@@ -1,0 +1,17 @@
+[Unit]
+PartOf=graphical-session.target
+
+Description=IBus Service
+After=graphical-session.target
+
+[Service]
+# Type=exec
+ExitType=cgroup
+ExecStartPre=/usr/bin/sleep 10
+ExecStart=/usr/bin/ibus-daemon -drxR
+Restart=no
+TimeoutSec=15s
+Slice=app.slice
+
+[Install]
+WantedBy=graphical-session.target
