@@ -1,4 +1,3 @@
-~/.config/systemd/user/plasma-custom-wm.service
 [Install]
 WantedBy=plasma-workspace.target
 
