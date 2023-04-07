@@ -19,7 +19,7 @@ set $mod Mod1
 ##for_window [class="plasmashell"] floating enable
 
 # Don’t spawn an empty window for the Plasma Desktop
-for_window [title="Desktop — Plasma"] kill, floating enable, border none
+for_window [title="Desktop.*QRect.*— Plasma"] kill, floating enable, border none
 for_window [title="Contero"] floating enable
 for_window [title="Ron"] floating enable
 for_window [title="Comal"] floating enable
