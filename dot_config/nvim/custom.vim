@@ -106,7 +106,11 @@ nmap <leader>мр :vs<CR>
 :nmap <localleader>де :VimtexTocOpen<CR>                " lt
 :nmap <localleader>дЕ :VimtexTocToggle<CR>              " lT
 :nmap <localleader>дй :VimtexLog<CR>                    " lq
-:nmap <localleader>дм :VimtexView<CR>                   " lv    Go to PDF viewer (Okular). Go back to Vim: Shift+Click.
+:nmap <localleader>дм :VimtexView<CR>                   " lv    Go to PDF viewer (Okular). Go back to Neovim: Shift+Click.
+                                                        "       With neovim-remote package,
+                                                        "       Okular Settings > Configure Okular > Editor > Command:
+                                                        "       nvr --remote-silent %f -c %l
+                                                        "
 :nmap <localleader>дк :VimtexRSearch<CR>                " lr
 :nmap <localleader>дд :VimtexCompile<CR>                " ll    Start background compilation.
 :nmap <localleader>дД :VimtexCompileSelected<CR>        " lL
