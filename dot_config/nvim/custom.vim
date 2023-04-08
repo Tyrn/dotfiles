@@ -37,6 +37,7 @@ if !isManjaro
     colorscheme koehler
 endif
 
+" Quit search highlights.
 nmap <leader>nh :nohlsearch<CR>:let @/=""<CR>
 nmap <leader>тр :nohlsearch<CR>:let @/=""<CR>
 
@@ -105,9 +106,9 @@ nmap <leader>мр :vs<CR>
 :nmap <localleader>де :VimtexTocOpen<CR>                " lt
 :nmap <localleader>дЕ :VimtexTocToggle<CR>              " lT
 :nmap <localleader>дй :VimtexLog<CR>                    " lq
-:nmap <localleader>дм :VimtexView<CR>                   " lv
+:nmap <localleader>дм :VimtexView<CR>                   " lv    Go to PDF viewer (Okular). Go back to Vim: Shift+Click.
 :nmap <localleader>дк :VimtexRSearch<CR>                " lr
-:nmap <localleader>дд :VimtexCompile<CR>                " ll
+:nmap <localleader>дд :VimtexCompile<CR>                " ll    Start background compilation.
 :nmap <localleader>дД :VimtexCompileSelected<CR>        " lL
 :nmap <localleader>дл :VimtexStop<CR>                   " lk
 :nmap <localleader>дЛ :VimtexStopAll<CR>                " lK
