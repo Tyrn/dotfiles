@@ -20,3 +20,4 @@ export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 export PATH=$ANDROID_HOME/cmdline-tools/latest:$PATH
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
+exec /usr/bin/ibus-daemon -drx &
