@@ -22,3 +22,5 @@ $ chezmoi apply -v
 ## Miscellany
 
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
+
+- 2023-04-16: do NOT enable ibus-custom.service.
