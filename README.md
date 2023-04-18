@@ -24,3 +24,11 @@ $ chezmoi apply -v
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
 
 - 2023-04-16: do NOT enable ibus-custom.service.
+
+- 2023-04-18: for now it's necessary to add by hand to `/etc/environment`:
+```
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+```
+- TODO: the script to install all the necessary packages, like `ibus`, `neovim`, `emacs`, etc.
