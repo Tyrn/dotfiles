@@ -28,7 +28,7 @@ for_window [title="Comal"] floating enable
 ##no_focus [class="plasmashell" window_type="notification"]
 ##no_focus [class="plasmashell" window_type="on_screen_display"]
 
-set $Locker i3lock && sleep 1
+set $Locker i3lock -c 031207 && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
