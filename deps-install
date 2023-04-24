@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+sudo pacman -S yay
+
+# IBus.
+
+yay -S ibus
+yay -S ibus-m17n
+
+# Neovim.
+
+yay -S python-pynvim
+yay -S neovim-remote
+yay -S tree-sitter
+yay -S tree-sitter-python-git
+yay -S tree-sitter-rust-git
+yay -S python-jedi
+yay -S python-pylint
+yay -S npm
+yay -S xsel
+yay -S aspell
+yay -S neovim
+
+# Doom Emacs.
+
+yay -S python-lsp-server
+yay -S pyright
+yay -S rust-analyzer
+yay -S texlab
+yay -S hunspell
+yay -S hunspell-en_us
+yay -S hunspell-es_es
+yay -S hunspell-ru
