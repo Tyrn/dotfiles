@@ -4,11 +4,11 @@ set -u
 set -x
 
 sudo pacman -S yay
-# yay -S base-devel
-# yay -S docker
-# yay -S docker-compose
-# yay -S docker-buildx
-# docker buildx install
+yay -S base-devel
+yay -S docker
+yay -S docker-compose
+yay -S docker-buildx
+docker buildx install
 yay -S fakeroot
 yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
