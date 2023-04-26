@@ -32,6 +32,13 @@ yay -S noto-color-emoji-fontconfig
 yay -S alacritty
 yay -S alacritty-themes
 
+# i3.
+
+yay -S i3-wm
+yay -S i3status
+yay -S dmenu-manjaro
+yay -S i3lock
+
 # IBus.
 
 yay -S ibus
