@@ -16,6 +16,10 @@ The repository is found in `~/.local/share/chezmoi`
 ```
 $ chezmoi apply -v
 ```
+- Enable custom WM for KDE:
+```
+systemctl enable --user plasma-custom-wm.service
+```
 - Set groups (reboot/relogin afterwards):
 ```
 $ cd ~/.local/share/chezmoi
