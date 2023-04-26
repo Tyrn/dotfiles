@@ -34,4 +34,4 @@ GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
 ```
-- TODO: the script to install all the necessary packages, like `ibus`, `neovim`, `emacs`, etc.
+- TODO: A full set of necessary groups to deps-install (q)
