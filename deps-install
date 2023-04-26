@@ -39,3 +39,4 @@ yay -S hunspell
 yay -S hunspell-en_us
 yay -S hunspell-es_es
 yay -S hunspell-ru
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
