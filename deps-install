@@ -12,6 +12,7 @@ sudo pacman -S yay
 yay -S fakeroot
 yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
+yay -S lazygit
 yay -S tmux
 yay -S zoxide
 yay -S ripgrep
