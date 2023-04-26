@@ -9,6 +9,8 @@ yay -S fakeroot
 yay -S python-virtualenvwrapper
 yay -S oh-my-zsh-git
 yay -S zoxide
+yay -S ripgrep
+yay -S bat
 
 # IBus.
 
