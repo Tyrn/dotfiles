@@ -11,6 +11,7 @@ yay -S oh-my-zsh-git
 yay -S zoxide
 yay -S ripgrep
 yay -S bat
+yay -S alacritty
 
 # IBus.
 
