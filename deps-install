@@ -21,6 +21,8 @@ yay -S zoxide
 yay -S ripgrep
 yay -S bat
 
+yay -S rpi-imager
+
 yay -S ttf-liberation
 yay -S ttf-dejavu
 
