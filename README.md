@@ -1,8 +1,8 @@
-# Linux workstation config
+# Manjaro Linux workstation config
 
-Via [Chezmoi](https://www.chezmoi.io/)
+For Plasma KDE and i3; also good for RPi.
 
-- Install:
+- Install [Chezmoi](https://www.chezmoi.io/):
 ```
 $ yay -S chezmoi
 ```
