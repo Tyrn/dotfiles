@@ -56,4 +56,7 @@ yay -S hunspell
 yay -S hunspell-en_us
 yay -S hunspell-es_es
 yay -S hunspell-ru
+rm -rf ~/.emacs.d
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+yay -S emacs-nativecomp
+doom install

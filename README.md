@@ -16,6 +16,15 @@ The repository is found in `~/.local/share/chezmoi`
 ```
 $ chezmoi apply -v
 ```
+- Set groups (reboot/relogin afterwards):
+```
+$ cd ~/.local/share/chezmoi
+$ ./groups-add
+```
+- Install the things `dotfiles` are all about:
+```
+$ ./deps-install
+```
 
 *NB* No symlinks so far
 
@@ -34,4 +43,3 @@ GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
 ```
-- TODO: A full set of necessary groups to deps-install (q)
