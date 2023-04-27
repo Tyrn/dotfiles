@@ -17,9 +17,21 @@ yay -S python-virtualenvwrapper
 yay -S mlocate
 yay -S lazygit
 yay -S tmux
+
 yay -S zoxide
 yay -S ripgrep
+yay -S fd
+yay -S sd
 yay -S bat
+yay -S exa
+yay -S dust
+yay -S procs
+yay -S tealdeer
+yay -S broot
+yay -S skim
+yay -S tokei
+yay -S ouch
+yay -S difftastic
 
 yay -S rpi-imager
 yay -S gnome-disk-utility
