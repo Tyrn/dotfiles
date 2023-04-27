@@ -29,6 +29,12 @@ $ ./groups-add
 ```
 $ ./deps-install
 ```
+- 2023-04-18: for now it's necessary to add by hand to `/etc/environment`:
+```
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+```
 
 *NB* No symlinks so far
 
@@ -40,10 +46,4 @@ $ ./deps-install
 ```
 $ ibus exit
 $ ibus-daemon -drx &
-```
-- 2023-04-18: for now it's necessary to add by hand to `/etc/environment`:
-```
-GTK_IM_MODULE=ibus
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
 ```
