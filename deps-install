@@ -18,6 +18,7 @@ yay -S python-pipx
 yay -S mlocate
 yay -S lazygit
 yay -S tmux
+yay -S shellcheck-bin
 
 yay -S zoxide
 yay -S ripgrep
