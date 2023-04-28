@@ -70,6 +70,7 @@ yay -S python-jedi
 yay -S python-pylint
 yay -S npm
 yay -S xsel
+yay -S xclip
 yay -S aspell
 yay -S neovim
 
