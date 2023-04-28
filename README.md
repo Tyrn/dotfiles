@@ -4,7 +4,7 @@ For Plasma KDE and i3; also good for RPi.
 
 - Install [Chezmoi](https://www.chezmoi.io/):
 ```
-$ yay -S chezmoi
+$ sudo pacman -S chezmoi zoxide
 ```
 - Init:
 ```
@@ -18,7 +18,8 @@ $ chezmoi apply -v
 ```
 - Enable custom WM for KDE:
 ```
-systemctl enable --user plasma-custom-wm.service
+$ systemctl mask --user plasma-kwin_x11
+$ systemctl enable --user plasma-custom-wm.service
 ```
 - Set groups (reboot/relogin afterwards):
 ```

@@ -3,5 +3,6 @@
 set -u
 set -x
 
+sudo groupadd docker
 sudo gpasswd -a $USER docker
 sudo gpasswd -a $USER uucp
