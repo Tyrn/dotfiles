@@ -14,6 +14,7 @@ The repository is found in `~/.local/share/chezmoi`
 
 - Deploy:
 ```
+$ cp ~/.zshrc ~/.zshrc.old
 $ chezmoi apply -v
 ```
 - Enable custom WM for KDE:
