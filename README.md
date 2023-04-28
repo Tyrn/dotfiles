@@ -28,7 +28,7 @@ $ ./groups-add
 ```
 - Install the things `dotfiles` are all about:
 ```
-$ ./deps-install
+$ yes | ./deps-install
 ```
 - 2023-04-18: for now it's necessary to add by hand to `/etc/environment`:
 ```
@@ -47,4 +47,18 @@ XMODIFIERS=@im=ibus
 ```
 $ ibus exit
 $ ibus-daemon -drx &
+```
+- Change shell, if necessary:
+```
+$ chsh -s $(which zsh)
+$ ps -p $$
+$ echo $SHELL
+```
+- Troubleshooting: [Extra shells](https://unix.stackexchange.com/questions/39881/running-chsh-does-not-change-shell)
+```
+$ who
+danny  pts/0        Nov 6 13:53 (10.1.6.121)
+danny  pts/1        Nov 5 12:30 (10.1.6.165)
+danny  pts/2        Nov 4 12:33 (10.1.6.197)
+$ pkill -KILL -u danny
 ```
