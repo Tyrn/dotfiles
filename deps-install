@@ -53,6 +53,7 @@ yay -S i3-wm
 yay -S i3status
 yay -S dmenu-manjaro
 yay -S i3lock
+yay -S feh
 
 # IBus.
 
