@@ -75,6 +75,9 @@ yay -S python-pylint
 yay -S xsel
 yay -S xclip
 yay -S aspell
+yay -S aspell-en
+yay -S aspell-es
+yay -S aspell-ru
 yay -S neovim
 
 # Doom Emacs.
