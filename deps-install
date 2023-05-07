@@ -60,6 +60,10 @@ yay -S feh
 yay -S ibus
 yay -S ibus-m17n
 
+# CUPS drivers for SPL (Samsung Printer Language) printers.
+
+yay -S splix
+
 # Neovim.
 
 yay -S npm
