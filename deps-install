@@ -64,6 +64,13 @@ yay -S ibus-m17n
 
 yay -S splix
 
+# Rust.
+
+# yay -S rustup
+# rustup toolchain install nightly
+# rustup component add rust-analyzer
+# rustup component add rust-src
+
 # Neovim.
 
 yay -S npm
@@ -88,7 +95,6 @@ yay -S neovim
 
 yay -S python-lsp-server
 yay -S pyright
-yay -S rust-analyzer
 yay -S texlab
 yay -S hunspell
 yay -S hunspell-en_us
