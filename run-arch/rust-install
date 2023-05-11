@@ -8,4 +8,4 @@ set -x
 yay -S rustup
 rustup toolchain install nightly
 rustup component add rust-analyzer
-rustup component add rust-src
+# rustup component add rust-src
