@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Neovim.
+
+yay -S python-pynvim
+yay -S neovim-remote
+yay -S tree-sitter
+yay -S tree-sitter-python-git
+yay -S tree-sitter-rust-git
+yay -S python-jedi
+yay -S python-pylint
+yay -S neovim

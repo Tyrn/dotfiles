@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Rust.
+
+yay -S rustup
+rustup toolchain install nightly
+rustup component add rust-analyzer
+rustup component add rust-src

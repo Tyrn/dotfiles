@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+./base-install
+# ./rust-install
+./spell-install
+./nvim-install
+./doom-install
