@@ -7,8 +7,10 @@ set -x
 
 # yay -S google-chrome
 yay -S qutebrowser
-yay -S doublecmd-qt5
 yay -S geany geany-plugins
-yay -S zoom
-yay -S foxitreader
-yay -S yacreader
+if [ $(uname -m) == 'x86_64' ]; then
+    yay -S doublecmd-qt5
+    yay -S foxitreader
+    yay -S zoom
+    yay -S yacreader
+fi
