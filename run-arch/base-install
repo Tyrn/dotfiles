@@ -47,6 +47,11 @@ yay -S noto-color-emoji-fontconfig
 yay -S alacritty
 yay -S alacritty-themes
 
+# Clipboard.
+
+yay -S xsel
+yay -S xclip
+
 # i3.
 
 yay -S i3-wm
@@ -64,43 +69,7 @@ yay -S ibus-m17n
 
 yay -S splix
 
-# Rust.
-
-# yay -S rustup
-# rustup toolchain install nightly
-# rustup component add rust-analyzer
-# rustup component add rust-src
-
-# Neovim.
+# JS.
 
 yay -S npm
 npm install --global state-machine-cat
-
-yay -S python-pynvim
-yay -S neovim-remote
-yay -S tree-sitter
-yay -S tree-sitter-python-git
-yay -S tree-sitter-rust-git
-yay -S python-jedi
-yay -S python-pylint
-yay -S xsel
-yay -S xclip
-yay -S aspell
-yay -S aspell-en
-yay -S aspell-es
-yay -S aspell-ru
-yay -S neovim
-
-# Doom Emacs.
-
-yay -S python-lsp-server
-yay -S pyright
-yay -S texlab
-yay -S hunspell
-yay -S hunspell-en_us
-yay -S hunspell-es_es
-yay -S hunspell-ru
-rm -rf ~/.emacs.d
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
-yay -S emacs-nativecomp
-doom install
