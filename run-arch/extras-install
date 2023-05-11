@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Miscellaneous applications.
+
+# yay -S google-chrome
+yay -S qutebrowser
+yay -S doublecmd-qt5
+yay -S geany geany-plugins
+yay -S zoom
+yay -S foxitreader
+yay -S yacreader
