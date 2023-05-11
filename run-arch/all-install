@@ -4,6 +4,7 @@ set -u
 set -x
 
 ./base-install
+# ./extras-install
 # ./rust-install
 ./spell-install
 ./nvim-install
