@@ -5,7 +5,6 @@ set -x
 
 # Doom Emacs.
 
-yay -S python-lsp-server
 yay -S pyright
 yay -S texlab
 rm -rf ~/.emacs.d
