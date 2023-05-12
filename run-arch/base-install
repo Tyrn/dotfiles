@@ -69,7 +69,12 @@ yay -S ibus-m17n
 
 yay -S splix
 
-# JS.
+# Python, base.
+
+yay -S python-lsp-server
+yay -S python-black
+
+# JS, base.
 
 yay -S npm
 npm install --global state-machine-cat
