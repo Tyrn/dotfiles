@@ -63,3 +63,14 @@ danny  pts/1        Nov 5 12:30 (10.1.6.165)
 danny  pts/2        Nov 4 12:33 (10.1.6.197)
 $ pkill -KILL -u danny
 ```
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter); plugin setup/cleanup:
+```
+:PlugClean
+...
+$ rm -rf ~/.cache/nvim ~/.config/nvim/plugged ~/.local/share/nvim
+...
+:PlugInstall
+:UpdateRemotePlugins
+...
+:TSInstall python  # If $ yay -S tree-sitter-python-git is no longer available.
+```
