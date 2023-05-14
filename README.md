@@ -70,6 +70,9 @@ $ pkill -KILL -u danny
 $ rm -rf ~/.cache/nvim ~/.config/nvim/plugged ~/.local/share/nvim
 ...
 :PlugInstall
+```
+- Restart `nvim`
+```
 :UpdateRemotePlugins
 ...
 :TSInstall python  # If $ yay -S tree-sitter-python-git is no longer available or not recommended.
