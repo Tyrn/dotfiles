@@ -72,5 +72,5 @@ $ rm -rf ~/.cache/nvim ~/.config/nvim/plugged ~/.local/share/nvim
 :PlugInstall
 :UpdateRemotePlugins
 ...
-:TSInstall python  # If $ yay -S tree-sitter-python-git is no longer available.
+:TSInstall python  # If $ yay -S tree-sitter-python-git is no longer available or not recommended.
 ```
