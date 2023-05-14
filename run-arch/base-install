@@ -52,6 +52,7 @@ yay -S alacritty-themes
 
 yay -S xsel
 yay -S xclip
+yay -S wl-clipboard
 
 # i3.
 
