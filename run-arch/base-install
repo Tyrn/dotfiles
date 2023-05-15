@@ -36,6 +36,10 @@ yay -S tokei
 yay -S ouch
 yay -S difftastic
 
+yay -S mpv
+yay -S yt-dlp
+yay -S youtube-dl
+
 yay -S rpi-imager
 yay -S gnome-disk-utility
 
