@@ -11,6 +11,7 @@ yay -S geany geany-plugins
 if [ $(uname -m) == 'x86_64' ]; then
     yay -S doublecmd-qt5
     yay -S foxitreader
+    yay -S pandoc-bin
     yay -S zoom
     yay -S yacreader
 fi
