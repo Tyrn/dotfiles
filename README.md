@@ -77,3 +77,24 @@ $ rm -rf ~/.cache/nvim ~/.config/nvim/plugged ~/.local/share/nvim
 ...
 :TSInstall python  # If $ yay -S tree-sitter-python-git is no longer available or not recommended.
 ```
+
+### Git credentials on the workstation
+
+- [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
+- Generate a public key on your workstation (`~/.ssh/id_rsa.pub`, if you accept all defaults):
+```
+$ ssh-keygen
+```
+- Create a new SSH key in GitHub web interface and copy/paste the `~/.ssh/id_rsa.pub` contents
+
+- Say `yes` once asked *Are you sure...* (the question is never repeated):
+```
+$ git clone git@github.com: ...
+Cloning into ...
+The authenticity of host '...' can't be established.
+...
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+```
