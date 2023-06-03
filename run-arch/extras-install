@@ -14,6 +14,8 @@ if [ $(uname -m) == 'x86_64' ]; then
     yay -S doublecmd-qt5
     yay -S foxitreader
     yay -S pandoc-bin
+    yay -S deadbeef opusfile
+    yay -S qmmp
     yay -S zoom
     yay -S yacreader
     yay -S anki-official-binary-bundle
