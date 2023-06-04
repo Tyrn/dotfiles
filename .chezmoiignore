@@ -1,6 +1,5 @@
 README.*
-deps-install
-groups-add
+run-arch/
 
 # Neovim
 **/autoload/
