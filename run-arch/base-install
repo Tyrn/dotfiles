@@ -17,6 +17,7 @@ yay -S python-virtualenvwrapper
 yay -S python-pipx
 yay -S mlocate
 yay -S lazygit
+yay -S tig
 yay -S tmux
 yay -S debtap
 yay -S shellcheck-bin
@@ -27,10 +28,13 @@ yay -S fd
 yay -S sd
 yay -S bat
 yay -S exa
+yay -S htop
+yay -S btop
+yay -S bottom
 yay -S dust
 yay -S procs
 yay -S tealdeer
-yay -S broot
+# yay -S broot
 yay -S skim
 yay -S tokei
 yay -S ouch
