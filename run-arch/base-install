@@ -87,12 +87,17 @@ yay -S ibus-m17n
 
 yay -S splix
 
-# Python, base.
+# Python, forgettable.
 
+pipx install poetry
 yay -S python-lsp-server
 yay -S python-black
 
-# JS, base.
+# JS, forgettable.
 
 yay -S npm
 npm install --global state-machine-cat
+
+# Ruby, forgettable.
+
+yay -S fpm
