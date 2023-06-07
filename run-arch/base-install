@@ -28,6 +28,8 @@ yay -S fd
 yay -S sd
 yay -S bat
 yay -S exa
+yay -S tree
+yay -S erdtree
 yay -S htop
 yay -S btop
 yay -S bottom
