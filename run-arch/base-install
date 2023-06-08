@@ -60,6 +60,7 @@ yay -S gnome-disk-utility
 yay -S ttf-liberation
 yay -S ttf-dejavu
 
+yay -S fontforge
 yay -S noto-fonts
 yay -S noto-fonts-emoji
 yay -S noto-color-emoji-fontconfig
