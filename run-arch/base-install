@@ -14,7 +14,7 @@ docker buildx install
 
 yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
-yay -S python-pipx
+# yay -S python-pipx
 yay -S mlocate
 yay -S lazygit
 yay -S tig
@@ -92,7 +92,7 @@ yay -S splix
 
 # Python, forgettable.
 
-pipx install poetry
+pip install poetry
 yay -S python-lsp-server
 yay -S python-black
 
