@@ -7,4 +7,11 @@ run-archlinux/
 **/plugged/
 **/plugged/**/*
 **/yankring_history*.txt
-
+# AstroNvim
+**/lua/astronvim/
+**/lua/astronvim/**/*
+**/lua/plugins/
+**/lua/plugins/**/*
+**/lua/resession/
+**/lua/resession/**/*
+**/lua/lazy_snapshot.lua
