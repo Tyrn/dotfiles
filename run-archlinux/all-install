@@ -5,7 +5,8 @@ set -x
 
 ./base-install
 # ./extras-install
-# ./rust-install
+./rust-install
+./flutter-install
 ./spell-install
 ./nvim-install
 ./doom-install
