@@ -19,7 +19,7 @@ local sections = {
 }
 
 --
--- Russian remapping BEGIN
+-- Russian remapping, based on nvim/astronvim/mappings BEGIN
 --
 
 -- Normal --
@@ -436,9 +436,45 @@ maps.n["<leader>гр"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
 -- utils.set_mappings(astronvim.user_opts("mappings", maps))
 
 --
--- Russian remapping END
+-- Russian remapping, based on nvim/astronvim/mappings END
 --
 
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+
+keymap("n", "ѵ", "0", opts)
+keymap("n", "ѱ", "G", opts)
+keymap("n", ";", "$", opts)  -- Russian dollar
+keymap("n", "Ñ", ":", opts)  -- Spanish colon
+keymap("n", ".", "/", opts)  -- Russian slash
+keymap("n", "-", "/", opts)  -- Spanish slash
+keymap("i", "YY", "{\\slv{}}", opts)
+keymap("i", "НН", "{\\slv{}}", opts)
+keymap("i", "NN", "\\textbf{}", opts)
+keymap("i", "ТТ", "\\textbf{}", opts)
+keymap("i", "II", "\\emph{}", opts)
+keymap("i", "ШШ", "\\emph{}", opts)
+keymap("i", "OO", "{}", opts)
+keymap("i", "ЩЩ", "{}", opts)
+keymap("i", "PP", "~\textemdash~", opts)
+keymap("i", "ЗЗ", "~\\textemdash~", opts)
+keymap("i", "LL", "\\ldots{}", opts)
+keymap("i", "ДД", "\\ldots{}", opts)
+keymap("i", "HH", "---~", opts)
+keymap("i", "РР", "---~", opts)
+keymap("i", "HJ", "~---", opts)
+keymap("i", "РО", "~---", opts)
+keymap("i", "JJ", "~---~", opts)
+keymap("i", "ОО", "~---~", opts)
+keymap("i", "ББ", "<<", opts)
+keymap("i", "ЮЮ", ">>", opts)
+keymap("i", "БЬ", "«", opts)
+keymap("i", "ЮЬ", "»", opts)
+keymap("i", "ññ", "«", opts)
+keymap("i", "ÑÑ", "»", opts)
+
+-- Template:
+--
 -- Mapping data with "desc" stored directly by vim.keymap.set().
 --
 -- Please use this mappings table to set keyboard mapping since this is the
