@@ -440,48 +440,48 @@ maps.n["<leader>гр"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
 --
 
 -- Vimtex mapping
-maps.n["<leader>lli"] = { ":VimtexInfo<CR>", desc = "" }
-maps.n["<leader>ддш"] = { ":VimtexInfo<CR>", desc = "" }
-maps.n["<leader>llI"] = { ":VimtexInfo!<CR>", desc = "" }
-maps.n["<leader>ддШ"] = { ":VimtexInfo!<CR>", desc = "" }
-maps.n["<leader>llt"] = { ":VimtexTocOpen<CR>", desc = "" }
-maps.n["<leader>дде"] = { ":VimtexTocOpen<CR>", desc = "" }
-maps.n["<leader>llT"] = { ":VimtexTocToggle<CR>", desc = "" }
-maps.n["<leader>ддЕ"] = { ":VimtexTocToggle<CR>", desc = "" }
-maps.n["<leader>llq"] = { ":VimtexLog<CR>", desc = "" }
-maps.n["<leader>ддй"] = { ":VimtexLog<CR>", desc = "" }
-maps.n["<leader>llv"] = { ":VimtexView<CR>", desc = "" }
-maps.n["<leader>ддм"] = { ":VimtexView<CR>", desc = "" }
-maps.n["<leader>llr"] = { ":VimtexRSearch<CR>", desc = "" }
-maps.n["<leader>ддк"] = { ":VimtexRSearch<CR>", desc = "" }
-maps.n["<leader>lll"] = { ":VimtexCompile<CR>", desc = "" }
-maps.n["<leader>ддд"] = { ":VimtexCompile<CR>", desc = "" }
-maps.n["<leader>llL"] = { ":VimtexCompileSelected<CR>", desc = "" }
-maps.n["<leader>ддД"] = { ":VimtexCompileSelected<CR>", desc = "" }
-maps.n["<leader>llk"] = { ":VimtexStop<CR>", desc = "" }
-maps.n["<leader>ддл"] = { ":VimtexStop<CR>", desc = "" }
-maps.n["<leader>llK"] = { ":VimtexStopAll<CR>", desc = "" }
-maps.n["<leader>ддЛ"] = { ":VimtexStopAll<CR>", desc = "" }
-maps.n["<leader>lle"] = { ":VimtexErrors<CR>", desc = "" }
-maps.n["<leader>дду"] = { ":VimtexErrors<CR>", desc = "" }
-maps.n["<leader>llo"] = { ":VimtexCompileOutput<CR>", desc = "" }
-maps.n["<leader>ддщ"] = { ":VimtexCompileOutput<CR>", desc = "" }
-maps.n["<leader>llg"] = { ":VimtexStatus<CR>", desc = "" }
-maps.n["<leader>ддп"] = { ":VimtexStatus<CR>", desc = "" }
-maps.n["<leader>llG"] = { ":VimtexStatus!<CR>", desc = "" }
-maps.n["<leader>ддП"] = { ":VimtexStatus!<CR>", desc = "" }
-maps.n["<leader>llc"] = { ":VimtexClean<CR>", desc = "" }
-maps.n["<leader>ддс"] = { ":VimtexClean<CR>", desc = "" }
-maps.n["<leader>llC"] = { ":VimtexClean!<CR>", desc = "" }
-maps.n["<leader>ддС"] = { ":VimtexClean!<CR>", desc = "" }
-maps.n["<leader>llm"] = { ":VimtexImapsList<CR>", desc = "" }
-maps.n["<leader>ддь"] = { ":VimtexImapsList<CR>", desc = "" }
-maps.n["<leader>llx"] = { ":VimtexReload<CR>", desc = "" }
-maps.n["<leader>ддч"] = { ":VimtexReload<CR>", desc = "" }
-maps.n["<leader>llX"] = { ":VimtexReloadState<CR>", desc = "" }
-maps.n["<leader>ддЧ"] = { ":VimtexReloadState<CR>", desc = "" }
-maps.n["<leader>lls"] = { ":VimtexToggleMain<CR>", desc = "" }
-maps.n["<leader>дды"] = { ":VimtexToggleMain<CR>", desc = "" }
+maps.n["<leader>lli"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
+maps.n["<leader>ддш"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
+maps.n["<leader>llI"] = { ":VimtexInfo!<CR>", desc = "VimTex current project info" }
+maps.n["<leader>ддШ"] = { ":VimtexInfo!<CR>", desc = "VimTex current project info" }
+maps.n["<leader>llt"] = { ":VimtexTocOpen<CR>", desc = "VimTex open table of contents" }
+maps.n["<leader>дде"] = { ":VimtexTocOpen<CR>", desc = "VimTex open table of contents" }
+maps.n["<leader>llT"] = { ":VimtexTocToggle<CR>", desc = "VimTex toggle table of contents" }
+maps.n["<leader>ддЕ"] = { ":VimtexTocToggle<CR>", desc = "VimTex toggle table of contents" }
+maps.n["<leader>llq"] = { ":VimtexLog<CR>", desc = "VimTex log" }
+maps.n["<leader>ддй"] = { ":VimtexLog<CR>", desc = "VimTex log" }
+maps.n["<leader>llv"] = { ":VimtexView<CR>", desc = "VimTex view pdf (forward search)" }
+maps.n["<leader>ддм"] = { ":VimtexView<CR>", desc = "VimTex view pdf (forward search)" }
+maps.n["<leader>llr"] = { ":VimtexRSearch<CR>", desc = "VimTex VimtexRSearch?" }
+maps.n["<leader>ддк"] = { ":VimtexRSearch<CR>", desc = "VimTex VimtexRSearch?" }
+maps.n["<leader>lll"] = { ":VimtexCompile<CR>", desc = "VimTex compile" }
+maps.n["<leader>ддд"] = { ":VimtexCompile<CR>", desc = "VimTex compile" }
+maps.n["<leader>llL"] = { ":VimtexCompileSelected<CR>", desc = "VimTex compile the selected part" }
+maps.n["<leader>ддД"] = { ":VimtexCompileSelected<CR>", desc = "VimTex compile the selected part" }
+maps.n["<leader>llk"] = { ":VimtexStop<CR>", desc = "VimTex stop compilation for the current project" }
+maps.n["<leader>ддл"] = { ":VimtexStop<CR>", desc = "VimTex stop compilation for the current project" }
+maps.n["<leader>llK"] = { ":VimtexStopAll<CR>", desc = "VimTex stop compilation for all projects" }
+maps.n["<leader>ддЛ"] = { ":VimtexStopAll<CR>", desc = "VimTex stop compilation for all projects" }
+maps.n["<leader>lle"] = { ":VimtexErrors<CR>", desc = "VimTex open quick fix window (err/warn)" }
+maps.n["<leader>дду"] = { ":VimtexErrors<CR>", desc = "VimTex open quick fix window (err/warn)" }
+maps.n["<leader>llo"] = { ":VimtexCompileOutput<CR>", desc = "VimTex open file where compiler output is redirected" }
+maps.n["<leader>ддщ"] = { ":VimtexCompileOutput<CR>", desc = "VimTex open file where compiler output is redirected" }
+maps.n["<leader>llg"] = { ":VimtexStatus<CR>", desc = "VimTex show compilation status for the current project" }
+maps.n["<leader>ддп"] = { ":VimtexStatus<CR>", desc = "VimTex show compilation status for the current project" }
+maps.n["<leader>llG"] = { ":VimtexStatus!<CR>", desc = "VimTex show compilation status for all projects" }
+maps.n["<leader>ддП"] = { ":VimtexStatus!<CR>", desc = "VimTex show compilation status for all projects" }
+maps.n["<leader>llc"] = { ":VimtexClean<CR>", desc = "VimTex clean auxiliary files" }
+maps.n["<leader>ддс"] = { ":VimtexClean<CR>", desc = "VimTex clean auxiliary files" }
+maps.n["<leader>llC"] = { ":VimtexClean!<CR>", desc = "VimTex clean auxiliary and output files" }
+maps.n["<leader>ддС"] = { ":VimtexClean!<CR>", desc = "VimTex clean auxiliary and output files" }
+maps.n["<leader>llm"] = { ":VimtexImapsList<CR>", desc = "VimTex show imaps list" }
+maps.n["<leader>ддь"] = { ":VimtexImapsList<CR>", desc = "VimTex show imaps list" }
+maps.n["<leader>llx"] = { ":VimtexReload<CR>", desc = "VimTex reload scripts" }
+maps.n["<leader>ддч"] = { ":VimtexReload<CR>", desc = "VimTex reload scripts" }
+maps.n["<leader>llX"] = { ":VimtexReloadState<CR>", desc = "VimTex reload the state of the current buffer" }
+maps.n["<leader>ддЧ"] = { ":VimtexReloadState<CR>", desc = "VimTex reload the state of the current buffer" }
+maps.n["<leader>lls"] = { ":VimtexToggleMain<CR>", desc = "VimTex toggle main or current file as a target" }
+maps.n["<leader>дды"] = { ":VimtexToggleMain<CR>", desc = "VimTex toggle main or current file as a target" }
 
 
 -- (La)TeX remapping
