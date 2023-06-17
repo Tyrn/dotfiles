@@ -439,6 +439,52 @@ maps.n["<leader>гр"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
 -- Russian remapping, based on nvim/astronvim/mappings END
 --
 
+-- Vimtex mapping
+maps.n["<leader>lli"] = { ":VimtexInfo<CR>", desc = "" }
+maps.n["<leader>ддш"] = { ":VimtexInfo<CR>", desc = "" }
+maps.n["<leader>llI"] = { ":VimtexInfo!<CR>", desc = "" }
+maps.n["<leader>ддШ"] = { ":VimtexInfo!<CR>", desc = "" }
+maps.n["<leader>llt"] = { ":VimtexTocOpen<CR>", desc = "" }
+maps.n["<leader>дде"] = { ":VimtexTocOpen<CR>", desc = "" }
+maps.n["<leader>llT"] = { ":VimtexTocToggle<CR>", desc = "" }
+maps.n["<leader>ддЕ"] = { ":VimtexTocToggle<CR>", desc = "" }
+maps.n["<leader>llq"] = { ":VimtexLog<CR>", desc = "" }
+maps.n["<leader>ддй"] = { ":VimtexLog<CR>", desc = "" }
+maps.n["<leader>llv"] = { ":VimtexView<CR>", desc = "" }
+maps.n["<leader>ддм"] = { ":VimtexView<CR>", desc = "" }
+maps.n["<leader>llr"] = { ":VimtexRSearch<CR>", desc = "" }
+maps.n["<leader>ддк"] = { ":VimtexRSearch<CR>", desc = "" }
+maps.n["<leader>lll"] = { ":VimtexCompile<CR>", desc = "" }
+maps.n["<leader>ддд"] = { ":VimtexCompile<CR>", desc = "" }
+maps.n["<leader>llL"] = { ":VimtexCompileSelected<CR>", desc = "" }
+maps.n["<leader>ддД"] = { ":VimtexCompileSelected<CR>", desc = "" }
+maps.n["<leader>llk"] = { ":VimtexStop<CR>", desc = "" }
+maps.n["<leader>ддл"] = { ":VimtexStop<CR>", desc = "" }
+maps.n["<leader>llK"] = { ":VimtexStopAll<CR>", desc = "" }
+maps.n["<leader>ддЛ"] = { ":VimtexStopAll<CR>", desc = "" }
+maps.n["<leader>lle"] = { ":VimtexErrors<CR>", desc = "" }
+maps.n["<leader>дду"] = { ":VimtexErrors<CR>", desc = "" }
+maps.n["<leader>llo"] = { ":VimtexCompileOutput<CR>", desc = "" }
+maps.n["<leader>ддщ"] = { ":VimtexCompileOutput<CR>", desc = "" }
+maps.n["<leader>llg"] = { ":VimtexStatus<CR>", desc = "" }
+maps.n["<leader>ддп"] = { ":VimtexStatus<CR>", desc = "" }
+maps.n["<leader>llG"] = { ":VimtexStatus!<CR>", desc = "" }
+maps.n["<leader>ддП"] = { ":VimtexStatus!<CR>", desc = "" }
+maps.n["<leader>llc"] = { ":VimtexClean<CR>", desc = "" }
+maps.n["<leader>ддс"] = { ":VimtexClean<CR>", desc = "" }
+maps.n["<leader>llC"] = { ":VimtexClean!<CR>", desc = "" }
+maps.n["<leader>ддС"] = { ":VimtexClean!<CR>", desc = "" }
+maps.n["<leader>llm"] = { ":VimtexImapsList<CR>", desc = "" }
+maps.n["<leader>ддь"] = { ":VimtexImapsList<CR>", desc = "" }
+maps.n["<leader>llx"] = { ":VimtexReload<CR>", desc = "" }
+maps.n["<leader>ддч"] = { ":VimtexReload<CR>", desc = "" }
+maps.n["<leader>llX"] = { ":VimtexReloadState<CR>", desc = "" }
+maps.n["<leader>ддЧ"] = { ":VimtexReloadState<CR>", desc = "" }
+maps.n["<leader>lls"] = { ":VimtexToggleMain<CR>", desc = "" }
+maps.n["<leader>дды"] = { ":VimtexToggleMain<CR>", desc = "" }
+
+
+-- (La)TeX remapping
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
