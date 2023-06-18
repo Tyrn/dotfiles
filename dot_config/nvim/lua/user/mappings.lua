@@ -439,6 +439,10 @@ maps.n["<leader>гр"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
 -- Russian remapping, based on nvim/astronvim/mappings END
 --
 
+-- Python Poetry
+maps.n["<leader>poa"] = { ":PoetvActivate<CR>", desc = "Poetry activate" }
+maps.n["<leader>pod"] = { ":PoetvDeactivate<CR>", desc = "Poetry deactivate" }
+
 -- Vimtex mapping
 maps.n["<leader>lli"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
 maps.n["<leader>ддш"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
