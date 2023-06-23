@@ -85,3 +85,22 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 ```
+
+### Android Studio and flutterup
+
+- Make sure *File > Settings > Appearance & Behavior > System Settings > Android SDK > SDK Tools > Android SDK Command Line Tools (latest)* gets checked and installed;
+
+- [flutterup](https://github.com/Decodetalkers/flutterup) and Flutter SDK manual installation
+```
+$ yay -S flutterup
+$ flutterup install
+$ flutter doctor
+```
+- Flutter SDK location (flutterup default)
+```
+~/.local/share/flutterup
+```
+- Dart SDK location
+```
+~/.local/share/flutterup/bin/cache/dart-sdk
+```
