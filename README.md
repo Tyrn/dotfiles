@@ -24,12 +24,12 @@ $ systemctl enable --user plasma-custom-wm.service
 ```
 - Set groups (reboot/relogin afterwards):
 ```
-$ cd ~/.local/share/chezmoi/run-arch
-run-arch $ ./groups-add
+$ cd ~/.local/share/chezmoi/run-archlinux
+run-archlinux $ ./groups-add
 ```
 - Install the things `dotfiles` are all about:
 ```
-run-arch $ yes | ./all-install
+run-archlinux $ yes | ./all-install
 ```
 - 2023-04-18: for now it's necessary to add by hand to `/etc/environment`:
 ```
