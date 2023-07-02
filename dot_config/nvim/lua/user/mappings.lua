@@ -95,7 +95,8 @@ maps.n["<leader>иык"] =
   { function() require("astronvim.utils.buffer").sort "unique_path" end, desc = "By relative path" }
 maps.n["<leader>иыз"] = { function() require("astronvim.utils.buffer").sort "full_path" end, desc = "By full path" }
 maps.n["<leader>иыш"] = { function() require("astronvim.utils.buffer").sort "bufnr" end, desc = "By buffer number" }
-maps.n["<leader>иыь"] = { function() require("astronvim.utils.buffer").sort "modified" end, desc = "By modification" }
+maps.n["<leader>иыь"] =
+  { function() require("astronvim.utils.buffer").sort "modified" end, desc = "By modification" }
 maps.n["<leader>и\\"] = {
   function()
     require("astronvim.utils.status.heirline").buffer_picker(function(bufnr)
@@ -151,7 +152,8 @@ if is_available "gitsigns.nvim" then
   maps.n["]п"] = { function() require("gitsigns").next_hunk() end, desc = "Next Git hunk" }
   maps.n["[п"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous Git hunk" }
   maps.n["<leader>пд"] = { function() require("gitsigns").blame_line() end, desc = "View Git blame" }
-  maps.n["<leader>пД"] = { function() require("gitsigns").blame_line { full = true } end, desc = "View full Git blame" }
+  maps.n["<leader>пД"] =
+    { function() require("gitsigns").blame_line { full = true } end, desc = "View full Git blame" }
   maps.n["<leader>пз"] = { function() require("gitsigns").preview_hunk() end, desc = "Preview Git hunk" }
   maps.n["<leader>пр"] = { function() require("gitsigns").reset_hunk() end, desc = "Reset Git hunk" }
   maps.n["<leader>пк"] = { function() require("gitsigns").reset_buffer() end, desc = "Reset Git buffer" }
@@ -211,19 +213,19 @@ if is_available "smart-splits.nvim" then
   maps.n["<C-о>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" }
   maps.n["<C-л>"] = { function() require("smart-splits").move_cursor_up() end, desc = "Move to above split" }
   maps.n["<C-д>"] = { function() require("smart-splits").move_cursor_right() end, desc = "Move to right split" }
---   maps.n["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" }
---   maps.n["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" }
---   maps.n["<C-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" }
---   maps.n["<C-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" }
+  --   maps.n["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" }
+  --   maps.n["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" }
+  --   maps.n["<C-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" }
+  --   maps.n["<C-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" }
 else
   maps.n["<C-р>"] = { "<C-w>h", desc = "Move to left split" }
   maps.n["<C-о>"] = { "<C-w>j", desc = "Move to below split" }
   maps.n["<C-л>"] = { "<C-w>k", desc = "Move to above split" }
   maps.n["<C-д>"] = { "<C-w>l", desc = "Move to right split" }
---   maps.n["<C-Up>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" }
---   maps.n["<C-Down>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" }
---   maps.n["<C-Left>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" }
---   maps.n["<C-Right>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" }
+  --   maps.n["<C-Up>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" }
+  --   maps.n["<C-Down>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" }
+  --   maps.n["<C-Left>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" }
+  --   maps.n["<C-Right>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" }
 end
 
 -- SymbolsOutline
@@ -332,7 +334,7 @@ end
 --   maps.n["<C-'>"] = maps.n["<F7>"] -- requires terminal that supports binding <C-'>
 --   maps.t["<C-'>"] = maps.n["<F7>"] -- requires terminal that supports binding <C-'>
 -- end
--- 
+--
 -- if is_available "nvim-dap" then
 --   maps.n["<leader>d"] = sections.d
 --   maps.v["<leader>d"] = sections.d
@@ -374,7 +376,7 @@ end
 --   maps.n["<leader>dr"] = { function() require("dap").restart_frame() end, desc = "Restart (C-F5)" }
 --   maps.n["<leader>dR"] = { function() require("dap").repl.toggle() end, desc = "Toggle REPL" }
 --   maps.n["<leader>ds"] = { function() require("dap").run_to_cursor() end, desc = "Run To Cursor" }
--- 
+--
 --   if is_available "nvim-dap-ui" then
 --     maps.n["<leader>dE"] = {
 --       function()
@@ -389,7 +391,7 @@ end
 --     maps.n["<leader>dh"] = { function() require("dap.ui.widgets").hover() end, desc = "Debugger Hover" }
 --   end
 -- end
--- 
+--
 -- -- Improved Code Folding
 -- if is_available "nvim-ufo" then
 --   maps.n["zR"] = { function() require("ufo").openAllFolds() end, desc = "Open all folds" }
@@ -398,17 +400,17 @@ end
 --   maps.n["zm"] = { function() require("ufo").closeFoldsWith() end, desc = "Fold more" }
 --   maps.n["zp"] = { function() require("ufo").peekFoldedLinesUnderCursor() end, desc = "Peek fold" }
 -- end
--- 
+--
 -- -- Stay in indent mode
 -- maps.v["<S-Tab>"] = { "<gv", desc = "Unindent line" }
 -- maps.v["<Tab>"] = { ">gv", desc = "Indent line" }
--- 
+--
 -- -- Improved Terminal Navigation
 -- maps.t["<C-h>"] = { "<cmd>wincmd h<cr>", desc = "Terminal left window navigation" }
 -- maps.t["<C-j>"] = { "<cmd>wincmd j<cr>", desc = "Terminal down window navigation" }
 -- maps.t["<C-k>"] = { "<cmd>wincmd k<cr>", desc = "Terminal up window navigation" }
 -- maps.t["<C-l>"] = { "<cmd>wincmd l<cr>", desc = "Terminal right window navigation" }
--- 
+--
 maps.n["<leader>г"] = sections.u
 -- Custom menu for modification of the user experience
 if is_available "nvim-autopairs" then maps.n["<leader>гф"] = { ui.toggle_autopairs, desc = "Toggle autopairs" } end
@@ -487,41 +489,40 @@ maps.n["<leader>ддЧ"] = { ":VimtexReloadState<CR>", desc = "VimTex reload the
 maps.n["<leader>lls"] = { ":VimtexToggleMain<CR>", desc = "VimTex toggle main or current file as a target" }
 maps.n["<leader>дды"] = { ":VimtexToggleMain<CR>", desc = "VimTex toggle main or current file as a target" }
 
-
 -- (La)TeX remapping
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.api.nvim_buf_set_keymap
 
-keymap("n", "ѵ", "0", opts)
-keymap("n", "ѱ", "G", opts)
-keymap("n", ";", "$", opts)  -- Russian dollar
-keymap("n", "Ñ", ":", opts)  -- Spanish colon
-keymap("n", ".", "/", opts)  -- Russian slash
-keymap("n", "-", "/", opts)  -- Spanish slash
-keymap("i", "YY", "{\\slv{}}", opts)
-keymap("i", "НН", "{\\slv{}}", opts)
-keymap("i", "NN", "\\textbf{}", opts)
-keymap("i", "ТТ", "\\textbf{}", opts)
-keymap("i", "II", "\\emph{}", opts)
-keymap("i", "ШШ", "\\emph{}", opts)
-keymap("i", "OO", "{}", opts)
-keymap("i", "ЩЩ", "{}", opts)
-keymap("i", "PP", "~\textemdash~", opts)
-keymap("i", "ЗЗ", "~\\textemdash~", opts)
-keymap("i", "LL", "\\ldots{}", opts)
-keymap("i", "ДД", "\\ldots{}", opts)
-keymap("i", "HH", "---~", opts)
-keymap("i", "РР", "---~", opts)
-keymap("i", "HJ", "~---", opts)
-keymap("i", "РО", "~---", opts)
-keymap("i", "JJ", "~---~", opts)
-keymap("i", "ОО", "~---~", opts)
-keymap("i", "ББ", "<<", opts)
-keymap("i", "ЮЮ", ">>", opts)
-keymap("i", "БЬ", "«", opts)
-keymap("i", "ЮЬ", "»", opts)
-keymap("i", "ññ", "«", opts)
-keymap("i", "ÑÑ", "»", opts)
+keymap(0, "n", "ѵ", "0", opts)
+keymap(0, "n", "ѱ", "G", opts)
+keymap(0, "n", ";", "$", opts) -- Russian dollar
+keymap(0, "n", "Ñ", ":", opts) -- Spanish colon
+keymap(0, "n", ".", "/", opts) -- Russian slash
+keymap(0, "n", "-", "/", opts) -- Spanish slash
+keymap(0, "i", "YY", "{\\slv{}}", opts)
+keymap(0, "i", "НН", "{\\slv{}}", opts)
+keymap(0, "i", "NN", "\\textbf{}", opts)
+keymap(0, "i", "ТТ", "\\textbf{}", opts)
+keymap(0, "i", "II", "\\emph{}", opts)
+keymap(0, "i", "ШШ", "\\emph{}", opts)
+keymap(0, "i", "OO", "{}", opts)
+keymap(0, "i", "ЩЩ", "{}", opts)
+keymap(0, "i", "PP", "~\textemdash~", opts)
+keymap(0, "i", "ЗЗ", "~\\textemdash~", opts)
+keymap(0, "i", "LL", "\\ldots{}", opts)
+keymap(0, "i", "ДД", "\\ldots{}", opts)
+keymap(0, "i", "HH", "---~", opts)
+keymap(0, "i", "РР", "---~", opts)
+keymap(0, "i", "HJ", "~---", opts)
+keymap(0, "i", "РО", "~---", opts)
+keymap(0, "i", "JJ", "~---~", opts)
+keymap(0, "i", "ОО", "~---~", opts)
+keymap(0, "i", "ББ", "<<", opts)
+keymap(0, "i", "ЮЮ", ">>", opts)
+keymap(0, "i", "БЬ", "«", opts)
+keymap(0, "i", "ЮЬ", "»", opts)
+keymap(0, "i", "ññ", "«", opts)
+keymap(0, "i", "ÑÑ", "»", opts)
 
 -- Template:
 --
