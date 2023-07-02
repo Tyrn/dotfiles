@@ -19,5 +19,6 @@ if [ $(uname -m) == 'x86_64' ]; then
     yay -S qmmp
     yay -S zoom
     yay -S yacreader
-    yay -S anki-official-binary-bundle
+    yay -S esplorer
+    # yay -S anki-official-binary-bundle
 fi
