@@ -2,12 +2,6 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_buf_set_keymap
 
-keymap(0, "n", "ѵ", "0", opts)
-keymap(0, "n", "ѱ", "G", opts)
-keymap(0, "n", ";", "$", opts) -- Russian dollar
-keymap(0, "n", "Ñ", ":", opts) -- Spanish colon
-keymap(0, "n", ".", "/", opts) -- Russian slash
-keymap(0, "n", "-", "/", opts) -- Spanish slash
 keymap(0, "i", "YY", "{\\slv{}}", opts)
 keymap(0, "i", "НН", "{\\slv{}}", opts)
 keymap(0, "i", "NN", "\\textbf{}", opts)
