@@ -4,7 +4,7 @@ set -u
 set -x
 
 ./base-install
-# ./extras-install
+./extras-install
 ./rust-install
 ./flutter-install
 ./spell-install
