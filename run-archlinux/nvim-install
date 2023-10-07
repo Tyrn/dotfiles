@@ -12,5 +12,5 @@ yay -S tree-sitter
 # yay -S tree-sitter-rust-git
 yay -S python-jedi
 yay -S python-pylint
-yay -S neovim
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+yay -S neovim

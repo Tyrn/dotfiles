@@ -10,3 +10,4 @@ set -x
 ./spell-install
 ./nvim-install
 ./doom-install
+chezmoi apply -v
