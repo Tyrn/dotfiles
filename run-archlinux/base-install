@@ -93,7 +93,7 @@ yay -S splix
 
 # Python, forgettable.
 
-pip install poetry
+# pip install poetry
 yay -S python-lsp-server
 yay -S python-black
 
