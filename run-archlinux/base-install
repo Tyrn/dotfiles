@@ -16,6 +16,7 @@ yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
 yay -S python-pipx
 yay -S mlocate
+yay -S atool
 yay -S lazygit
 yay -S tig
 yay -S tmux
