@@ -6,7 +6,7 @@ set -x
 # Miscellaneous applications.
 
 # yay -S google-chrome
-# yay -S qutebrowser
+# yay -S qutebrowser  # Good but heavy.
 yay -S geany geany-plugins
 yay -S retext
 # yay -S rstudio-desktop-bin
@@ -15,6 +15,8 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     yay -S fontmatrix  # Not recommended before adding archlinuxcn repo (due to qt5-webkit dependency).
 #     yay -S foxitreader
     yay -S pandoc-bin
+    yay -S arduino-ide-bin
+#     yay -Ss stm32cubeprog  # Installation script may hang.
 #     yay -S deadbeef opusfile
     yay -S qmmp
     yay -S zoom
