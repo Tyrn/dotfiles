@@ -98,6 +98,10 @@ pipx install poetry
 yay -S python-lsp-server
 yay -S python-black
 
+# C++, forgettable.
+
+yay -S doctest catch2
+
 # JS, forgettable.
 
 yay -S npm
