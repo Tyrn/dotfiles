@@ -15,7 +15,7 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     yay -S fontmatrix  # Not recommended before adding archlinuxcn repo (due to qt5-webkit dependency).
 #     yay -S foxitreader
     yay -S pandoc-bin
-    yay -S arduino-ide-bin
+#     yay -S arduino-ide-bin  # Not recommended before adding archlinuxcn repo.
 #     yay -Ss stm32cubeprog  # Installation script may hang.
 #     yay -S deadbeef opusfile
     yay -S qmmp
