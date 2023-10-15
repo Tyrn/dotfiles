@@ -101,6 +101,7 @@ yay -S python-black
 # C++, forgettable.
 
 yay -S doctest catch2 gtest trompeloeil
+yay -S meson
 
 # JS, forgettable.
 
