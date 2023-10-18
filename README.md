@@ -84,6 +84,12 @@ $ ~/.fzf/install
 ```
 - [Vim spell checking files (.spl, .sug)](https://ftp.nluug.nl/vim/runtime/spell/)
 
+- (Re)install AstroNvim
+```
+$ rm -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
+$ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+```
+
 ### Git credentials on the workstation
 
 - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
