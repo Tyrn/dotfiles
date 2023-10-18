@@ -65,6 +65,18 @@ $ pkill -KILL -u danny
 ```
 - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (Highly recommended)
 
+- Make GRUB menu visible
+```
+$ sudo -E nvim /etc/default/grub
+```
+Change timeout style(`/etc/default/grub`):
+```
+GRUB_TIMEOUT_STYLE=menu
+```
+Update GRUB:
+```
+$ sudo update-grub
+```
 - Install [fzf](https://github.com/junegunn/fzf#using-git) if necessary, using git; to `Do you want to update your shell config...` say no
 ```
 $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
