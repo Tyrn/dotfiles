@@ -4,7 +4,7 @@ For Plasma KDE and i3; also good for RPi.
 
 - Install [Chezmoi](https://www.chezmoi.io/):
 ```
-$ sudo pacman -S chezmoi zoxide
+$ sudo pacman -S chezmoi zoxide yay
 ```
 - Init:
 ```
