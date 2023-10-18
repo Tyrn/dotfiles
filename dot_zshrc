@@ -132,7 +132,6 @@ alias dm=damastes
 alias dp=procrustes
 alias dozer="docker-compose run buildozer android"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias manvim="bat ~/.config/nvim/custom.vim"
 
 function pipver-col() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/\1/p' ;}
 function pipver() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd, ;}
