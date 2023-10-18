@@ -22,6 +22,7 @@ yay -S tig
 yay -S tmux
 yay -S debtap
 yay -S shellcheck-bin
+yay -S unzip
 
 yay -S zoxide
 yay -S ripgrep
