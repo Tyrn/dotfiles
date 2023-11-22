@@ -31,7 +31,7 @@ run-archlinux $ ./groups-add
 ```
 run-archlinux $ yes | ./all-install
 ```
-- 2023-04-18: for now it's necessary to add by hand to `/etc/environment`:
+- 2023-04-18: for now **it's necessary to add by hand** to `/etc/environment`:
 ```
 GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
@@ -41,6 +41,10 @@ XMODIFIERS=@im=ibus
 *NB* No symlinks so far
 
 ## Miscellany
+
+- [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
+
+- [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
 
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
 
@@ -63,8 +67,6 @@ danny  pts/1        Nov 5 12:30 (10.1.6.165)
 danny  pts/2        Nov 4 12:33 (10.1.6.197)
 $ pkill -KILL -u danny
 ```
-- [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (Highly recommended)
-
 - Make GRUB menu visible
 ```
 $ sudo -E nvim /etc/default/grub
@@ -109,6 +111,25 @@ The authenticity of host '...' can't be established.
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+```
+
+### Kingst Logic Analyzers (LA1010, LA2016)
+
+- Deploy [firmware extract scripts](https://sigrok.org/wiki/Firmware#Where_to_put_the_firmware_files), or skip to PulseView installation if the firmware is already there (~/.local/share/sigrok-firmware)
+```
+$ git clone git://sigrok.org/sigrok-util
+$ cd sigrok-util/firmware/kingst-la
+```
+- [Download](http://www.qdkingst.com/en/vis-old) KingstVIS_v3.5.4.tar.gz to `sigrok-util/firmware/kingst-la`, then untar and extract
+```
+$ tar -zxf KingstVIS_v3.5.4.tar.gz
+$ ./sigrok-fwextract-kingst-la2016 KingstVIS/KingstVIS
+```
+- Copy or move the firmware (`fw`, `bitstream` files) to `~/.local/share/sigrok-firmware`
+
+- Install PulseView
+```
+$ yay -S pulseview-git
 ```
 
 ### Android Studio and flutterup
