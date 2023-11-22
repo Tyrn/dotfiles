@@ -127,6 +127,8 @@ $ ./sigrok-fwextract-kingst-la2016 KingstVIS/KingstVIS
 ```
 - Copy or move the firmware (`fw`, `bitstream` files) to `~/.local/share/sigrok-firmware`
 
+Alternate good firmware (`sigrok-firmware.zip`) and LA1010 [info](https://www.foroelectro.net/herramientas-f27/analizadores-logicos-kingst-la-xxxx-y-sigrok-pulse-t474.html) for the unlucky (AppImage, Debian/Ubuntu)
+
 - Install PulseView
 ```
 $ yay -S pulseview-git
