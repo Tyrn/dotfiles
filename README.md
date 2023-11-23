@@ -42,6 +42,8 @@ XMODIFIERS=@im=ibus
 
 ## Miscellany
 
+- [Assorted notes](https://github.com/Tyrn/arch-chronicle/tree/master/Usage)
+
 - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
 
 - [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
