@@ -1,7 +1,6 @@
 export TERMINAL=/usr/bin/alacritty
 
-export PATH=/usr/local/texlive/2018/bin/x86_64-linux:$PATH
-#export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
 export PATH=$HOME/micropython/ports/unix/build-standard:$PATH
 export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH
 export PATH=$HOME/.local/bin:$PATH
