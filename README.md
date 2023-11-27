@@ -122,9 +122,9 @@ Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 $ git clone git://sigrok.org/sigrok-util
 $ cd sigrok-util/firmware/kingst-la
 ```
-- [Download](http://www.qdkingst.com/en/vis-old) KingstVIS_v3.5.4.tar.gz to `sigrok-util/firmware/kingst-la`, then untar and extract
+- [Download](http://www.qdkingst.com/en/vis-old) KingstVIS_v3.6.1.tar.gz to `sigrok-util/firmware/kingst-la`, then untar and extract
 ```
-$ tar -zxf KingstVIS_v3.5.4.tar.gz
+$ tar -zxf KingstVIS_v3.6.1.tar.gz
 $ ./sigrok-fwextract-kingst-la2016 KingstVIS/KingstVIS
 ```
 - Copy or move the firmware (`fw`, `bitstream` files) to `~/.local/share/sigrok-firmware`
