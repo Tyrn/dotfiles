@@ -44,6 +44,7 @@ yay -S skim
 yay -S tokei
 yay -S ouch
 yay -S difftastic
+yay -S dos2unix
 
 yay -S mpv
 # yay -S youtube-dl
