@@ -117,7 +117,7 @@ Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 
 ### Kingst Logic Analyzers (LA1010, LA2016)
 
-- Deploy [firmware extract scripts](https://sigrok.org/wiki/Firmware#Where_to_put_the_firmware_files), or skip to PulseView installation if the firmware is already there (`~/.local/share/sigrok-firmware`)
+- Deploy [firmware extract scripts](https://sigrok.org/wiki/Firmware#Where_to_put_the_firmware_files), or **skip to PulseView installation if the firmware is already there** (`~/.local/share/sigrok-firmware`)
 ```
 $ git clone git://sigrok.org/sigrok-util
 $ cd sigrok-util/firmware/kingst-la
@@ -131,7 +131,7 @@ $ ./sigrok-fwextract-kingst-la2016 KingstVIS/KingstVIS
 
 Alternate good firmware (`sigrok-firmware.zip`) and LA1010 [info](https://www.foroelectro.net/herramientas-f27/analizadores-logicos-kingst-la-xxxx-y-sigrok-pulse-t474.html) for the unlucky (AppImage, Debian/Ubuntu)
 
-- Install PulseView
+- **Install PulseView**
 ```
 $ yay -S pulseview-git
 ```
