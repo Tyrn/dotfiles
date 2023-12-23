@@ -114,3 +114,8 @@ npm install --global state-machine-cat
 # Ruby, forgettable.
 
 yay -S fpm
+
+# Perl, forgettable.
+
+yay -S perl-yaml-tiny
+yay -S perl-file-homedir
