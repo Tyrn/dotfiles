@@ -1,7 +1,7 @@
-local utils = require "astronvim.utils"
+local utils = require("astronvim.utils")
 local get_icon = utils.get_icon
 local is_available = utils.is_available
-local ui = require "astronvim.utils.ui"
+local ui = require("astronvim.utils.ui")
 
 local maps = { i = {}, n = {}, v = {}, t = {} }
 
@@ -38,23 +38,33 @@ maps.n["<C-й>"] = { "<cmd>q!<cr>", desc = "Force quit" }
 -- Plugin Manager
 maps.n["<leader>з"] = sections.p
 maps.n["<leader>зш"] = {
-  function() require("lazy").install() end,
+  function()
+    require("lazy").install()
+  end,
   desc = "Plugins Install",
 }
 maps.n["<leader>зы"] = {
-  function() require("lazy").home() end,
+  function()
+    require("lazy").home()
+  end,
   desc = "Plugins Status",
 }
 maps.n["<leader>зЫ"] = {
-  function() require("lazy").sync() end,
+  function()
+    require("lazy").sync()
+  end,
   desc = "Plugins Sync",
 }
 maps.n["<leader>зг"] = {
-  function() require("lazy").check() end,
+  function()
+    require("lazy").check()
+  end,
   desc = "Plugins Check Updates",
 }
 maps.n["<leader>зГ"] = {
-  function() require("lazy").update() end,
+  function()
+    require("lazy").update()
+  end,
   desc = "Plugins Update",
 }
 
@@ -66,80 +76,112 @@ maps.n["<leader>зд"] = { "<cmd>AstroChangelog<cr>", desc = "AstroNvim Changelo
 
 -- Manage Buffers
 maps.n["<leader>с"] = {
-  function() require("astronvim.utils.buffer").close() end,
+  function()
+    require("astronvim.utils.buffer").close()
+  end,
   desc = "Close buffer",
 }
 maps.n["<leader>С"] = {
-  function() require("astronvim.utils.buffer").close(0, true) end,
+  function()
+    require("astronvim.utils.buffer").close(0, true)
+  end,
   desc = "Force close buffer",
 }
 maps.n["]и"] = {
-  function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+  function()
+    require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)
+  end,
   desc = "Next buffer",
 }
 maps.n["[и"] = {
-  function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+  function()
+    require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1))
+  end,
   desc = "Previous buffer",
 }
 maps.n[">и"] = {
-  function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end,
+  function()
+    require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1)
+  end,
   desc = "Move buffer tab right",
 }
 maps.n["<и"] = {
-  function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end,
+  function()
+    require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1))
+  end,
   desc = "Move buffer tab left",
 }
 
 maps.n["<leader>и"] = sections.b
 maps.n["<leader>ис"] = {
-  function() require("astronvim.utils.buffer").close_all(true) end,
+  function()
+    require("astronvim.utils.buffer").close_all(true)
+  end,
   desc = "Close all buffers except current",
 }
 maps.n["<leader>иС"] = {
-  function() require("astronvim.utils.buffer").close_all() end,
+  function()
+    require("astronvim.utils.buffer").close_all()
+  end,
   desc = "Close all buffers",
 }
 maps.n["<leader>ии"] = {
   function()
-    require("astronvim.utils.status.heirline").buffer_picker(function(bufnr) vim.api.nvim_win_set_buf(0, bufnr) end)
+    require("astronvim.utils.status.heirline").buffer_picker(function(bufnr)
+      vim.api.nvim_win_set_buf(0, bufnr)
+    end)
   end,
   desc = "Select buffer from tabline",
 }
 maps.n["<leader>ив"] = {
   function()
-    require("astronvim.utils.status.heirline").buffer_picker(
-      function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-    )
+    require("astronvim.utils.status.heirline").buffer_picker(function(bufnr)
+      require("astronvim.utils.buffer").close(bufnr)
+    end)
   end,
   desc = "Close buffer from tabline",
 }
 maps.n["<leader>ид"] = {
-  function() require("astronvim.utils.buffer").close_left() end,
+  function()
+    require("astronvim.utils.buffer").close_left()
+  end,
   desc = "Close all buffers to the left",
 }
 maps.n["<leader>ик"] = {
-  function() require("astronvim.utils.buffer").close_right() end,
+  function()
+    require("astronvim.utils.buffer").close_right()
+  end,
   desc = "Close all buffers to the right",
 }
 maps.n["<leader>иы"] = sections.bs
 maps.n["<leader>иыу"] = {
-  function() require("astronvim.utils.buffer").sort "extension" end,
+  function()
+    require("astronvim.utils.buffer").sort("extension")
+  end,
   desc = "By extension",
 }
 maps.n["<leader>иык"] = {
-  function() require("astronvim.utils.buffer").sort "unique_path" end,
+  function()
+    require("astronvim.utils.buffer").sort("unique_path")
+  end,
   desc = "By relative path",
 }
 maps.n["<leader>иыз"] = {
-  function() require("astronvim.utils.buffer").sort "full_path" end,
+  function()
+    require("astronvim.utils.buffer").sort("full_path")
+  end,
   desc = "By full path",
 }
 maps.n["<leader>иыш"] = {
-  function() require("astronvim.utils.buffer").sort "bufnr" end,
+  function()
+    require("astronvim.utils.buffer").sort("bufnr")
+  end,
   desc = "By buffer number",
 }
 maps.n["<leader>иыь"] = {
-  function() require("astronvim.utils.buffer").sort "modified" end,
+  function()
+    require("astronvim.utils.buffer").sort("modified")
+  end,
   desc = "By modification",
 }
 maps.n["<leader>и\\"] = {
@@ -163,16 +205,20 @@ maps.n["<leader>и|"] = {
 
 -- Navigate tabs
 maps.n["]е"] = {
-  function() vim.cmd.tabnext() end,
+  function()
+    vim.cmd.tabnext()
+  end,
   desc = "Next tab",
 }
 maps.n["[е"] = {
-  function() vim.cmd.tabprevious() end,
+  function()
+    vim.cmd.tabprevious()
+  end,
   desc = "Previous tab",
 }
 
 -- Alpha
-if is_available "alpha-nvim" then
+if is_available("alpha-nvim") then
   maps.n["<leader>р"] = {
     function()
       local wins = vim.api.nvim_tabpage_list_wins(0)
@@ -198,63 +244,85 @@ end
 -- end
 
 -- GitSigns
-if is_available "gitsigns.nvim" then
+if is_available("gitsigns.nvim") then
   maps.n["<leader>п"] = sections.g
   maps.n["]п"] = {
-    function() require("gitsigns").next_hunk() end,
+    function()
+      require("gitsigns").next_hunk()
+    end,
     desc = "Next Git hunk",
   }
   maps.n["[п"] = {
-    function() require("gitsigns").prev_hunk() end,
+    function()
+      require("gitsigns").prev_hunk()
+    end,
     desc = "Previous Git hunk",
   }
   maps.n["<leader>пд"] = {
-    function() require("gitsigns").blame_line() end,
+    function()
+      require("gitsigns").blame_line()
+    end,
     desc = "View Git blame",
   }
   maps.n["<leader>пД"] = {
-    function() require("gitsigns").blame_line { full = true } end,
+    function()
+      require("gitsigns").blame_line({ full = true })
+    end,
     desc = "View full Git blame",
   }
   maps.n["<leader>пз"] = {
-    function() require("gitsigns").preview_hunk() end,
+    function()
+      require("gitsigns").preview_hunk()
+    end,
     desc = "Preview Git hunk",
   }
   maps.n["<leader>пр"] = {
-    function() require("gitsigns").reset_hunk() end,
+    function()
+      require("gitsigns").reset_hunk()
+    end,
     desc = "Reset Git hunk",
   }
   maps.n["<leader>пк"] = {
-    function() require("gitsigns").reset_buffer() end,
+    function()
+      require("gitsigns").reset_buffer()
+    end,
     desc = "Reset Git buffer",
   }
   maps.n["<leader>пы"] = {
-    function() require("gitsigns").stage_hunk() end,
+    function()
+      require("gitsigns").stage_hunk()
+    end,
     desc = "Stage Git hunk",
   }
   maps.n["<leader>пЫ"] = {
-    function() require("gitsigns").stage_buffer() end,
+    function()
+      require("gitsigns").stage_buffer()
+    end,
     desc = "Stage Git buffer",
   }
   maps.n["<leader>пг"] = {
-    function() require("gitsigns").undo_stage_hunk() end,
+    function()
+      require("gitsigns").undo_stage_hunk()
+    end,
     desc = "Unstage Git hunk",
   }
   maps.n["<leader>пв"] = {
-    function() require("gitsigns").diffthis() end,
+    function()
+      require("gitsigns").diffthis()
+    end,
     desc = "View Git diff",
   }
 end
 
 -- NeoTree
-if is_available "neo-tree.nvim" then
+if is_available("neo-tree.nvim") then
   maps.n["<leader>у"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" }
   maps.n["<leader>щ"] = {
     function()
       if vim.bo.filetype == "neo-tree" then
-        vim.cmd.wincmd "p"
+        vim.cmd.wincmd("p")
       else
-        vim.cmd.Neotree "focus"
+        vim.cmd.Neotree("focus")
       end
     end,
     desc = "Toggle Explorer Focus",
@@ -262,65 +330,85 @@ if is_available "neo-tree.nvim" then
 end
 
 -- Session Manager
-if is_available "neovim-session-manager" then
+if is_available("neovim-session-manager") then
   maps.n["<leader>Ы"] = sections.S
   maps.n["<leader>Ыд"] = { "<cmd>SessionManager! load_last_session<cr>", desc = "Load last session" }
   maps.n["<leader>Ыы"] = { "<cmd>SessionManager! save_current_session<cr>", desc = "Save this session" }
   maps.n["<leader>Ыв"] = { "<cmd>SessionManager! delete_session<cr>", desc = "Delete session" }
   maps.n["<leader>Ыа"] = { "<cmd>SessionManager! load_session<cr>", desc = "Search sessions" }
   maps.n["<leader>Ы."] =
-    { "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" }
+  { "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" }
 end
-if is_available "resession.nvim" then
+if is_available("resession.nvim") then
   maps.n["<leader>Ы"] = sections.S
   maps.n["<leader>Ыд"] = {
-    function() require("resession").load "Last Session" end,
+    function()
+      require("resession").load("Last Session")
+    end,
     desc = "Load last session",
   }
   maps.n["<leader>Ыы"] = {
-    function() require("resession").save() end,
+    function()
+      require("resession").save()
+    end,
     desc = "Save this session",
   }
   maps.n["<leader>Ые"] = {
-    function() require("resession").save_tab() end,
+    function()
+      require("resession").save_tab()
+    end,
     desc = "Save this tab's session",
   }
   maps.n["<leader>Ыв"] = {
-    function() require("resession").delete() end,
+    function()
+      require("resession").delete()
+    end,
     desc = "Delete a session",
   }
   maps.n["<leader>Ыа"] = {
-    function() require("resession").load() end,
+    function()
+      require("resession").load()
+    end,
     desc = "Load a session",
   }
   maps.n["<leader>Ы."] = {
-    function() require("resession").load(vim.fn.getcwd(), { dir = "dirsession" }) end,
+    function()
+      require("resession").load(vim.fn.getcwd(), { dir = "dirsession" })
+    end,
     desc = "Load current directory session",
   }
 end
 
 -- Package Manager
-if is_available "mason.nvim" then
+if is_available("mason.nvim") then
   maps.n["<leader>зь"] = { "<cmd>Mason<cr>", desc = "Mason Installer" }
   maps.n["<leader>зЬ"] = { "<cmd>MasonUpdateAll<cr>", desc = "Mason Update" }
 end
 
 -- Smart Splits
-if is_available "smart-splits.nvim" then
+if is_available("smart-splits.nvim") then
   maps.n["<C-р>"] = {
-    function() require("smart-splits").move_cursor_left() end,
+    function()
+      require("smart-splits").move_cursor_left()
+    end,
     desc = "Move to left split",
   }
   maps.n["<C-о>"] = {
-    function() require("smart-splits").move_cursor_down() end,
+    function()
+      require("smart-splits").move_cursor_down()
+    end,
     desc = "Move to below split",
   }
   maps.n["<C-л>"] = {
-    function() require("smart-splits").move_cursor_up() end,
+    function()
+      require("smart-splits").move_cursor_up()
+    end,
     desc = "Move to above split",
   }
   maps.n["<C-д>"] = {
-    function() require("smart-splits").move_cursor_right() end,
+    function()
+      require("smart-splits").move_cursor_right()
+    end,
     desc = "Move to right split",
   }
   --   maps.n["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" }
@@ -339,36 +427,48 @@ else
 end
 
 -- SymbolsOutline
-if is_available "aerial.nvim" then
+if is_available("aerial.nvim") then
   maps.n["<leader>д"] = sections.l
   maps.n["<leader>дЫ"] = {
-    function() require("aerial").toggle() end,
+    function()
+      require("aerial").toggle()
+    end,
     desc = "Symbols outline",
   }
 end
 
 -- Telescope
-if is_available "telescope.nvim" then
+if is_available("telescope.nvim") then
   maps.n["<leader>а"] = sections.f
   maps.n["<leader>п"] = sections.g
   maps.n["<leader>пи"] = {
-    function() require("telescope.builtin").git_branches() end,
+    function()
+      require("telescope.builtin").git_branches()
+    end,
     desc = "Git branches",
   }
   maps.n["<leader>пс"] = {
-    function() require("telescope.builtin").git_commits() end,
+    function()
+      require("telescope.builtin").git_commits()
+    end,
     desc = "Git commits",
   }
   maps.n["<leader>пе"] = {
-    function() require("telescope.builtin").git_status() end,
+    function()
+      require("telescope.builtin").git_status()
+    end,
     desc = "Git status",
   }
   maps.n["<leader>а<CR>"] = {
-    function() require("telescope.builtin").resume() end,
+    function()
+      require("telescope.builtin").resume()
+    end,
     desc = "Resume previous search",
   }
   maps.n["<leader>аэ"] = {
-    function() require("telescope.builtin").marks() end,
+    function()
+      require("telescope.builtin").marks()
+    end,
     desc = "Find marks",
   }
   --  maps.n["<leader>аф"] = {
@@ -399,64 +499,92 @@ if is_available "telescope.nvim" then
   --    desc = "Find AstroNvim config files",
   --  }
   maps.n["<leader>аи"] = {
-    function() require("telescope.builtin").buffers() end,
+    function()
+      require("telescope.builtin").buffers()
+    end,
     desc = "Find buffers",
   }
   maps.n["<leader>ас"] = {
-    function() require("telescope.builtin").grep_string() end,
+    function()
+      require("telescope.builtin").grep_string()
+    end,
     desc = "Find for word under cursor",
   }
   maps.n["<leader>аС"] = {
-    function() require("telescope.builtin").commands() end,
+    function()
+      require("telescope.builtin").commands()
+    end,
     desc = "Find commands",
   }
   maps.n["<leader>аа"] = {
-    function() require("telescope.builtin").find_files() end,
+    function()
+      require("telescope.builtin").find_files()
+    end,
     desc = "Find files",
   }
   maps.n["<leader>аА"] = {
-    function() require("telescope.builtin").find_files { hidden = true, no_ignore = true } end,
+    function()
+      require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+    end,
     desc = "Find all files",
   }
   maps.n["<leader>ар"] = {
-    function() require("telescope.builtin").help_tags() end,
+    function()
+      require("telescope.builtin").help_tags()
+    end,
     desc = "Find help",
   }
   maps.n["<leader>ал"] = {
-    function() require("telescope.builtin").keymaps() end,
+    function()
+      require("telescope.builtin").keymaps()
+    end,
     desc = "Find keymaps",
   }
   maps.n["<leader>аь"] = {
-    function() require("telescope.builtin").man_pages() end,
+    function()
+      require("telescope.builtin").man_pages()
+    end,
     desc = "Find man",
   }
-  if is_available "nvim-notify" then
+  if is_available("nvim-notify") then
     maps.n["<leader>ат"] = {
-      function() require("telescope").extensions.notify.notify() end,
+      function()
+        require("telescope").extensions.notify.notify()
+      end,
       desc = "Find notifications",
     }
   end
   maps.n["<leader>ащ"] = {
-    function() require("telescope.builtin").oldfiles() end,
+    function()
+      require("telescope.builtin").oldfiles()
+    end,
     desc = "Find history",
   }
   maps.n["<leader>ак"] = {
-    function() require("telescope.builtin").registers() end,
+    function()
+      require("telescope.builtin").registers()
+    end,
     desc = "Find registers",
   }
   maps.n["<leader>ае"] = {
-    function() require("telescope.builtin").colorscheme { enable_preview = true } end,
+    function()
+      require("telescope.builtin").colorscheme({ enable_preview = true })
+    end,
     desc = "Find themes",
   }
   maps.n["<leader>ац"] = {
-    function() require("telescope.builtin").live_grep() end,
+    function()
+      require("telescope.builtin").live_grep()
+    end,
     desc = "Find words",
   }
   maps.n["<leader>аЦ"] = {
     function()
-      require("telescope.builtin").live_grep {
-        additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
-      }
+      require("telescope.builtin").live_grep({
+        additional_args = function(args)
+          return vim.list_extend(args, { "--hidden", "--no-ignore" })
+        end,
+      })
     end,
     desc = "Find words in all files",
   }
@@ -580,10 +708,14 @@ end
 --
 maps.n["<leader>г"] = sections.u
 -- Custom menu for modification of the user experience
-if is_available "nvim-autopairs" then maps.n["<leader>гф"] = { ui.toggle_autopairs, desc = "Toggle autopairs" } end
+if is_available("nvim-autopairs") then
+  maps.n["<leader>гф"] = { ui.toggle_autopairs, desc = "Toggle autopairs" }
+end
 maps.n["<leader>ги"] = { ui.toggle_background, desc = "Toggle background" }
-if is_available "nvim-cmp" then maps.n["<leader>гс"] = { ui.toggle_cmp, desc = "Toggle autocompletion" } end
-if is_available "nvim-colorizer.lua" then
+if is_available("nvim-cmp") then
+  maps.n["<leader>гс"] = { ui.toggle_cmp, desc = "Toggle autocompletion" }
+end
+if is_available("nvim-colorizer.lua") then
   maps.n["<leader>гС"] = { "<cmd>ColorizerToggle<cr>", desc = "Toggle color highlight" }
 end
 maps.n["<leader>гв"] = { ui.toggle_diagnostics, desc = "Toggle diagnostics" }
@@ -612,7 +744,7 @@ maps.n["<leader>гр"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
 maps.n["<leader>poa"] = { ":PoetvActivate<CR>", desc = "Poetry activate" }
 maps.n["<leader>pod"] = { ":PoetvDeactivate<CR>", desc = "Poetry deactivate" }
 
--- Vimtex mapping
+-- Vimtex mapping.
 maps.n["<leader>lli"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
 maps.n["<leader>ддш"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
 maps.n["<leader>llI"] = { ":VimtexInfo!<CR>", desc = "VimTex current project info" }
