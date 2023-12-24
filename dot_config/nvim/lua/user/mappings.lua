@@ -745,6 +745,8 @@ maps.n["<leader>poa"] = { ":PoetvActivate<CR>", desc = "Poetry activate" }
 maps.n["<leader>pod"] = { ":PoetvDeactivate<CR>", desc = "Poetry deactivate" }
 
 -- Vimtex mapping
+maps.n["<leader>lla"] = { ":VimtexContextMenu<CR>", desc = "VimTex context menu" }
+maps.n["<leader>ддф"] = { ":VimtexContextMenu<CR>", desc = "VimTex context menu" }
 maps.n["<leader>lli"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
 maps.n["<leader>ддш"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
 maps.n["<leader>llI"] = { ":VimtexInfo!<CR>", desc = "VimTex current project info" }
