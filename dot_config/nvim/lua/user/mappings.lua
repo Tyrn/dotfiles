@@ -744,7 +744,7 @@ maps.n["<leader>гр"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
 maps.n["<leader>poa"] = { ":PoetvActivate<CR>", desc = "Poetry activate" }
 maps.n["<leader>pod"] = { ":PoetvDeactivate<CR>", desc = "Poetry deactivate" }
 
--- Vimtex mapping.
+-- Vimtex mapping
 maps.n["<leader>lli"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
 maps.n["<leader>ддш"] = { ":VimtexInfo<CR>", desc = "VimTex current project info" }
 maps.n["<leader>llI"] = { ":VimtexInfo!<CR>", desc = "VimTex current project info" }
@@ -757,8 +757,6 @@ maps.n["<leader>llq"] = { ":VimtexLog<CR>", desc = "VimTex log" }
 maps.n["<leader>ддй"] = { ":VimtexLog<CR>", desc = "VimTex log" }
 maps.n["<leader>llv"] = { ":VimtexView<CR>", desc = "VimTex view pdf (forward search)" }
 maps.n["<leader>ддм"] = { ":VimtexView<CR>", desc = "VimTex view pdf (forward search)" }
-maps.n["<leader>llr"] = { ":VimtexRSearch<CR>", desc = "VimTex VimtexRSearch?" }
-maps.n["<leader>ддк"] = { ":VimtexRSearch<CR>", desc = "VimTex VimtexRSearch?" }
 maps.n["<leader>lll"] = { ":VimtexCompile<CR>", desc = "VimTex compile" }
 maps.n["<leader>ддд"] = { ":VimtexCompile<CR>", desc = "VimTex compile" }
 maps.n["<leader>llL"] = { ":VimtexCompileSelected<CR>", desc = "VimTex compile the selected part" }
