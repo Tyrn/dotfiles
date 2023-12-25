@@ -26,3 +26,11 @@ keymap(0, "i", "БЬ", "«", opts)
 keymap(0, "i", "ЮЬ", "»", opts)
 keymap(0, "i", "ññ", "«", opts)
 keymap(0, "i", "ÑÑ", "»", opts)
+-- Slavonic/Russian/Spanish special remapping
+-- local keymap = vim.api.nvim_set_keymap
+keymap(0, "n", "ѵ", "0", opts)
+keymap(0, "n", "ѱ", "G", opts)
+keymap(0, "n", ";", "$", opts) -- Russian dollar
+keymap(0, "n", "Ñ", ":", opts) -- Spanish colon
+keymap(0, "n", ".", "/", opts) -- Russian slash
+keymap(0, "n", "-", "/", opts) -- Spanish slash
