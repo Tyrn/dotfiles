@@ -337,7 +337,7 @@ if is_available("neovim-session-manager") then
 	maps.n["<leader>Ыв"] = { "<cmd>SessionManager! delete_session<cr>", desc = "Delete session" }
 	maps.n["<leader>Ыа"] = { "<cmd>SessionManager! load_session<cr>", desc = "Search sessions" }
 	maps.n["<leader>Ы."] =
-		{ "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" }
+	{ "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" }
 end
 if is_available("resession.nvim") then
 	maps.n["<leader>Ы"] = sections.S
@@ -411,10 +411,10 @@ if is_available("smart-splits.nvim") then
 		end,
 		desc = "Move to right split",
 	}
---   maps.n["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" }
---   maps.n["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" }
---   maps.n["<C-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" }
---   maps.n["<C-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" }
+	--   maps.n["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" }
+	--   maps.n["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" }
+	--   maps.n["<C-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" }
+	--   maps.n["<C-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" }
 else
 	maps.n["<C-р>"] = { "<C-w>h", desc = "Move to left split" }
 	maps.n["<C-о>"] = { "<C-w>j", desc = "Move to below split" }
@@ -741,15 +741,15 @@ maps.n["<leader>гр"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
 --
 
 -- Slavonic/Russian/Spanish special remapping
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+-- local opts = { noremap = true, silent = true }
+-- local keymap = vim.api.nvim_set_keymap
 
-keymap("n", "ѵ", "0", opts)
-keymap("n", "ѱ", "G", opts)
-keymap("n", ";", "$", opts) -- Russian dollar
-keymap("n", "Ñ", ":", opts) -- Spanish colon
-keymap("n", ".", "/", opts) -- Russian slash
-keymap("n", "-", "/", opts) -- Spanish slash
+-- keymap("n", "ѵ", "0", opts)
+-- keymap("n", "ѱ", "G", opts)
+-- keymap("n", ";", "$", opts) -- Russian dollar
+-- keymap("n", "Ñ", ":", opts) -- Spanish colon
+-- keymap("n", ".", "/", opts) -- Russian slash
+-- keymap("n", "-", "/", opts) -- Spanish slash
 
 -- Template:
 --
