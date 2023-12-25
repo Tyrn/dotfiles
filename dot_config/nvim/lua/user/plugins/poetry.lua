@@ -7,10 +7,10 @@ return {
 			vim.g.poetv_executables = { "poetry" }
 			vim.g.poetv_auto_activate = 0
 			vim.g.poetv_set_environment = 1
-			vim.g.poetv_statusline_symbol = "П"
+			vim.g.poetv_statusline_symbol = "P"
 		end,
 		keys = {
-			{ "<leader>poa", ":PoetvActivate<CR>", desc = "Poetry activate" },
+			{ "<leader>poa", ":PoetvActivate<CR>",       desc = "Poetry activate" },
 			{ "<leader>pod", "<cmd>PoetvDeactivate<cr>", desc = "Poetry deactivate" },
 		},
 	},
