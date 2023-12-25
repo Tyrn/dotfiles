@@ -17,8 +17,6 @@ return {
 		end,
 		event = "BufRead",
 		keys = {
-			{ "<leader>poa", ":PoetvActivate<CR>", desc = "Poetry activate" },
-			{ "<leader>pod", "<cmd>PoetvDeactivate<cr>", desc = "Poetry deactivate" },
 			{ "<leader>lla", ":VimtexContextMenu<CR>", desc = "VimTex context menu" },
 			{ "<leader>ддф", ":VimtexContextMenu<CR>", desc = "VimTex context menu" },
 			{ "<leader>lli", ":VimtexInfo<CR>", desc = "VimTex current project info" },
