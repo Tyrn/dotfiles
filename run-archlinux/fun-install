@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+yay -S lolcat
+yay -S sl
+yay -S cmatrix
+yay -S aalib
+yay -S oneko
+yay -S espeak
+yay -S rig
+yay -S asciiquarium
+yay -S toilet
