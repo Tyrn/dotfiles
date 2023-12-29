@@ -12,6 +12,7 @@ yay -S docker-compose
 yay -S docker-buildx
 docker buildx install
 
+yay -S direnv
 yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
 yay -S python-pipx
