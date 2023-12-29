@@ -156,3 +156,28 @@ complete -o nospace -C /usr/bin/terraform terraform
 [[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+# skip loading direnv if it is already loaded
+if test -z $DIRENV_DIR; then
+    if whereis direnv 2&>1 1> /dev/null ; then
+        case "$(basename $SHELL)" in
+            zsh)
+                eval "$(direnv hook zsh)"
+                ;;
+            bash)
+                eval "$(direnv hook bash)"
+                ;;
+            *)
+                echo "skip" /dev/null
+                ;;
+        esac
+    fi
+fi
+# substitute prompt (direnv)
+setopt PROMPT_SUBST
+
+show_virtual_env() {
+  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+    echo "($(basename $VIRTUAL_ENV)) "
+  fi
+}
+PS1='$(show_virtual_env)'$PS1
