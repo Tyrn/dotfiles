@@ -22,7 +22,7 @@ yay -S atool
 yay -S lazygit
 yay -S tig
 yay -S tmux
-yay -S debtap
+yay -S debtap  # Install deb packages.
 yay -S shellcheck-bin
 yay -S unzip
 
@@ -101,6 +101,8 @@ yay -S splix
 pipx install poetry
 yay -S python-lsp-server
 yay -S python-black
+yay -S ipython
+yay -S ptpython
 
 # C++, forgettable.
 
@@ -114,7 +116,7 @@ npm install --global state-machine-cat
 
 # Ruby, forgettable.
 
-yay -S fpm
+yay -S fpm  # Build packages: deb, rpm, etc.
 
 # Perl, forgettable.
 
