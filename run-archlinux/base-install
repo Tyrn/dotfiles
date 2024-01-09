@@ -12,18 +12,20 @@ yay -S docker-compose
 yay -S docker-buildx
 docker buildx install
 
+yay -S neofetch  # System info.
 yay -S direnv
 yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
 yay -S python-pipx
 yay -S mlocate
 yay -S xorg-xinput
-yay -S atool
 yay -S lazygit
 yay -S tig
 yay -S tmux
 yay -S debtap  # Install deb packages.
 yay -S shellcheck-bin
+yay -S atool
+yay -S ouch
 yay -S unzip
 
 yay -S zoxide
@@ -41,9 +43,8 @@ yay -S dust
 yay -S procs
 yay -S tealdeer
 # yay -S broot
-yay -S skim
+yay -S skim  # Fuzzy Finder in Rust.
 yay -S tokei
-yay -S ouch
 yay -S difftastic
 yay -S dos2unix
 
