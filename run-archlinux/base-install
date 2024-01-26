@@ -85,6 +85,11 @@ yay -S wl-clipboard
 yay -S xdotool
 yay -S wtype
 
+# Viewers.
+
+yay -S zathura
+yay -S zathura-pdf-poppler
+
 # i3.
 
 yay -S i3-wm
