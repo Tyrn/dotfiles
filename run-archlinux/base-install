@@ -80,6 +80,11 @@ yay -S xsel
 yay -S xclip
 yay -S wl-clipboard
 
+# Virtual Keyboard.
+
+yay -S xdotool
+yay -S wtype
+
 # i3.
 
 yay -S i3-wm
