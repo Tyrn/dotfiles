@@ -20,4 +20,9 @@ export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 export PATH=$ANDROID_HOME/cmdline-tools/latest:$PATH
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
-exec /usr/bin/ibus-daemon -rxRd &
+if [ $XDG_SESSION_TYPE == 'x11' ]; then
+    export GTK_IM_MODULE=ibus
+    export QT_IM_MODULE=ibus
+    export XMODIFIERS=@im=ibus
+    exec /usr/bin/ibus-daemon -rxRd &
+fi
