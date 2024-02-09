@@ -74,6 +74,12 @@ yay -S noto-color-emoji-fontconfig
 yay -S alacritty
 yay -S alacritty-themes
 
+# Sway
+
+yay -S network-manager-applet
+yay -S waybar
+yay -S sway
+
 # Clipboard.
 
 yay -S xsel
