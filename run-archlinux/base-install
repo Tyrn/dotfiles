@@ -121,6 +121,12 @@ yay -S python-black
 yay -S ipython
 yay -S ptpython
 
+yay -S bash-language-server
+yay -S bash-completion
+yay -S lua-language-server
+yay -S taplo  # TOML toolkit.
+yay -S yaml-language-server
+
 # C++, forgettable.
 
 yay -S doctest catch2 gtest trompeloeil
