@@ -9,4 +9,5 @@ return {
 	{ import = "astrocommunity.pack.python" },
 	{ import = "astrocommunity.pack.kotlin" },
 	{ import = "astrocommunity.pack.elm" },
+	{ import = "astrocommunity.pack.haskell" },
 }
