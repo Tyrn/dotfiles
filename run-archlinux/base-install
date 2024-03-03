@@ -12,6 +12,9 @@ yay -S docker-compose
 yay -S docker-buildx
 docker buildx install
 
+yay -S zsh-nix-shell
+yay -S nix-zsh-completions
+
 yay -S neofetch  # System info.
 yay -S direnv
 yay -S oh-my-zsh-git

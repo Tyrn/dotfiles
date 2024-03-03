@@ -11,6 +11,9 @@ export PATH=$HOME/.zfunc:$PATH
 export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH
 export PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
 
+export PATH=$HOME/.nix-profile/bin:$PATH
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+
 export CODE=$HOME/spaces
 export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
 
