@@ -83,7 +83,7 @@ $ pkill -KILL -u danny
 - Make GRUB menu visible
 
 ```
-$ sudo -e nvim /etc/default/grub
+$ sudo micro /etc/default/grub
 ```
 
 Change timeout style(`/etc/default/grub`):
