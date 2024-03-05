@@ -8,6 +8,8 @@ return {
 	{ import = "astrocommunity.pack.rust" },
 	{ import = "astrocommunity.pack.python" },
 	{ import = "astrocommunity.pack.kotlin" },
+	{ import = "astrocommunity.pack.json" },
 	{ import = "astrocommunity.pack.elm" },
+	{ import = "astrocommunity.pack.nix" },
 	{ import = "astrocommunity.pack.haskell" },
 }
