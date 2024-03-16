@@ -10,6 +10,8 @@ set -x
 ./spell-install
 ./nvim-install
 # ./doom-install
+./nix-init
+./racket-install
 chezmoi apply -v
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install  # Say no to Do you want to update your shell config...
