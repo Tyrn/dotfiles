@@ -1,6 +1,6 @@
 # Manjaro Linux workstation config
 
-For Plasma KDE and i3; also good for RPi.
+For Plasma KDE and i3; also good for RPi. _X11 only_, so far!
 
 - Install [Chezmoi](https://www.chezmoi.io/):
 
