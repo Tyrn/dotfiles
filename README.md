@@ -5,7 +5,7 @@ For Plasma KDE and i3; also good for RPi. _X11 only_, so far!
 - Install [Chezmoi](https://www.chezmoi.io/):
 
 ```
-$ sudo pacman -S chezmoi zoxide yay nix
+$ sudo pacman -S chezmoi zoxide yay micro nix
 ```
 
 - Init:
@@ -39,7 +39,7 @@ run-archlinux $ ./groups-add
 
 - _Reboot!_
 
-- Add repositories:
+- Add repositories (use `sudo micro /etc/pacman.conf`):
 
   - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
   - [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
