@@ -30,12 +30,22 @@ $ systemctl mask --user plasma-kwin_x11
 $ systemctl enable --user plasma-custom-wm.service
 ```
 
-- Set groups (reboot/relogin afterwards):
+- Set groups:
 
 ```
 $ cd ~/.local/share/chezmoi/run-archlinux
 run-archlinux $ ./groups-add
 ```
+
+**Reboot!**
+
+- Add repositories:
+
+  - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
+  - [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
+
+- Check `extras-install` (uncomment whatever you see fit).
+  Don't forget to commit changes or do `git reset --hard`.
 
 - Install the things `dotfiles` are all about:
 
@@ -48,10 +58,6 @@ _NB_ No symlinks so far
 ## Miscellany
 
 - [**Assorted notes**](https://github.com/Tyrn/arch-chronicle/tree/master/Usage)
-
-- [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
-
-- [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
 
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
 
