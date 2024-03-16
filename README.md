@@ -44,6 +44,12 @@ run-archlinux $ ./groups-add
   - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
   - [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
 
+- Update repositories:
+
+```
+$ yay -Syy
+```
+
 - Check `extras-install` (uncomment whatever you see fit).
   Don't forget to commit changes, or do `git reset --hard` later.
 
