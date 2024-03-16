@@ -37,7 +37,7 @@ $ cd ~/.local/share/chezmoi/run-archlinux
 run-archlinux $ ./groups-add
 ```
 
-**Reboot!**
+- _Reboot!_
 
 - Add repositories:
 
