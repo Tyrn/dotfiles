@@ -12,4 +12,5 @@ return {
 	{ import = "astrocommunity.pack.elm" },
 	{ import = "astrocommunity.pack.nix" },
 	{ import = "astrocommunity.pack.haskell" },
+	{ import = "astrocommunity.pack.typst" },
 }
