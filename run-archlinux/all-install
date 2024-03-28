@@ -3,9 +3,9 @@
 set -u
 set -x
 
+./rust-install
 ./base-install
 ./extras-install
-./rust-install
 # ./flutter-install
 ./spell-install
 ./nvim-install
