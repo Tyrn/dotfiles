@@ -122,8 +122,7 @@ $ ~/.fzf/install
 - (Re)install AstroNvim
 
 ```
-$ rm -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
-$ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+~/.local/share/chezmoi/run-archlinux/nvim-reinstall
 ```
 
 ### Git credentials on the workstation

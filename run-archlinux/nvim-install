@@ -3,7 +3,7 @@
 set -u
 set -x
 
-# Neovim.
+# AstroNvim.
 
 yay -S python-pynvim
 yay -S neovim-remote
@@ -12,5 +12,5 @@ yay -S tree-sitter
 # yay -S tree-sitter-rust-git
 yay -S python-jedi
 yay -S python-pylint
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 yay -S neovim
