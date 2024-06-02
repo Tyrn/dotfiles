@@ -15,7 +15,8 @@ docker buildx install
 yay -S zsh-nix-shell
 yay -S nix-zsh-completions
 
-yay -S neofetch  # System info.
+# yay -S neofetch  # System info.
+yay -S fastfetch  # System info.
 yay -S direnv
 yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
