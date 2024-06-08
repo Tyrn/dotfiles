@@ -15,6 +15,10 @@ docker buildx install
 yay -S zsh-nix-shell
 yay -S nix-zsh-completions
 
+# Runtime version manager.
+
+yay -S asdf-vm  # Not recommended before adding andontie-aur repo.
+
 # yay -S neofetch  # System info.
 yay -S fastfetch  # System info.
 yay -S direnv
