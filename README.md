@@ -198,3 +198,19 @@ $ flutter doctor
 ```
 ~/.local/share/flutterup/bin/cache/dart-sdk
 ```
+
+### Package management
+
+- _archlinuxcn-keyring_ trouble: [archlinuxcn issue 3557](https://github.com/archlinuxcn/repo/issues/3557)
+
+```
+sudo pacman-key --lsign-key "farseerfc@archlinux.org"
+```
+
+- General trust trouble
+
+```
+$ sudo pacman-key --init
+$ sudo pacman-key --populate archlinux manjaro
+$ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
+```
