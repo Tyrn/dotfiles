@@ -23,13 +23,6 @@ $ cp ~/.zshrc ~/.zshrc.old
 $ chezmoi apply -v
 ```
 
-- Enable custom WM for KDE:
-
-```
-$ systemctl mask --user plasma-kwin_x11
-$ systemctl enable --user plasma-custom-wm.service
-```
-
 - Set groups:
 
 ```
@@ -57,6 +50,13 @@ $ yay -Syy
 
 ```
 run-archlinux $ yes | ./all-install
+```
+
+- Enable custom WM for KDE:
+
+```
+$ systemctl mask --user plasma-kwin_x11
+$ systemctl enable --user plasma-custom-wm.service
 ```
 
 _NB_ No symlinks so far
