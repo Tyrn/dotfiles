@@ -54,6 +54,12 @@ run-archlinux $ ./groups-add
   - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
   - [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
 
+- _archlinuxcn-keyring_ trouble: [archlinuxcn issue 3557](https://github.com/archlinuxcn/repo/issues/3557)
+
+```
+sudo pacman-key --lsign-key "farseerfc@archlinux.org"
+```
+
 - Update repositories:
 
 ```
@@ -214,12 +220,4 @@ $ flutter doctor
 
 ```
 ~/.local/share/flutterup/bin/cache/dart-sdk
-```
-
-### Package management
-
-- _archlinuxcn-keyring_ trouble: [archlinuxcn issue 3557](https://github.com/archlinuxcn/repo/issues/3557)
-
-```
-sudo pacman-key --lsign-key "farseerfc@archlinux.org"
 ```
