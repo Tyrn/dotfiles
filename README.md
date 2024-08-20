@@ -2,6 +2,12 @@
 
 For Plasma KDE and i3; also good for RPi. _X11 only_, so far!
 
+- Install Manjaro from USB stick. In case of _signature is unknown trust_, run
+
+```
+$ sudo pacman -Sy archlinux-keyring && sudo pacman -Syu
+```
+
 - Install [Chezmoi](https://www.chezmoi.io/):
 
 ```
