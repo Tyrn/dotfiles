@@ -38,7 +38,7 @@ run-archlinux $ ./groups-add
 
 - _Reboot!_
 
-- Add repositories (use `sudo micro /etc/pacman.conf`):
+- Add repositories (use `sudo micro /etc/pacman.conf`, Ctrl+C > Ctrl+Shift+V):
 
   - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
   - [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
