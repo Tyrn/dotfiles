@@ -8,6 +8,17 @@ For Plasma KDE and i3; also good for RPi. _X11 only_, so far!
 $ sudo pacman -Sy archlinux-keyring && sudo pacman -Syu
 ```
 
+or
+
+- General trust trouble, [1](https://forum.manjaro.org/t/update-error-failed-to-commit-transaction/150638),
+  [2](https://forum.manjaro.org/t/error-failed-to-commit-transaction-invalid-or-corrupted-package-pgp-signature/150830)
+
+```
+$ sudo pacman-key --init
+$ sudo pacman-key --populate archlinux manjaro
+$ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
+```
+
 - Install [Chezmoi](https://www.chezmoi.io/):
 
 ```
@@ -211,13 +222,4 @@ $ flutter doctor
 
 ```
 sudo pacman-key --lsign-key "farseerfc@archlinux.org"
-```
-
-- General trust trouble, [1](https://forum.manjaro.org/t/update-error-failed-to-commit-transaction/150638),
-  [2](https://forum.manjaro.org/t/error-failed-to-commit-transaction-invalid-or-corrupted-package-pgp-signature/150830)
-
-```
-$ sudo pacman-key --init
-$ sudo pacman-key --populate archlinux manjaro
-$ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
 ```
