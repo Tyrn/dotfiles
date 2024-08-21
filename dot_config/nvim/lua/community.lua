@@ -15,7 +15,7 @@ return {
 	{ import = "astrocommunity.pack.json" },
 	{ import = "astrocommunity.pack.elm" },
 	{ import = "astrocommunity.pack.nix" },
-	{ import = "astrocommunity.pack.haskell" },
+	-- { import = "astrocommunity.pack.haskell" },  -- Commented out because the plugin won't work without Haskell up.
 	{ import = "astrocommunity.pack.typst" },
 	-- import/override with your plugins folder
 }
