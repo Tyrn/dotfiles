@@ -31,10 +31,12 @@ yay -S lazygit
 yay -S tig
 yay -S tmux
 yay -S debtap  # Install deb packages.
-yay -S shellcheck-bin
-yay -S atool
+# yay -S shellcheck-bin
+yay -S atool  # Universal archive manager.
 yay -S ouch
 yay -S unzip
+
+yay -S tk  # Crossplatform widget toolkit.
 
 yay -S zoxide
 yay -S ripgrep
