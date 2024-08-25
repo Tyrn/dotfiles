@@ -70,6 +70,7 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git python docker systemd sudo vi-mode
+    asdf zsh-autosuggestions zsh-syntax-highlighting
 )
 
 
@@ -183,4 +184,4 @@ show_virtual_env() {
 PS1='$(show_virtual_env)'$PS1
 
 # Multiple runtime versions manager.
-. /opt/asdf-vm/asdf.sh
+#. /opt/asdf-vm/asdf.sh
