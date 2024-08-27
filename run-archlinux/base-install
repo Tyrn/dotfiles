@@ -37,7 +37,6 @@ yay -S ouch
 yay -S unzip
 
 yay -S tk  # Crossplatform widget toolkit.
-yay -S fop  # Erlang/Elixir obscure dependency.
 
 yay -S zoxide
 yay -S ripgrep
