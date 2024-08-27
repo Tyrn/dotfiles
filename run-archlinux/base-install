@@ -38,6 +38,8 @@ yay -S unzip
 
 yay -S tk  # Crossplatform widget toolkit.
 yay -S unixodbc
+yay -S wxwidgets-common
+yay -S wxwidgets-gtk3
 
 yay -S zoxide
 yay -S ripgrep
