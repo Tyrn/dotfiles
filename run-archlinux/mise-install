@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Mise toolchain manager.
+
+cargo install mise
+
+# Install Elixir:
+
+# cd ~  # .tool-versions expected there.
+# export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+# mise install
