@@ -37,6 +37,7 @@ yay -S ouch
 yay -S unzip
 
 yay -S tk  # Crossplatform widget toolkit.
+yay -S unixodbc
 
 yay -S zoxide
 yay -S ripgrep
