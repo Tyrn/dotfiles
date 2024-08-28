@@ -148,6 +148,13 @@ $ ~/.fzf/install
 ~/.local/share/chezmoi/run-archlinux/nvim-reinstall
 ```
 
+- Troubleshoot AstroNvim
+
+```
+:Lazy update  (<Leader>pU)
+:Lazy sync    (<Leader>pS)
+```
+
 ### Git credentials on the workstation
 
 - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
