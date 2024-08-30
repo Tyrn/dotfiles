@@ -70,7 +70,7 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git python docker systemd sudo vi-mode
-#    asdf
+    mise
 #    zsh-autosuggestions zsh-syntax-highlighting
 )
 
@@ -186,4 +186,5 @@ PS1='$(show_virtual_env)'$PS1
 
 # Multiple runtime versions manager.
 #. /opt/asdf-vm/asdf.sh
-eval "$(mise activate zsh)"
+#eval "$(mise activate zsh)"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
