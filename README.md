@@ -228,3 +228,13 @@ $ flutter doctor
 ```
 ~/.local/share/flutterup/bin/cache/dart-sdk
 ```
+
+### Plasma
+
+- Plasms 6, the panel icons won't stay pinned or unpinned (X11)
+
+```
+$ kquitapp6 plasmashell && plasmashell
+```
+
+_reboot_
