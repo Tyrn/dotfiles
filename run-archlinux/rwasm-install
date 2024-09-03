@@ -5,8 +5,8 @@ set -x
 
 # Rust for Wasm.
 
-# cargo install cargo-shuttle  # https://www.shuttle.rs/
-cargo install dioxus-cli  # https://github.com/DioxusLabs/dioxus/tree/main/packages/cli
+# cargo install cargo-shuttle  # ~/.cargo/bin/cargo-shuttle https://www.shuttle.rs/
+cargo install dioxus-cli  # ~/.cargo/bin/dx https://github.com/DioxusLabs/dioxus/tree/main/packages/cli
 rustup target add wasm32-unknown-unknown
-cargo install cargo-watch  # https://github.com/watchexec/cargo-watch
-cargo install cargo-make  # https://github.com/sagiegurari/cargo-make
+cargo install cargo-watch  # ~/.cargo/bin/cargo-watch https://github.com/watchexec/cargo-watch
+cargo install cargo-make  # ~/.cargo/bin/cargo-make, makers https://github.com/sagiegurari/cargo-make
