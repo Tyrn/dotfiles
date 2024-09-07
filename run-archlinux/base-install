@@ -143,7 +143,7 @@ yay -S meson
 
 # JS, forgettable.
 
-# yay -S npm
+yay -S npm
 # npm install --global state-machine-cat
 
 # Ruby, forgettable.
