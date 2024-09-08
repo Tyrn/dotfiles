@@ -107,6 +107,15 @@ $ ibus exit
 $ ibus-daemon -drx &
 ```
 
+- Change date and time language(`LC_TIME`, `/etc/default/locale`):
+
+```
+LANG=en_US.UTF-8
+...
+LC_TIME=en_US.UTF-8
+
+```
+
 - Change shell, if necessary:
 
 ```
@@ -247,4 +256,4 @@ $ flutter doctor
 $ kquitapp6 plasmashell && plasmashell
 ```
 
-_reboot_
+- _Reboot!_
