@@ -27,7 +27,7 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     yay -S puddletag  # An audio tag editor.
 #     yay -S pulseview-git
 #     yay -S zoom
-#     yay -S yacreader
+#     yay -S yacreader-bin
 #     yay -S esplorer
 #     yay -S anki-official-binary-bundle
 #     yay -S rstudio-desktop-bin
