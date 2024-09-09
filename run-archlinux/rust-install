@@ -9,5 +9,4 @@ yay -S rustup
 rustup toolchain install nightly
 rustup component add rust-analyzer
 # rustup component add rust-src
-rustup target add wasm32-unknown-unknown
 cargo install cargo-binstall
