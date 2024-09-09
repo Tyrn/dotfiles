@@ -6,7 +6,6 @@ set -x
 # Mise toolchain manager.
 
 # cargo install mise
-cargo install cargo-binstall
 cargo binstall mise
 
 # Updating cargo-binstall: cargo binstall cargo-binstall
