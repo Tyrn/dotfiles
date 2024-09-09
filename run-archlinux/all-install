@@ -4,6 +4,7 @@ set -u
 set -x
 
 ./rust-install
+./rwasm-install
 ./mise-install
 ./base-install
 ./extras-install
