@@ -47,6 +47,12 @@ $ cd ~/.local/share/chezmoi/run-archlinux
 run-archlinux $ ./groups-add
 ```
 
+- Set udev rules:
+
+```
+run-archlinux $ ./udev-add
+```
+
 - _Reboot!_
 
 - Add repositories (use `sudo micro /etc/pacman.conf`, Ctrl+C > Ctrl+Shift+V):
