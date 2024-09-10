@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Use tee: https://stackoverflow.com/questions/84882/sudo-echo-something-etc-privilegedfile-doesnt-work
+# Use multiline: https://unix.stackexchange.com/questions/678930/how-do-you-output-a-multi-line-string-that-includes-slashes-and-other-special-ch
+
+sudo pacman -Sy archlinux-keyring && sudo pacman -Syu
+sudo pacman -S chezmoi zoxide yay micro nix
+
+printf '\n\n# Custom appendix to the end of file
+
+[options]
+Color
+
+[archlinuxcn]
+Server = http://repo.archlinuxcn.org/$arch
+## or install archlinuxcn-mirrorlist-git and use the mirrorlist
+#Include = /etc/pacman.d/archlinuxcn-mirrorlist
+
+[andontie-aur]
+Server = https://aur.andontie.net/$arch' | sudo tee -a /etc/pacman.conf
+
+# Required by archlinuxcn
+sudo pacman-key --lsign-key "farseerfc@archlinux.org"
+# Required by andontie-aur
+sudo pacman-key --recv-key 72BF227DD76AE5BF
+sudo pacman-key --lsign-key 72BF227DD76AE5BF
+
+sudo pacman -Syy
+sudo pacman -S archlinuxcn-keyring 
+
+chezmoi init https://github.com/Tyrn/dotfiles.git
+
+cp ~/.zshrc ~/.zshrc.old
+chezmoi apply -v
