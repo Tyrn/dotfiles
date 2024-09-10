@@ -11,12 +11,14 @@ yay -S docker
 yay -S docker-compose
 yay -S docker-buildx
 docker buildx install
+sudo systemctl enable docker
 
 yay -S zsh-nix-shell
 yay -S nix-zsh-completions
 
 yay -S partitionmanager
 yay -S fastfetch  # System info.
+yay -S kdialog
 yay -S direnv
 yay -S oh-my-zsh-git
 yay -S python-virtualenvwrapper
