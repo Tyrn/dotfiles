@@ -5,6 +5,11 @@ set -x
 
 # Rust.
 
+sudo pacman -S yay
+yay -S fakeroot
+
+yay -S base-devel
+
 yay -S rustup
 rustup toolchain install nightly
 rustup component add rust-analyzer
