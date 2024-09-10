@@ -10,18 +10,18 @@ sudo pacman -Sy archlinux-keyring && sudo pacman -Syu
 sudo pacman -S chezmoi zoxide yay micro nix
 
 if ! grep -q appendiX /etc/pacman.conf; then
-  printf '\n\n# Custom appendiX to the end of file
-  
-  [options]
-  Color
-  
-  [archlinuxcn]
-  Server = http://repo.archlinuxcn.org/$arch
-  ## or install archlinuxcn-mirrorlist-git and use the mirrorlist
-  #Include = /etc/pacman.d/archlinuxcn-mirrorlist
-  
-  [andontie-aur]
-  Server = https://aur.andontie.net/$arch' | sudo tee -a /etc/pacman.conf
+printf '\n\n# Custom appendiX to the end of file
+
+[options]
+Color
+
+[archlinuxcn]
+Server = http://repo.archlinuxcn.org/$arch
+## or install archlinuxcn-mirrorlist-git and use the mirrorlist
+#Include = /etc/pacman.d/archlinuxcn-mirrorlist
+
+[andontie-aur]
+Server = https://aur.andontie.net/$arch' | sudo tee -a /etc/pacman.conf
 fi
 
 # Required by archlinuxcn
