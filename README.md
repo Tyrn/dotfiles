@@ -2,7 +2,24 @@
 
 For Plasma KDE and i3; also good for RPi. _X11 only_, so far!
 
-- Install Manjaro from USB stick. In case of _signature is unknown trust_, run
+- Install Manjaro from USB stick
+
+- Check session type
+
+```
+$ echo $XDG_SESSION_TYPE
+x11
+```
+
+- Run admin script. In case of success, **reboot** and jump right to **Check** and **Install the things**.
+  In case of problems, feel free to read the notes.
+
+```
+$ cd ~/.local/share/chezmoi/run-archlinux
+$ [yes |] ./admin-add
+```
+
+- In case of _signature is unknown trust_, run
 
 ```
 $ sudo pacman -Sy archlinux-keyring && sudo pacman -Syu
@@ -82,10 +99,10 @@ sudo pacman-key --lsign-key "farseerfc@archlinux.org"
 $ yay -Syy
 ```
 
-- Check `extras-install` (uncomment whatever you see fit).
+- **Check** `extras-install` (uncomment whatever you see fit).
   Don't forget to commit changes, or do `git reset --hard` later.
 
-- Install the things `dotfiles` are all about:
+- **Install the things** `dotfiles` are all about:
 
 ```
 run-archlinux $ yes | ./all-install
