@@ -31,7 +31,9 @@ sudo pacman-key --lsign-key 72BF227DD76AE5BF
 sudo pacman -Syy
 sudo pacman -S archlinuxcn-keyring 
 
-chezmoi init https://github.com/Tyrn/dotfiles.git
+if [ ! -d ~/.local/share/chezmoi/.git ]; then
+  chezmoi init https://github.com/Tyrn/dotfiles.git
+  cp ~/.zshrc ~/.zshrc.old
+  chezmoi apply -v
+fi
 
-cp ~/.zshrc ~/.zshrc.old
-chezmoi apply -v
