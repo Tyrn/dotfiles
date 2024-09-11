@@ -11,8 +11,29 @@ $ echo $XDG_SESSION_TYPE
 x11
 ```
 
-- Run admin script. In case of success, **reboot** and jump right to **Check** and **Install the things**.
-  In case of problems, feel free to read the notes.
+- Update the system
+
+```
+$ sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
+```
+
+- Another take on update, to make it faster
+
+```
+$ sudo pacman-mirrors --geoip && sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
+```
+
+- _Reboot_
+
+- Install and bootstrap `chezmoi`
+
+```
+$ sudo pacman -S chezmoi
+$ chezmoi init https://github.com/Tyrn/dotfiles.git
+```
+
+- Run the admin script. In case of success, **reboot** and jump right to **Check** and **Install the things**.
+  In case of trouble, feel free to read the notes.
 
 ```
 $ cd ~/.local/share/chezmoi/run-archlinux
@@ -22,7 +43,7 @@ $ [yes |] ./admin-add
 - In case of _signature is unknown trust_, run
 
 ```
-$ sudo pacman -Sy archlinux-keyring && sudo pacman -Syu
+$ sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
 ```
 
 or
