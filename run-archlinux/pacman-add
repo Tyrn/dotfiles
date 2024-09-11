@@ -6,7 +6,7 @@ set -x
 # Use tee: https://stackoverflow.com/questions/84882/sudo-echo-something-etc-privilegedfile-doesnt-work
 # Use multiline: https://unix.stackexchange.com/questions/678930/how-do-you-output-a-multi-line-string-that-includes-slashes-and-other-special-ch
 
-sudo pacman -Sy archlinux-keyring && sudo pacman -Syu
+sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
 sudo pacman -S chezmoi zoxide yay micro nix
 
 if ! grep -q appendiX /etc/pacman.conf; then
@@ -35,7 +35,10 @@ sudo pacman -S archlinuxcn-keyring
 
 if [ ! -d ~/.local/share/chezmoi/.git ]; then
   chezmoi init https://github.com/Tyrn/dotfiles.git
-  cp ~/.zshrc ~/.zshrc.old
-  chezmoi apply -v
 fi
 
+if [ ! -d ~/.zshrc.old ]; then
+  cp ~/.zshrc ~/.zshrc.old
+fi
+
+chezmoi apply -v
