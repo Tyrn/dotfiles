@@ -41,4 +41,4 @@ if [ ! -d ~/.zshrc.old ]; then
   cp ~/.zshrc ~/.zshrc.old
 fi
 
-chezmoi apply -v
+chezmoi apply --force --verbose

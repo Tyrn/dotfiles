@@ -15,6 +15,6 @@ set -x
 ./nix-init
 ./racket-install
 ./typst-install
-chezmoi apply -v
+chezmoi apply --force --verbose
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install  # Say no to Do you want to update your shell config...
