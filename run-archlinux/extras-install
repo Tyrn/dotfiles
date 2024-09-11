@@ -19,6 +19,7 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     yay -S ghcup-hs-bin  # Haskell, starting the right way (ghcup tui).
 #     yay -S fop  # Erlang/Elixir obscure dependency, requires a lot of Java!
     yay -S pandoc-bin
+#     cargo binstall tex-fmt
 #     yay -S vscodium-bin  # Not recommended before adding archlinuxcn repo.
 #     yay -S arduino-ide-bin  # Not recommended before adding archlinuxcn repo.
 #     yay -Ss stm32cubeprog  # Installation script may hang.
