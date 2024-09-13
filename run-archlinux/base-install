@@ -137,6 +137,7 @@ yay -S yaml-language-server
 # C++, forgettable.
 
 yay -S doctest catch2 gtest trompeloeil
+yay -S cmake
 yay -S meson
 
 # JS, forgettable.
