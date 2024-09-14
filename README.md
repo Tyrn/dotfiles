@@ -136,6 +136,13 @@ $ systemctl mask --user plasma-kwin_x11
 $ systemctl enable --user plasma-custom-wm.service
 ```
 
+- Back to KWin:
+
+```
+$ systemctl unmask --user plasma-kwin_x11
+$ systemctl disable --user plasma-custom-wm.service
+```
+
 _NB_ No symlinks so far
 
 ## Miscellany
