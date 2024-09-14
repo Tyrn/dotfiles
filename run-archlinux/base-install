@@ -123,6 +123,7 @@ yay -S splix
 # Python, forgettable.
 
 pipx install poetry
+pipx install mkdocs-material --include-deps
 yay -S python-lsp-server
 yay -S python-black
 yay -S ipython
