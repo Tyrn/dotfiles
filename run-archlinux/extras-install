@@ -27,6 +27,7 @@ if [ $(uname -m) == 'x86_64' ]; then
     yay -S qmmp
 #     yay -S puddletag  # An audio tag editor.
 #     yay -S pulseview-git
+#     yay -S kicad kicad-library kicad-library-3d python-kikit
 #     yay -S zoom
 #     yay -S yacreader-bin
 #     yay -S esplorer
