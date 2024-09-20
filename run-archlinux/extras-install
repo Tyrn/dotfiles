@@ -22,6 +22,8 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     cargo binstall tex-fmt
 #     yay -S vscodium-bin  # Not recommended before adding archlinuxcn repo.
 #     yay -S arduino-ide-bin  # Not recommended before adding archlinuxcn repo.
+#     yay -S modpoll-bin  # Modbus master CLI simulator.
+#     yay -S qmodbus-git  # Modbus master GUI simulator.
 #     yay -Ss stm32cubeprog  # Installation script may hang.
 #     yay -S deadbeef opusfile
     yay -S qmmp
