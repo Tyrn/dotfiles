@@ -9,6 +9,8 @@ sudo pacman -S yay
 yay -S fakeroot
 
 yay -S base-devel
+yay -S clang
+yay -S doxygen
 
 yay -S rustup
 rustup toolchain install nightly
