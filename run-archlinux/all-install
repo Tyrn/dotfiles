@@ -3,6 +3,7 @@
 set -u
 set -x
 
+./build-install  # Build essentials.
 ./rust-install
 ./rwasm-install
 ./mise-install
