@@ -30,6 +30,10 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     yay -S deadbeef opusfile
     yay -S qmmp
 #     yay -S puddletag  # An audio tag editor.
+#     yay -S kdenlive  # Video editor.
+    yay -S vorbis-tools
+#     yay -S ocenaudio-bin  # Audio editor.
+#     yay -S snd  # Audio editor.
 #     yay -S pulseview-git
 #     yay -S kicad kicad-library kicad-library-3d python-kikit
 #     yay -S zoom
