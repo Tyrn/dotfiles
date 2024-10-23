@@ -17,6 +17,7 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     yay -S foxitreader  # Not recommended before adding andontie-aur repo.
     yay -S evince
 #     yay -S jetbrains-toolbox  # The right way for getting free PyCharm Community and Android Studio.
+#     yay -S juliaup-bin
 #     yay -S ghcup-hs-bin  # Haskell, starting the right way (ghcup tui).
 #     yay -S fop  # Erlang/Elixir obscure dependency, requires a lot of Java!
     yay -S pandoc-bin
