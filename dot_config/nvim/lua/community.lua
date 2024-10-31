@@ -11,6 +11,7 @@ return {
 	{ import = "astrocommunity.pack.cmake" },
 	{ import = "astrocommunity.pack.cpp" },
 	{ import = "astrocommunity.pack.rust" },
+	{ import = "astrocommunity.pack.dart" },
 	{ import = "astrocommunity.pack.python" },
 	{ import = "astrocommunity.pack.kotlin" },
 	{ import = "astrocommunity.pack.elixir-phoenix" },
