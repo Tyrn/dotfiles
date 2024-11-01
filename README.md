@@ -277,14 +277,14 @@ $ yay -S pulseview-git
 
 ### Java
 
-- Check and/or enable Java environment
+- Check and/or enable Java environment (as of 2024-11-01 should be something like `java-17-openjdk` for use with Flutter; less than 20)
 
 ```
 $ archlinux-java
 ...
 ```
 
-### Flutter and Android
+### Dart, Flutter, and Android
 
 - In case of Android Studio, make sure _File > Settings > Appearance & Behavior > System Settings > Android SDK > SDK Tools > Android SDK Command Line Tools (latest)_ gets checked and installed;
 
@@ -292,7 +292,7 @@ $ archlinux-java
 
 ```
 $ yay -S android-platform android-sdk-cmdline-tools-latest android-sdk-build-tools android-sdk-platform-tools
-# /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+$ sudo chown -R $USER:$USER /opt/android-sdk
 ```
 
 - [flutterup](https://github.com/Decodetalkers/flutterup) and Flutter SDK manual installation
