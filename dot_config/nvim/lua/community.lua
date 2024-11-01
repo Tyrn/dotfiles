@@ -10,6 +10,7 @@ return {
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.cmake" },
 	{ import = "astrocommunity.pack.cpp" },
+	{ import = "astrocommunity.pack.typescript-all-in-one" },
 	{ import = "astrocommunity.pack.rust" },
 	{ import = "astrocommunity.pack.dart" },
 	{ import = "astrocommunity.pack.python" },
