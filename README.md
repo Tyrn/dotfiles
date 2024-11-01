@@ -275,16 +275,32 @@ Alternate good firmware (`sigrok-firmware.zip`) and LA1010 [info](https://www.fo
 $ yay -S pulseview-git
 ```
 
-### Android Studio and flutterup
+### Java
 
-- Make sure _File > Settings > Appearance & Behavior > System Settings > Android SDK > SDK Tools > Android SDK Command Line Tools (latest)_ gets checked and installed;
+- Check and/or enable Java environment
+
+```
+$ archlinux-java
+...
+```
+
+### Flutter and Android
+
+- In case of Android Studio, make sure _File > Settings > Appearance & Behavior > System Settings > Android SDK > SDK Tools > Android SDK Command Line Tools (latest)_ gets checked and installed;
+
+- Otherwise, Android SDK Arch Linux way
+
+```
+$ yay -S android-platform android-sdk-cmdline-tools-latest android-sdk-build-tools android-sdk-platform-tools
+# /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+```
 
 - [flutterup](https://github.com/Decodetalkers/flutterup) and Flutter SDK manual installation
 
 ```
 $ yay -S flutterup
 $ flutterup install
-$ flutter doctor
+$ flutter doctor -v
 ```
 
 - Flutter SDK location (flutterup default)
