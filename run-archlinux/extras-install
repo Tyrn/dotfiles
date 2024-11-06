@@ -15,6 +15,7 @@ if [ $(uname -m) == 'x86_64' ]; then
 #     yay -S doublecmd-qt5
 #     yay -S fontmatrix  # Not recommended before adding archlinuxcn repo (due to qt5-webkit dependency).
 #     yay -S foxitreader  # Not recommended before adding andontie-aur repo.
+    yay -S watchman-bin
     yay -S evince
 #     yay -S jetbrains-toolbox  # The right way for getting free PyCharm Community and Android Studio.
 #     yay -S juliaup-bin
