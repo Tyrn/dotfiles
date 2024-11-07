@@ -324,3 +324,11 @@ $ kquitapp6 plasmashell && plasmashell
 ```
 
 - _Reboot!_
+
+### SSD State
+
+- If `smartmontools` package is installed
+
+```
+ sudo smartctl -a /dev/nvme0 [| grep Percentage]
+```
