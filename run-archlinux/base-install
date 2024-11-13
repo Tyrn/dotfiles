@@ -71,7 +71,10 @@ yay -S rpi-imager
 yay -S gnome-disk-utility
 yay -S gdu
 
+# Network.
+
 yay -S traceroute
+yay -S mtr
 
 yay -S ttf-liberation
 yay -S ttf-dejavu
