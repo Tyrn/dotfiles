@@ -69,6 +69,7 @@ yay -S python-websockets
 
 yay -S rpi-imager
 yay -S gnome-disk-utility
+yay -S gnome-browser-connector
 yay -S gdu
 
 # Network.
