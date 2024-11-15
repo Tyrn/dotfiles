@@ -71,7 +71,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(
     git python docker systemd sudo vi-mode
     mise
-#    zsh-autosuggestions zsh-syntax-highlighting
+    zsh-256color zsh-autosuggestions zsh-syntax-highlighting
 )
 
 
