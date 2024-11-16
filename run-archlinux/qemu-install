@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# QEMU/KVM/Virtual Machine Manager.
+# Necessary groups already set by groups-add.
+
+yay -S qemu-full
+yay -S virt-manager
+
+sudo systemctl enable --now libvirtd

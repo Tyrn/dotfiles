@@ -332,3 +332,13 @@ $ kquitapp6 plasmashell && plasmashell
 ```
  sudo smartctl -a /dev/nvme0 [| grep Percentage]
 ```
+
+### QEMU/KVM/Virtual Machine Manager
+
+- [Default Netowrk](https://askubuntu.com/questions/1036297/cant-start-kvm-guest-network-default-is-not-active)
+
+```
+sudo virsh net-list --all
+...
+sudo virsh net-start default
+```
