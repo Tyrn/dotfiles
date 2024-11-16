@@ -13,6 +13,7 @@ set -x
 ./spell-install
 ./nvim-install
 # ./doom-install
+# ./qemu-install
 ./nix-init
 ./racket-install
 ./typst-install
