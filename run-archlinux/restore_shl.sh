@@ -4,19 +4,11 @@
 #|-/ /--| Prasanth Rangan           |-/ /--|#
 #|/ /---+---------------------------+/ /---|#
 
+# This is an edited script from HyDE project, https://github.com/prasanthrangan/hyprdots
+# The purpose is to add plugins from restore_zsh.lst, if oh-my-zsh-git package
+# from AUR is already present. Update plugins list in ~/.zshrc manually.
+
 scrDir=$(dirname "$(realpath "$0")")
-#source "${scrDir}/global_fn.sh"
-#if [ $? -ne 0 ]; then
-#    echo "Error: unable to source global_fn.sh..."
-#    exit 1
-#fi
-#
-#if chk_list "myShell" "${shlList[@]}"; then
-#    echo -e "\033[0;32m[SHELL]\033[0m detected // ${myShell}"
-#else
-#    echo "Error: user shell not found"
-#    exit 1
-#fi
 
 pkg_installed() {
     local PkgIn=$1
