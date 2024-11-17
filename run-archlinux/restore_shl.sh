@@ -18,9 +18,18 @@ scrDir=$(dirname "$(realpath "$0")")
 #    exit 1
 #fi
 
+pkg_installed() {
+    local PkgIn=$1
+
+    if pacman -Qi "${PkgIn}" &> /dev/null; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 # add zsh plugins
-#if pkg_installed zsh && pkg_installed oh-my-zsh-git; then
-if true; then
+if pkg_installed zsh && pkg_installed oh-my-zsh-git; then
 
     # set variables
     Zsh_rc="${ZDOTDIR:-$HOME}/.zshrc"
