@@ -1,3 +1,5 @@
+# To be read by restore_shl.sh script.
+
 #git                                                     # alias and functions for git commands
 #sudo                                                    # press ESC key twice to execute command with sudo prefix 
 #python                                                 # alias for python
