@@ -4,7 +4,7 @@
 #|-/ /--| Prasanth Rangan           |-/ /--|#
 #|/ /---+---------------------------+/ /---|#
 
-#scrDir=$(dirname "$(realpath "$0")")
+scrDir=$(dirname "$(realpath "$0")")
 #source "${scrDir}/global_fn.sh"
 #if [ $? -ne 0 ]; then
 #    echo "Error: unable to source global_fn.sh..."
@@ -19,7 +19,8 @@
 #fi
 
 # add zsh plugins
-if pkg_installed zsh && pkg_installed oh-my-zsh-git; then
+#if pkg_installed zsh && pkg_installed oh-my-zsh-git; then
+if true; then
 
     # set variables
     Zsh_rc="${ZDOTDIR:-$HOME}/.zshrc"
