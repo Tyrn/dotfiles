@@ -190,6 +190,6 @@ PS1='$(show_virtual_env)'$PS1
 # Multiple runtime versions manager.
 #. /opt/asdf-vm/asdf.sh
 #eval "$(mise activate zsh)"
-source /usr/share/oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/oh-my-zsh/custom/plugins/zsh-256color/zsh-256color.plugin.zsh
+#source /usr/share/oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/oh-my-zsh/custom/plugins/zsh-256color/zsh-256color.plugin.zsh
