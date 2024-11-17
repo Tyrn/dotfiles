@@ -4,13 +4,15 @@ set -u
 set -x
 
 sudo gpasswd -a $USER uucp
+
+sudo groupadd nix-users
 sudo gpasswd -a $USER nix-users
 
 sudo groupadd docker
-sudo gpasswd -a $USER docker
+sudo gpasswd -a $USER docker  # Tanto monta,
 
 sudo groupadd libvirt
-sudo usermod -aG libvirt $USER
+sudo usermod -aG libvirt $USER  # monta tanto.
 
 sudo groupadd kvm
 sudo usermod -aG kvm $USER
