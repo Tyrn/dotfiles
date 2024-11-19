@@ -15,8 +15,8 @@ set -x
 # ./doom-install
 # ./qemu-install
 ./nix-init
-./racket-install
-./typst-install
+# ./racket-install
+# ./typst-install
 ./restore_shl.sh
 chezmoi apply --force --verbose
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
