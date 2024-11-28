@@ -325,6 +325,14 @@ $ kquitapp6 plasmashell && plasmashell
 
 - _Reboot!_
 
+- In case of trouble with Gtk apps, reset Gtk settings to defaults
+
+```
+$ rm -rf ~/.config/gtk*
+```
+
+- Reboot
+
 ### SSD State
 
 - If `smartmontools` package is installed
