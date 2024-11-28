@@ -333,6 +333,12 @@ $ rm -rf ~/.config/gtk*
 
 - Reboot
 
+- [General purpose remedy](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks): reinstall everything
+
+```
+$ sudo pacman -Qqn | sudo pacman -S -
+```
+
 ### SSD State
 
 - If `smartmontools` package is installed
