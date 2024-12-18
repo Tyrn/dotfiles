@@ -1,31 +1,4 @@
-export TERMINAL=/usr/bin/alacritty
-
-export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
-export PATH=$HOME/micropython/ports/unix/build-standard:$PATH
-export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.emacs.d/bin:$PATH
-export PATH=$HOME/.zfunc:$PATH
-#export PATH=$HOME/STM32CubeMX:$PATH
-export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH
-export PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
-
-export PATH=$HOME/.nix-profile/bin:$PATH
-export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
-
-export CODE=$HOME/spaces
-export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
-
-# ~/.konan/bin/ must be a link, created manually to something like ~/.konan/kotlin-native-prebuilt-linux-x86_64-1.9.22/bin
-export PATH=$HOME/.konan/bin:$PATH
-
-# Android SDK, Arch Linux way.
-export ANDROID_SDK_ROOT=/opt/android-sdk
-export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
-export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
-export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
-
+#export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 if [ $XDG_SESSION_TYPE == 'x11' ]; then
     export GTK_IM_MODULE=ibus
     export QT_IM_MODULE=ibus
