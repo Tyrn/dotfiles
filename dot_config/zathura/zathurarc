@@ -1,3 +1,17 @@
 set highlight-fg "#000000"
 set highlight-color "#a2a2a2"
 set highlight-transparency "0.65"
+
+# Russian mappings.
+map л scroll up
+map о scroll down
+map <C-г> scroll half-up
+map <C-в> scroll half-down
+map <C-и> scroll full-up
+map <C-а> scroll full-down
+map пп goto top
+map П goto
+map П goto bottom
+
+map ф adjust_window best-fit
+map ы adjust_window width
