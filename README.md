@@ -225,6 +225,14 @@ $ ~/.fzf/install
 :Lazy sync    (<Leader>pS)
 ```
 
+### Hyprland ML4W
+
+- Installation; **the install script will suggest a** `~/dotfiles` **directory**; **reject, and change it to** `~/ml4w-dotfiles`**!**
+
+```
+bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)
+```
+
 ### Git credentials on the workstation
 
 - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
