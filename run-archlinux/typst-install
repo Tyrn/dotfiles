@@ -7,4 +7,4 @@ set -x
 
 cargo install --git https://github.com/typst/typst --locked typst-cli
 # yay -S typst
-# yay -S typst-lsp
+# yay -S tinymist
