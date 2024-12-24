@@ -23,7 +23,13 @@
     "break",
     {
       "type": "host",
-      "format": "{5} {1} Type {2} {3}",
+      "format": "{5} {1}",
+      "key": "Manufacturer",
+    },
+    {
+      "type": "host",
+      "format": "{2} {3}",
+      "key": "Model",
     },
     "display",
     "cpu",
