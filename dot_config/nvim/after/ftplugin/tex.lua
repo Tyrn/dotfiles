@@ -37,8 +37,25 @@ keymap(0, "n", "-", "/", opts) -- Spanish slash
 
 local lops = { remap = true, silent = true }
 
+-- <C-w> selection
+vim.keymap.set("n", "<leader>zo", "<C-w>o", opts)
+vim.keymap.set("n", "<leader>zs", "<C-w>s", opts)
+vim.keymap.set("n", "<leader>zv", "<C-w>v", opts)
+
+vim.keymap.set("n", "<leader>ящ", "<C-w>o", opts)
+vim.keymap.set("n", "<leader>яы", "<C-w>s", opts)
+vim.keymap.set("n", "<leader>ям", "<C-w>v", opts)
+
+-- Window navigation, AstroNvim convention
+vim.keymap.set("n", "<C-р>", "<C-h>", lops)
+vim.keymap.set("n", "<C-о>", "<C-j>", lops)
+vim.keymap.set("n", "<C-л>", "<C-k>", lops)
+vim.keymap.set("n", "<C-д>", "<C-l>", lops)
+
 -- Wildcats
 vim.keymap.set("n", "<leader>й", "<leader>q", lops)
+vim.keymap.set("n", "<leader>Й", "<leader>Q", lops)
+vim.keymap.set("n", "<leader>ц", "<leader>w", lops)
 
 -- The (ru) mappings follow https://docs.astronvim.com/mappings
 --
