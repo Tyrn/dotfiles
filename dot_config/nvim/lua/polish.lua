@@ -20,10 +20,12 @@ vim.keymap.set("n", "-", "/", opts) -- Spanish slash
 vim.keymap.set("n", "<leader>zo", "<C-w>o", opts)
 vim.keymap.set("n", "<leader>zs", "<C-w>s", opts)
 vim.keymap.set("n", "<leader>zv", "<C-w>v", opts)
+vim.keymap.set("n", "<leader>zw", "<C-w>w", opts)
 
 vim.keymap.set("n", "<leader>ящ", "<C-w>o", opts)
 vim.keymap.set("n", "<leader>яы", "<C-w>s", opts)
 vim.keymap.set("n", "<leader>ям", "<C-w>v", opts)
+vim.keymap.set("n", "<leader>яц", "<C-w>w", opts)
 
 -- Window navigation, AstroNvim convention
 vim.keymap.set("n", "<C-р>", "<C-h>", lops)
