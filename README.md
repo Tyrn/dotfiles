@@ -158,7 +158,7 @@ $ ibus exit
 $ ibus-daemon -drx &
 ```
 
-- Change date and time language; `LC_TIME` in `/etc/default/locale`; (or `/etc/locale.conf`, or both?):
+- Change date and time language; `LC_TIME` in `/etc/locale.conf` (`/etc/default/locale` is ignored):
 
 ```
 LANG=en_US.UTF-8
