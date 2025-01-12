@@ -6,7 +6,7 @@ set -x
 # AstroNvim.
 
 yay -S python-pynvim
-yay -S neovim-remote
+yay -S neovim-remote  # (AUR only).
 yay -S tree-sitter
 # yay -S tree-sitter-python-git  # Orphaned and aren't crossplatform anyway.
 # yay -S tree-sitter-rust-git
