@@ -9,8 +9,8 @@ yay -S docker-buildx
 docker buildx install
 sudo systemctl enable docker
 
-yay -S zsh-nix-shell
-yay -S nix-zsh-completions
+yay -S zsh-nix-shell  # (AUR only).
+yay -S nix-zsh-completions  # (AUR only).
 
 yay -S partitionmanager
 yay -S fastfetch  # System info.
@@ -24,8 +24,8 @@ yay -S xorg-xinput
 yay -S lazygit
 yay -S tig
 yay -S tmux
-yay -S debtap  # Install deb packages.
-# yay -S shellcheck-bin
+yay -S debtap  # Install deb packages (AUR only).
+# yay -S shellcheck
 yay -S atool  # Universal archive manager.
 yay -S ouch
 yay -S unzip
@@ -56,8 +56,8 @@ yay -S difftastic
 yay -S dos2unix
 
 yay -S mpv
-# yay -S youtube-dl
-yay -S yt-dlp-drop-in
+# yay -S youtube-dl  # Looks like abandonware (AUR only).
+yay -S yt-dlp-drop-in  # (AUR only).
 yay -S yt-dlp
 yay -S ffmpeg
 yay -S rtmpdump
@@ -84,9 +84,9 @@ yay -S ttf-dejavu
 yay -S fontforge
 yay -S noto-fonts
 yay -S noto-fonts-emoji
-yay -S noto-color-emoji-fontconfig
+yay -S noto-color-emoji-fontconfig  # (AUR only).
 yay -S alacritty
-yay -S alacritty-themes
+yay -S alacritty-themes  # (AUR only).
 
 # Sway
 
@@ -121,7 +121,7 @@ yay -S feh
 # IBus.
 
 yay -S ibus
-yay -S ibus-m17n
+yay -S ibus-m17n  # (AUR only).
 
 # CUPS drivers for SPL (Samsung Printer Language) printers.
 
@@ -139,7 +139,7 @@ yay -S ptpython
 yay -S bash-language-server
 yay -S bash-completion
 yay -S lua-language-server
-yay -S taplo  # TOML toolkit.
+# yay -S taplo-cli  # TOML toolkit.
 yay -S yaml-language-server
 
 # C++, forgettable.
@@ -150,7 +150,7 @@ yay -S meson
 
 # JS, forgettable.
 
-yay -S npm
+# yay -S npm
 # npm install --global state-machine-cat
 
 # Ruby, forgettable.
