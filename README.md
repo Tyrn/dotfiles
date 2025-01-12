@@ -60,7 +60,7 @@ $ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
 - Install [Chezmoi](https://www.chezmoi.io/):
 
 ```
-$ sudo pacman -S chezmoi zoxide yay micro nix
+$ sudo pacman -S chezmoi zoxide yay micro [nix]
 ```
 
 - Init:
