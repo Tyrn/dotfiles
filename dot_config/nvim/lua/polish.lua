@@ -4,6 +4,9 @@
 -- things like custom filetypes. This is just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
+-- Neovide settings
+vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
+
 local opts = { noremap = true, silent = true }
 local lops = { remap = true, silent = true }
 
