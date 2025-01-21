@@ -163,9 +163,9 @@ complete -o nospace -C /usr/bin/terraform terraform
 ## [/Completion]
 
 # skip loading direnv if it is already loaded
-if test -z $DIRENV_DIR; then
-    if whereis direnv 2&>1 1> /dev/null ; then
-        case "$(basename $SHELL)" in
+if test -z "$DIRENV_DIR"; then
+    if whereis direnv > /dev/null 2>&1; then
+        case "$(basename "$SHELL")" in
             zsh)
                 eval "$(direnv hook zsh)"
                 ;;
@@ -173,7 +173,7 @@ if test -z $DIRENV_DIR; then
                 eval "$(direnv hook bash)"
                 ;;
             *)
-                echo "skip" /dev/null
+                echo "skip" > /dev/null
                 ;;
         esac
     fi
