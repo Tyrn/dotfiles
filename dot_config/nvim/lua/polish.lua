@@ -19,6 +19,12 @@ vim.keymap.set("n", "Ñ", ":", opts) -- Spanish colon
 vim.keymap.set("n", ".", "/", opts) -- Russian slash
 vim.keymap.set("n", "-", "/", opts) -- Spanish slash
 
+-- Lambda for everybody
+local lambda = "λ"
+vim.keymap.set("i", "ILI;", lambda, opts)
+vim.keymap.set("i", "ШДШж", lambda, opts)
+vim.keymap.set("i", "ILIñ", lambda, opts)
+
 -- <C-w> selection
 vim.keymap.set("n", "<leader>zo", "<C-w>o", opts)
 vim.keymap.set("n", "<leader>zs", "<C-w>s", opts)
