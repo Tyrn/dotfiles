@@ -4,6 +4,9 @@
 -- things like custom filetypes. This is just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
+-- Spell settings
+vim.opt.spelllang = { "ru_ru", "en_us", "es_es" }
+
 -- Neovide settings
 vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 
