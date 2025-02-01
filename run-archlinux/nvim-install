@@ -3,6 +3,11 @@
 set -u
 set -x
 
+# MicroPython.
+
+yay -S adafruit-ampy  # (AUR only).
+yay -S rshell  # (AUR only).
+
 # AstroNvim.
 
 yay -S python-pynvim
