@@ -135,8 +135,8 @@ alias lg="lazygit"
 alias dozer="docker-compose run buildozer android"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias ff="fastfetch --physicaldisk-temp --cpu-temp --gpu-temp --battery-temp"
-alias acore="find ~/.arduino15/packages -maxdepth 2 -name hardware -exec find {} -mindepth 2 -maxdepth 2 \;"
 alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
+alias acl="arduino-cli"
 alias nv="neovide"
 
 function pipver-col() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/\1/p' ;}
