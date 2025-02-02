@@ -13,9 +13,6 @@ vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 local opts = { noremap = true, silent = true }
 local lops = { remap = true, silent = true }
 
--- MicroPython settings
-vim.keymap.set("n", "<leader>mr", require("micropython_nvim").run)
-
 -- Slavonic/Russian/Spanish special remapping
 -- local keymap = vim.api.nvim_set_keymap
 vim.keymap.set("n", "ѵ", "0", opts)
