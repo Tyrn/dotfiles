@@ -1,0 +1,13 @@
+{
+  "label": "Fantail",
+  "light": {
+    "fg": "#000",
+    "bg": "#ffe",
+    "link": "#a00"
+  },
+  "dark": {
+    "fg": "#aaa",
+    "bg": "#333333",
+    "link": "#0a0"
+  }
+}
