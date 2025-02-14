@@ -5,6 +5,7 @@ set -x
 
 # Typst.
 
-cargo install --git https://github.com/typst/typst --locked typst-cli
+cargo binstall typst-cli
+# cargo install --git https://github.com/typst/typst --locked typst-cli
 # yay -S typst
 # yay -S tinymist
