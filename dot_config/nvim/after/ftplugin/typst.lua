@@ -2,6 +2,8 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_buf_set_keymap
 
+keymap(0, "i", "LL", "...", opts)
+keymap(0, "i", "ДД", "...", opts)
 keymap(0, "i", "HH", "---~", opts)
 keymap(0, "i", "РР", "---~", opts)
 keymap(0, "i", "HJ", "~---", opts)
