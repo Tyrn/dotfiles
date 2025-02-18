@@ -46,6 +46,15 @@ vim.keymap.set("n", "<C-р>", "<C-h>", lops)
 vim.keymap.set("n", "<C-о>", "<C-j>", lops)
 vim.keymap.set("n", "<C-л>", "<C-k>", lops)
 vim.keymap.set("n", "<C-д>", "<C-l>", lops)
+-- Tab/buffer navigation
+vim.keymap.set("n", "ъи", "]b", lops)
+vim.keymap.set("n", "хи", "[b", lops)
+
+-- Frame movement, Vim convention
+vim.keymap.set("n", "<C-а>", "<C-f>", lops)
+vim.keymap.set("n", "<C-и>", "<C-b>", lops)
+vim.keymap.set("n", "<C-в>", "<C-d>", lops)
+vim.keymap.set("n", "<C-г>", "<C-u>", lops)
 
 -- Wildcats
 vim.keymap.set("n", "<leader>й", "<leader>q", lops)
