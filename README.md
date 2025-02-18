@@ -2,6 +2,20 @@
 
 For Plasma KDE and i3; also good for RPi. _X11 only_, so far!
 
+- Create USB stick
+
+  - Plug in, but do not mount the stick; check
+
+  ```
+  $ sudo fdisk -l
+  ```
+
+  - Upload the system
+
+  ```
+  $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
+  ```
+
 - Install Manjaro from USB stick
 
 - Check session type
@@ -363,4 +377,12 @@ $ sudo pacman -Qqn | sudo pacman -S -
 sudo virsh net-list --all
 ...
 sudo virsh net-start default
+```
+
+### Downgrade all the files from executables recursively
+
+- The [simplest way](https://superuser.com/questions/91935/how-to-recursively-chmod-all-directories-except-files)
+
+```
+chmod -R u+rwX,go+rX,go-w .
 ```
