@@ -29,17 +29,17 @@ vim.keymap.set("i", "ШДШж", lambda, opts)
 vim.keymap.set("i", "ILIñ", lambda, opts)
 
 -- <C-w> selection
-vim.keymap.set("n", "<leader>zo", "<C-w>o", opts)
-vim.keymap.set("n", "<leader>zs", "<C-w>s", opts)
-vim.keymap.set("n", "<leader>zv", "<C-w>v", opts)
-vim.keymap.set("n", "<leader>zc", "<C-w>c", opts)
-vim.keymap.set("n", "<leader>zw", "<C-w>w", opts)
+vim.keymap.set("n", "<leader>Lo", "<C-w>o", opts)
+vim.keymap.set("n", "<leader>Ls", "<C-w>s", opts)
+vim.keymap.set("n", "<leader>Lv", "<C-w>v", opts)
+vim.keymap.set("n", "<leader>Lc", "<C-w>c", opts)
+vim.keymap.set("n", "<leader>Lw", "<C-w>w", opts)
 
-vim.keymap.set("n", "<leader>ящ", "<C-w>o", opts)
-vim.keymap.set("n", "<leader>яы", "<C-w>s", opts)
-vim.keymap.set("n", "<leader>ям", "<C-w>v", opts)
-vim.keymap.set("n", "<leader>яс", "<C-w>c", opts)
-vim.keymap.set("n", "<leader>яц", "<C-w>w", opts)
+vim.keymap.set("n", "<leader>Дщ", "<C-w>o", opts)
+vim.keymap.set("n", "<leader>Ды", "<C-w>s", opts)
+vim.keymap.set("n", "<leader>Дм", "<C-w>v", opts)
+vim.keymap.set("n", "<leader>Дс", "<C-w>c", opts)
+vim.keymap.set("n", "<leader>Дц", "<C-w>w", opts)
 
 -- Window navigation, AstroNvim convention
 vim.keymap.set("n", "<C-р>", "<C-h>", lops)
