@@ -19,7 +19,7 @@ vim.keymap.set("n", "ѵ", "0", opts)
 vim.keymap.set("n", "ѱ", "G", opts)
 vim.keymap.set("n", ";", "$", opts) -- Russian dollar
 vim.keymap.set("n", "Ñ", ":", opts) -- Spanish colon
-vim.keymap.set("n", ".", "/", opts) -- Russian slash
+vim.keymap.set("n", "ю", "/", opts) -- Russian slash, alternative
 vim.keymap.set("n", "-", "/", opts) -- Spanish slash
 
 -- Lambda for everybody
