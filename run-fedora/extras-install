@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Miscellaneous applications.
+
+# yay -S google-chrome
+# yay -S qutebrowser  # Good but heavy.
+yay -S geany geany-plugins
+yay -S retext
+yay -S foliate  # epub reader.
+yay -S qbittorrent
+if [ $(uname -m) == 'x86_64' ]; then
+#     yay -S doublecmd-qt5
+#     yay -S fontmatrix  # Not recommended before adding archlinuxcn repo (due to qt5-webkit dependency).
+#     yay -S foxitreader  # Not recommended before adding andontie-aur repo.
+#     yay -S ml4w-hyprland-git ml4w-hyprland-setup
+    yay -S watchman-bin  # (AUR only).
+    yay -S warpinator
+    yay -S scrcpy
+    yay -S evince
+#     yay -S jetbrains-toolbox  # The right way for getting free PyCharm Community and Android Studio.
+#     yay -S juliaup-bin
+#     yay -S ghcup-hs-bin  # Haskell, starting the right way (ghcup tui).
+#     yay -S fop  # Erlang/Elixir obscure dependency, requires a lot of Java!
+    yay -S pandoc-bin  # (AUR only).
+#     cargo binstall tex-fmt
+#     yay -S texlive-dummy
+#     yay -S vscodium-bin  # Not recommended before adding archlinuxcn repo.
+#     yay -S arduino-ide
+#     yay -S arduino-language-server
+#     yay -S modpoll-bin  # Modbus master CLI simulator.
+#     yay -S qmodbus-git  # Modbus master GUI simulator.
+#     yay -Ss stm32cubeprog  # Installation script may hang.
+#     yay -S deadbeef opusfile
+    yay -S qmmp
+#     yay -S puddletag  # An audio tag editor.
+#     yay -S kdenlive  # Video editor.
+    yay -S vorbis-tools
+#     yay -S ocenaudio-bin  # Audio editor.
+#     yay -S snd  # Audio editor.
+#     yay -S pulseview-git
+#     yay -S kicad kicad-library kicad-library-3d python-kikit
+#     yay -S zoom
+#     yay -S yacreader-bin
+#     yay -S esplorer
+#     yay -S anki-official-binary-bundle
+#     yay -S rstudio-desktop-bin
+fi

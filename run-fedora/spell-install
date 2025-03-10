@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Spell checking.
+
+yay -S aspell
+yay -S aspell-en
+yay -S aspell-es
+yay -S aspell-ru
+
+yay -S hunspell
+yay -S hunspell-en_us
+yay -S hunspell-es_es
+yay -S hunspell-ru
