@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# To be started manually, if needed.
+# Nix is presumed to be already installed, user added to nix-users.
+
+sudo systemctl enable nix-daemon
+sudo systemctl start nix-daemon
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update

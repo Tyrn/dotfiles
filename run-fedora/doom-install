@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Doom Emacs.
+
+yay -S pyright
+yay -S texlab
+rm -rf ~/.emacs.d
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+yay -S emacs-nativecomp
+doom install

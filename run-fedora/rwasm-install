@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Rust for Wasm.
+
+# cargo install cargo-shuttle  # ~/.cargo/bin/cargo-shuttle https://www.shuttle.rs/
+cargo binstall dioxus-cli  # ~/.cargo/bin/dx https://github.com/DioxusLabs/dioxus/tree/main/packages/cli
+rustup target add wasm32-unknown-unknown
+cargo binstall cargo-watch  # ~/.cargo/bin/cargo-watch https://github.com/watchexec/cargo-watch
+cargo binstall cargo-make  # ~/.cargo/bin/cargo-make, makers https://github.com/sagiegurari/cargo-make

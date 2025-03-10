@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Racket.
+
+yay -S racket
+raco pkg install infix
+raco pkg install from-template
+raco pkg install fmt
+raco pkg install pie
+raco pkg install racket-langserver
