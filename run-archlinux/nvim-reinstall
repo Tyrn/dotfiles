@@ -8,4 +8,4 @@ set -x
 sudo rm -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
 sudo rm -rf ~/.config/nvim/.git
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
-chezmoi apply --force --verbose
+chezmoi apply --force
