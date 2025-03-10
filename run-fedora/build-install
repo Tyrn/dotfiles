@@ -7,4 +7,5 @@ set -x
 
 sudo dnf install -y @c-development
 sudo dnf install -y clang
+sudo dnf install -y cmake
 sudo dnf install -y doxygen
