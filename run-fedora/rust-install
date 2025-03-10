@@ -3,7 +3,7 @@
 set -u
 set -x
 
-yay -S rustup
+sudo dnf install rustup
 rustup toolchain install nightly
 rustup component add rust-analyzer
 # rustup component add rust-src
