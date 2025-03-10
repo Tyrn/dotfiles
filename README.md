@@ -196,7 +196,7 @@ $ who
 danny  pts/0        Nov 6 13:53 (10.1.6.121)
 danny  pts/1        Nov 5 12:30 (10.1.6.165)
 danny  pts/2        Nov 4 12:33 (10.1.6.197)
-$ pkill -KILL -u danny
+$ pkill -KILL -u $USER
 ```
 
 - Make GRUB menu visible
