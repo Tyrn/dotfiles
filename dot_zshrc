@@ -114,7 +114,7 @@ vac()
 }
 
 export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+#source /usr/bin/virtualenvwrapper.sh
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
