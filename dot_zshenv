@@ -1,5 +1,7 @@
 # Arch Linux issue, https://github.com/asdf-vm/asdf-erlang/issues/286
-export KERL_CONFIGURE_OPTIONS="--with-odbc=/var/lib/pacman/local/unixodbc-$(pacman -Q unixodbc | cut -d' ' -f2)"
+if command -v pacman &> /dev/null; then
+  export KERL_CONFIGURE_OPTIONS="--with-odbc=/var/lib/pacman/local/unixodbc-$(pacman -Q unixodbc | cut -d' ' -f2)"
+fi
 # GoogleTest convenience:
 export GTEST_COLOR=1
 
