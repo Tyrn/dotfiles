@@ -3,9 +3,10 @@
 set -u
 set -x
 
-# Build essentials, to be installed before everything,
+# Build essentials, to be installed before everything.
 
 sudo dnf install -y @c-development
 sudo dnf install -y clang
 sudo dnf install -y cmake
 sudo dnf install -y doxygen
+sudo dnf install -y pipx
