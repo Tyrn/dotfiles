@@ -3,17 +3,23 @@
 set -u
 set -x
 
-# Build essentials, to be installed before everything.
+# Build essentials, to be installed before trying all-install.
 
 sudo dnf install -y @c-development
 sudo dnf install -y fontconfig-devel freetype-devel libstdc++-static
 sudo dnf install -y libstdc++-devel
-
 sudo dnf install -y clang cmake doxygen pipx
 
+./rust-install
+
+# Ecosystem essentials.
+
+#cargo binstall mise
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
 sudo dnf install -y mise
 mise trust ~
 
 mise use -g chezmoi@latest lazygit@latest
+
+../nerd-fonts-install
