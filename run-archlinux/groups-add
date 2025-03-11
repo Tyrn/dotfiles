@@ -3,7 +3,7 @@
 set -u
 set -x
 
-sudo gpasswd -a $USER uucp
+sudo gpasswd -a $USER uucp  # Aka dialout in other systems.
 
 sudo groupadd nix-users
 sudo gpasswd -a $USER nix-users

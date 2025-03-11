@@ -3,16 +3,16 @@
 set -u
 set -x
 
-sudo gpasswd -a $USER uucp
+sudo usermod -aG dialout $USER  # Aka uucp in other systems.
 
 sudo groupadd nix-users
-sudo gpasswd -a $USER nix-users
+sudo usermod -aG nix-users $USER
 
 sudo groupadd docker
-sudo gpasswd -a $USER docker  # Tanto monta,
+sudo usermod -aG docker $USER
 
 sudo groupadd libvirt
-sudo usermod -aG libvirt $USER  # monta tanto.
+sudo usermod -aG libvirt $USER
 
 sudo groupadd kvm
 sudo usermod -aG kvm $USER
