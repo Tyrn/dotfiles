@@ -6,6 +6,8 @@ set -x
 # Build essentials, to be installed before everything.
 
 sudo dnf install -y @c-development
+sudo dnf install -y fontconfig-devel freetype-devel libstdc++-static
+
 sudo dnf install -y clang
 sudo dnf install -y cmake
 sudo dnf install -y doxygen
