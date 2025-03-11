@@ -5,18 +5,15 @@ set -x
 
 # MicroPython.
 
-yay -S adafruit-ampy  # (AUR only).
-yay -S rshell  # (AUR only).
+pipx install adafruit-ampy
+pipx install rshell
 
 # AstroNvim.
 
-yay -S python-pynvim
-yay -S neovim-remote  # (AUR only).
-yay -S tree-sitter
-# yay -S tree-sitter-python-git  # Orphaned and aren't crossplatform anyway.
-# yay -S tree-sitter-rust-git
-yay -S python-jedi
-yay -S python-pylint
-yay -S neovide
+#yay -S python-pynvim
+#yay -S neovim-remote  # (AUR only).
+sudo dnf install -y tree-sitter
+sudo dnf install -y python3-jedi
+yes | cargo binstall neovide
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
-yay -S neovim
+sudo dnf install -y neovim
