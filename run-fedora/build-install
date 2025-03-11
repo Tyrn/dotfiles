@@ -17,4 +17,3 @@ sudo dnf install -y mise
 mise trust ~
 
 mise use -g chezmoi@latest
-mise use -g nix@latest
