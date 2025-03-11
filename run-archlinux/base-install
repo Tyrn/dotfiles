@@ -24,7 +24,7 @@ yay -S xorg-xinput
 yay -S lazygit
 yay -S tig
 yay -S tmux
-yay -S debtap  # Install deb packages (AUR only).
+# yay -S debtap  # Install deb packages (AUR only).
 # yay -S shellcheck
 yay -S atool  # Universal archive manager.
 yay -S ouch
@@ -57,7 +57,7 @@ yay -S dos2unix
 
 yay -S mpv
 # yay -S youtube-dl  # Looks like abandonware (AUR only).
-yay -S yt-dlp-drop-in  # (AUR only).
+# yay -S yt-dlp-drop-in  # (AUR only).
 yay -S yt-dlp
 yay -S ffmpeg
 yay -S rtmpdump
@@ -84,9 +84,9 @@ yay -S ttf-dejavu
 yay -S fontforge
 yay -S noto-fonts
 yay -S noto-fonts-emoji
-yay -S noto-color-emoji-fontconfig  # (AUR only).
+# yay -S noto-color-emoji-fontconfig  # (AUR only), fontconfig/font.conf will hopefully do.
 yay -S alacritty
-yay -S alacritty-themes  # (AUR only).
+# yay -S alacritty-themes  # (AUR only).
 
 # Sway
 
@@ -122,7 +122,7 @@ yay -S feh
 # IBus.
 
 yay -S ibus
-yay -S ibus-m17n  # (AUR only).
+# yay -S ibus-m17n  # (AUR only).
 
 # CUPS drivers for SPL (Samsung Printer Language) printers.
 
