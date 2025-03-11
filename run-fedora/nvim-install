@@ -13,7 +13,7 @@ pipx install rshell
 #yay -S python-pynvim
 #yay -S neovim-remote  # (AUR only).
 sudo dnf install -y tree-sitter
-sudo dnf install -y python3-jedi
+sudo dnf install -y python3-jedi python3-neovim
 yes | cargo binstall neovide
 rm -rf ~/.config/nvim
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
