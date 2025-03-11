@@ -14,3 +14,6 @@ sudo dnf install -y clang cmake doxygen pipx
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
 sudo dnf install -y mise
+mise trust ~
+
+mise use --global chezmoi@2.60.1
