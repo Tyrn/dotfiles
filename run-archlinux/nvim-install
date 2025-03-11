@@ -12,7 +12,7 @@ pipx install rshell
 
 # AstroNvim.
 
-# yay -S python-pynvim
+yay -S python-pynvim  # Aka python3-neovim in other systems.
 # yay -S neovim-remote  # (AUR only).
 yay -S tree-sitter
 yay -S python-jedi
