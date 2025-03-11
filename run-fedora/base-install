@@ -148,17 +148,3 @@ yay -S yaml-language-server
 yay -S doctest catch2 gtest trompeloeil
 yay -S cmake
 yay -S meson
-
-# JS, forgettable.
-
-# yay -S npm
-# npm install --global state-machine-cat
-
-# Ruby, forgettable.
-
-# yay -S fpm  # Build packages: deb, rpm, etc.
-
-# Perl, forgettable.
-
-# yay -S perl-yaml-tiny
-# yay -S perl-file-homedir
