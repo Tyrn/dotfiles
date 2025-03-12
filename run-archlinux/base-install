@@ -82,8 +82,8 @@ yay -S ttf-liberation
 yay -S ttf-dejavu
 
 yay -S fontforge
-yay -S noto-fonts
-yay -S noto-fonts-emoji
+# yay -S noto-fonts
+# yay -S noto-fonts-emoji
 # yay -S noto-color-emoji-fontconfig  # (AUR only), fontconfig/font.conf will hopefully do.
 yay -S alacritty
 # yay -S alacritty-themes  # (AUR only).

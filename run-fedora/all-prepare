@@ -8,16 +8,16 @@ set -x
 sudo dnf install -y @c-development
 sudo dnf install -y fontconfig-devel freetype-devel libstdc++-static
 sudo dnf install -y libstdc++-devel
-sudo dnf install -y clang cmake doxygen pipx
+sudo dnf install -y clang cmake meson gtest doxygen pipx
 
 ./rust-install
 
 # Ecosystem essentials.
 
-#cargo binstall mise
-sudo dnf install -y dnf-plugins-core
-sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
-sudo dnf install -y mise
+cargo binstall mise
+#sudo dnf install -y dnf-plugins-core
+#sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
+#sudo dnf install -y mise
 mise trust ~
 
 mise use -g chezmoi@latest lazygit@latest

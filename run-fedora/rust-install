@@ -8,5 +8,6 @@ rustup toolchain install nightly
 rustup component add rust-analyzer
 # rustup component add rust-src
 yes | cargo install cargo-binstall
+yes | cargo binstall cargo-update
 
 # Updating cargo-binstall: cargo binstall cargo-binstall

@@ -3,148 +3,38 @@
 set -u
 set -x
 
-yay -S docker
-yay -S docker-compose
-yay -S docker-buildx
+sudo dnf install -y docker docker-compose docker-buildx
 docker buildx install
 sudo systemctl enable docker
 
-# yay -S zsh-nix-shell  # (AUR only).
-# yay -S nix-zsh-completions  # (AUR only).
+sudo dnf install -y @kde-apps qbittorrent
+sudo dnf install -y gparted fastfetch kdialog direnv tig tmux atool tk
 
-yay -S partitionmanager
-yay -S fastfetch  # System info.
-yay -S kdialog
-yay -S direnv
-# yay -S oh-my-zsh-git
-yay -S python-virtualenvwrapper
-yay -S python-pipx
-yay -S mlocate
-yay -S xorg-xinput
-yay -S lazygit
-yay -S tig
-yay -S tmux
-yay -S debtap  # Install deb packages (AUR only).
-# yay -S shellcheck
-yay -S atool  # Universal archive manager.
-yay -S ouch
-yay -S unzip
+yes | cargo binstall du-dust
+yes | cargo binstall bottom
 
-yay -S tk  # Crossplatform widget toolkit.
-yay -S unixodbc
-yay -S wxwidgets-common
-yay -S wxwidgets-gtk3
+sudo dnf install -y zoxide ripgrep fd-find sd bat eza erdtree htop btop gdu
+sudo dnf install -y procs tealdeer skim tokei difftastic mpv alacritty
+sudo dnf install -y zathura zathura-pdf-poppler yt-dlp fontforge taglib-devel
 
-yay -S zoxide
-yay -S ripgrep
-yay -S fd
-yay -S sd
-yay -S bat
-yay -S exa
-yay -S tree
-yay -S erdtree
-yay -S htop
-yay -S btop
-yay -S bottom
-yay -S dust
-yay -S procs
-yay -S tealdeer
-# yay -S broot
-yay -S skim  # Fuzzy Finder in Rust.
-yay -S tokei
-yay -S difftastic
-yay -S dos2unix
+sudo dnf install -y AtomicParsley aria2 python3-pycryptodomex python3-websockets
+sudo dnf install -y rpi-imager smartmontools gnome-browser-connector
 
-yay -S mpv
-# yay -S youtube-dl  # Looks like abandonware (AUR only).
-yay -S yt-dlp-drop-in  # (AUR only).
-yay -S yt-dlp
-yay -S ffmpeg
-yay -S rtmpdump
-yay -S atomicparsley
-yay -S aria2
-yay -S python-mutagen
-yay -S python-pycryptodomex
-yay -S python-websockets
-
-yay -S rpi-imager
-yay -S gnome-disk-utility
-yay -S smartmontools
-yay -S gnome-browser-connector
-yay -S gdu
-
-# Network.
-
-yay -S traceroute
-yay -S mtr
-
-yay -S ttf-liberation
-yay -S ttf-dejavu
-
-yay -S fontforge
-yay -S noto-fonts
-yay -S noto-fonts-emoji
-yay -S noto-color-emoji-fontconfig  # (AUR only).
-yay -S alacritty
-yay -S alacritty-themes  # (AUR only).
-
-# Sway
-
-yay -S network-manager-applet
-yay -S waybar
-yay -S sway
-
-# Clipboard.
-
-yay -S xsel
-yay -S xclip
-yay -S wl-clipboard
-
-# Virtual Keyboard.
-
-yay -S xdotool
-yay -S wtype
-
-# Viewers.
-
-yay -S zathura
-yay -S zathura-pdf-poppler
-
-# i3.
-
-yay -S i3-wm
-yay -S i3status
-# yay -S dmenu-manjaro
-yay -S dmenu
-yay -S i3lock
-yay -S feh
-
-# IBus.
-
-yay -S ibus
-yay -S ibus-m17n  # (AUR only).
+#yay -S ttf-liberation
+#yay -S ttf-dejavu
 
 # CUPS drivers for SPL (Samsung Printer Language) printers.
 
-yay -S splix
+sudo dnf install -y splix
 
 # Python, forgettable.
 
 pipx install poetry
+pipx install uv
 pipx install mkdocs-material --include-deps
-yay -S python-lsp-server
-yay -S python-black
-yay -S ipython
-yay -S ptpython
 
-yay -S bash-language-server
-yay -S bash-completion
-yay -S lua-language-server
-# yay -S taplo-cli  # TOML toolkit.
-yay -S yaml-language-server
 
-# C++, forgettable.
+sudo dnf install -y python3-lsp-server python3-lsp-black black
+sudo dnf install -y python3-ipython ptpython3
 
-yay -S doctest catch2 gtest trompeloeil
-yay -S cmake
-yay -S meson
+sudo dnf install -y nodejs-bash-language-server
