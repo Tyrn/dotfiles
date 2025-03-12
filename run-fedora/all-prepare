@@ -24,3 +24,6 @@ mise use -g chezmoi@latest lazygit@latest
 
 ../noto-nerd-install
 ./admin-add
+
+echo "!!! REBOOT !!!"
+sudo reboot
