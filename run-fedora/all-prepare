@@ -22,4 +22,4 @@ mise trust ~
 
 mise use -g chezmoi@latest lazygit@latest
 
-../nerd-fonts-install
+../noto-nerd-install
