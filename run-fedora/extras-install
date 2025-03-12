@@ -5,11 +5,8 @@ set -x
 
 # Miscellaneous applications.
 
-google-chrome-stable
-qutebrowser
-geany geany-plugins-addons geany-plugins-vimode
-retext
-watchman
+sudo dnf install -y google-chrome-stable qutebrowser
+sudo dnf install -y geany geany-plugins-addons geany-plugins-vimode
 
 #yes | flatpak install flathub com.vscodium.codium  # flatpak run com.vscodium.codium
 #yes | flatpak install cc.arduino.arduinoide
@@ -18,13 +15,8 @@ watchman
 
 cargo binstall tex-fmt
 
-pandoc
-opusfile
-qmmp mpv
-puddletag
-kdenlive
-vorbis-tools
-yacreader
+sudo dnf install -y retext watchman pandoc opusfile qmmp mpv puddletag
+sudo dnf install -y kdenlive vorbis-tools yacreader
 
 # CRAN (R Studio)
 #sudo dnf copr enable iucar/cran
