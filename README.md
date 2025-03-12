@@ -164,7 +164,7 @@ _NB_ No symlinks so far
 - Get fedora-dotfiles
 
 ```
-curl -L -O "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles"
+curl -L -O "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
 ```
 
 ## Miscellany
