@@ -165,6 +165,15 @@ _NB_ No symlinks so far
 
 ```
 curl -L -O "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
+bash fedora-dotfiles.sh
+```
+
+- TODO...
+
+- After successfully moving to _zsh_, and before running any app,
+
+```
+chezmoi apply --force
 ```
 
 ## Miscellany
