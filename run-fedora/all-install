@@ -8,6 +8,7 @@ set -x
 # 2. Chezmoi has been set up according to README
 #    Like $ chezmoi init https://github.com/Tyrn/dotfiles.git
 
+./rust-install  # This is mandatory!
 # ./rwasm-install
 ./base-install
 ./extras-install
