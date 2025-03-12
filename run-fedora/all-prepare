@@ -7,7 +7,7 @@ set -x
 
 sudo dnf install -y @c-development
 sudo dnf install -y fontconfig-devel freetype-devel libstdc++-static
-sudo dnf install -y libstdc++-devel
+sudo dnf install -y libstdc++-devel gettext-devel
 sudo dnf install -y clang cmake meson gtest doxygen pipx
 
 ./rust-install
@@ -23,3 +23,4 @@ mise trust ~
 mise use -g chezmoi@latest lazygit@latest
 
 ../noto-nerd-install
+./admin-add
