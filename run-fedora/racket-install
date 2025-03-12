@@ -6,8 +6,8 @@ set -x
 # Racket.
 
 sudo dnf install -y racket
-raco pkg install infix
-raco pkg install from-template
-raco pkg install fmt
-raco pkg install pie
-raco pkg install racket-langserver
+yes | raco pkg install infix
+yes | raco pkg install from-template
+yes | raco pkg install fmt
+yes | raco pkg install pie
+yes | raco pkg install racket-langserver
