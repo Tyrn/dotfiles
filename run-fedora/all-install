@@ -4,8 +4,9 @@ set -u
 set -x
 
 # Before running this script make sure that
-# 1. ./all-prepare script has ben run
+# 1. ./all-prepare script has been run
 # 2. Chezmoi has been set up according to README
+#    Like $ chezmoi init https://github.com/Tyrn/dotfiles.git
 
 # ./rwasm-install
 ./base-install
