@@ -19,16 +19,14 @@ if ! test -e "$font_file"; then
         echo "$url"
         wget "$url"
     else
-
         echo "We cannot find the curl and wget command. First, install the curl and wget command, one of them."
         exit 1
-
     fi
 fi
 
 echo "creating fonts folder: ${HOME}/.fonts"
 mkdir -p  "$HOME/.fonts"
-echo "unzip the $font_name.zip"
-unzip "$font_name.zip" -d "$HOME/.fonts/$font_name/"
+echo "unzip the $font_file"
+unzip "$font_file" -d "$HOME/.fonts/$font_name/"
 fc-cache -fv
 echo "done!"
