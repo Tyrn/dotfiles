@@ -159,6 +159,14 @@ $ systemctl disable --user plasma-custom-wm.service
 
 _NB_ No symlinks so far
 
+## Fedora
+
+- Get fedora-dotfiles
+
+```
+curl -L -O "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles"
+```
+
 ## Miscellany
 
 - [**Assorted notes**](https://github.com/Tyrn/arch-chronicle/tree/master/Usage)
