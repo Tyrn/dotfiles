@@ -26,4 +26,4 @@ sudo dnf install -y clang cmake meson gtest doxygen pipx micro
 ./admin-add
 
 echo "!!! REBOOT !!!"
-sudo reboot
+sudo shutdown -r now
