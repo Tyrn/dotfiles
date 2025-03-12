@@ -8,7 +8,7 @@ sudo dnf install -y zsh
 rm -rf ~/.oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-chezmoi apply --force
+#chezmoi apply --force
 
 git clone --depth 1 https://github.com/chrissicool/zsh-256color          ~/.oh-my-zsh/custom/plugins/zsh-256color
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions

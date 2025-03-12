@@ -1,6 +1,8 @@
 README.*
 run-archlinux/
 run-fedora/
+nerd-fonts-install
+noto-nerd-install
 
 ## Neovim
 #**/autoload/
