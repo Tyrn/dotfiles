@@ -6,5 +6,5 @@ set -x
 # Flutter.
 # all-install/rust-install first!
 
-yay -S flutterup
-flutterup install
+#yay -S flutterup
+#flutterup install

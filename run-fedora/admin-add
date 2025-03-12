@@ -3,6 +3,5 @@
 set -u
 set -x
 
-./pacman-add
 ./groups-add
 ./udev-add

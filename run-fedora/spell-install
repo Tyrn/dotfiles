@@ -5,12 +5,6 @@ set -x
 
 # Spell checking.
 
-yay -S aspell
-yay -S aspell-en
-yay -S aspell-es
-yay -S aspell-ru
+sudo dnf install -y aspell aspell-en aspell-es aspell-ru
 
-yay -S hunspell
-yay -S hunspell-en_us
-yay -S hunspell-es_es
-yay -S hunspell-ru
+sudo dnf install -y hunspell hunspell-en-US hunspell-es-ES hunspell-ru
