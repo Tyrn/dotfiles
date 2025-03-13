@@ -13,7 +13,7 @@ sudo dnf install -y geany geany-plugins-addons geany-plugins-vimode
 #yes | flatpak install flathub us.zoom.Zoom
 #yes | flatpak install flathub org.x.Warpinator
 
-cargo binstall tex-fmt
+yes | cargo binstall tex-fmt
 
 sudo dnf install -y retext watchman pandoc opusfile qmmp mpv puddletag
 sudo dnf install -y kdenlive vorbis-tools yacreader
