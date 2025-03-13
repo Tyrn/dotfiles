@@ -8,7 +8,7 @@ set -x
 sudo dnf install -y @c-development
 sudo dnf install -y fontconfig-devel freetype-devel libstdc++-static
 sudo dnf install -y libstdc++-devel gettext-devel
-sudo dnf install -y clang cmake meson gtest doxygen pipx micro
+sudo dnf install -y clang cmake meson gtest doxygen pipx micro zoxide
 
 curl https://sh.rustup.rs -sSf | sh
 rustup toolchain install nightly

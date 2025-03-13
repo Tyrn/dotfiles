@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Check which chezmoi.
+#
+# Run this script manually as
+# yes | ./fzf-install
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+chezmoi apply --force

@@ -17,7 +17,7 @@ sudo dnf install -y gparted fastfetch kdialog direnv tig tmux atool tk
 yes | cargo binstall du-dust
 yes | cargo binstall bottom
 
-sudo dnf install -y zoxide ripgrep fd-find sd bat eza erdtree htop btop gdu
+sudo dnf install -y ripgrep fd-find sd bat eza erdtree htop btop gdu
 sudo dnf install -y procs tealdeer skim tokei difftastic alacritty
 sudo dnf install -y zathura zathura-pdf-poppler yt-dlp fontforge taglib-devel
 
