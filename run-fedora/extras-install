@@ -12,6 +12,7 @@ sudo dnf install -y geany geany-plugins-addons geany-plugins-vimode
 
 sudo dnf install -y retext watchman pandoc opusfile qmmp mpv puddletag
 sudo dnf install -y kdenlive vorbis-tools yacreader
+sudo dnf install -y gnome-tweaks gnome-extensions-app
 
 yes | cargo binstall tex-fmt
 
