@@ -21,4 +21,4 @@ git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 sudo rm -rf ~/.config/nvim/.git
 sudo dnf install -y neovim
 
-#chezmoi apply --force
+chezmoi apply --force
