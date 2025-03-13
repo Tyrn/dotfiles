@@ -20,6 +20,4 @@ set -x
 ./racket-install
 ./typst-install
 #chezmoi apply --force
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install  # Say no to Do you want to update your shell config...
 gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FFD700'
