@@ -164,7 +164,7 @@ _NB_ No symlinks so far
 - Get fedora-dotfiles
 
 ```
-curl -L -O "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
+curl -OL "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
 bash fedora-dotfiles.sh
 ```
 
@@ -175,6 +175,14 @@ bash fedora-dotfiles.sh
 ```
 chezmoi apply --force
 ```
+
+### Important extensions
+
+- [PaperWM](https://github.com/paperwm/PaperWM),
+  [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
+
+- [Switcher](https://github.com/daniellandau/switcher),
+  [e.g.org](https://extensions.gnome.org/extension/973/switcher/)
 
 ## Update apps installed globally with non-native package managers
 
