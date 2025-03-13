@@ -8,15 +8,17 @@ set -x
 sudo dnf install -y google-chrome-stable qutebrowser
 sudo dnf install -y geany geany-plugins-addons geany-plugins-vimode
 
-#yes | flatpak install flathub com.vscodium.codium  # flatpak run com.vscodium.codium
-#yes | flatpak install cc.arduino.arduinoide
-#yes | flatpak install flathub us.zoom.Zoom
-#yes | flatpak install flathub org.x.Warpinator
+sudo dnf install -y retext watchman pandoc opusfile qmmp mpv puddletag
+sudo dnf install -y kdenlive vorbis-tools yacreader
 
 yes | cargo binstall tex-fmt
 
-sudo dnf install -y retext watchman pandoc opusfile qmmp mpv puddletag
-sudo dnf install -y kdenlive vorbis-tools yacreader
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+#flatpak install flathub com.vscodium.codium  # flatpak run com.vscodium.codium
+#flatpak install cc.arduino.arduinoide
+#flatpak install flathub us.zoom.Zoom
+#flatpak install flathub org.x.Warpinator
 
 # CRAN (R Studio)
 #sudo dnf copr enable iucar/cran

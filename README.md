@@ -176,6 +176,56 @@ bash fedora-dotfiles.sh
 chezmoi apply --force
 ```
 
+## Update apps installed globally with non-native package managers
+
+- Cargo
+
+  - List all the packages
+
+  ```
+  cargo install --list
+  ```
+
+  - Update all the packages
+
+  ```
+  cargo install-update -a
+  ```
+
+- Mise
+
+  - List all packages
+
+  ```
+  mise ls -g
+  ```
+
+  - Update individually
+
+  ```
+  mise use -g app@latest
+  ```
+
+- Flatpak
+
+  - List all the apps
+
+  ```
+  flatpak list
+  ```
+
+  - Update all the apps
+
+  ```
+  flatpak update [-y]
+  ```
+
+  - Update individually
+
+  ```
+  flatpak update com.vscodium.codium
+  ```
+
 ## Miscellany
 
 - [**Assorted notes**](https://github.com/Tyrn/arch-chronicle/tree/master/Usage)
