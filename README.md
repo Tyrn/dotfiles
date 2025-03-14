@@ -161,19 +161,55 @@ _NB_ No symlinks so far
 
 ## Fedora
 
+### Install sequence
+
 - Get fedora-dotfiles
 
 ```
 curl -OL "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
+```
+
+- Run the bootstrap script, which causes reboot in the end
+
+```
 bash fedora-dotfiles.sh
 ```
 
-- TODO...
+_NB_ chezmoi is already installed via mise, zsh-install script relies on that!
 
-- After successfully moving to _zsh_, and before running any app,
+- Now the installation scripts are in place. Go to them
 
 ```
-chezmoi apply --force
+cd ~/.local/share/chezmoi/run-fedora
+```
+
+- First thing, run `./zsh-install`. The process is messy, even the shell restart may not help.
+  If `chsh -s $(which zsh)` is unsuccessful, run
+
+  ```
+  pkill -KILL -u $USER
+  ```
+
+which is going to result in reboot. After reboot the console should be accepting zsh,
+PATH variable should be set properly. Try `which chezmoi`; success means that all's well.
+
+- Run `./fzf-install`; should be no errors
+
+- Finally, start `./all-install`; it's a longish run, sometimes you'll need to make choices
+  (mostly yes).
+
+### Fedora tips
+
+- Install/reinstall rustup at will
+
+```
+curl https://sh.rustup.rs -sSf | sh
+```
+
+- Uninstall rustup (the toolchains will be gone)
+
+```
+rustup self uninstall
 ```
 
 ### Important extensions
@@ -183,6 +219,9 @@ chezmoi apply --force
 
 - [Switcher](https://github.com/daniellandau/switcher),
   [e.g.org](https://extensions.gnome.org/extension/973/switcher/)
+
+- [AppIndicator and KStatusNotifierItem Support](https://github.com/ubuntu/gnome-shell-extension-appindicator),
+  [e.g.org](https://extensions.gnome.org/extension/615/appindicator-support/)
 
 ## Update apps installed globally with non-native package managers
 

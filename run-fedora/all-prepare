@@ -11,7 +11,7 @@ sudo dnf install -y libstdc++-devel gettext-devel
 sudo dnf install -y clang cmake meson gtest doxygen pipx micro zoxide
 
 curl https://sh.rustup.rs -sSf | sh
-rustup toolchain install nightly
+rustup toolchain install stable
 
 # Ecosystem essentials.
 
