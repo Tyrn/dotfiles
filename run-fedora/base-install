@@ -12,7 +12,7 @@ docker buildx install
 sudo systemctl enable docker
 
 sudo dnf install -y @kde-apps qbittorrent
-sudo dnf install -y gparted fastfetch kdialog direnv tig tmux atool tk
+sudo dnf install -y gparted fastfetch kdialog tig tmux atool tk
 
 yes | cargo binstall du-dust
 yes | cargo binstall bottom
