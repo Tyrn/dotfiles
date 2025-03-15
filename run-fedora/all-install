@@ -17,7 +17,7 @@ set -x
 # ./doom-install
 ./qemu-install
 # ./nix-init
-./racket-install
+# ./racket-install
 ./typst-install
-#chezmoi apply --force
+chezmoi apply --force
 gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FFD700'
