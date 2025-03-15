@@ -5,7 +5,7 @@ set -x
 
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
-sudo dnf install -y mise
+sudo dnf install -y mise zoxide direnv
 mise trust ~
 
 mise use -g chezmoi@latest lazygit@latest

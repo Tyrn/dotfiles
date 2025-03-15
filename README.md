@@ -187,7 +187,7 @@ sudo dracut -f --regenerate-all
 curl -OL "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
 ```
 
-- Run the bootstrap script, which causes reboot in the end
+- Run the bootstrap script
 
 ```
 bash fedora-dotfiles.sh
@@ -212,6 +212,8 @@ which is going to result in reboot. After reboot the console should be accepting
 PATH variable should be set properly. Try `which chezmoi`; success means that all's well.
 
 - Run `./fzf-install`; should be no errors
+
+- Run `./all-prepare`, which causes a reboot
 
 - Finally, start `./all-install`; it's a longish run, sometimes you'll need to make choices
   (mostly yes).
