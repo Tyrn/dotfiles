@@ -202,16 +202,25 @@ cd ~/.local/share/chezmoi/run-fedora
 ```
 
 - First thing, run `./zsh-install`. The process is messy, even the shell restart may not help.
-  If `chsh -s $(which zsh)` is unsuccessful, run
+  Answer yes to the question about replacing bash with zsh, leave the new and pretty
+  default zsh with Ctrl+D. Close and open again the terminal.
+  Answer yes to any questions about zoxide and direnv. If it still won't work
 
   ```
   pkill -KILL -u $USER
   ```
 
-which is going to result in reboot. After reboot the console should be accepting zsh,
-PATH variable should be set properly. Try `which chezmoi`; success means that all's well.
+which is going to result in relogin. After relogin the console should be accepting zsh,
+PATH variable should be set properly. Try `which chezmoi`; success means that all's well,
+and the messy things are over.
 
-- Run `./fzf-install`; should be no errors
+- Run `./fzf-install`; say yes to all, should be no errors
+
+- To activate smart Ctrl+R once and for all, reload zsh without restarting the terminal
+
+```
+omz reload
+```
 
 - Run `./all-prepare`, which causes a reboot
 
