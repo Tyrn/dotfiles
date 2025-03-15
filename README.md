@@ -163,6 +163,24 @@ _NB_ No symlinks so far
 
 ### Install sequence
 
+- Install the system from USB stick
+
+NB Unlike other GUI installers, the initial system settings belong not to the
+installer, but to the first boot. Click anywhere, and you get asked about user
+name, password, etc.
+
+- Update the system
+
+```
+sudo dnf update --refresh
+```
+
+```
+sudo dracut -f --regenerate-all
+```
+
+- Reboot
+
 - Get fedora-dotfiles
 
 ```
