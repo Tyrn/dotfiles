@@ -165,7 +165,7 @@ _NB_ No symlinks so far
 
 - Install the system from USB stick
 
-NB Unlike other GUI installers, the initial system settings belong not to the
+_NB_ Unlike other GUI installers, the initial system settings belong not to the
 installer, but to the first boot. Click anywhere, and you get asked about user
 name, password, etc.
 
@@ -222,7 +222,10 @@ and the messy things are over.
 omz reload
 ```
 
-- Run `./all-prepare`, which causes a reboot
+- Run `./all-prepare`, which eventually causes a reboot
+
+_NB_ Among other things, at the end all-prepare sets user groups. Somehow, it takes
+a lot of time, up to three minutes.
 
 - Finally, start `./all-install`; it's a longish run, sometimes you'll need to make choices
   (mostly yes).
