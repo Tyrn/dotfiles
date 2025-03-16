@@ -19,6 +19,7 @@ yes | cargo binstall tex-fmt
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 #flatpak install flathub org.telegram.desktop
+#flatpak install flathub org.torproject.torbrowser-launcher
 #flatpak install flathub com.vscodium.codium  # flatpak run com.vscodium.codium
 #flatpak install cc.arduino.arduinoide
 #flatpak install flathub us.zoom.Zoom
