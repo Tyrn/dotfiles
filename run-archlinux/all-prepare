@@ -16,17 +16,10 @@ if [ ! -d ~/.zshrc.old ]; then
   cp ~/.zshrc ~/.zshrc.old
 fi
 
-ssh="git@github.com:Tyrn/dotfiles.git"
-https="https://github.com/Tyrn/dotfiles.git"
-
-rm -rf ~/.local/share/chezmoi
-
-chezmoi init "$https"
-
 # Ecosystem essentials.
 
 ../noto-nerd-install
-./admin-add
+#./admin-add
 
 echo "!!! REBOOT !!!"
 sudo shutdown -r now
