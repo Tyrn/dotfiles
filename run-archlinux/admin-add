@@ -11,4 +11,5 @@ yes |sudo pacman -S unixodbc zoxide direnv
 
 ./all-prepare
 
-
+echo "!!! REBOOT !!!"
+sudo shutdown -r now
