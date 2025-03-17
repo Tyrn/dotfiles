@@ -6,3 +6,7 @@ set -x
 ./pacman-add
 ./groups-add
 ./udev-add
+
+yes |sudo pacman -S unixodbc zoxide direnv
+
+

@@ -19,10 +19,10 @@ sudo systemctl enable --now docker
 
 yes |sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty
 
-yes |sudo pacman -S partitionmanager fastfetch kdialog direnv python-pipx mlocate xorg-xinput
+yes |sudo pacman -S partitionmanager fastfetch kdialog python-pipx mlocate xorg-xinput
 yes |sudo pacman -S lazygit tig tmux atool ouch unzip
 
-yes |sudo pacman -S tk unixodbc wxwidgets-common wxwidgets-gtk3
+yes |sudo pacman -S tk wxwidgets-common wxwidgets-gtk3
 
 yes |sudo pacman -S ripgrep fd sd bat exa tree erdtree htop btop bottom dust procs tealdeer
 yes |sudo pacman -S skim tokei difftastic dos2unix
