@@ -4,10 +4,8 @@ set -u
 set -x
 
 # Doom Emacs.
-
-yay -S pyright
-yay -S texlab
+yes |sudo pacman -S pyright texlab
 rm -rf ~/.emacs.d
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
-yay -S emacs-nativecomp
+yes |sudo pacman -S emacs-nativecomp
 doom install

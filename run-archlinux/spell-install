@@ -5,12 +5,6 @@ set -x
 
 # Spell checking.
 
-yay -S aspell
-yay -S aspell-en
-yay -S aspell-es
-yay -S aspell-ru
+yes |sudo pacman -S aspell aspell-en aspell-es aspell-ru
 
-yay -S hunspell
-yay -S hunspell-en_us
-yay -S hunspell-es_es
-yay -S hunspell-ru
+yes |sudo pacman -S hunspell hunspell-en_us hunspell-es_es hunspell-ru
