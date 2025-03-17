@@ -8,8 +8,8 @@ set -x
 
 #./pacman-add  # pacman-add can be run just once!
 
-yes |sudo pacman -S chezmoi zoxide yay micro nix
-yes |sudo pacman -S fakeroot base-devel clang doxygen rustup
+yes |sudo pacman -S chezmoi zoxide yay micro nix doctest cmake mason
+yes |sudo pacman -S fakeroot base-devel clang doxygen rustup catch2 gtest trompeloeil
 rustup toolchain install stable
 
 if [ ! -d ~/.zshrc.old ]; then
