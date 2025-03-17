@@ -9,4 +9,6 @@ set -x
 
 yes |sudo pacman -S unixodbc zoxide direnv
 
+./all-prepare
+
 
