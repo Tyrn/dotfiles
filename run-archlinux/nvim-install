@@ -9,6 +9,8 @@ pipx install adafruit-ampy
 pipx install rshell
 
 # AstroNvim.
+#
+# NB Before starting nvim for the first time, make sure that npm is available.
 
 #yay -S neovim-remote  # (AUR only).
 yes |sudo pacman -S python-pynvim tree-sitter python-jedi neovide
