@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Build essentials, to be installed before everything,
+# including Rust.
+
+#./pacman-add  # pacman-add can be run just once!
+
+yes |sudo pacman -S chezmoi zoxide yay micro nix
+yes |sudo pacman -S fakeroot base-devel clang doxygen rustup
+rustup toolchain install stable
+
+if [ ! -d ~/.zshrc.old ]; then
+  cp ~/.zshrc ~/.zshrc.old
+fi
+
+ssh="git@github.com:Tyrn/dotfiles.git"
+https="https://github.com/Tyrn/dotfiles.git"
+
+rm -rf ~/.local/share/chezmoi
+
+chezmoi init "$https"
+
+# Ecosystem essentials.
+
+../noto-nerd-install
+./admin-add
+
+echo "!!! REBOOT !!!"
+sudo shutdown -r now

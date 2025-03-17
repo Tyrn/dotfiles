@@ -7,7 +7,6 @@ set -x
 # Use multiline: https://unix.stackexchange.com/questions/678930/how-do-you-output-a-multi-line-string-that-includes-slashes-and-other-special-ch
 
 sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
-sudo pacman -S chezmoi zoxide yay micro nix
 
 if ! grep -q appendiX /etc/pacman.conf; then
 printf '\n\n# Custom appendiX to the end of file
@@ -32,13 +31,3 @@ sudo pacman-key --lsign-key 72BF227DD76AE5BF
 
 sudo pacman -Syy
 sudo pacman -S archlinuxcn-keyring 
-
-if [ ! -d ~/.local/share/chezmoi/.git ]; then
-  chezmoi init https://github.com/Tyrn/dotfiles.git
-fi
-
-if [ ! -d ~/.zshrc.old ]; then
-  cp ~/.zshrc ~/.zshrc.old
-fi
-
-chezmoi apply --force
