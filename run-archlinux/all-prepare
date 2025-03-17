@@ -20,6 +20,3 @@ fi
 
 ../noto-nerd-install
 #./admin-add
-
-echo "!!! REBOOT !!!"
-sudo shutdown -r now
