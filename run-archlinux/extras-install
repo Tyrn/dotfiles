@@ -7,6 +7,7 @@ set -x
 
 yes |sudo pacman -S google-chrome
 yes |sudo pacman -S qutebrowser
+yes |sudo pacman -S tor-browser-bin
 yes |sudo pacman -S geany geany-plugins retext foliate qbittorrent
 yes |sudo pacman -S warpinator scrcpy vorbis-tools pandoc-bin
 yes |cargo binstall tex-fmt
