@@ -3,6 +3,9 @@
 set -u
 set -x
 
+cargo binstall mise
+mise trust ~
+
 rustup component add rust-analyzer
 cargo install cargo-binstall
 yes |cargo binstall cargo-update
