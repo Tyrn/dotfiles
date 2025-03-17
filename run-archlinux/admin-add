@@ -9,7 +9,20 @@ set -x
 
 yes |sudo pacman -S unixodbc zoxide direnv
 
-./all-prepare
+# Build essentials, to be installed before everything,
+# including Rust.
+
+yes |sudo pacman -S chezmoi yay micro nix doctest cmake meson
+yes |sudo pacman -S fakeroot base-devel clang doxygen rustup catch2 gtest trompeloeil
+rustup toolchain install stable
+
+if [ ! -d ~/.zshrc.old ]; then
+  cp ~/.zshrc ~/.zshrc.old
+fi
+
+# Ecosystem essentials.
+
+../noto-nerd-install
 
 echo "!!! REBOOT !!!"
 sudo shutdown -r now
