@@ -3,7 +3,7 @@
 set -u
 set -x
 
-cargo binstall mise
+yes |sudo pacman -S mise
 mise trust ~
 
 rustup component add rust-analyzer
