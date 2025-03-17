@@ -10,9 +10,7 @@ rustup component add rust-analyzer
 cargo install cargo-binstall
 yes |cargo binstall cargo-update
 
-yay -S docker
-yay -S docker-compose
-yay -S docker-buildx
+yes |sudo pacman -S docker docker-compose docker-buildx
 
 docker buildx install
 sudo systemctl enable --now docker
