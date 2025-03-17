@@ -159,6 +159,46 @@ $ systemctl disable --user plasma-custom-wm.service
 
 _NB_ No symlinks so far
 
+## EndeavourOS
+
+### Install Sequence
+
+- Install the system from USB stick
+
+- Update system
+
+```
+sudo pacman -Syu
+```
+
+- Bootstrap dotfiles
+
+```
+sudo pacman -S chezmoi
+```
+
+```
+chezmoi init https://github.com/Tyrn/dotfiles.git
+```
+
+or, if it's your active account
+
+```
+chezmoi init git@github.com:Tyrn/dotfiles.git
+```
+
+```
+cd ~/.local/share/chezmoi/run-archlinux
+```
+
+- Run `./admin-add`
+
+- Run `./zsh-install`
+
+- Run `./fzf-install`
+
+- Run `./all-install`
+
 ## Fedora
 
 ### Install sequence
