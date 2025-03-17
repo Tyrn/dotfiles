@@ -15,9 +15,11 @@ yes |sudo pacman -S docker docker-compose docker-buildx
 docker buildx install
 sudo systemctl enable --now docker
 
+sudo pacman -S xorg-input
+
 yes |sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty
 
-yes |sudo pacman -S partitionmanager fastfetch kdialog python-pipx mlocate xorg-xinput
+yes |sudo pacman -S partitionmanager fastfetch kdialog python-pipx mlocate
 yes |sudo pacman -S lazygit tig tmux atool ouch unzip
 
 yes |sudo pacman -S tk wxwidgets-common wxwidgets-gtk3
