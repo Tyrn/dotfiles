@@ -8,7 +8,7 @@ set -x
 
 #./pacman-add  # pacman-add can be run just once!
 
-sudo pacman -S chezmoi yay micro nix doctest cmake mason
+sudo pacman -S chezmoi yay micro nix doctest cmake meson
 sudo pacman -S fakeroot base-devel clang doxygen rustup catch2 gtest trompeloeil
 rustup toolchain install stable
 
