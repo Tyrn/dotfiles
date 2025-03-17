@@ -15,7 +15,7 @@ yes |sudo pacman -S docker docker-compose docker-buildx
 docker buildx install
 sudo systemctl enable --now docker
 
-sudo pacman -S xorg-input
+#sudo pacman -S kdialog
 
 yes |sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty
 
