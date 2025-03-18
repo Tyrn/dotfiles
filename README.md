@@ -2,6 +2,8 @@
 
 ## Manjaro Linux workstation
 
+_As of 2025-03-17, AUR free setup_
+
 - Follow the instructions for EndeavourOS
 
 _NB_ If you experience a general trust trouble, [1](https://forum.manjaro.org/t/update-error-failed-to-commit-transaction/150638),
@@ -12,6 +14,8 @@ $ sudo pacman-key --init
 $ sudo pacman-key --populate archlinux manjaro
 $ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
 ```
+
+- Later on, see `pacman-add` on adoption of unofficial repositories
 
 ### If you want Plasma KDE + i3 on X11
 
@@ -92,6 +96,8 @@ cd ~/.local/share/chezmoi/run-archlinux
   ```
 
 - Run `./all-install`
+
+- Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
 ## Fedora
 
@@ -253,7 +259,7 @@ rustup self uninstall
   sudo blkid -o list
   ```
 
-  - Upload the system
+  - Upload the system to the stick. Be careful about the `of` argument!
 
   ```
   $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
