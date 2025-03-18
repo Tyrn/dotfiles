@@ -16,7 +16,11 @@ pipx install rshell
 # NB Before starting nvim for the first time, make sure that npm is available.
 
 #yay -S neovim-remote  # (AUR only).
-yes |sudo pacman -S npm
+
+if [ ! "$(command -v npm)" ]; then
+    yes |sudo pacman -S npm
+fi
+
 yes |sudo pacman -S python-pynvim tree-sitter python-jedi neovide
 
 sudo rm -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
