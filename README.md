@@ -195,8 +195,6 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Run `./zsh-install`
 
-- Run `./fzf-install`
-
 - Run `./all-install`
 
 ## Fedora
