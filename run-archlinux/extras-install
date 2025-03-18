@@ -10,9 +10,14 @@ yes |sudo pacman -S qutebrowser
 yes |sudo pacman -S tor-browser-bin
 yes |sudo pacman -S geany geany-plugins retext foliate qbittorrent
 yes |sudo pacman -S warpinator scrcpy vorbis-tools pandoc-bin
+yes |sudo pacman -S vscodium
+yes |sudo pacman -S arduino-ide
+yes |sudo pacman -S zoom
+#yes |sudo pacman -S kicad kicad-library kicad-library-3d python-kikit
+
 yes |cargo binstall tex-fmt
-# sudo pacman -S evince
-# sudo pacman -S qmmp
+#sudo pacman -S evince
+#sudo pacman -S qmmp
 #
 #     yay -S doublecmd-qt5
 #     yay -S fontmatrix  # Not recommended before adding archlinuxcn repo (due to qt5-webkit dependency).
@@ -37,7 +42,6 @@ yes |cargo binstall tex-fmt
 #     yay -S ocenaudio-bin  # Audio editor.
 #     yay -S snd  # Audio editor.
 #     yay -S pulseview-git
-#     yay -S kicad kicad-library kicad-library-3d python-kikit
 #     yay -S zoom
 #     yay -S yacreader-bin
 #     yay -S esplorer
