@@ -1,4 +1,6 @@
-# Manjaro Linux workstation config
+# Making life easier with dotfiles
+
+## Manjaro Linux workstation
 
 - Follow the instructions for EndeavourOS
 
@@ -11,7 +13,7 @@ $ sudo pacman-key --populate archlinux manjaro
 $ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
 ```
 
-## If you want Plasma KDE + i3 on X11
+### If you want Plasma KDE + i3 on X11
 
 - Check session type, because you can't have it on Wayland. Must be `x11`
 
@@ -61,7 +63,7 @@ sudo pacman -S chezmoi
 chezmoi init https://github.com/Tyrn/dotfiles.git
 ```
 
-or, if it's your active account
+or, if it's your active GitHub account
 
 ```
 chezmoi init git@github.com:Tyrn/dotfiles.git
@@ -82,6 +84,12 @@ cd ~/.local/share/chezmoi/run-archlinux
 - Run `./zsh-install`. Answer _yes_ to the question about replacing bash
   with zsh, then leave the new and pretty default zsh with Ctrl+D. Close
   and open again the terminal.
+
+  - You can reload the shell (zsh) any time without closing the terminal
+
+  ```
+  omz reload
+  ```
 
 - Run `./all-install`
 
