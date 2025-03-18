@@ -57,7 +57,7 @@ If your user configuration is on `dotfiles`, install it right away:
 chezmoi apply -v
 ```
 
-If the [support packages](https://github.com/Tyrn/arch-chronicle/blob/master/Usage/Vim.md#plugin-functionality-support)
+If the [support packages](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/Vim.md#plugin-functionality-support)
 are already installed,
 
 ```

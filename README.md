@@ -265,7 +265,7 @@ rustup self uninstall
   $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
   ```
 
-- [**Assorted notes**](https://github.com/Tyrn/arch-chronicle/tree/master/Usage)
+- [**Assorted notes**](https://github.com/Tyrn/dotfiles/tree/main/messy-notes)
 
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
 

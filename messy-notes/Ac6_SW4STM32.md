@@ -1,15 +1,19 @@
 ## CubeMX SW4STM32 (Ac6) Eclipse project
+
 _Arch Linux Take_
 
 ### Installation
+
 #### Install Eclipse (legacy)
+
 ```
 $ yaourt -S eclipse-java
 ```
+
 Eclipse upgrade is destructive, so `/etc/pacman.conf`:
 `IgnorePkg  = eclipse-java eclipse-common`
 
-*NB* `eclipse-php` or `eclipse-cpp` will do; the latter has CDT plugins preinstalled.
+_NB_ `eclipse-php` or `eclipse-cpp` will do; the latter has CDT plugins preinstalled.
 
 #### Install Eclipse CDT plugin (legacy)
 
@@ -28,9 +32,11 @@ http://ac6-tools.com/Eclipse-updates/org.openstm32.system-workbench.update-site-
 [Install Emb Sys Registers plugin](https://mcuoneclipse.com/2017/07/26/embsysregview-0-2-6-for-eclipse-neon-and-oxygen/) (In `/usr/lib/eclipse/plugins`)
 
 #### Install STM32CubeMX (legacy)
+
 ```
 yaourt -S stm32cubemx
 ```
+
 The utility is also available as an Eclipse plugin; the standalone application may be easier on your system, though.
 
 NB Manual installaiton can be less troublesome:
@@ -38,21 +44,26 @@ NB Manual installaiton can be less troublesome:
 - Unpack factory archive and install in `~/STM32CubeMX`
 
 - Create `/usr/bin/stm32cubemx`:
+
 ```
 #/usr/bin/env bash
 exec $HOME/STM32CubeMX/STM32CubeMX
 ```
+
 - `sudo chmod +x /usr/bin/stm32cubemx`
 
 #### Install STM32CubeIDE
 
 - [Download](https://aur.archlinux.org/packages/stm32cubeide) (Pinned Comment)
+
 ```
 $ yay -S stm32cubeide
 ```
+
 - Install [Linux Tools](http://wiki.eclipse.org/Linux_Tools_Project/PluginInstallHelp) Eclipse Plugin, `http://download.eclipse.org/linuxtools/update` (C/C++ Call Graph Visualization and a lot more)
 
 - Install ST-Link and put in place [/etc/udev/rules.d/69-probe-rs.rules](https://probe.rs/docs/getting-started/probe-setup/):
+
 ```
 # Copy this file to /etc/udev/rules.d/
 # If rules fail to reload automatically, you can refresh udev rules
@@ -61,7 +72,7 @@ $ yay -S stm32cubeide
 # This rules are based on the udev rules from the OpenOCD project, with unsupported probes removed.
 # See http://openocd.org/ for more details.
 #
-# This file is available under the GNU General Public License v2.0 
+# This file is available under the GNU General Public License v2.0
 
 ACTION!="add|change", GOTO="probe_rs_rules_end"
 
@@ -114,12 +125,16 @@ ATTRS{product}=="*CMSIS-DAP*", MODE="660", GROUP="plugdev", TAG+="uaccess"
 
 LABEL="probe_rs_rules_end"
 ```
+
 If you don't care to relogin:
+
 ```
 $ sudo udevadm control --reload
 $ sudo udevadm trigger
 ```
+
 ST-Link, at last:
+
 ```
 $ yay -S stlink-git
 $ st-info --probe
@@ -127,12 +142,15 @@ $ st-info --probe
   chipid:     0x410    ;; Must not be zero.
 ...
 ```
-- Install STLinkUpgrade (Disconnect from the Pill before running ``$ STLinkUpgrade``!)
+
+- Install STLinkUpgrade (Disconnect from the Pill before running `$ STLinkUpgrade`!)
+
 ```
 $ yay -S stsw-link007
 ```
 
 ### Configuration
+
 #### Create CubeMX project
 
 Resources:
@@ -141,9 +159,9 @@ Resources:
 
 [FreeRTOS](https://habrahabr.ru/post/249273/) (5 parts, Russian)
 
-[Carmine Noviello. *Mastering STM32*, examples](https://github.com/cnoviello/mastering-stm32)
+[Carmine Noviello. _Mastering STM32_, examples](https://github.com/cnoviello/mastering-stm32)
 
-[Kento Watanabe. *Introduction to STM32 ARM Microcontroller with STM HAL Library & SW4STM32*, examples](https://github.com/meerstern/stm32introductory)
+[Kento Watanabe. _Introduction to STM32 ARM Microcontroller with STM HAL Library & SW4STM32_, examples](https://github.com/meerstern/stm32introductory)
 
 Example:
 
@@ -152,8 +170,7 @@ Example:
 Guidelines:
 
 - Select project location inside Eclipse workspace; the project gets imported in place.
-- In case of STLink do *not* forget to set `Pinout > Configuration > Peripherals > SYS > Debug` to `Serial Wire`. See `[project].xml` in your project directory.
-
+- In case of STLink do _not_ forget to set `Pinout > Configuration > Peripherals > SYS > Debug` to `Serial Wire`. See `[project].xml` in your project directory.
 
 #### Import and configure Eclipse SW4STM32 project
 
@@ -219,6 +236,7 @@ Guidelines:
 - Use `printf()` for tracing; manually added `\n` is mandatory.
 
 ### TDD
+
 #### CppUTest
 
 [CppUTest](https://cpputest.github.io/), [CppUTest manual](https://cpputest.github.io/manual.html), [CppUTest mocking manual](https://cpputest.github.io/mocking_manual.html)
@@ -227,7 +245,7 @@ Guidelines:
 
 [Unity](http://www.throwtheswitch.org/white-papers/unity-intro.html), [Unity on GitHub](https://github.com/ThrowTheSwitch/Unity), [docs](https://github.com/ThrowTheSwitch/Unity/tree/master/docs)
 
-#### [Ceedling](https://github.com/Tyrn/arch-chronicle/blob/master/Usage/Ceedling.md)
+#### [Ceedling](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/Ceedling.md)
 
 #### Fake Function Framework (fff)
 
@@ -236,6 +254,7 @@ Guidelines:
 [CMock vs fff](http://www.electronvector.com/blog/cmock-vs-fff-a-comparison-of-c-mocking-frameworks), [fff plugin for Ceedling](http://www.electronvector.com/blog/more-flexible-mocks-for-ceedling-with-the-fake-function-framework-fff), [GitHub](https://github.com/ElectronVector/fake_function_framework)
 
 ### Bits and pieces
+
 #### FreeRTOS
 
 [FreeRTOS](http://blog.mbedded.ninja/programming/operating-systems/freertos), ([The embedded engineering website that’s got your back](http://blog.mbedded.ninja/)), [API Reference](https://www.freertos.org/a00106.html), [CMSIS-RTOS](https://stackoverflow.com/questions/41858814/difference-between-freertos-and-cmsis-rtx)
