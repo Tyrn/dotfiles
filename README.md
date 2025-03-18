@@ -1,69 +1,9 @@
 # Manjaro Linux workstation config
 
-For Plasma KDE and i3; also good for RPi. _X11 only_, so far!
+- Follow the instructions for EndeavourOS
 
-- Create USB stick
-
-  - Plug in, but do not mount the stick; check
-
-  ```
-  $ sudo fdisk -l
-  ```
-
-  - Upload the system
-
-  ```
-  $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
-  ```
-
-- Install Manjaro from USB stick
-
-- Check session type
-
-```
-$ echo $XDG_SESSION_TYPE
-x11
-```
-
-- Update the system
-
-```
-$ sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
-```
-
-- Another take on update, to make it faster
-
-```
-$ sudo pacman-mirrors --geoip && sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
-```
-
-- _Reboot_
-
-- Install and bootstrap `chezmoi`
-
-```
-$ sudo pacman -S chezmoi
-$ chezmoi init https://github.com/Tyrn/dotfiles.git
-```
-
-- Run the admin script. In case of success, **reboot** and jump right to **Check** and **Install the things**.
-  In case of trouble, feel free to read the notes.
-
-```
-$ cd ~/.local/share/chezmoi/run-archlinux
-$ [yes |] ./admin-add
-```
-
-- In case of _signature is unknown trust_, run
-
-```
-$ sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
-```
-
-or
-
-- General trust trouble, [1](https://forum.manjaro.org/t/update-error-failed-to-commit-transaction/150638),
-  [2](https://forum.manjaro.org/t/error-failed-to-commit-transaction-invalid-or-corrupted-package-pgp-signature/150830)
+_NB_ If you experience a general trust trouble, [1](https://forum.manjaro.org/t/update-error-failed-to-commit-transaction/150638),
+[2](https://forum.manjaro.org/t/error-failed-to-commit-transaction-invalid-or-corrupted-package-pgp-signature/150830)
 
 ```
 $ sudo pacman-key --init
@@ -71,93 +11,33 @@ $ sudo pacman-key --populate archlinux manjaro
 $ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
 ```
 
-- Install [Chezmoi](https://www.chezmoi.io/):
+## If you want Plasma KDE + i3 on X11
+
+- Check session type, because you can't have it on Wayland. Must be `x11`
 
 ```
-$ sudo pacman -S chezmoi zoxide yay micro [nix]
-```
-
-- Init:
-
-```
-$ chezmoi init https://github.com/Tyrn/dotfiles.git
-```
-
-The repository is found in `~/.local/share/chezmoi`
-
-- Deploy:
-
-```
-$ cp ~/.zshrc ~/.zshrc.old
-$ chezmoi apply -v
-```
-
-- Set groups:
-
-```
-$ cd ~/.local/share/chezmoi/run-archlinux
-run-archlinux $ ./groups-add
-```
-
-- Set udev rules:
-
-```
-run-archlinux $ ./udev-add
-```
-
-- _Reboot!_
-
-- Add repositories (use `sudo micro /etc/pacman.conf`, Ctrl+C > Ctrl+Shift+V):
-
-  - [archlinuxcn repo](https://wiki.archlinux.org/title/unofficial_user_repositories#archlinuxcn) (highly recommended)
-  - [andontie-aur repo](https://wiki.archlinux.org/title/unofficial_user_repositories#andontie-aur) (highly recommended)
-
-```
-[archlinuxcn]
-Server = http://repo.archlinuxcn.org/$arch
-## or install archlinuxcn-mirrorlist-git and use the mirrorlist
-#Include = /etc/pacman.d/archlinuxcn-mirrorlist
-
-[andontie-aur]
-Server = https://aur.andontie.net/$arch
-```
-
-- _archlinuxcn-keyring_ trouble: [archlinuxcn issue 3557](https://github.com/archlinuxcn/repo/issues/3557)
-
-```
-sudo pacman-key --lsign-key "farseerfc@archlinux.org"
-```
-
-- Update repositories:
-
-```
-$ yay -Syy
-```
-
-- **Check** `extras-install` (uncomment whatever you see fit).
-  Don't forget to commit changes, or do `git reset --hard` later.
-
-- **Install the things** `dotfiles` are all about:
-
-```
-run-archlinux $ yes | ./all-install
+echo $XDG_SESSION_TYPE
 ```
 
 - Enable custom WM for KDE:
 
 ```
-$ systemctl mask --user plasma-kwin_x11
-$ systemctl enable --user plasma-custom-wm.service
+systemctl mask --user plasma-kwin_x11
+```
+
+```
+systemctl enable --user plasma-custom-wm.service
 ```
 
 - Back to KWin:
 
 ```
-$ systemctl unmask --user plasma-kwin_x11
-$ systemctl disable --user plasma-custom-wm.service
+systemctl unmask --user plasma-kwin_x11
 ```
 
-_NB_ No symlinks so far
+```
+systemctl disable --user plasma-custom-wm.service
+```
 
 ## EndeavourOS
 
@@ -165,7 +45,7 @@ _NB_ No symlinks so far
 
 - Install the system from USB stick
 
-- Update system
+- Update the system
 
 ```
 sudo pacman -Syu
@@ -187,13 +67,21 @@ or, if it's your active account
 chezmoi init git@github.com:Tyrn/dotfiles.git
 ```
 
+- Now the installation scripts are in place. Go to them (you'll need it more than
+  once down the road)
+
 ```
 cd ~/.local/share/chezmoi/run-archlinux
 ```
 
-- Run `./admin-add`
+- Keep an eye on your installation scripts output. Sometimes you'll
+  have to say _yes_ or _Enter_
 
-- Run `./zsh-install`
+- Run `./admin-add` (expect reboot)
+
+- Run `./zsh-install`. Answer _yes_ to the question about replacing bash
+  with zsh, then leave the new and pretty default zsh with Ctrl+D. Close
+  and open again the terminal.
 
 - Run `./all-install`
 
@@ -233,16 +121,16 @@ bash fedora-dotfiles.sh
 
 _NB_ chezmoi is already installed via mise, zsh-install script relies on that!
 
-- Now the installation scripts are in place. Go to them
+- Now the installation scripts are in place. Go to them (you'll need it more than
+  once down the road)
 
 ```
 cd ~/.local/share/chezmoi/run-fedora
 ```
 
-- First thing, run `./zsh-install`. The process is messy, even the shell restart may not help.
-  Answer yes to the question about replacing bash with zsh, leave the new and pretty
-  default zsh with Ctrl+D. Close and open again the terminal.
-  Answer yes to any questions about zoxide and direnv. If it still won't work
+- Run `./zsh-install`. Answer _yes_ to the question about replacing bash
+  with zsh, leave the new and pretty default zsh with Ctrl+D. Close and open again
+  the terminal. In an improbable case that it still won't work
 
   ```
   pkill -KILL -u $USER
@@ -252,21 +140,19 @@ which is going to result in relogin. After relogin the console should be accepti
 PATH variable should be set properly. Try `which chezmoi`; success means that all's well,
 and the messy things are over.
 
-- Run `./fzf-install`; say yes to all, should be no errors
-
-- To activate smart Ctrl+R once and for all, reload zsh without restarting the terminal
+- You can reload the shell (zsh) any time without closing the terminal
 
 ```
 omz reload
 ```
 
-- Run `./all-prepare`, which eventually causes a reboot
+- Run `./all-prepare`, (expect reboot)
 
 _NB_ Among other things, at the end all-prepare sets user groups. Somehow, it takes
 a lot of time, up to three minutes.
 
-- Finally, start `./all-install`; it's a longish run, sometimes you'll need to make choices
-  (mostly yes).
+- Run `./all-install`; it's a longish run, sometimes you'll need to make choices
+  (mostly _yes_).
 
 ### Fedora tips
 
@@ -345,6 +231,26 @@ rustup self uninstall
 
 ## Miscellany
 
+- Create a USB stick
+
+  - Plug in, but do not mount the stick; check
+
+  ```
+  sudo fdisk -l
+  ```
+
+  - If you want to check the stick label
+
+  ```
+  sudo blkid -o list
+  ```
+
+  - Upload the system
+
+  ```
+  $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
+  ```
+
 - [**Assorted notes**](https://github.com/Tyrn/arch-chronicle/tree/master/Usage)
 
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
@@ -380,7 +286,10 @@ $ who
 danny  pts/0        Nov 6 13:53 (10.1.6.121)
 danny  pts/1        Nov 5 12:30 (10.1.6.165)
 danny  pts/2        Nov 4 12:33 (10.1.6.197)
-$ pkill -KILL -u $USER
+```
+
+```
+pkill -KILL -u $USER
 ```
 
 - Make GRUB menu visible
@@ -413,7 +322,7 @@ $ ~/.fzf/install
 - (Re)install AstroNvim
 
 ```
-~/.local/share/chezmoi/run-archlinux/nvim-reinstall
+~/.local/share/chezmoi/run-archlinux/nvim-install
 ```
 
 - Troubleshoot AstroNvim
@@ -443,7 +352,7 @@ $ ssh-keygen
 
 - Create a new SSH key in GitHub web interface and copy/paste the `~/.ssh/id_rsa.pub` contents
 
-- Say `yes` once asked _Are you sure..._ (the question is never repeated):
+- Say _yes_ once asked _Are you sure..._ (the question is never repeated):
 
 ```
 $ git clone git@github.com: ...

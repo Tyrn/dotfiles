@@ -3,6 +3,9 @@
 set -u
 set -x
 
+# This script adds unofficial repositories to /etc/pacman.conf
+# It can be run securely multiple times.
+
 # Use tee: https://stackoverflow.com/questions/84882/sudo-echo-something-etc-privilegedfile-doesnt-work
 # Use multiline: https://unix.stackexchange.com/questions/678930/how-do-you-output-a-multi-line-string-that-includes-slashes-and-other-special-ch
 
