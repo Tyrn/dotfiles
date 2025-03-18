@@ -63,7 +63,7 @@ sudo pacman -S chezmoi
 chezmoi init https://github.com/Tyrn/dotfiles.git
 ```
 
-or, if it's your active GitHub account
+or, if it's your active GitHub account already
 
 ```
 chezmoi init git@github.com:Tyrn/dotfiles.git
