@@ -3,6 +3,9 @@
 set -u
 set -x
 
+# The script also serves the clean reinstall,
+# can be run securely multiple times.
+
 # MicroPython.
 
 pipx install adafruit-ampy
