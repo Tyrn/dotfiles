@@ -22,6 +22,8 @@ fi
 
 # Ecosystem essentials.
 
+../locale-to-en
+
 ../noto-nerd-install
 
 echo "!!! REBOOT !!!"
