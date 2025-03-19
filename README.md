@@ -85,9 +85,9 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Run `./admin-add` (expect reboot)
 
-- Run `./zsh-install`. Answer _yes_ to the question about replacing bash
-  with zsh, then leave the new and pretty default zsh with Ctrl+D. Close
-  and open again the terminal.
+- Run `./zsh-install`. Answer _yes_ to everything, then leave the new and pretty
+  default zsh with Ctrl+D. Wait till the end and close the terminal. Open it any
+  time and enjoy [the fun](https://github.com/ohmyzsh/ohmyzsh/wiki).
 
   - You can reload the shell (zsh) any time without closing the terminal
 
@@ -142,23 +142,15 @@ _NB_ chezmoi is already installed via mise, zsh-install script relies on that!
 cd ~/.local/share/chezmoi/run-fedora
 ```
 
-- Run `./zsh-install`. Answer _yes_ to the question about replacing bash
-  with zsh, leave the new and pretty default zsh with Ctrl+D. Close and open again
-  the terminal. In an improbable case that it still won't work
+- Run `./zsh-install`. Answer _yes_ to everything, then leave the new and pretty
+  default zsh with Ctrl+D. Wait till the end and close the terminal. Open it any
+  time and enjoy [the fun](https://github.com/ohmyzsh/ohmyzsh/wiki).
+
+  - You can reload the shell (zsh) any time without closing the terminal
 
   ```
-  pkill -KILL -u $USER
+  omz reload
   ```
-
-which is going to result in relogin. After relogin the console should be accepting zsh,
-PATH variable should be set properly. Try `which chezmoi`; success means that all's well,
-and the messy things are over.
-
-- You can reload the shell (zsh) any time without closing the terminal
-
-```
-omz reload
-```
 
 - Run `./all-prepare`, (expect reboot)
 
