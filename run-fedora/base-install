@@ -4,7 +4,7 @@ set -u
 set -x
 
 rustup component add rust-analyzer
-cargo install cargo-binstall
+cargo install --locked cargo-binstall
 yes | cargo binstall cargo-update
 
 sudo dnf install -y docker docker-compose docker-buildx
