@@ -17,7 +17,7 @@ sudo systemctl enable --now docker
 
 #sudo pacman -S kdialog
 
-yes |sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty
+yes |sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty taglib1
 
 yes |sudo pacman -S partitionmanager fastfetch python-pipx mlocate
 yes |sudo pacman -S lazygit tig tmux atool ouch unzip
