@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-printf 'LANG=en_US.UTF-8
+locale='LANG=en_US.UTF-8
 LC_ADDRESS=en_US.UTF-8
 LC_IDENTIFICATION=en_US.UTF-8
 LC_MEASUREMENT=en_US.UTF-8
@@ -9,4 +9,11 @@ LC_NAME=en_US.UTF-8
 LC_NUMERIC=en_US.UTF-8
 LC_PAPER=en_US.UTF-8
 LC_TELEPHONE=en_US.UTF-8
-LC_TIME=en_US.UTF-8\n' | sudo tee /etc/default/locale
+LC_TIME=en_US.UTF-8\n'
+
+default="/etc/default/locale"
+conf="/etc/locale.conf"
+
+printf "\n$default:\n\n$locale" | sudo tee "$default"
+
+printf "\n$conf:\n\n$locale" | sudo tee "$conf"
