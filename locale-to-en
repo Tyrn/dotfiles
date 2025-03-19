@@ -14,6 +14,8 @@ LC_TIME=en_US.UTF-8\n'
 default="/etc/default/locale"
 conf="/etc/locale.conf"
 
-printf "\n$default:\n\n$locale" | sudo tee "$default"
+printf "\n$default:\n\n"
+printf "$locale" | sudo tee "$default"
 
-printf "\n$conf:\n\n$locale" | sudo tee "$conf"
+printf "\n$conf:\n\n"
+printf "$locale" | sudo tee "$conf"
