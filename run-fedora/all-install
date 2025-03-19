@@ -21,3 +21,4 @@ set -x
 ./typst-install
 chezmoi apply --force
 gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FFD700'
+gsettings set org.gnome.desktop.sound allow-volume-above-100-percent 'true'
