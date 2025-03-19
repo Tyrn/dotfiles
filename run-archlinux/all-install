@@ -6,11 +6,11 @@ set -x
 # ./rwasm-install
 ./base-install
 ./extras-install
-# ./flutter-install
+# ./flutter-install  # Not yet ready without AUR.
 ./spell-install
 ./nvim-install
-# ./doom-install
-# ./qemu-install
+# ./doom-install  # Probably outdated.
+./qemu-install
 # ./nix-init
 # ./racket-install
 ./typst-install
