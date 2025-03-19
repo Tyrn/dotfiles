@@ -7,8 +7,7 @@ yes |sudo pacman -S mise
 mise trust ~
 
 rustup component add rust-analyzer
-cargo install cargo-binstall
-yes |cargo binstall cargo-update
+yes |sudo pacman -S cargo-binstall cargo-update
 
 yes |sudo pacman -S docker docker-compose docker-buildx
 
