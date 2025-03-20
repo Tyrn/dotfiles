@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+
+locale='[ids]
+*
+
+[main]
+compose = layer(meta)
+capslock = layer(nav)
+
+[nav]
+h = left
+k = up
+j = down
+l = right
+р = left
+л = up
+о = down
+д = right\n'
+
+conf="/etc/keyd/default.conf"
+
+printf "\n$conf:\n\n"
+printf "$locale" | sudo tee "$conf"
+
+set -x
+
+sudo pacman -S keyd
+
+sudo systemctl enable --now keyd
