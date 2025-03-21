@@ -29,7 +29,8 @@ set -x
 if command -v pacman &> /dev/null; then
   sudo pacman -S keyd
 else
-  echo "No support yet for this package manager"
+  set +x
+  echo "Arch Linux only, so far"
   exit 1
 fi
 
