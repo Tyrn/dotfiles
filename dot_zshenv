@@ -9,7 +9,7 @@ export GTEST_COLOR=1
 # The following exports moved from ~/.xprofile; XDG_DATA_DIRS is ruining KDE panel, somehow.
 export TERMINAL=/usr/bin/alacritty
 
-export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
+export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
 export PATH=$HOME/micropython/ports/unix/build-standard:$PATH
 export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH
 export PATH=$HOME/.local/share/flutterup/bin:$PATH
