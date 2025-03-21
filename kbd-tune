@@ -26,6 +26,11 @@ printf "$locale" | sudo tee "$conf"
 
 set -x
 
-sudo pacman -S keyd
+if command -v pacman &> /dev/null; then
+  sudo pacman -S keyd
+else
+  echo "No support yet for this package manager"
+  exit 1
+fi
 
 sudo systemctl enable --now keyd
