@@ -23,7 +23,11 @@ Server = http://repo.archlinuxcn.org/$arch
 #Include = /etc/pacman.d/archlinuxcn-mirrorlist
 
 [andontie-aur]
-Server = https://aur.andontie.net/$arch' | sudo tee -a /etc/pacman.conf
+Server = https://aur.andontie.net/$arch
+
+[ownstuff]
+#Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
+Server = https://martchus.dyn.f3l.de/repo/arch/$repo/os/$arch' | sudo tee -a /etc/pacman.conf
 fi
 
 # Required by archlinuxcn
@@ -31,6 +35,9 @@ sudo pacman-key --lsign-key "farseerfc@archlinux.org"
 # Required by andontie-aur
 sudo pacman-key --recv-key 72BF227DD76AE5BF
 sudo pacman-key --lsign-key 72BF227DD76AE5BF
+# Required by ownstuff
+sudo pacman-key --recv-key B9E36A7275FC61B464B67907E06FE8F53CDC6A4C
+sudo pacman-key --lsign-key B9E36A7275FC61B464B67907E06FE8F53CDC6A4C
 
 sudo pacman -Syy
 sudo pacman -S archlinuxcn-keyring 
