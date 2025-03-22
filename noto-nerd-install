@@ -15,9 +15,9 @@ echo "Starting download $nerd_name nerd font"
 cd "$nerd_download_dir"
 
 if ! test -e "$nerd_file"; then
-    if [ "$(command -v cnerd_url)" ]; then
+    if [ "$(command -v curl)" ]; then
         echo "$nerd_url"
-        cnerd_url -OL "$nerd_url"
+        curl -OL "$nerd_url"
     elif [ "$(command -v wget)" ]; then
         echo "$nerd_url"
         wget "$nerd_url"
@@ -44,9 +44,9 @@ echo "Starting download $slav_name nerd font"
 cd "$slav_download_dir"
 
 if ! test -e "$slav_file"; then
-    if [ "$(command -v cslav_url)" ]; then
+    if [ "$(command -v curl)" ]; then
         echo "$slav_url"
-        cslav_url -OL "$slav_url"
+        curl -OL "$slav_url"
     elif [ "$(command -v wget)" ]; then
         echo "$slav_url"
         wget "$slav_url"
