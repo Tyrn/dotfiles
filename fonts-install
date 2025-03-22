@@ -3,6 +3,8 @@
 echo "Creating fonts folder: ${HOME}/.fonts"
 mkdir -p  "$HOME/.fonts"
 
+# A behemoth: Noto Nerd fonts.
+
 nerd_name="Noto"
 nerd_file="$nerd_name.zip"
 nerd_url="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$nerd_file"

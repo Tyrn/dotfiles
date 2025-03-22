@@ -24,7 +24,7 @@ fi
 
 ../locale-to-en
 
-../noto-nerd-install
+../fonts-install
 
 echo "!!! REBOOT !!!"
 sudo shutdown -r now

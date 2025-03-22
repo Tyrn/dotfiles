@@ -15,7 +15,7 @@ rustup toolchain install stable
 
 # Ecosystem essentials.
 
-../noto-nerd-install
+../fonts-install
 ./admin-add
 
 echo "!!! REBOOT !!!"

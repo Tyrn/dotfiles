@@ -5,7 +5,7 @@ run-fedora/
 locale-to-en
 kbd-tune
 nerd-fonts-install
-noto-nerd-install
+fonts-install
 
 ## Neovim
 #**/autoload/
