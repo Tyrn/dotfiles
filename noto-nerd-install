@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
-font_name="Noto"
-font_file="$font_name.zip"
-url="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$font_file"
+nerd_name="Noto"
+nerd_file="$nerd_name.zip"
+nerd_url="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$nerd_file"
 
 download_dir="$HOME/Downloads/Fonts/Nerd"
 mkdir -p "$download_dir"
 
-echo "Starting download $font_name nerd font"
+echo "Starting download $nerd_name nerd font"
 
 cd "$download_dir"
 
-if ! test -e "$font_file"; then
-    if [ "$(command -v curl)" ]; then
-        echo "$url"
-        curl -OL "$url"
+if ! test -e "$nerd_file"; then
+    if [ "$(command -v cnerd_url)" ]; then
+        echo "$nerd_url"
+        cnerd_url -OL "$nerd_url"
     elif [ "$(command -v wget)" ]; then
-        echo "$url"
-        wget "$url"
+        echo "$nerd_url"
+        wget "$nerd_url"
     else
         echo "We cannot find the curl and wget command. First, install the curl and wget command, one of them."
         exit 1
@@ -26,7 +26,7 @@ fi
 
 echo "creating fonts folder: ${HOME}/.fonts"
 mkdir -p  "$HOME/.fonts"
-echo "unzip the $font_file"
-unzip "$font_file" -d "$HOME/.fonts/$font_name/"
+echo "unzip the $nerd_file"
+unzip "$nerd_file" -d "$HOME/.fonts/$nerd_name/"
 fc-cache -fv
 echo "done!"
