@@ -32,32 +32,32 @@ unzip "$nerd_file" -d "$HOME/.fonts/$nerd_name/"
 
 # A tiny addition: the Church Slavonic fonts.
 
-nerd_name="fonts-churchslavonic"
-nerd_file="$nerd_name.zip"
-nerd_url="https://www.ponomar.net/files/$nerd_file"
+slav_name="fonts-churchslavonic"
+slav_file="$slav_name.zip"
+slav_url="https://www.ponomar.net/files/$slav_file"
 
-nerd_download_dir="$HOME/Downloads/Fonts/Nerd"
-mkdir -p "$nerd_download_dir"
+slav_download_dir="$HOME/Downloads/Fonts/Nerd"
+mkdir -p "$slav_download_dir"
 
-echo "Starting download $nerd_name nerd font"
+echo "Starting download $slav_name nerd font"
 
-cd "$nerd_download_dir"
+cd "$slav_download_dir"
 
-if ! test -e "$nerd_file"; then
-    if [ "$(command -v cnerd_url)" ]; then
-        echo "$nerd_url"
-        cnerd_url -OL "$nerd_url"
+if ! test -e "$slav_file"; then
+    if [ "$(command -v cslav_url)" ]; then
+        echo "$slav_url"
+        cslav_url -OL "$slav_url"
     elif [ "$(command -v wget)" ]; then
-        echo "$nerd_url"
-        wget "$nerd_url"
+        echo "$slav_url"
+        wget "$slav_url"
     else
         echo "Fatal error: no curl, no wget on the system"
         exit 1
     fi
 fi
 
-echo "unzip the $nerd_file"
-unzip "$nerd_file" -d "$HOME/.fonts/$nerd_name/"
+echo "unzip the $slav_file"
+unzip "$slav_file" -d "$HOME/.fonts/$slav_name/"
 
 fc-cache -fv
 echo "Done!"
