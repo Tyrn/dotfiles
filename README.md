@@ -485,3 +485,9 @@ sudo virsh net-start default
 ```
 chmod -R ugo-x,u+rwX,go+rX,go-w .
 ```
+
+or
+
+```
+chmod -R u=rw,go=r,a+X .
+```
