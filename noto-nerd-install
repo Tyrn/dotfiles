@@ -7,7 +7,7 @@ nerd_name="Noto"
 nerd_file="$nerd_name.zip"
 nerd_url="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$nerd_file"
 
-nerd_download_dir="$HOME/Downloads/Fonts/Nerd"
+nerd_download_dir="$HOME/Downloads/Fonts/$nerd_name"
 mkdir -p "$nerd_download_dir"
 
 echo "Starting download $nerd_name nerd font"
@@ -36,7 +36,7 @@ slav_name="fonts-churchslavonic"
 slav_file="$slav_name.zip"
 slav_url="https://www.ponomar.net/files/$slav_file"
 
-slav_download_dir="$HOME/Downloads/Fonts/Nerd"
+slav_download_dir="$HOME/Downloads/Fonts/$slav_name"
 mkdir -p "$slav_download_dir"
 
 echo "Starting download $slav_name nerd font"
