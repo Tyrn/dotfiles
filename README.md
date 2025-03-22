@@ -483,5 +483,5 @@ sudo virsh net-start default
 - The [simplest way](https://superuser.com/questions/91935/how-to-recursively-chmod-all-directories-except-files)
 
 ```
-chmod -R u+rwX,go+rX,go-w .
+chmod -R ugo-x,u+rwX,go+rX,go-w .
 ```
