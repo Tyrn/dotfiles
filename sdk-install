@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+if [ ! "$(command -v sdkmanager)" ]; then
+    echo "Can't install Android SDK: no sdkmanager on the system"
+    exit 1
+fi
+
+sudo sdkmanager --install "platform-tools"
+sudo sdkmanager --install "platforms;android-35"
+sudo sdkmanager --install "build-tools;35.0.1"
+sudo sdkmanager --install "cmdline-tools;latest"
+
+sudo chown -R $USER:$USER /opt/android-sdk
+
+yes |sudo sdkmanager --licenses
