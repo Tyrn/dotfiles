@@ -9,7 +9,8 @@
   *
 
   [main]
-  compose = layer(meta)
+  kp0 = rightcontrol
+  rightcontrol = layer(meta)
   capslock = layer(nav)
 
   [nav]
