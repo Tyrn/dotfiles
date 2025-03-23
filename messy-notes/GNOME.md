@@ -60,3 +60,9 @@
 
 - An app (Google Chrome) sometimes starts unfocused (in the scratch layer).
   To make it normal, press Ctrl+Super+Esc.
+
+- Desktop scale
+
+  - _Tweaks > Fonts > Scaling Factor_
+
+  - _Settings_..?
