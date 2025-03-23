@@ -237,6 +237,9 @@ rustup self uninstall
 
 ## Miscellany
 
+_A lot of installation instructions already implemented in scripts,
+so unnecessary to execute manually_
+
 - Create a USB stick
 
   - Plug in, but do not mount the stick; check
@@ -412,16 +415,34 @@ $ archlinux-java
 - Otherwise, Android SDK Arch Linux way
 
 ```
-$ yay -S android-platform android-sdk-cmdline-tools-latest android-sdk-build-tools android-sdk-platform-tools
-$ sudo chown -R $USER:$USER /opt/android-sdk
+yay -S android-platform android-sdk-cmdline-tools-latest android-sdk-build-tools android-sdk-platform-tools
+```
+
+```
+sudo chown -R $USER:$USER /opt/android-sdk
+```
+
+- Android SDK without AUR
+
+```
+./sdk-install
 ```
 
 - [flutterup](https://github.com/Decodetalkers/flutterup) and Flutter SDK manual installation
 
 ```
-$ yay -S flutterup
-$ flutterup install
-$ flutter doctor -v
+yay -S flutterup
+```
+
+without AUR
+
+```
+cargo install --locked --git https://github.com/Decodetalkers/flutterup
+```
+
+```
+flutterup install
+flutter doctor -v
 ```
 
 - Flutter SDK location (flutterup default)
