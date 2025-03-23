@@ -47,9 +47,15 @@
   sudo keyd -m
   ```
 
+- Redefine lock screen shortcut _Settings > Keyboard > View
+  and Customize Shortcuts > System > Lock screen_ (to Ctrl+Delete)
+
+- Create custom shortcut _Settings > Keyboard > View
+  and Customize Shortcuts_ Launch Terminal (Alt+Return)
+
 - Check Extensions app 🧩
 
-- Settings > Mouse & Touchpad > Scroll Direction: Traditional/Natural
+- _Settings > Mouse & Touchpad > Scroll Direction_: Traditional/Natural
 
 - An app (Google Chrome) sometimes starts unfocused (in the scratch layer).
   To make it normal, press Ctrl+Super+Esc.
