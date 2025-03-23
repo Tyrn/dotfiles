@@ -31,6 +31,10 @@ yes |sudo pacman -S python-pycryptodomex python-websockets
 
 yes |sudo pacman -S rpi-imager gnome-disk-utility smartmontools gnome-browser-connector gdu
 
+# Java.
+
+yes |sudo pacman -S java-runtime-common jdk21-openjdk
+
 # Network.
 
 yes |sudo pacman -S traceroute mtr
