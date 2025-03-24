@@ -6,13 +6,24 @@
 
   - _Extensions_ 🧩
 
+    - [PaperWM](https://github.com/paperwm/PaperWM),
+      [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
+
+    - [Switcher](https://github.com/daniellandau/switcher),
+      [e.g.org](https://extensions.gnome.org/extension/973/switcher/)
+
+    - [AppIndicator and KStatusNotifierItem Support](https://github.com/ubuntu/gnome-shell-extension-appindicator),
+      [e.g.org](https://extensions.gnome.org/extension/615/appindicator-support/)
+
   - _Tweaks_; additional Gnome settings
 
   - _dconf Editor_; universal settings GUI, same as CLI `gsettings`
 
 - Low level key remapping with [keyd](https://github.com/rvaiya/keyd)
 
-  - Config example, `/etc/keyd/default.conf`
+  - Config suggestion, if the keyboard absolutely lacks essential keys
+    to the right, `/etc/keyd/default.conf`; less drastic default solution,
+    [kbd-tune](https://github.com/Tyrn/dotfiles/blob/main/kbd-tune)
 
   ```
   [ids]

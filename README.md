@@ -174,16 +174,7 @@ curl https://sh.rustup.rs -sSf | sh
 rustup self uninstall
 ```
 
-### Important extensions
-
-- [PaperWM](https://github.com/paperwm/PaperWM),
-  [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
-
-- [Switcher](https://github.com/daniellandau/switcher),
-  [e.g.org](https://extensions.gnome.org/extension/973/switcher/)
-
-- [AppIndicator and KStatusNotifierItem Support](https://github.com/ubuntu/gnome-shell-extension-appindicator),
-  [e.g.org](https://extensions.gnome.org/extension/615/appindicator-support/)
+## [GNOME tips](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/GNOME.md)
 
 ## Update apps installed globally with non-native package managers
 
