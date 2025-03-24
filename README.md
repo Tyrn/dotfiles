@@ -99,7 +99,7 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
-### [GNOME tips](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/GNOME.md)
+### [Gnome tips](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/GNOME.md)
 
 ## Fedora
 

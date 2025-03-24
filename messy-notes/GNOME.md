@@ -17,12 +17,13 @@
 
   - _Tweaks_; additional Gnome settings
 
-  - _dconf Editor_; universal settings GUI, same as CLI `gsettings`
+  - _dconf Editor_; universal settings GUI, same as CLI
+    [gsettings](https://discourse.gnome.org/t/what-is-the-purpose-of-gsettings/17165)
 
 - Low level key remapping with [keyd](https://github.com/rvaiya/keyd)
 
-  - Config suggestion, if the keyboard absolutely lacks essential keys
-    to the right, `/etc/keyd/default.conf`; less drastic default solution,
+  - `/etc/keyd/default.conf` suggestion, if the keyboard absolutely lacks essential keys
+    to the right, ; less drastic default solution,
     [kbd-tune](https://github.com/Tyrn/dotfiles/blob/main/kbd-tune)
 
   ```
