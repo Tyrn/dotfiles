@@ -22,6 +22,12 @@ ac: aliased to printf '%s\n' ~/.arduino15/packages/*/hard*/*/*
 ~>
 ```
 
+[or](https://forum.arduino.cc/t/check-the-core-library-version/1303479/12)
+
+```
+arduino-cli core list
+```
+
 ### Arduino IDE 2 for the Blue Pill
 
 - [stm32duino](https://github.com/stm32duino), forum, wiki, bits and pieces
