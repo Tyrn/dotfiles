@@ -14,6 +14,9 @@ sudo dnf install -y retext watchman pandoc opusfile qmmp mpv puddletag
 sudo dnf install -y kdenlive vorbis-tools yacreader
 sudo dnf install -y gnome-tweaks gnome-extensions-app
 
+cargo install --locked --git https://github.com/Decodetalkers/flutterup
+#flutterup install
+
 yes | cargo binstall tex-fmt
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
