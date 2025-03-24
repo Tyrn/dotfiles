@@ -7,4 +7,4 @@ set -x
 # Use multiline: https://unix.stackexchange.com/questions/678930/how-do-you-output-a-multi-line-string-that-includes-slashes-and-other-special-ch
 
 printf '# STM32_HID_bootloader
-ATTRS{idProduct}=="beba", ATTRS{idVendor}=="1209", MODE:="666"' | sudo tee /etc/udev/rules.d/99-stm32_hid_bl.rules
+ATTRS{idProduct}=="beba", ATTRS{idVendor}=="1209", MODE:="666"\n' | sudo tee /etc/udev/rules.d/99-stm32_hid_bl.rules
