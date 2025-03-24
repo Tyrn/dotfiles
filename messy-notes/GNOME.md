@@ -23,7 +23,7 @@
 - Low level key remapping with [keyd](https://github.com/rvaiya/keyd)
 
   - `/etc/keyd/default.conf` suggestion, if the keyboard absolutely lacks essential keys
-    to the right, ; less drastic default solution,
+    to the right; less drastic default solution,
     [kbd-tune](https://github.com/Tyrn/dotfiles/blob/main/kbd-tune)
 
   ```
