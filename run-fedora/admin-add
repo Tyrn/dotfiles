@@ -4,4 +4,4 @@ set -u
 set -x
 
 ./groups-add
-./udev-add
+../udev-add
