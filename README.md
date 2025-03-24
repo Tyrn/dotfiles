@@ -99,6 +99,8 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
+### [GNOME tips](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/GNOME.md)
+
 ## Fedora
 
 ### Install sequence
@@ -173,8 +175,6 @@ curl https://sh.rustup.rs -sSf | sh
 ```
 rustup self uninstall
 ```
-
-## [GNOME tips](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/GNOME.md)
 
 ## Update apps installed globally with non-native package managers
 
