@@ -1,5 +1,15 @@
 # GNOME 47 and upwards
 
+- Settings entry points
+
+  - _Settings_; basic Gnome settings ⚙
+
+  - _Extensions_ 🧩
+
+  - _Tweaks_; additional Gnome settings
+
+  - _dconf Editor_; universal settings GUI, same as CLI `gsettings`
+
 - Low level key remapping with [keyd](https://github.com/rvaiya/keyd)
 
   - Config example, `/etc/keyd/default.conf`
@@ -53,8 +63,6 @@
 
 - Create custom shortcut _Settings > Keyboard > View
   and Customize Shortcuts_ Launch Terminal (Alt+Return)
-
-- Check Extensions app 🧩
 
 - _Settings > Mouse & Touchpad > Scroll Direction_: Traditional/Natural
 

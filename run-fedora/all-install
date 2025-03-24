@@ -11,7 +11,6 @@ set -x
 ./base-install
 # ./rwasm-install
 ./extras-install
-# ./flutter-install
 ./spell-install
 ./nvim-install
 # ./doom-install
