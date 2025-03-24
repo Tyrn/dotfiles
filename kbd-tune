@@ -29,12 +29,13 @@ printf "$locale" | sudo tee "$conf"
 
 set -x
 
+# An attempt at installing keyd on Arch Linux.
 if command -v pacman &> /dev/null; then
   sudo pacman -S keyd
-else
-  set +x
-  echo "Arch Linux only, so far"
-  exit 1
 fi
 
-sudo systemctl enable --now keyd
+if [ "$(command -v keyd)" ]; then
+  sudo systemctl enable --now keyd
+else
+  exit 1
+fi
