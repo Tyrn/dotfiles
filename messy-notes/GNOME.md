@@ -87,8 +87,18 @@
 
   - _Settings_..?
 
-- Dolphin not serving [_Open With_](https://www.reddit.com/r/kde/comments/1jj1ziw/dolphin_and_open_with/)
+- Dolphin not serving
+  [_Open With_](https://www.reddit.com/r/kde/comments/1jj1ziw/dolphin_and_open_with/)
 
-```
-curl -L https://raw.githubusercontent.com/KDE/plasma-workspace/master/menu/desktop/plasma-applications.menu -o $HOME/.config/menus/applications.menu
-```
+  - Download the config
+
+  ```
+  curl -L https://raw.githubusercontent.com/KDE/plasma-workspace/master/menu/desktop/plasma-applications.menu -o $HOME/.config/menus/applications.menu
+  ```
+
+  - Use `kservice` to rebuild the KDE cache. Implemented in
+    [kde-to-gnome](https://github.com/Tyrn/dotfiles/blob/main/kde-to-gnome)
+
+  ```
+  kbuildsycoca6 --noincremental
+  ```
