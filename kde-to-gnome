@@ -11,7 +11,10 @@ menus_dir="$HOME/.config/menus"
 apps_menu="$menus_dir/applications.menu"
 
 # Download the config and rebuild the KDE cache.
-dl_command="curl -L $apps_url -o $apps_menu && kbuildsycoca6 --noincremental"
+dl_command() {
+    curl -L $apps_url -o $apps_menu
+    kbuildsycoca6 --noincremental
+}
 
 mkdir -p $menus_dir
 
