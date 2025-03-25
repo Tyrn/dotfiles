@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Tweaking KDE apps installed in pure Gnome environment.
+# Tweaking the KDE apps already installed in pure Gnome environment.
 #
 
 # Dolphin requires applications.menu configuration file:
@@ -10,7 +10,8 @@ apps_url="https://raw.githubusercontent.com/KDE/plasma-workspace/master/menu/des
 menus_dir="$HOME/.config/menus"
 apps_menu="$menus_dir/applications.menu"
 
-dl_command="curl -L $apps_url -o $apps_menu"
+# Download the config and rebuild the KDE cache.
+dl_command="curl -L $apps_url -o $apps_menu && kbuildsycoca6 --noincremental"
 
 mkdir -p $menus_dir
 
