@@ -4,6 +4,7 @@ run-archlinux/
 run-fedora/
 udev-add
 locale-to-en
+kde-to-gnome
 kbd-tune
 sdk-install
 nerd-fonts-install
