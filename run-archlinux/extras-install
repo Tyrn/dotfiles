@@ -6,7 +6,7 @@ set -x
 # Miscellaneous applications.
 
 sudo pacman -S dolphin
-yes |sudo pacman -S dolphin-plugins
+yes |sudo pacman -S dolphin-plugins gwenview
 yes |sudo pacman -S google-chrome
 yes |sudo pacman -S qutebrowser
 yes |sudo pacman -S tor-browser-bin
