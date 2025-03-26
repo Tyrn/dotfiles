@@ -67,6 +67,7 @@ yes |sudo pacman -S splix
 # Python, forgettable.
 
 pipx install poetry
+pipx install uv
 pipx install mkdocs-material --include-deps
 
 yes |sudo pacman -S python-lsp-server python-black ipython ptpython
