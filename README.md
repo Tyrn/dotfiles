@@ -192,6 +192,20 @@ rustup self uninstall
   cargo install-update -a
   ```
 
+- pipx
+
+  - List all the packages
+
+  ```
+  pipx list
+  ```
+
+  - Update all the packages
+
+  ```
+  pipx upgrade-all
+  ```
+
 - Mise
 
   - List all packages
