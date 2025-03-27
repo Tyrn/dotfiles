@@ -6,6 +6,7 @@
 
 ```
 https://espressif.github.io/arduino-esp32/package_esp32_index.json
+
 https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
 ```
 
