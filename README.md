@@ -308,43 +308,33 @@ pkill -KILL -u $USER
 
 - Make GRUB menu visible
 
-```
-$ sudo micro /etc/default/grub
-```
+  - Change timeout style (`/etc/default/grub`):
 
-Change timeout style(`/etc/default/grub`):
+  ```
+  GRUB_TIMEOUT_STYLE=menu
+  ```
 
-```
-GRUB_TIMEOUT_STYLE=menu
-```
+  - Update GRUB:
 
-Update GRUB:
+  ```
+  $ sudo update-grub
+  ```
 
-```
-$ sudo update-grub
-```
+- Manage AstroNvim
 
-- Install [fzf](https://github.com/junegunn/fzf#using-git) if necessary, using git; to `Do you want to update your shell config...` say no
+  - [Vim spell checking files (.spl, .sug)](https://ftp.nluug.nl/vim/runtime/spell/)
+  - (Re)install AstroNvim
 
-```
-$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-$ ~/.fzf/install
-```
+  ```
+  ~/.local/share/chezmoi/run-archlinux/nvim-install
+  ```
 
-- [Vim spell checking files (.spl, .sug)](https://ftp.nluug.nl/vim/runtime/spell/)
+  - Troubleshoot AstroNvim
 
-- (Re)install AstroNvim
-
-```
-~/.local/share/chezmoi/run-archlinux/nvim-install
-```
-
-- Troubleshoot AstroNvim
-
-```
-:Lazy update  (<Leader>pU)
-:Lazy sync    (<Leader>pS)
-```
+  ```
+  :Lazy update  (<Leader>pU)
+  :Lazy sync    (<Leader>pS)
+  ```
 
 ### Hyprland ML4W
 
