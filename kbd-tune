@@ -11,6 +11,7 @@ locale='[ids]
 [main]
 compose = layer(meta)
 capslock = layer(nav)
+kpdot = compose
 
 [nav]
 h = left
