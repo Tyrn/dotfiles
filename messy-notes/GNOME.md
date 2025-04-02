@@ -9,6 +9,8 @@
     - [PaperWM](https://github.com/paperwm/PaperWM),
       [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
 
+    - [Dash to Dock](https://github.com/micheleg/dash-to-dock),
+
     - [Switcher](https://github.com/daniellandau/switcher),
       [e.g.org](https://extensions.gnome.org/extension/973/switcher/)
 
@@ -32,6 +34,7 @@
 
   [main]
   kp0 = rightcontrol
+  kpdot = compose
   rightcontrol = layer(meta)
   capslock = layer(nav)
 

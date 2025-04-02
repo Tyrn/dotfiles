@@ -10,6 +10,8 @@ yes |sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers gwenvi
 
 ../kde-to-gnome
 
+yes |sudo pacman -S gnome-shell-extension-dash-to-dock
+
 yes |sudo pacman -S google-chrome
 yes |sudo pacman -S qutebrowser
 yes |sudo pacman -S tor-browser-bin
