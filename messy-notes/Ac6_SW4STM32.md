@@ -245,7 +245,7 @@ Guidelines:
 
 [Unity](http://www.throwtheswitch.org/white-papers/unity-intro.html), [Unity on GitHub](https://github.com/ThrowTheSwitch/Unity), [docs](https://github.com/ThrowTheSwitch/Unity/tree/master/docs)
 
-#### [Ceedling](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/Ceedling.md)
+#### [Ceedling](Ceedling.md)
 
 #### Fake Function Framework (fff)
 
