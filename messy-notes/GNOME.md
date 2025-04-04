@@ -26,7 +26,7 @@
 
   - `/etc/keyd/default.conf` suggestion, if the keyboard absolutely lacks essential keys
     to the right; less drastic default solution,
-    [kbd-tune](https://github.com/Tyrn/dotfiles/blob/main/kbd-tune)
+    [kbd-tune](/kbd-tune)
 
   ```
   [ids]
@@ -100,7 +100,7 @@
   ```
 
   - Use `kservice` to rebuild the KDE cache. Implemented in
-    [kde-to-gnome](https://github.com/Tyrn/dotfiles/blob/main/kde-to-gnome)
+    [kde-to-gnome](/kde-to-gnome)
 
   ```
   kbuildsycoca6 --noincremental
