@@ -99,7 +99,7 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
-### [Gnome tips](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/GNOME.md)
+### [Gnome tips](messy-notes/GNOME.md)
 
 ## Fedora
 
@@ -265,7 +265,7 @@ so unnecessary to execute manually_
   $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
   ```
 
-- [**Assorted notes**](https://github.com/Tyrn/dotfiles/tree/main/messy-notes)
+- [**Assorted notes**](messy-notes)
 
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
 

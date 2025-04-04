@@ -8,7 +8,7 @@ _Arch Linux Take_
 
 #### Assumed:
 
-[Basic GNU MCU Eclipse Installation](https://github.com/Tyrn/dotfiles/blob/main/messy-notes/GNU_MCU_Eclipse.md)
+[Basic GNU MCU Eclipse Installation](GNU_MCU_Eclipse.md)
 
 - Eclipse and GNU MCU Plugins
 - `gcc-arm-none-eabi` in `/opt/arm/bin`
