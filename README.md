@@ -4,7 +4,7 @@
 
 _As of 2025-03-17, AUR free setup_
 
-- Follow the instructions for EndeavourOS
+- Follow the instructions for [EndeavourOS](#endeavouros)
 
 _NB_ If you experience a general trust trouble, [1](https://forum.manjaro.org/t/update-error-failed-to-commit-transaction/150638),
 [2](https://forum.manjaro.org/t/error-failed-to-commit-transaction-invalid-or-corrupted-package-pgp-signature/150830)
