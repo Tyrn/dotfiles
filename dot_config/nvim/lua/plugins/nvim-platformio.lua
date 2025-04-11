@@ -8,7 +8,12 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 		},
 		lazy = false,
-		init = function() end,
+		init = function()
+			require("platformio").setup({
+				lsp = "clangd", --default: ccls, other option: clangd
+				-- If you pick clangd, it also creates compile_commands.json
+			})
+		end,
 		-- event = "BufRead",
 	},
 }
