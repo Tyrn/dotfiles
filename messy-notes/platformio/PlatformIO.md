@@ -15,6 +15,14 @@
 
 ## Project Essentials
 
+### Platform
+
+- List all available platforms
+
+```
+pio pkg search "platform:*"
+```
+
 - Install platform
 
 ```
@@ -27,10 +35,24 @@ pio pkg install -p "platformio/espressif32"
 pio pkg update -p "platformio/espressif32"
 ```
 
+### Project configuration
+
 - Create project in the current directory
 
 ```
 pio project init -b esp32dev -O framework=arduino --ide=vim
+```
+
+- Install a standard library
+
+```
+pio pkg install -l arkhipenko/TaskScheduler
+```
+
+- Install a library from GitHub
+
+```
+pio pkg install -l git@github.com:Tyrn/LCD_1602_RUS_ALL.git
 ```
 
 - Create/update `.ccls` file if necessary
@@ -38,6 +60,8 @@ pio project init -b esp32dev -O framework=arduino --ide=vim
 ```
 pio project init --ide=vim
 ```
+
+### Build and run
 
 - Build project
 
