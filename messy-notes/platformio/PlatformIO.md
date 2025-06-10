@@ -55,6 +55,12 @@ pio pkg install -l arkhipenko/TaskScheduler
 pio pkg install -l git@github.com:Tyrn/LCD_1602_RUS_ALL.git
 ```
 
+- Unistall a library
+
+```
+pio pkg uninstall -l git@github.com:Tyrn/LCD_1602_RUS_ALL.git
+```
+
 - Create/update `.ccls` file if necessary
 
 ```
