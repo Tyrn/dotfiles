@@ -21,7 +21,7 @@ if [ ! "$(command -v npm)" ]; then
     yes |sudo pacman -S npm
 fi
 
-yes |sudo pacman -S python-pynvim tree-sitter python-jedi neovide
+yes |sudo pacman -S python-pynvim tree-sitter python-jedi neovide luarocks
 
 sudo rm -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
 
