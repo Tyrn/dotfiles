@@ -37,6 +37,8 @@ pio pkg update -p "platformio/espressif32"
 
 ### Project configuration
 
+- Standard project directories are `include` `lib` `src` `test`
+
 - Create project in the current directory
 
 ```
