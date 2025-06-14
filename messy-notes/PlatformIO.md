@@ -17,7 +17,7 @@
 
 ### Platform
 
-- List all available platforms
+- List all available platforms (requires correction as of 2025-06-14)
 
 ```
 pio pkg search "platform:*"
@@ -33,6 +33,12 @@ pio pkg install -p "platformio/espressif32"
 
 ```
 pio pkg update -p "platformio/espressif32"
+```
+
+- Install tool globally
+
+```
+pio pkg install -g -t "platformio/tool-stm32duino"
 ```
 
 ### Project configuration
