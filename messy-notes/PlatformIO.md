@@ -7,11 +7,20 @@
   [Blog](https://anurag3301.com/blog/nvim-platformio-lua/),
   [#20](https://github.com/anurag3301/nvim-platformio.lua/issues/20),
   [#23](https://github.com/anurag3301/nvim-platformio.lua/issues/23),
+  [#25](https://github.com/anurag3301/nvim-platformio.lua/issues/25)
   [#4950](https://github.com/platformio/platformio-core/issues/4950),
   [AstroNvim](https://github.com/Tyrn/dotfiles/blob/main/dot_config/nvim/lua/plugins/nvim-platformio.lua)
 
 - [PlatformIO Core](https://docs.platformio.org/en/latest/core/index.html)
 - [PlatformIO CLI Guide](https://docs.platformio.org/en/latest/core/userguide/index.html)
+
+## Misc
+
+- To enable HID bootloader (for STM32)
+
+```
+yay -S hid-flash
+```
 
 ## Project Essentials
 
