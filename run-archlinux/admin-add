@@ -12,7 +12,7 @@ yes |sudo pacman -S unixodbc zoxide direnv
 # Build essentials, to be installed before everything,
 # including Rust.
 
-yes |sudo pacman -S chezmoi yay micro nix doctest cmake meson
+yes |sudo pacman -S chezmoi yay micro nix doctest cmake meson boost qt5-tools
 yes |sudo pacman -S fakeroot base-devel clang doxygen rustup catch2 gtest trompeloeil
 rustup toolchain install stable
 
