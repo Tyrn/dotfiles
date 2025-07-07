@@ -211,7 +211,7 @@ rustup self uninstall
   - List all packages
 
   ```
-  mise ls -g
+  mise ls [-g]
   ```
 
   - Update individually
@@ -495,6 +495,11 @@ sudo virsh net-list --all
 ...
 sudo virsh net-start default
 ```
+
+### Optical Drive
+
+- [USB Optical Drive](https://forum.endeavouros.com/t/usb-optical-drive/73276);
+  wholly unnecessary (?), as it turned out :)
 
 ### Downgrade all the files from executables recursively
 
