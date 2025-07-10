@@ -394,7 +394,8 @@ Alternate good firmware (`sigrok-firmware.zip`) and LA1010 [info](https://www.fo
 $ yay -S pulseview-git
 ```
 
-- 2025-06-26, **patched** pulseview-git [PKGBUILD](run-archlinux/pulseview-git/PKGBUILD)
+- 2025-06-26, **patched** pulseview-git [PKGBUILD](run-archlinux/pulseview-git/PKGBUILD);
+  obsolete as of 2025-07-04
 
 ### Java
 
