@@ -4,7 +4,7 @@
 # Contributor: megamoth
 # Contributor: xorly
 
-# Patched by Schlaefer 2025-06-26
+# Patched by Schlaefer 2025-06-26; obsolete as of 2025-07-04
 
 _gitname='pulseview'
 pkgname="${_gitname}-git"
