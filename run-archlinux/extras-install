@@ -12,6 +12,7 @@ yes |sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers gwenvi
 
 yes |sudo pacman -S gnome-shell-extension-dash-to-dock
 
+yes |sudo pacman -S vlc vlc-plugins-all
 yes |sudo pacman -S google-chrome
 yes |sudo pacman -S qutebrowser
 yes |sudo pacman -S tor-browser-bin
