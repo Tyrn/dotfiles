@@ -502,6 +502,44 @@ sudo virsh net-start default
 - [USB Optical Drive](https://forum.endeavouros.com/t/usb-optical-drive/73276);
   wholly unnecessary (?), as it turned out :)
 
+### Manage groups
+
+- Review groups
+
+```
+bat /etc/group
+```
+
+- Check what groups the user belongs to
+
+```
+groups
+```
+
+- Create a group
+
+```
+sudo groupadd group
+```
+
+- Add user to a group
+
+```
+sudo usermod -aG group $USER
+```
+
+or
+
+```
+sudo gpasswd -a $USER group
+```
+
+- Remove user from group
+
+```
+sudo gpasswd --delete $USER group
+```
+
 ### Downgrade all the files from executables recursively
 
 - The [simplest way](https://superuser.com/questions/91935/how-to-recursively-chmod-all-directories-except-files)
