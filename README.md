@@ -487,6 +487,20 @@ $ sudo pacman -Qqn | sudo pacman -S -
  sudo smartctl -a /dev/nvme0 [| grep Percentage]
 ```
 
+### Hardware info
+
+- General
+
+```
+ff
+```
+
+- Serial number
+
+```
+sudo dmidecode -t baseboard | grep "Serial Number"
+```
+
 ### QEMU/KVM/Virtual Machine Manager
 
 - [Default Netowrk](https://askubuntu.com/questions/1036297/cant-start-kvm-guest-network-default-is-not-active)
