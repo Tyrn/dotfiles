@@ -7,8 +7,10 @@
 ---@type LazySpec
 return {
 	"AstroNvim/astrocommunity",
-	{ import = "astrocommunity.recipes.neovide" },
 	{ import = "astrocommunity.note-taking.neorg" },
+	{ import = "astrocommunity.colorscheme.catppuccin" },
+	{ import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+	{ import = "astrocommunity.recipes.neovide" },
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.cmake" },
 	{ import = "astrocommunity.pack.cpp" },
