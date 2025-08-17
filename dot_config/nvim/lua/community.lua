@@ -8,6 +8,7 @@
 return {
 	"AstroNvim/astrocommunity",
 	{ import = "astrocommunity.recipes.neovide" },
+	{ import = "astrocommunity.note-taking.neorg" },
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.cmake" },
 	{ import = "astrocommunity.pack.cpp" },
