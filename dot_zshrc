@@ -138,7 +138,12 @@ alias ff="fastfetch --physicaldisk-temp --cpu-temp --gpu-temp --battery-temp"
 alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
 alias acl="arduino-cli"
 alias nv="neovide"
-alias nt='alacritty --working-directory "$PWD" &'
+#alias nt='alacritty --working-directory "$PWD" &'
+#alias nt='alacritty --working-directory "$(pwd -P)" &'  # Good for symlinks.
+#alias nt='alacritty -e zsh -c "cd \"$PWD\" && zsh" &'
+#alias nt='nohup alacritty --working-directory "$PWD" >/dev/null 2>&1 & disown'
+#alias nt='setsid alacritty --working-directory "$PWD" --config-file /dev/null >/dev/null 2>&1'
+alias nt='setsid alacritty --working-directory "$PWD" >/dev/null 2>&1'
 
 function cf() { clang-format -i **/*.(c|cpp|h|hh|hpp|ino|cc|hxx) }
 
