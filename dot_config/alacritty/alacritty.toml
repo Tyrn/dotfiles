@@ -34,3 +34,6 @@ foreground = "#a5a2a2"
 
 [font]
 size = 10.0
+
+[window]
+opacity = 0.9
