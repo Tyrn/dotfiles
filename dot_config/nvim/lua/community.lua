@@ -7,7 +7,7 @@
 ---@type LazySpec
 return {
 	"AstroNvim/astrocommunity",
-	{ import = "astrocommunity.completion.cmp-nvim-lua" },
+	{ import = "astrocommunity.completion.nvim-cmp" },
 	-- { import = "astrocommunity.note-taking.neorg" },
 	{ import = "astrocommunity.colorscheme.catppuccin" },
 	{ import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
