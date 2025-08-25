@@ -17,6 +17,8 @@
 --   },
 -- }
 
+-- vim.o.cmdheight = 0
+
 -- Spell settings
 vim.opt.spelllang = { "ru_ru", "en_us", "es_es" }
 
