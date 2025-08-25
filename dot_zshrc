@@ -142,7 +142,7 @@ if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
 else
   function nv() {
     # Launch Neovide in the background, disown it from the shell, and pass the current directory
-    nohup neovide "$@" > /dev/null 2>&1 & disown
+    neovide --no-multigrid --fork "$@"
     # Wait a tiny moment for the window to appear, then close the terminal
     sleep 0.5 && exit
   }
