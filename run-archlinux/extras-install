@@ -19,8 +19,8 @@ yes |sudo pacman -S tor-browser-bin
 yes |sudo pacman -S geany geany-plugins retext foliate qbittorrent
 yes |sudo pacman -S warpinator scrcpy vorbis-tools pandoc-bin
 yes |sudo pacman -S telegram-desktop
-yes |sudo pacman -S vscodium
-yes |sudo pacman -S arduino-ide arduino-language-server
+#yes |sudo pacman -S vscodium
+#yes |sudo pacman -S arduino-ide arduino-language-server
 yes |sudo pacman -S libusb-compat python-pyserial
 yes |sudo pacman -S platformio-core platformio-core-udev
 yes |sudo pacman -S zoom
