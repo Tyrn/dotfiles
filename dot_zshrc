@@ -134,7 +134,8 @@ alias exst="exstat | tail -n 10"
 alias lg="lazygit"
 alias dozer="docker-compose run buildozer android"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias ff="fastfetch --physicaldisk-temp --cpu-temp --gpu-temp --battery-temp"
+alias ff="fastfetch"
+alias fff="fastfetch -c all.jsonc"
 alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
 alias acl="arduino-cli"
 if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
