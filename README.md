@@ -88,7 +88,6 @@ cd ~/.local/share/chezmoi/run-archlinux
 - Run `./zsh-install`. Answer _yes_ to everything, then leave the new and pretty
   default zsh with Ctrl+D. Wait till the end and close the terminal. Open it any
   time and enjoy [the fun](https://github.com/ohmyzsh/ohmyzsh/wiki).
-
   - You can reload the shell (zsh) any time without closing the terminal
 
   ```
@@ -147,7 +146,6 @@ cd ~/.local/share/chezmoi/run-fedora
 - Run `./zsh-install`. Answer _yes_ to everything, then leave the new and pretty
   default zsh with Ctrl+D. Wait till the end and close the terminal. Open it any
   time and enjoy [the fun](https://github.com/ohmyzsh/ohmyzsh/wiki).
-
   - You can reload the shell (zsh) any time without closing the terminal
 
   ```
@@ -179,7 +177,6 @@ rustup self uninstall
 ## Update apps installed globally with non-native package managers
 
 - Cargo
-
   - List all the packages
 
   ```
@@ -193,7 +190,6 @@ rustup self uninstall
   ```
 
 - pipx
-
   - List all the packages
 
   ```
@@ -207,7 +203,6 @@ rustup self uninstall
   ```
 
 - Mise
-
   - List all packages
 
   ```
@@ -221,7 +216,6 @@ rustup self uninstall
   ```
 
 - Flatpak
-
   - List all the apps
 
   ```
@@ -246,7 +240,6 @@ _A lot of installation instructions already implemented in scripts,
 so unnecessary to execute manually_
 
 - Create a USB stick
-
   - Plug in, but do not mount the stick; check
 
   ```
@@ -307,7 +300,6 @@ pkill -KILL -u $USER
 ```
 
 - Make GRUB menu visible
-
   - Change timeout style (`/etc/default/grub`):
 
   ```
@@ -321,7 +313,6 @@ pkill -KILL -u $USER
   ```
 
 - Manage AstroNvim
-
   - [Vim spell checking files (.spl, .sug)](https://ftp.nluug.nl/vim/runtime/spell/)
   - (Re)install AstroNvim
 
@@ -487,12 +478,18 @@ $ sudo pacman -Qqn | sudo pacman -S -
  sudo smartctl -a /dev/nvme0 [| grep Percentage]
 ```
 
-### Hardware info
+### Hardware and system info
 
 - General
 
 ```
 ff
+```
+
+- Full info
+
+```
+fff
 ```
 
 - Serial number
