@@ -179,7 +179,8 @@ function to-repo() {
   if [[ "$package" != "0" ]]; then
     aur fetch -r "$package"
   fi
-  ls -d */ | sed 's|/$|/|' > _pkglist.txt && aur build -a ./_pkglist.txt -d "$database"
+  ls -d */ | sed 's|/$|/|' > _pkglist.txt
+  aur build -a ./_pkglist.txt -d "$database" --margs -s
 }
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
