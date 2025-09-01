@@ -9,6 +9,8 @@ set -x
 # Use tee: https://stackoverflow.com/questions/84882/sudo-echo-something-etc-privilegedfile-doesnt-work
 # Use multiline: https://unix.stackexchange.com/questions/678930/how-do-you-output-a-multi-line-string-that-includes-slashes-and-other-special-ch
 
+# pacman -Sl sandbox to see the contents of the repo.
+
 yes |sudo pacman -S aurutils
 sudo mkdir /var/cache/pacman/sandbox
 sudo repo-add /var/cache/pacman/sandbox/sandbox.db.tar.gz
