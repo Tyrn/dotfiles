@@ -4,6 +4,7 @@ set -u
 set -x
 
 ./pacman-add
+./sandbox-repo-add
 ./groups-add
 ../udev-add
 
