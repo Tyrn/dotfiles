@@ -1,5 +1,7 @@
 ## GitHub
+
 #### Resources
+
 ##### Line endings
 
 - [Eclipse & Git: Mind your Windows line endings!](http://mike.meessen.biz/blog/?p=368)
@@ -18,7 +20,18 @@
 
 - [Collaborating](https://www.atlassian.com/git/tutorials/syncing)
 
+- Change the commentary (message) to the last commit
+
+```
+git commit --amend -m "New message"
+```
+
+```
+git push --force-with-lease
+```
+
 #### Rollback
+
 ```
 $ git reset --hard f6486e8b
 $ git reset --soft HEAD@{1}
@@ -30,12 +43,15 @@ $ git commit ...
 - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 - Generate a public key on your workstation (`~/.ssh/id_rsa.pub`, if you accept all defaults):
+
 ```
 $ ssh-keygen
 ```
+
 - Create a new SSH key in GitHub web interface and copy/paste the `~/.ssh/id_rsa.pub` contents
 
-- Say `yes` once asked *Are you sure...* (the question is never repeated):
+- Say `yes` once asked _Are you sure..._ (the question is never repeated):
+
 ```
 $ git clone git@github.com: ...
 Cloning into ...
