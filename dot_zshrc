@@ -161,21 +161,24 @@ function pipver-col() { curl -s https://pypi.org/rss/project/$1/releases.xml | s
 function pipver() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd, ;}
 function tpipver() { curl -s https://test.pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd, ;}
 
-# Download into the (empty) current directory
-# a [package] from AUR, build it (AUR dependencies, too),
-# and put the package[s] into the [database] repository.
+# Fetches into the (empty) current directory a [package] from AUR,
+# along with its AUR dependencies, if any, builds it/them
+# and puts the package[s] into the [database] repository.
 # The local [database] repository must exist.
+# NB If [package] is 0, no fetching from AUR is performed.
 function to-repo() {
   local package="${1}"
   local database="${2:-sandbox}"  # Use 'sandbox' as default.
 
   if [[ -z "$package" ]]; then
-    echo "Usage: to-repo <aur-package> [database]"
+    echo "Usage: to-repo <aur-package>|0 [database]"
     echo "Default database: sandbox"
     return 1
   fi
 
-  aur fetch -r "$package"
+  if [[ "$package" != "0" ]]; then
+    aur fetch -r "$package"
+  fi
   ls -d */ | sed 's|/$|/|' > _pkglist.txt && aur build -a ./_pkglist.txt -d "$database"
 }
 
