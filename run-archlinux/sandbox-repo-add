@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# This script adds sandbox local repository to /etc/pacman.conf
+# It can be run securely multiple times.
+
+# Use tee: https://stackoverflow.com/questions/84882/sudo-echo-something-etc-privilegedfile-doesnt-work
+# Use multiline: https://unix.stackexchange.com/questions/678930/how-do-you-output-a-multi-line-string-that-includes-slashes-and-other-special-ch
+
+sudo pacman -S aurutils
+sudo mkdir /var/cache/pacman/sandbox
+sudo repo-add /var/cache/pacman/sandbox/sandbox.db.tar.gz
+echo "Server = file:///var/cache/pacman/sandbox" | sudo tee /etc/pacman.d/sandbox-repo
+
+if ! grep -q sandboX /etc/pacman.conf; then
+printf '\n\n# Custom sandboX to the end of file
+
+[sandbox]
+SigLevel = Optional TrustAll
+Include = /etc/pacman.d/sandbox-repo' | sudo tee -a /etc/pacman.conf
+fi
+
+sudo pacman -Syy
