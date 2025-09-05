@@ -25,6 +25,11 @@ Server = http://repo.archlinuxcn.org/$arch
 [andontie-aur]
 Server = https://aur.andontie.net/$arch
 
+[wee-green-arch-repo]
+SigLevel = Optional TrustAll
+Server = https://tyrn.github.io/$repo/$arch
+#Server = file:///home/alexey/arch-repos/$repo/$arch
+
 [ownstuff]
 #Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
 Server = https://martchus.dyn.f3l.de/repo/arch/$repo/os/$arch' | sudo tee -a /etc/pacman.conf
