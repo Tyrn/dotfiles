@@ -17,6 +17,8 @@ printf '\n\n# Custom appendiX to the end of file
 [options]
 Color
 
+IgnorePkg   = ibus-m17n
+
 [archlinuxcn]
 Server = http://repo.archlinuxcn.org/$arch
 ## or install archlinuxcn-mirrorlist-git and use the mirrorlist

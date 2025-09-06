@@ -359,6 +359,18 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 ```
 
+### Church Slavonic keyboard layout
+
+- [Already there](run-archlinux/m17n-add)
+
+- [Slavonic Computing](https://sci.ponomar.net/)
+
+- [Keyboard description](https://www.ponomar.net/files/docen.pdf?_ga=2.125568652.766108792.1757098335-1690461937.1757098335)
+
+- [Howto](https://forum.manjaro.org/t/gnome-ibus-vs-vanilla-ibus/181338),
+  [2](https://forum.endeavouros.com/t/gnome-ibus-vs-vanilla-ibus/74905),
+  [3](https://discourse.gnome.org/t/gnome-ibus-vs-vanilla-ibus/31286)
+
 ### Kingst Logic Analyzers (LA1010, LA2016)
 
 - Deploy [firmware extract scripts](https://sigrok.org/wiki/Firmware#Where_to_put_the_firmware_files), or **skip to PulseView installation if the firmware is already there** (`~/.local/share/sigrok-firmware`)
