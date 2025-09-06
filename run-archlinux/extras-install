@@ -9,6 +9,7 @@ sudo pacman -S dolphin
 yes |sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers gwenview
 
 ../kde-to-gnome
+./m17n-add
 
 yes |sudo pacman -S gnome-shell-extension-dash-to-dock
 
