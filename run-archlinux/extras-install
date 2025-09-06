@@ -11,6 +11,9 @@ yes |sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers gwenvi
 ../kde-to-gnome
 ./m17n-add
 
+yes |sudo pacman -S python311
+yes |sudo pacman -S pulseview-git
+
 yes |sudo pacman -S gnome-shell-extension-dash-to-dock
 
 yes |sudo pacman -S vlc vlc-plugins-all
@@ -53,7 +56,6 @@ yes |cargo binstall tex-fmt
 #     yay -S kdenlive  # Video editor.
 #     yay -S ocenaudio-bin  # Audio editor.
 #     yay -S snd  # Audio editor.
-#     yay -S pulseview-git
 #     yay -S yacreader-bin
 #     yay -S esplorer
 #     yay -S anki-official-binary-bundle
