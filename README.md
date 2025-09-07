@@ -6,6 +6,19 @@ _As of 2025-03-17, AUR free setup_
 
 - Follow the instructions for [EndeavourOS](#endeavouros)
 
+- [Trouble wit GRUB](https://forum.manjaro.org/t/get-a-black-screen-with-error-grub-is-using-legacy-shim-lock-protocol-not-found/180669/5)
+  (_shim lock_ error)
+  - Install and run `install-grub` script after first update, and before reboot
+
+  - Otherwise
+
+  ```
+  sudo -i
+  manjaro-chroot -a
+  pacman -S install-grub
+  install-grub
+  ```
+
 _NB_ If you experience a general trust trouble, [1](https://forum.manjaro.org/t/update-error-failed-to-commit-transaction/150638),
 [2](https://forum.manjaro.org/t/error-failed-to-commit-transaction-invalid-or-corrupted-package-pgp-signature/150830)
 
