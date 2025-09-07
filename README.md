@@ -16,26 +16,14 @@ $ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
 ```
 
 [or](https://forum.manjaro.org/t/pacman-key-refresh-keys-always-hangs-on-the-same-key/143521),
-if the above just hangs
-
-```
-bash <(curl -s "https://notabug.org/megavolt/random-scripts/raw/master/fix-gpg-pacman.sh") --basic
-```
-
-if it isn't enough
-
-```
-bash <(curl -s "https://notabug.org/megavolt/random-scripts/raw/master/fix-gpg-pacman.sh") --aggressive
-```
-
-if nothing helps
+better, run the copy of the [semi-]official script.
 
 ```
 curl -OL https://github.com/Tyrn/dotfiles/raw/main/run-archlinux/fix-gpg-pacman.sh
 ```
 
 ```
-bash fix-gpg-pacman.sh --help
+bash fix-gpg-pacman.sh --usage
 ```
 
 - Later on, see `pacman-add` script on adoption of unofficial repositories
