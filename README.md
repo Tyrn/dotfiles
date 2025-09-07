@@ -15,6 +15,19 @@ $ sudo pacman-key --populate archlinux manjaro
 $ sudo pacman-key --refresh-keys           ;; This one takes a lot of time!
 ```
 
+[or](https://forum.manjaro.org/t/pacman-key-refresh-keys-always-hangs-on-the-same-key/143521),
+if the above just hangs
+
+```
+bash <(curl -s "https://notabug.org/megavolt/random-scripts/raw/master/fix-gpg-pacman.sh") --basic
+```
+
+if it isn't enough
+
+```
+bash <(curl -s "https://notabug.org/megavolt/random-scripts/raw/master/fix-gpg-pacman.sh") --aggressive
+```
+
 - Later on, see `pacman-add` on adoption of unofficial repositories
 
 ### If you want Plasma KDE + i3 on X11
