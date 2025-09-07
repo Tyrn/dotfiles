@@ -8,9 +8,9 @@ _As of 2025-03-17, AUR free setup_
 
 - [Trouble wit GRUB](https://forum.manjaro.org/t/get-a-black-screen-with-error-grub-is-using-legacy-shim-lock-protocol-not-found/180669/5)
   (_shim lock_ error)
-  - Install and run `install-grub` script after first update, and before reboot
+  - Install and run `install-grub` script after the first update, and before reboot
 
-  - Otherwise
+  - Otherwise, boot from a USB stick, then
 
   ```
   sudo -i
