@@ -1,5 +1,11 @@
 # Making life easier with dotfiles
 
+- Whenever logging is necessary, run any script like this
+
+```
+./all-install 2>&1 | tee all-install.log
+```
+
 ## Manjaro Linux workstation
 
 _As of 2025-03-17, AUR free setup_
