@@ -15,6 +15,7 @@ yes |sudo pacman -S python311
 yes |sudo pacman -S pulseview-git
 
 yes |sudo pacman -S gnome-shell-extension-dash-to-dock
+yes |sudo pacman -S dconf-editor
 
 yes |sudo pacman -S watchman-bin
 
