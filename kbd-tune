@@ -17,11 +17,7 @@ kpdot = compose
 h = left
 k = up
 j = down
-l = right
-р = left
-л = up
-о = down
-д = right\n'
+l = right\n'
 
 conf="/etc/keyd/default.conf"
 

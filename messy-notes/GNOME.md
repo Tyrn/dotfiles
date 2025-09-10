@@ -1,21 +1,13 @@
 # GNOME 47 and upwards
 
 - Settings entry points
-
   - _Settings_; basic Gnome settings ⚙
 
   - _Extensions_ 🧩
-
     - [PaperWM](https://github.com/paperwm/PaperWM),
       [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
 
     - [Dash to Dock](https://github.com/micheleg/dash-to-dock)
-
-    - [Switcher](https://github.com/daniellandau/switcher),
-      [e.g.org](https://extensions.gnome.org/extension/973/switcher/)
-
-    - [AppIndicator and KStatusNotifierItem Support](https://github.com/ubuntu/gnome-shell-extension-appindicator),
-      [e.g.org](https://extensions.gnome.org/extension/615/appindicator-support/)
 
   - _Tweaks_; additional Gnome settings
 
@@ -23,7 +15,6 @@
     [gsettings](https://discourse.gnome.org/t/what-is-the-purpose-of-gsettings/17165)
 
 - Low level key remapping with [keyd](https://github.com/rvaiya/keyd)
-
   - `/etc/keyd/default.conf` suggestion, if the keyboard absolutely lacks essential keys
     to the right; less drastic default solution,
     [kbd-tune](/kbd-tune)
@@ -43,10 +34,6 @@
   k = up
   j = down
   l = right
-  р = left
-  л = up
-  о = down
-  д = right
   ```
 
   - After editing, restart
@@ -85,14 +72,12 @@
   To make it normal, press Ctrl+Super+Esc.
 
 - Desktop scale
-
   - _Tweaks > Fonts > Scaling Factor_
 
   - _Settings_..?
 
 - Dolphin not serving
   [_Open With_](https://www.reddit.com/r/kde/comments/1jj1ziw/dolphin_and_open_with/)
-
   - Download the config
 
   ```
