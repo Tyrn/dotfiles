@@ -36,7 +36,8 @@ unzip "$nerd_file" -d "$HOME/.fonts/$nerd_name/"
 
 slav_name="fonts-churchslavonic"
 slav_file="$slav_name.zip"
-slav_url="https://www.ponomar.net/files/$slav_file"
+#slav_url="https://www.ponomar.net/files/$slav_file"
+slav_url="https://github.com/typiconman/fonts-cu/releases/download/v2.2.1/$slav_file"
 
 slav_download_dir="$HOME/Downloads/Fonts/$slav_name"
 mkdir -p "$slav_download_dir"
