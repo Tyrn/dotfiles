@@ -12,6 +12,7 @@ return {
 	{ import = "astrocommunity.colorscheme.catppuccin" },
 	{ import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
 	{ import = "astrocommunity.recipes.neovide" },
+	{ import = "astrocommunity.pack.bash" },
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.cmake" },
 	{ import = "astrocommunity.pack.cpp" },
