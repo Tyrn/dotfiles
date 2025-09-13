@@ -1,66 +1,56 @@
 #!/usr/bin/env bash
 
-echo "Creating fonts folder: ${HOME}/.fonts"
-mkdir -p  "$HOME/.fonts"
+fonts_unzip_to="$HOME/.fonts"
+downloads_fonts="$HOME/Downloads/Fonts"
+
+function font_install_zip() {
+    local font_name=$1
+    local font_file="$font_name.zip"
+    local deeper=$2
+    local font_folder=$3
+    local font_url="$font_folder/$font_file"
+    local font_download_dir="$downloads_fonts$deeper/$font_name"
+
+    mkdir -p "$font_download_dir"
+    echo "Starting download $font_name font"
+    cd "$font_download_dir" || exit 1
+
+    if ! test -e "$font_file"; then
+        if [ "$(command -v curl)" ]; then
+            echo "$font_url"
+            curl -OL "$font_url"
+        elif [ "$(command -v wget)" ]; then
+            echo "$font_url"
+            wget "$font_url"
+        else
+            echo "Fatal error: no curl, no wget on the system"
+            exit 1
+        fi
+    fi
+
+    echo "unzip the $font_file"
+    mkdir -p "$fonts_unzip_to$deeper"
+    unzip "$font_file" -d "$fonts_unzip_to$deeper/$font_name/"
+}
 
 # A behemoth: Noto Nerd fonts.
 
-nerd_name="Noto"
-nerd_file="$nerd_name.zip"
-nerd_url="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$nerd_file"
-
-nerd_download_dir="$HOME/Downloads/Fonts/$nerd_name"
-mkdir -p "$nerd_download_dir"
-
-echo "Starting download $nerd_name nerd font"
-
-cd "$nerd_download_dir"
-
-if ! test -e "$nerd_file"; then
-    if [ "$(command -v curl)" ]; then
-        echo "$nerd_url"
-        curl -OL "$nerd_url"
-    elif [ "$(command -v wget)" ]; then
-        echo "$nerd_url"
-        wget "$nerd_url"
-    else
-        echo "Fatal error: no curl, no wget on the system"
-        exit 1
-    fi
-fi
-
-echo "unzip the $nerd_file"
-unzip "$nerd_file" -d "$HOME/.fonts/$nerd_name/"
+font_install_zip \
+    "Noto" \
+    "" \
+    "https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
 
 # A tiny addition: the Church Slavonic fonts.
 
-slav_name="fonts-churchslavonic"
-slav_file="$slav_name.zip"
-#slav_url="https://www.ponomar.net/files/$slav_file"
-slav_url="https://github.com/typiconman/fonts-cu/releases/download/v2.2.1/$slav_file"
+font_install_zip \
+    "fonts-churchslavonic" \
+    "" \
+    "https://www.ponomar.net/files"
 
-slav_download_dir="$HOME/Downloads/Fonts/$slav_name"
-mkdir -p "$slav_download_dir"
-
-echo "Starting download $slav_name nerd font"
-
-cd "$slav_download_dir"
-
-if ! test -e "$slav_file"; then
-    if [ "$(command -v curl)" ]; then
-        echo "$slav_url"
-        curl -OL "$slav_url"
-    elif [ "$(command -v wget)" ]; then
-        echo "$slav_url"
-        wget "$slav_url"
-    else
-        echo "Fatal error: no curl, no wget on the system"
-        exit 1
-    fi
-fi
-
-echo "unzip the $slav_file"
-unzip "$slav_file" -d "$HOME/.fonts/$slav_name/"
+font_install_zip \
+    "fonts-churchslavonic" \
+    "/legacy" \
+    "https://github.com/typiconman/fonts-cu/releases/download/v2.2.1"
 
 fc-cache -fv
 echo "Done!"
