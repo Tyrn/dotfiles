@@ -4,10 +4,10 @@ fonts_unzip_to="$HOME/.fonts"
 downloads_fonts="$HOME/Downloads/Fonts"
 
 function font_install_zip() {
-    local font_name=$1
+    local font_name="${1}"
     local font_file="$font_name.zip"
-    local deeper=$2
-    local font_folder=$3
+    local font_folder="${2}"
+    local deeper="${3:-}" # "" by default; pass something like "/legacy", if you need it deeper.
     local font_url="$font_folder/$font_file"
     local font_download_dir="$downloads_fonts$deeper/$font_name"
 
@@ -39,22 +39,22 @@ if [ $# -eq 0 ]; then
 
     font_install_zip \
         "Noto" \
-        "" \
         "https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
 
     # A tiny addition: the Church Slavonic fonts.
 
     font_install_zip \
         "fonts-churchslavonic" \
-        "" \
         "https://www.ponomar.net/files"
 
-else # Church Slavonic legacy only.
+else
+
+    # Church Slavonic legacy.
 
     font_install_zip \
         "fonts-churchslavonic" \
-        "/legacy" \
-        "https://github.com/typiconman/fonts-cu/releases/download/v2.2.1"
+        "https://github.com/typiconman/fonts-cu/releases/download/v2.2.1" \
+        "/legacy"
 
 fi
 
