@@ -24,7 +24,7 @@ yes | sudo pacman -S gparted lazygit tig tmux atool ouch
 yes | sudo pacman -S tk wxwidgets-common wxwidgets-gtk3
 
 yes | sudo pacman -S ripgrep fd sd bat exa tree erdtree htop btop bottom dust procs tealdeer
-yes | sudo pacman -S skim tokei difftastic dos2unix
+yes | sudo pacman -S skim tokei difftastic dos2unix dysk
 
 yes | sudo pacman -S mpv yt-dlp ffmpeg rtmpdump atomicparsley aria2 python-mutagen
 yes | sudo pacman -S python-pycryptodomex python-websockets
