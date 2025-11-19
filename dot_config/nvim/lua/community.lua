@@ -13,6 +13,7 @@ return {
 	{ import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
 	{ import = "astrocommunity.recipes.neovide" },
 	{ import = "astrocommunity.code-runner.conjure" },
+	{ import = "astrocommunity.pack.markdown" },
 	{ import = "astrocommunity.pack.bash" },
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.cmake" },
