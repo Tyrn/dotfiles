@@ -19,7 +19,7 @@ sudo systemctl enable --now docker
 yes | sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty taglib1
 
 yes | sudo pacman -S partitionmanager fastfetch python-pipx mlocate sdkmanager
-yes | sudo pacman -S gparted lazygit tig tmux atool ouch
+yes | sudo pacman -S gparted grsync lazygit tig tmux atool ouch
 
 yes | sudo pacman -S tk wxwidgets-common wxwidgets-gtk3
 
