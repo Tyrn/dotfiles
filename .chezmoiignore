@@ -9,6 +9,7 @@ kbd-tune
 sdk-install
 nerd-fonts-install
 fonts-install
+gnome-customize
 
 ## Neovim
 #**/autoload/

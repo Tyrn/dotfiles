@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# This script is safe to run multiple times
+
+temp_dir=$(mktemp -d)
+
+cleanup() {
+	rm -rf "$temp_dir"
+	echo "Cleaned up: $temp_dir"
+}
+
+# Register cleanup for various exit signals
+trap cleanup EXIT INT TERM
+
+# Unsafe Mode button to GNOME Main Menu
+# (not required for switch-keyboard-layout)
+
+cd "$temp_dir" || exit
+git clone https://github.com/linushdot/unsafe-mode-menu.git
+cd unsafe-mode-menu || exit
+mkdir -p ~/.local/share/gnome-shell/extensions/
+rm -rf ~/.local/share/gnome-shell/extensions/unsafe-mode-menu@linushdot.local
+cp -r unsafe-mode-menu@linushdot.local ~/.local/share/gnome-shell/extensions/
+
+# Switch Keyboard Layout made possible
+# https://askubuntu.com/questions/1176703/switch-between-keyboard-languages-by-cli-in-gnome
+
+extension_dir_path=~/.local/share/gnome-shell/extensions/switch-keyboard-layout@kos
+rm -rf "${extension_dir_path}"
+mkdir -p "${extension_dir_path}"
+git clone https://gist.github.com/8436d4883db98826f2270372de15fe59.git "${extension_dir_path}"
+
+# Supply metadata.json updated to current GNOME version
+printf '{
+	"name": "Switch keyboard layout",
+	"description": "Switch to a specific keyboard layout",
+	"uuid": "switch-keyboard-layout@kos",
+	"shell-version": [
+		"48"
+	]
+}\n' | tee "${extension_dir_path}/metadata.json"
