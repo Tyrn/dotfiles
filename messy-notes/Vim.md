@@ -109,6 +109,23 @@ keymap(0, "n", ".", "/", opts) -- Russian slash
 keymap(0, "n", "-", "/", opts) -- Spanish slash
 ```
 
+### AstroNvim and Russian layout (legacy)
+
+- `~/.config/nvim/lua/plugins/ruremap.lua`
+
+```
+return {
+  -- Russian keyboard remapping.
+  {
+    'powerman/vim-plugin-ruscmd',
+      lazy = false,
+      init = function ()
+      end
+      -- event = "BufRead",
+  },
+}
+```
+
 ### VimTeX & Okular
 
 - Okular Settings > Configure Okular... > Editor > Custom Text Editor ([neovim-remote installed](https://github.com/mhinz/neovim-remote))
