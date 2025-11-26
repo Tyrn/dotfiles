@@ -8,7 +8,7 @@ if os.getenv "XDG_CURRENT_DESKTOP" == "GNOME" then
           linux = {
             cmd_get = vim.fn.stdpath "config" .. "/gnome-kbd.sh", -- set the command that outputs the keyboard state
             cmd_set = vim.fn.stdpath "config" .. "/gnome-kbd.sh %s", -- set the command that changes the keyboard state
-            -- normal_input = "us", -- Optional.
+            normal_input = "us", -- Optional.
             lang_inputs = {
               Ru = "ru",
               Es = "es",
