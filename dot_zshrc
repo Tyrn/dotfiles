@@ -228,39 +228,9 @@ show_virtual_env() {
 }
 PS1='$(show_virtual_env)'$PS1
 
-switch_keyboard_layout_gnome() {
-    local id=$1
-
-    local layouts=( $(
-        gsettings get org.gnome.desktop.input-sources sources |
-        python3 -c "import sys; import ast; print(' '.join(l for _, l in ast.literal_eval(sys.stdin.read())))"
-    ) )
-
-    if ! [ -z $id ]; then
-        ([ $id -ge 1 ] && [ $id -le ${#layouts[@]} ]) || {
-            return 1
-        }
-    else
-        select id in "${layouts[@]}"; do
-            ([ $REPLY -ge 1 ] && [ $REPLY -le ${#layouts[@]} ]) || {
-                continue
-            }
-
-            id=$REPLY
-
-            break
-        done
-    fi
-
-    (( id-- ))
-
-    gdbus call \
-        --session \
-        --dest org.gnome.Shell \
-        --object-path /org/gnome/Shell/Extensions/SwitchKeyboardLayout \
-        --method org.gnome.Shell.Extensions.SwitchKeyboardLayout.Call \
-        ${id}
-}
+if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
+  source ~/.gnome-kbd-lib.sh
+fi
 
 # Multiple runtime versions manager.
 #. /opt/asdf-vm/asdf.sh
