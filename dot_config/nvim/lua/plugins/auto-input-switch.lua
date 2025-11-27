@@ -3,6 +3,7 @@ if os.getenv "XDG_CURRENT_DESKTOP" == "GNOME" then
     {
       "amekusa/auto-input-switch.nvim",
       lazy = false,
+      init = function() vim.fn.system(vim.fn.stdpath "config" .. "/gnome-kbd.sh us") end,
       opts = {
         os_settings = {
           linux = {
@@ -17,6 +18,7 @@ if os.getenv "XDG_CURRENT_DESKTOP" == "GNOME" then
             },
           },
         },
+        -- log = true,
       },
     },
   }
