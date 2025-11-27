@@ -4,6 +4,10 @@
   - _Settings_; basic Gnome settings ⚙
 
   - _Extensions_ 🧩
+    - [**Shyriiwook**](https://github.com/madhead/shyriiwook),
+      [e.g.org](https://extensions.gnome.org/extension/6691/shyriiwook);
+      _Required for keyboard management!_
+
     - [PaperWM](https://github.com/paperwm/PaperWM),
       [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
 
