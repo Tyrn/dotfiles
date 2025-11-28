@@ -30,5 +30,7 @@ function set_keyboard_layout_gnome() {
     --dest org.gnome.Shell \
     --object-path /me/madhead/Shyriiwook \
     --method me.madhead.Shyriiwook.activate \
-    "${id}"
+    "${id}" >/dev/null 2>&1
+
+  printf '\n' # Explicit single newline
 }
