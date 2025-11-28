@@ -20,17 +20,7 @@ function get_keyboard_layout_gnome() {
     "${get_properties[@]}"
     return 0
   fi
-  "${get_properties[@]}" | python3 -c "
-import sys
-import re
-lines = sys.stdin.readlines()
-for line in lines:
-    if 'readonly' in line and 'currentLayout' in line:
-        match = re.search(r\"= '([^']+)'\", line)
-        if match:
-            print(match.group(1))
-        break
-"
+  "${get_properties[@]}" | grep "currentLayout" | sed -n "s/.*= '\([^']*\)'.*/\1/p"
 }
 
 function set_keyboard_layout_gnome() {
