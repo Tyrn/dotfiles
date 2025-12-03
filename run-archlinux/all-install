@@ -9,12 +9,14 @@ set -x
 ./spell-install
 ./nvim-install
 # ./doom-install  # Probably outdated.
-./qemu-install
+# ./qemu-install
 # ./nix-init
 # ./racket-install
 ./typst-install
 chezmoi apply --force
-gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FFD700'
-gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
-gsettings set org.gnome.desktop.media-handling automount false
-gsettings set org.gnome.desktop.media-handling automount-open false
+if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
+  gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FFD700'
+  gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+  gsettings set org.gnome.desktop.media-handling automount false
+  gsettings set org.gnome.desktop.media-handling automount-open false
+fi

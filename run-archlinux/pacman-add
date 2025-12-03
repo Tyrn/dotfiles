@@ -12,7 +12,8 @@ set -x
 sudo pacman -Sy archlinux-keyring && sudo pacman -Syyu
 
 if ! grep -q appendiX /etc/pacman.conf; then
-printf '\n\n# Custom appendiX to the end of file
+  # shellcheck disable=SC2016
+  printf '\n\n# Custom appendiX to the end of file
 
 [options]
 Color
@@ -27,10 +28,10 @@ Server = http://repo.archlinuxcn.org/$arch
 [andontie-aur]
 Server = https://aur.andontie.net/$arch
 
-[wee-green-arch-repo]
-SigLevel = Optional TrustAll
-Server = https://tyrn.github.io/$repo/$arch
-#Server = file:///home/alexey/arch-repos/$repo/$arch
+#[wee-green-arch-repo]
+#SigLevel = Optional TrustAll
+#Server = https://tyrn.github.io/$repo/$arch
+##Server = file:///home/alexey/arch-repos/$repo/$arch
 
 [ownstuff]
 #Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
@@ -47,4 +48,4 @@ sudo pacman-key --recv-key B9E36A7275FC61B464B67907E06FE8F53CDC6A4C
 sudo pacman-key --lsign-key B9E36A7275FC61B464B67907E06FE8F53CDC6A4C
 
 sudo pacman -Syy
-sudo pacman -S archlinuxcn-keyring 
+sudo pacman -S archlinuxcn-keyring
