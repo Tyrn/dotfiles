@@ -41,6 +41,15 @@ else
 			"amekusa/auto-input-switch.nvim",
 			lazy = false,
 			opts = {
+				os_settings = {
+					linux = {
+						lang_inputs = {
+							Es = "xkb:es::spa",
+							Slavonic = "m17n:cu:kbd",
+							Hellenic = "m17n:grc:mizuochi",
+						},
+					},
+				},
 				-- log = true,
 			},
 		},
