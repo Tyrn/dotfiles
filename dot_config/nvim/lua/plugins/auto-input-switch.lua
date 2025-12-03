@@ -41,6 +41,9 @@ else
 			"amekusa/auto-input-switch.nvim",
 			lazy = false,
 			opts = {
+				restore = {
+					exclude_pattern = [==[[-+0-9@#$%^&/\\¥=~<>(){}\[\];:`]]==], -- An option for Latin-based layouts like "es"
+				},
 				os_settings = {
 					linux = {
 						lang_inputs = {
