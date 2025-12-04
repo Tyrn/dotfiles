@@ -41,6 +41,7 @@ yes | cargo binstall tex-fmt
 #sudo pacman -S evince
 #sudo pacman -S qmmp
 #
+#     yay -S kwin-scripts-krohnkite
 #     yay -S doublecmd-qt5
 #     yay -S fontmatrix  # Not recommended before adding archlinuxcn repo (due to qt5-webkit dependency).
 #     yay -S foxitreader  # Not recommended before adding andontie-aur repo.
