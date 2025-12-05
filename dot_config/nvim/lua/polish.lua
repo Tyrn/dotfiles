@@ -45,8 +45,8 @@ vim.keymap.set("i", en_rp .. "ñ", lambda, opts)
 -- local super = "⊞"
 -- local super = "ᛥ"
 local super = "ᛞ"
-vim.keymap.set("i", en_lp .. "w", super, opts)
-vim.keymap.set("i", ru_lp .. "ц", super, opts)
+vim.keymap.set("i", en_lp .. "s", super, opts)
+vim.keymap.set("i", ru_lp .. "ы", super, opts)
 
 -- Runic Alt for everybody
 local alt = "ᛅ"
@@ -60,13 +60,13 @@ vim.keymap.set("i", ru_lp .. "с", control, opts)
 
 -- Runic Shift for everybody
 local shift = "ᛏ"
-vim.keymap.set("i", en_lp .. "e", shift, opts)
-vim.keymap.set("i", ru_lp .. "у", shift, opts)
+vim.keymap.set("i", en_lp .. "f", shift, opts)
+vim.keymap.set("i", ru_lp .. "а", shift, opts)
 
 -- Open Box Space for everybody
 local space = "␣"
-vim.keymap.set("i", en_lp .. "s", space, opts)
-vim.keymap.set("i", ru_lp .. "ы", space, opts)
+vim.keymap.set("i", en_lp .. "e", space, opts)
+vim.keymap.set("i", ru_lp .. "у", space, opts)
 
 -- Enter for everybody
 -- local enter = "⏎"
@@ -83,6 +83,12 @@ vim.keymap.set("i", ru_lp .. "е", tab, opts)
 local del = "␡"
 vim.keymap.set("i", en_lp .. "d", del, opts)
 vim.keymap.set("i", ru_lp .. "в", del, opts)
+
+-- Runic separator for everybody
+-- local separator = "ᛜ"
+local separator = "⬞"
+vim.keymap.set("i", en_lp .. "g", separator, opts)
+vim.keymap.set("i", ru_lp .. "п", separator, opts)
 
 -- Left arrow for everybody
 local left_arrow = "⮜"
@@ -107,28 +113,22 @@ vim.keymap.set("i", ru_rp .. "д", right_arrow, opts)
 -- Home for everybody
 local home_key = "⥾"
 vim.keymap.set("i", en_rp .. "y", home_key, opts)
-vim.keymap.set("i", ru_rp .. "", home_key, opts)
+vim.keymap.set("i", ru_rp .. "н", home_key, opts)
 
 -- Page Down arrow for everybody
 local page_down = "⤥"
 vim.keymap.set("i", en_rp .. "u", page_down, opts)
-vim.keymap.set("i", ru_rp .. "", page_down, opts)
+vim.keymap.set("i", ru_rp .. "г", page_down, opts)
 
 -- Page Up arrow for everybody
 local page_up = "⤣"
 vim.keymap.set("i", en_rp .. "i", page_up, opts)
-vim.keymap.set("i", ru_rp .. "", page_up, opts)
+vim.keymap.set("i", ru_rp .. "ш", page_up, opts)
 
 -- End arrow for everybody
 local end_key = "⥿"
 vim.keymap.set("i", en_rp .. "o", end_key, opts)
-vim.keymap.set("i", ru_rp .. "", end_key, opts)
-
--- Runic separator for everybody
--- local separator = "ᛜ"
-local separator = "⬞"
-vim.keymap.set("i", en_lp .. "f", separator, opts)
-vim.keymap.set("i", ru_lp .. "а", separator, opts)
+vim.keymap.set("i", ru_rp .. "щ", end_key, opts)
 
 -- <C-w> selection
 vim.keymap.set("n", "<leader>Lo", "<C-w>o", opts)
