@@ -11,8 +11,8 @@ yes | sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers gwenv
 ../kde-to-gnome
 ./m17n-add
 
-yes | sudo pacman -S python311
-yes | sudo pacman -S pulseview-git
+#yes | sudo pacman -S python311
+#yes | sudo pacman -S pulseview-git
 
 yes | sudo pacman -S gnome-shell-extension-dash-to-dock
 yes | sudo pacman -S dconf-editor
@@ -22,7 +22,7 @@ yes | sudo pacman -S watchman-bin
 yes | sudo pacman -S obs-studio
 yes | sudo pacman -S vlc vlc-plugins-all
 yes | sudo pacman -S google-chrome
-yes | sudo pacman -S qutebrowser
+#yes | sudo pacman -S qutebrowser
 yes | sudo pacman -S tor-browser-bin
 yes | sudo pacman -S geany geany-plugins retext foliate qbittorrent
 yes | sudo pacman -S warpinator scrcpy vorbis-tools pandoc-bin
@@ -31,7 +31,7 @@ yes | sudo pacman -S telegram-desktop
 #yes |sudo pacman -S arduino-ide arduino-language-server
 yes | sudo pacman -S libusb-compat python-pyserial
 yes | sudo pacman -S platformio-core platformio-core-udev
-yes | sudo pacman -S zoom
+#yes | sudo pacman -S zoom
 #yes |sudo pacman -S kicad kicad-library kicad-library-3d python-kikit
 
 cargo install --locked --git https://github.com/Decodetalkers/flutterup
