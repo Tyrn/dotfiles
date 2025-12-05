@@ -14,7 +14,7 @@ TranslateKeysInNormalMode = false
 --   filename = {
 --     ["Foofile"] = "fooscript",
 --   },
---   pattern = {
+--y   pattern = {
 --     ["~/%.config/foo/.*"] = "fooscript",
 --   },
 -- }
@@ -30,10 +30,10 @@ vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 local opts = { noremap = true, silent = true }
 local lops = { remap = true, silent = true }
 
-local en_lp = "ESE"
-local en_rp = "ILI"
-local ru_lp = "УЫУ"
-local ru_rp = "ШДШ"
+local en_lp = "DF"
+local en_rp = "KJ"
+local ru_lp = "ВА"
+local ru_rp = "ЛО"
 
 -- Lambda for everybody
 local lambda = "λ"
@@ -49,7 +49,6 @@ vim.keymap.set("i", en_lp .. "w", super, opts)
 vim.keymap.set("i", ru_lp .. "ц", super, opts)
 
 -- Runic Alt for everybody
--- local alt = "⎇"
 local alt = "ᛅ"
 vim.keymap.set("i", en_lp .. "a", alt, opts)
 vim.keymap.set("i", ru_lp .. "ф", alt, opts)
@@ -60,7 +59,6 @@ vim.keymap.set("i", en_lp .. "c", control, opts)
 vim.keymap.set("i", ru_lp .. "с", control, opts)
 
 -- Runic Shift for everybody
--- local shift = "⇧"
 local shift = "ᛏ"
 vim.keymap.set("i", en_lp .. "e", shift, opts)
 vim.keymap.set("i", ru_lp .. "у", shift, opts)
@@ -85,6 +83,46 @@ vim.keymap.set("i", ru_lp .. "е", tab, opts)
 local del = "␡"
 vim.keymap.set("i", en_lp .. "d", del, opts)
 vim.keymap.set("i", ru_lp .. "в", del, opts)
+
+-- Left arrow for everybody
+local left_arrow = "⮜"
+vim.keymap.set("i", en_rp .. "h", left_arrow, opts)
+vim.keymap.set("i", ru_rp .. "р", left_arrow, opts)
+
+-- Down arrow for everybody
+local down_arrow = "⮟"
+vim.keymap.set("i", en_rp .. "j", down_arrow, opts)
+vim.keymap.set("i", ru_rp .. "о", down_arrow, opts)
+
+-- Up arrow for everybody
+local up_arrow = "⮝"
+vim.keymap.set("i", en_rp .. "k", up_arrow, opts)
+vim.keymap.set("i", ru_rp .. "л", up_arrow, opts)
+
+-- Right arrow for everybody
+local right_arrow = "⮞"
+vim.keymap.set("i", en_rp .. "l", right_arrow, opts)
+vim.keymap.set("i", ru_rp .. "д", right_arrow, opts)
+
+-- Home for everybody
+local home_key = "⥾"
+vim.keymap.set("i", en_rp .. "y", home_key, opts)
+vim.keymap.set("i", ru_rp .. "", home_key, opts)
+
+-- Page Down arrow for everybody
+local page_down = "⤥"
+vim.keymap.set("i", en_rp .. "u", page_down, opts)
+vim.keymap.set("i", ru_rp .. "", page_down, opts)
+
+-- Page Up arrow for everybody
+local page_up = "⤣"
+vim.keymap.set("i", en_rp .. "i", page_up, opts)
+vim.keymap.set("i", ru_rp .. "", page_up, opts)
+
+-- End arrow for everybody
+local end_key = "⥿"
+vim.keymap.set("i", en_rp .. "o", end_key, opts)
+vim.keymap.set("i", ru_rp .. "", end_key, opts)
 
 -- Runic separator for everybody
 -- local separator = "ᛜ"
