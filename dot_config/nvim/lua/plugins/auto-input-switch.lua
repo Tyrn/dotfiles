@@ -9,14 +9,8 @@ if os.getenv("XDG_CURRENT_DESKTOP") == "GNOME" then
 				vim.fn.system(vim.fn.stdpath("config") .. "/gnome-kbd.sh us")
 			end,
 			opts = {
-				-- Confine Normalize and Restore actions to ModeChanged event
-				normalize = {
-					on = false,
-				},
 				restore = {
-					on = false,
-					-- exclude_pattern = false, -- Disable exclusion
-					-- exclude_pattern = [==[[-+0-9@#$%^&/\\¥=~<>(){}\[\];:`]]==], -- An option for Latin-based layouts like "es"
+					exclude_pattern = [==[[-+0-9@#$%^&/\\¥=~<>(){}\[\];:`]]==], -- An option for Latin-based layouts like "es"
 				},
 				os_settings = {
 					linux = {
