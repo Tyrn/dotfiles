@@ -79,6 +79,11 @@ local tab = "⇆"
 vim.keymap.set("i", en_lp .. "t", tab, opts)
 vim.keymap.set("i", ru_lp .. "е", tab, opts)
 
+-- Escape for everybody
+local escape = "⎋"
+vim.keymap.set("i", en_lp .. "w", escape, opts)
+vim.keymap.set("i", ru_lp .. "ц", escape, opts)
+
 -- Delete for everybody
 local del = "␡"
 vim.keymap.set("i", en_lp .. "d", del, opts)
