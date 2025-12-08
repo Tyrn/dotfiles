@@ -81,8 +81,8 @@ vim.keymap.set("i", ru_lp .. "е", tab, opts)
 
 -- Escape for everybody
 local escape = "⎋"
-vim.keymap.set("i", en_lp .. "w", escape, opts)
-vim.keymap.set("i", ru_lp .. "ц", escape, opts)
+vim.keymap.set("i", en_lp .. "q", escape, opts)
+vim.keymap.set("i", ru_lp .. "й", escape, opts)
 
 -- Delete for everybody
 local del = "␡"
@@ -94,6 +94,16 @@ vim.keymap.set("i", ru_lp .. "в", del, opts)
 local separator = "⬞"
 vim.keymap.set("i", en_lp .. "g", separator, opts)
 vim.keymap.set("i", ru_lp .. "п", separator, opts)
+
+-- Mouse Wheel for everybody
+local mouse_wheel = "☉"
+vim.keymap.set("i", en_lp .. "w", mouse_wheel, opts)
+vim.keymap.set("i", ru_lp .. "ц", mouse_wheel, opts)
+
+-- Print Screen for everybody
+local print_screen = "⎙"
+vim.keymap.set("i", en_rp .. "p", print_screen, opts)
+vim.keymap.set("i", ru_rp .. "з", print_screen, opts)
 
 -- Left arrow for everybody
 local left_arrow = "⮜"
