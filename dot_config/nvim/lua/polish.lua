@@ -56,7 +56,7 @@ end
 
 vks_l("ᛞ", "s", "ы") -- Runic Super/Meta for everybody
 vks_l("ᛅ", "a", "ф") -- Runic Alt
-vks_l("⌃", "c", "с") -- Runic Ctrl
+vks_l("⌃", "c", "с") -- Ctrl
 vks_l("ᛏ", "f", "а") -- Runic Shift
 vks_l("␣", "e", "у") -- Open Box Space
 vks_l("⮐", "r", "к") -- Enter
@@ -66,7 +66,6 @@ vks_l("␡", "d", "в") -- Delete
 vks_l("⬞", "g", "п") -- Separator
 vks_l("☉", "w", "ц") -- Mouse Wheel
 
-vks_r("⎙", "p", "з") -- Print Screen
 vks_r("⮜", "h", "р") -- Left arrow
 vks_r("⮟", "j", "о") -- Down arrow
 vks_r("⮝", "k", "л") -- Up arrow
@@ -75,6 +74,7 @@ vks_r("⥾", "y", "н") -- Home
 vks_r("⤥", "u", "г") -- Page Down
 vks_r("⤣", "i", "ш") -- Page Up
 vks_r("⥿", "o", "щ") -- End
+vks_r("⎙", "p", "з") -- Print Screen
 
 -- ⮝⮝⮝ Weird characters for Insert Mode ⮝⮝⮝
 
