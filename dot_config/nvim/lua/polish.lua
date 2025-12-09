@@ -30,6 +30,9 @@ vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 local opts = { noremap = true, silent = true }
 local lops = { remap = true, silent = true }
 
+-- ⮟⮟⮟ Weird characters for Insert Mode ⮟⮟⮟
+
+-- Insert Mode prefixes
 local en_lp = "DF"
 local en_rp = "KJ"
 local ru_lp = "ВА"
@@ -41,109 +44,39 @@ vim.keymap.set("i", en_rp .. ";", lambda, opts)
 vim.keymap.set("i", ru_rp .. "ж", lambda, opts)
 vim.keymap.set("i", en_rp .. "ñ", lambda, opts)
 
--- Runic Super/Meta for everybody
--- local super = "⊞"
--- local super = "ᛥ"
-local super = "ᛞ"
-vim.keymap.set("i", en_lp .. "s", super, opts)
-vim.keymap.set("i", ru_lp .. "ы", super, opts)
+function vks_l(symbol, en_key, ru_key)
+  vim.keymap.set("i", en_lp .. en_key, symbol, opts)
+  vim.keymap.set("i", ru_lp .. ru_key, symbol, opts)
+end
 
--- Runic Alt for everybody
-local alt = "ᛅ"
-vim.keymap.set("i", en_lp .. "a", alt, opts)
-vim.keymap.set("i", ru_lp .. "ф", alt, opts)
+function vks_r(symbol, en_key, ru_key)
+  vim.keymap.set("i", en_rp .. en_key, symbol, opts)
+  vim.keymap.set("i", ru_rp .. ru_key, symbol, opts)
+end
 
--- Runic Ctrl for everybody
-local control = "⌃"
-vim.keymap.set("i", en_lp .. "c", control, opts)
-vim.keymap.set("i", ru_lp .. "с", control, opts)
+vks_l("ᛞ", "s", "ы") -- Runic Super/Meta for everybody
+vks_l("ᛅ", "a", "ф") -- Runic Alt
+vks_l("⌃", "c", "с") -- Runic Ctrl
+vks_l("ᛏ", "f", "а") -- Runic Shift
+vks_l("␣", "e", "у") -- Open Box Space
+vks_l("⮐", "r", "к") -- Enter
+vks_l("⇆", "t", "е") -- Tab
+vks_l("⎋", "q", "й") -- Escape
+vks_l("␡", "d", "в") -- Delete
+vks_l("⬞", "g", "п") -- Separator
+vks_l("☉", "w", "ц") -- Mouse Wheel
 
--- Runic Shift for everybody
-local shift = "ᛏ"
-vim.keymap.set("i", en_lp .. "f", shift, opts)
-vim.keymap.set("i", ru_lp .. "а", shift, opts)
+vks_r("⎙", "p", "з") -- Print Screen
+vks_r("⮜", "h", "р") -- Left arrow
+vks_r("⮟", "j", "о") -- Down arrow
+vks_r("⮝", "k", "л") -- Up arrow
+vks_r("⮞", "l", "д") -- Right arrow
+vks_r("⥾", "y", "н") -- Home
+vks_r("⤥", "u", "г") -- Page Down
+vks_r("⤣", "i", "ш") -- Page Up
+vks_r("⥿", "o", "щ") -- End
 
--- Open Box Space for everybody
-local space = "␣"
-vim.keymap.set("i", en_lp .. "e", space, opts)
-vim.keymap.set("i", ru_lp .. "у", space, opts)
-
--- Enter for everybody
--- local enter = "⏎"
-local enter = "⮐"
-vim.keymap.set("i", en_lp .. "r", enter, opts)
-vim.keymap.set("i", ru_lp .. "к", enter, opts)
-
--- Tab for everybody
-local tab = "⇆"
-vim.keymap.set("i", en_lp .. "t", tab, opts)
-vim.keymap.set("i", ru_lp .. "е", tab, opts)
-
--- Escape for everybody
-local escape = "⎋"
-vim.keymap.set("i", en_lp .. "q", escape, opts)
-vim.keymap.set("i", ru_lp .. "й", escape, opts)
-
--- Delete for everybody
-local del = "␡"
-vim.keymap.set("i", en_lp .. "d", del, opts)
-vim.keymap.set("i", ru_lp .. "в", del, opts)
-
--- Runic separator for everybody
--- local separator = "ᛜ"
-local separator = "⬞"
-vim.keymap.set("i", en_lp .. "g", separator, opts)
-vim.keymap.set("i", ru_lp .. "п", separator, opts)
-
--- Mouse Wheel for everybody
-local mouse_wheel = "☉"
-vim.keymap.set("i", en_lp .. "w", mouse_wheel, opts)
-vim.keymap.set("i", ru_lp .. "ц", mouse_wheel, opts)
-
--- Print Screen for everybody
-local print_screen = "⎙"
-vim.keymap.set("i", en_rp .. "p", print_screen, opts)
-vim.keymap.set("i", ru_rp .. "з", print_screen, opts)
-
--- Left arrow for everybody
-local left_arrow = "⮜"
-vim.keymap.set("i", en_rp .. "h", left_arrow, opts)
-vim.keymap.set("i", ru_rp .. "р", left_arrow, opts)
-
--- Down arrow for everybody
-local down_arrow = "⮟"
-vim.keymap.set("i", en_rp .. "j", down_arrow, opts)
-vim.keymap.set("i", ru_rp .. "о", down_arrow, opts)
-
--- Up arrow for everybody
-local up_arrow = "⮝"
-vim.keymap.set("i", en_rp .. "k", up_arrow, opts)
-vim.keymap.set("i", ru_rp .. "л", up_arrow, opts)
-
--- Right arrow for everybody
-local right_arrow = "⮞"
-vim.keymap.set("i", en_rp .. "l", right_arrow, opts)
-vim.keymap.set("i", ru_rp .. "д", right_arrow, opts)
-
--- Home for everybody
-local home_key = "⥾"
-vim.keymap.set("i", en_rp .. "y", home_key, opts)
-vim.keymap.set("i", ru_rp .. "н", home_key, opts)
-
--- Page Down arrow for everybody
-local page_down = "⤥"
-vim.keymap.set("i", en_rp .. "u", page_down, opts)
-vim.keymap.set("i", ru_rp .. "г", page_down, opts)
-
--- Page Up arrow for everybody
-local page_up = "⤣"
-vim.keymap.set("i", en_rp .. "i", page_up, opts)
-vim.keymap.set("i", ru_rp .. "ш", page_up, opts)
-
--- End arrow for everybody
-local end_key = "⥿"
-vim.keymap.set("i", en_rp .. "o", end_key, opts)
-vim.keymap.set("i", ru_rp .. "щ", end_key, opts)
+-- ⮝⮝⮝ Weird characters for Insert Mode ⮝⮝⮝
 
 -- <C-w> selection
 vim.keymap.set("n", "<leader>Lo", "<C-w>o", opts)
