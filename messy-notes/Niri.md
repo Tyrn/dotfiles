@@ -19,3 +19,22 @@ to
 ```
 Ctrl+Space
 ```
+
+- Keyboard, mouse and touchpad, 2025-12-10 `~/.config/niri/config.kdl`
+
+```
+input {
+    keyboard {
+        xkb {
+        }
+        //numlock
+    }
+    touchpad {
+        tap
+    }
+    mouse {
+    }
+    trackpoint {
+    }
+}
+```
