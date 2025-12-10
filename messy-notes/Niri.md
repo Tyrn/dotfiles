@@ -38,3 +38,5 @@ input {
     }
 }
 ```
+
+- _Don't forget about the monitor settings!_ (`output`)
