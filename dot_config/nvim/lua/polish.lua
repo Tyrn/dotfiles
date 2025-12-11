@@ -74,6 +74,7 @@ vks_r("⥾", "y", "н") -- Home
 vks_r("⤥", "u", "г") -- Page Down
 vks_r("⤣", "i", "ш") -- Page Up
 vks_r("⥿", "o", "щ") -- End
+vks_r("⌫", "n", "т") -- Backspace
 vks_r("⎙", "p", "з") -- Print Screen
 
 -- ⮝⮝⮝ Weird characters for Insert Mode ⮝⮝⮝
