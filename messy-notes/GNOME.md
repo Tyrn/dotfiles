@@ -11,6 +11,9 @@
     - [PaperWM](https://github.com/paperwm/PaperWM),
       [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
 
+    - System Monitor,
+      [e.g.org](https://extensions.gnome.org/extension/6807/system-monitor/)
+
     - [Dash to Dock](https://github.com/micheleg/dash-to-dock)
 
   - _Tweaks_; additional Gnome settings
