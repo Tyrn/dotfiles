@@ -34,7 +34,7 @@ yes | sudo pacman -S platformio-core platformio-core-udev
 #yes | sudo pacman -S zoom
 #yes |sudo pacman -S kicad kicad-library kicad-library-3d python-kikit
 
-cargo install --locked --git https://github.com/Decodetalkers/flutterup
+#cargo install --locked --git https://github.com/Decodetalkers/flutterup
 #flutterup install
 
 yes | cargo binstall tex-fmt
