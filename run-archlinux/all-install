@@ -14,4 +14,4 @@ set -x
 # ./racket-install
 ./typst-install
 chezmoi apply --force
-./gsettings-set
+../gsettings-set
