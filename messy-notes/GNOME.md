@@ -1,12 +1,17 @@
 # GNOME 47 and upwards
 
+- Weird naming
+  - _Loupe_ app is referred to as _Image Viewer_
+  - _Nautilus_ is referred to as _Files_
+  - _Evince_ (_Papers_, too) is referred to as _Document Viewer_
+
 - Settings entry points
   - _Settings_; basic Gnome settings ⚙
 
   - _Extensions_ 🧩
     - [**Shyriiwook**](https://github.com/madhead/shyriiwook),
       [e.g.org](https://extensions.gnome.org/extension/6691/shyriiwook);
-      _Required for keyboard management!_
+      _Required for Neovim advanced keyboard management!_
 
     - [PaperWM](https://github.com/paperwm/PaperWM),
       [e.g.org](https://extensions.gnome.org/extension/6099/paperwm/)
