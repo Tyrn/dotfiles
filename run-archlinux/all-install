@@ -20,4 +20,5 @@ if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
   gsettings set org.gnome.desktop.media-handling automount false
   gsettings set org.gnome.desktop.media-handling automount-open false
   gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+  gsettings set org.gtk.Settings.FileChooser show-hidden true
 fi
