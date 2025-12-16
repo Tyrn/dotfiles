@@ -19,4 +19,5 @@ if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
   gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
   gsettings set org.gnome.desktop.media-handling automount false
   gsettings set org.gnome.desktop.media-handling automount-open false
+  gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 fi
