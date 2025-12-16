@@ -11,6 +11,7 @@ sdk-install
 nerd-fonts-install
 fonts-install
 gnome-customize
+gsettings-set
 
 ## Neovim
 #**/autoload/
