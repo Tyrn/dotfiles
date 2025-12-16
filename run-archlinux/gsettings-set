@@ -10,6 +10,8 @@ if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.media-handling automount-open false
   gsettings set org.gtk.Settings.FileChooser sort-directories-first true
   gsettings set org.gtk.Settings.FileChooser show-hidden true
+  gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first true
+  gsettings set org.gtk.gtk4.Settings.FileChooser show-hidden true
 else
   echo "No gsettings utility found"
 fi
