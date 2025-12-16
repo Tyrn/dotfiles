@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+if command -v gsettings &>/dev/null; then
+  gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FFD700'
+  gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+  gsettings set org.gnome.desktop.media-handling automount false
+  gsettings set org.gnome.desktop.media-handling automount-open false
+  gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+  gsettings set org.gtk.Settings.FileChooser show-hidden true
+else
+  echo "No gsettings utility found"
+fi
