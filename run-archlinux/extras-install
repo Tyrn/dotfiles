@@ -13,7 +13,7 @@ yes | sudo pacman -S thunar tumbler android-file-transfer # android-udev ?
 yes | sudo pacman -S catfish thunar-volman thunar-archive-plugin thunar-media-tags-plugin
 
 ../kde-to-gnome
-./m17n-add
+#./m17n-add
 
 #yes | sudo pacman -S python311
 #yes | sudo pacman -S pulseview-git
@@ -27,7 +27,7 @@ yes | sudo pacman -S obs-studio
 yes | sudo pacman -S vlc vlc-plugins-all
 yes | sudo pacman -S google-chrome
 #yes | sudo pacman -S qutebrowser
-yes | sudo pacman -S tor-browser-bin
+#yes | sudo pacman -S tor-browser-bin
 yes | sudo pacman -S geany geany-plugins retext foliate qbittorrent
 yes | sudo pacman -S warpinator scrcpy vorbis-tools pandoc-bin
 yes | sudo pacman -S telegram-desktop
