@@ -125,6 +125,18 @@ export EDITOR="$VISUAL"
 
 export SAM_CLI_TELEMETRY=0
 
+# A list of file extensions,
+# encountered recursively.
+function lsext-col() {
+    local dir="${1:-.}"
+    find "$dir" -type f | sed -n 's/.*\.//p' | sort -u
+}
+
+function lsext() {
+    local dir="${1:-.}"
+    find "$dir" -type f | sed -n 's/.*\.//p' | sort -u | paste -sd ' '
+}
+
 # Recursive/selective copying;
 # only the specified extensions included.
 function cprf() {
