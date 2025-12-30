@@ -125,6 +125,28 @@ export EDITOR="$VISUAL"
 
 export SAM_CLI_TELEMETRY=0
 
+# Recursive/selective copying;
+# only the specified extensions included.
+function cprf() {
+  if [[ $# -lt 3 ]]; then
+    echo "Usage: cprf source dest ext1 [ext2 ...]"
+    return 1
+  fi
+
+  local src="$1"
+  local dest="$2"
+  shift 2
+
+  # Build include args
+  local include_args="--include=\"*/\""
+  for ext in "$@"; do
+    include_args="$include_args --include=\"*.$ext\""
+  done
+
+  # Execute
+  eval "rsync -avm $include_args --exclude=\"*\" \"$src/\" \"$dest/\""
+}
+
 alias dm=damastes
 alias dp=procrustes
 alias lls="ls -lha --color=always | less -r"
