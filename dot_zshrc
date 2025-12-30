@@ -128,13 +128,13 @@ export SAM_CLI_TELEMETRY=0
 # A list of file extensions,
 # encountered recursively.
 function lsext-col() {
-    local dir="${1:-.}"
-    find "$dir" -type f | sed -n 's/.*\.//p' | sort -u
+  local dir="${1:-.}"
+  find "$dir" -type f | grep -E '\.[^./][^./]*$' | sed 's/.*\.//' | sort -u
 }
 
 function lsext() {
-    local dir="${1:-.}"
-    find "$dir" -type f | sed -n 's/.*\.//p' | sort -u | paste -sd ' '
+  local dir="${1:-.}"
+  find "$dir" -type f | grep -E '\.[^./][^./]*$' | sed 's/.*\.//' | sort -u | paste -sd ' '
 }
 
 # Recursive/selective copying;
