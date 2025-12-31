@@ -137,6 +137,12 @@ function lsext() {
   find "$dir" -type f | grep -E '\.[^./][^./]*$' | sed 's/.*\.//' | sort -u | paste -sd ' '
 }
 
+# Remove exec permission recursively.
+function chmod-x() {
+  local dir="${1:-.}"
+  chmod -R u=rw,go=r,a+X "$dir"
+}
+
 # Recursive/selective copying;
 # only the specified extensions included.
 function cprf() {
