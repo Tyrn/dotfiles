@@ -41,3 +41,33 @@ binds {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
 }
+
+window-rule {
+    match app-id="firefox"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="google-chrome"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="org.kde.dolphin"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="thunar"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="org.qbittorrent.qBittorrent"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    open-maximized true
+}
