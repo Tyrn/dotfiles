@@ -1,6 +1,16 @@
 # Niri Wayland compositor
 
+## How to
+
+- Learn about the opened windows
+
+```
+niri msg windows
+```
+
 ## Settings
+
+_Almost everything implemented via_ `common.kdl`
 
 - For IBus, add to `~/.config/niri/config.kdl`
 
