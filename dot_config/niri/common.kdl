@@ -1,0 +1,25 @@
+//
+// Common settings presumably good enough
+// for any desktop or laptop using IBus.
+//
+input {
+    keyboard {
+        xkb {
+        }
+    }
+    touchpad {
+        tap
+    }
+}
+
+spawn-at-startup "ibus" "start" "--type" "wayland"
+
+binds {
+    // Mod+Space reserved for IBus switch.
+    /-Mod+Space hotkey-overlay-title=null {
+        spawn "true";
+    }
+    Ctrl+Space hotkey-overlay-title="Application Launcher" {
+        spawn "dms" "ipc" "call" "spotlight" "toggle";
+    }
+}
