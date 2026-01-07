@@ -2,7 +2,10 @@
 // Common settings presumably good enough
 // for any desktop or laptop using IBus.
 //
-// Append to config.kdl:
+// IN CASE THE CONFIG FILES (niri/config.kdl, niri/dms/*.kdl)
+// ARE DEFAULT/GENERATED:
+//
+// Append these includes at the end of config.kdl:
 
 // //include "custom.kdl"  // For a laptop, mostly.
 // include "common.kdl"
