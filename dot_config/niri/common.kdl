@@ -2,13 +2,28 @@
 // Common settings presumably good enough
 // for any desktop or laptop using IBus.
 //
+// Append to config.kdl:
+
+// //include "custom.kdl"  // For a laptop, mostly.
+// include "common.kdl"
+//
+// Comment out (with /-):
+//
+// input from config.kdl
+// Mod+Space ... {} from dms/binds.kdl
+//
 input {
     keyboard {
         xkb {
         }
+        //numlock
     }
     touchpad {
         tap
+    }
+    mouse {
+    }
+    trackpoint {
     }
 }
 
