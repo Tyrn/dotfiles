@@ -7,8 +7,8 @@
 //
 // Append these includes at the end of config.kdl:
 
-// //include "custom.kdl"  // For a laptop, mostly.
-// include "common.kdl"
+// //include "user/custom.kdl"  // For a laptop, mostly.
+// include "user/common.kdl"
 //
 // Comment out (with /-):
 //
