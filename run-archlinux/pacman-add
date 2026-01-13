@@ -25,11 +25,8 @@ Server = http://repo.archlinuxcn.org/$arch
 ## or install archlinuxcn-mirrorlist-git and use the mirrorlist
 #Include = /etc/pacman.d/archlinuxcn-mirrorlist
 
-#[andontie-aur]
-#Server = https://aur.andontie.net/$arch
-
-[chaotic-aur]
-Include = /etc/pacman.d/chaotic-mirrorlist
+#[chaotic-aur]
+#Include = /etc/pacman.d/chaotic-mirrorlist
 
 #[wee-green-arch-repo]
 #SigLevel = Optional TrustAll
@@ -43,9 +40,6 @@ fi
 
 # Required by archlinuxcn
 sudo pacman-key --lsign-key "farseerfc@archlinux.org"
-# Required by andontie-aur
-#sudo pacman-key --recv-key 72BF227DD76AE5BF
-#sudo pacman-key --lsign-key 72BF227DD76AE5BF
 # Required by chaotic-aur
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
