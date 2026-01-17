@@ -12,7 +12,7 @@ yes | sudo pacman -S gthumb # gwenview alternative
 yes | sudo pacman -S thunar tumbler android-file-transfer # android-udev ?
 yes | sudo pacman -S catfish thunar-volman thunar-archive-plugin thunar-media-tags-plugin
 
-../kde-to-gnome
+#../kde-to-gnome
 #./m17n-add
 
 #yes | sudo pacman -S python311
