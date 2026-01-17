@@ -5,7 +5,7 @@ set -x
 
 # ./rwasm-install
 ./base-install
-./extras-install
+#./extras-install
 ./spell-install
 ./nvim-install
 # ./doom-install  # Probably outdated.
@@ -14,4 +14,4 @@ set -x
 # ./racket-install
 ./typst-install
 chezmoi apply --force
-../gsettings-set
+#../gsettings-set
