@@ -30,6 +30,7 @@ yes | sudo pacman -S mpv yt-dlp ffmpeg rtmpdump atomicparsley aria2 python-mutag
 yes | sudo pacman -S python-pycryptodomex python-websockets
 
 yes | sudo pacman -S rpi-imager gnome-disk-utility smartmontools gnome-browser-connector gdu
+yes | sudo pacman -S platformio-core platformio-core-udev
 
 # Java.
 
