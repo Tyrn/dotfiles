@@ -1,277 +1,29 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# shellcheck disable=SC1090
+# shellcheck disable=SC2296
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="sunaku"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git python docker systemd sudo vi-mode
-    mise
-    zsh-256color zsh-autosuggestions zsh-syntax-highlighting
-)
-
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $ZSH/oh-my-zsh.sh
+source ~/.antidote/antidote.zsh
 
-vac()
-{
-    . $(pdm venv activate "$1")
-}
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
 
-export WORKON_HOME=~/.virtualenvs
-#source /usr/bin/virtualenvwrapper.sh
-
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-export VISUAL=/usr/bin/nvim
-export EDITOR="$VISUAL"
-
-#export CODE=~/spaces
-
-export SAM_CLI_TELEMETRY=0
-
-# A list of file extensions,
-# encountered recursively.
-function lsext-col() {
-  local dir="${1:-.}"
-  find "$dir" -type f | grep -E '\.[^./][^./]*$' | sed 's/.*\.//' | sort -u
-}
-
-function lsext() {
-  local dir="${1:-.}"
-  find "$dir" -type f | grep -E '\.[^./][^./]*$' | sed 's/.*\.//' | sort -u | paste -sd ' '
-}
-
-# Remove exec permission recursively.
-function chmod-x() {
-  local dir="${1:-.}"
-  chmod -R u=rw,go=r,a+X "$dir"
-}
-
-# Recursive/selective copying;
-# only the specified extensions included.
-function cprf() {
-  if [[ $# -lt 3 ]]; then
-    echo "Usage: cprf source dest ext1 [ext2 ...]"
-    return 1
-  fi
-
-  local src="$1"
-  local dest="$2"
-  shift 2
-
-  # Build include args
-  local include_args="--include=\"*/\""
-  for ext in "$@"; do
-    include_args="$include_args --include=\"*.$ext\""
-  done
-
-  # Execute
-  eval "rsync -avm $include_args --exclude=\"*\" \"$src/\" \"$dest/\""
-}
-
-alias dm=damastes
-alias dp=procrustes
-alias lls="ls -lha --color=always | less -r"
-alias lss="ls --color=always | less -r"
-alias exstat="expac -H M '%m\t%n' | sort -h"
-alias exst="exstat | tail -n 10"
-alias lg="lazygit"
-alias dozer="docker-compose run buildozer android"
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias ff="fastfetch"
-alias fff="fastfetch -c all.jsonc"
-alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
-alias acl="arduino-cli"
-if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
-  alias nv="neovide"
-else
-  function nv() {
-    # Launch Neovide in the background, disown it from the shell, and pass the current directory
-    neovide --no-multigrid --fork "$@"
-    # Wait a tiny moment for the window to appear, then close the terminal
-    sleep 0.5 && exit
-  }
-fi
-#alias nt='alacritty --working-directory "$PWD" &'
-#alias nt='alacritty --working-directory "$(pwd -P)" &'  # Good for symlinks.
-#alias nt='alacritty -e zsh -c "cd \"$PWD\" && zsh" &'
-#alias nt='nohup alacritty --working-directory "$PWD" >/dev/null 2>&1 & disown'
-#alias nt='setsid alacritty --working-directory "$PWD" --config-file /dev/null >/dev/null 2>&1'
-alias nt='setsid alacritty --working-directory "$PWD" >/dev/null 2>&1'
-
-function cf() { clang-format -i **/*.(c|cpp|h|hh|hpp|ino|cc|hxx) }
-
-function pipver-col() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/\1/p' ;}
-function pipver() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd, ;}
-function tpipver() { curl -s https://test.pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd, ;}
-
-# Fetches into the (empty) current directory a [package] from AUR,
-# along with its AUR dependencies, if any, builds it/them
-# and puts the package[s] into the [database] repository.
-# The local [database] repository must exist.
-# NB If [package] is 0, no fetching from AUR is performed.
-function to-repo() {
-  local package="${1}"
-  local database="${2:-sandbox}"  # Use 'sandbox' as default.
-
-  if [[ -z "$package" ]]; then
-    echo "Usage: to-repo <aur-package>|0 [database]"
-    echo "Default database: sandbox"
-    return 1
-  fi
-
-  if [[ "$package" != "0" ]]; then
-    aur fetch -r "$package"
-  fi
-  ls -d */ | sed 's|/$|/|' > _pkglist.txt
-  aur build -a ./_pkglist.txt -d "$database" --margs -s
-}
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
-
+# Enable smart cd.
 eval "$(zoxide init zsh)"
 alias cd=z
-#source ~/z.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
-#eval "$(starship init zsh)"
-
-## [Completion] 
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
-# skip loading direnv if it is already loaded
-if test -z "$DIRENV_DIR"; then
-    if whereis direnv > /dev/null 2>&1; then
-        case "$(basename "$SHELL")" in
-            zsh)
-                eval "$(direnv hook zsh)"
-                ;;
-            bash)
-                eval "$(direnv hook bash)"
-                ;;
-            *)
-                echo "skip" > /dev/null
-                ;;
-        esac
-    fi
-fi
-# substitute prompt (direnv)
-setopt PROMPT_SUBST
-
-show_virtual_env() {
-  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
-    echo "($(basename $VIRTUAL_ENV)) "
-  fi
-}
-PS1='$(show_virtual_env)'$PS1
-
+# A very special case of IBus (scripted switch).
 if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
   source ~/.gnome-kbd-lib.sh
 fi
 
-# Multiple runtime versions manager.
-#. /opt/asdf-vm/asdf.sh
-#eval "$(mise activate zsh)"
+source ~/.assorted-helpers.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
