@@ -1,0 +1,13 @@
+romkatv/powerlevel10k
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
+#chrissicool/zsh-256color
+
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib
+#ohmyzsh/ohmyzsh path:themes/sunaku.zsh-theme
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/sudo
+ohmyzsh/ohmyzsh path:plugins/vi-mode
+ohmyzsh/ohmyzsh path:plugins/yarn

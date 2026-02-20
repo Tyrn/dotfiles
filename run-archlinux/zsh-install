@@ -9,7 +9,9 @@ rm -rf ~/.oh-my-zsh
 rm -rf ~/.antidote
 
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-~}"/.antidote
+
+# shellcheck disable=SC2086
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
 chezmoi apply --force
 
