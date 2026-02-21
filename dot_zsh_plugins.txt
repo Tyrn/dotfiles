@@ -11,7 +11,7 @@ ohmyzsh/ohmyzsh path:plugins/python
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/docker
 ohmyzsh/ohmyzsh path:plugins/systemd
-ohmyzsh/ohmyzsh path:plugins/mise
+#ohmyzsh/ohmyzsh path:plugins/mise
 ohmyzsh/ohmyzsh path:plugins/direnv
 ohmyzsh/ohmyzsh path:plugins/sudo
 ohmyzsh/ohmyzsh path:plugins/vi-mode
