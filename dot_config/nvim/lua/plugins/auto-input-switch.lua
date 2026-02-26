@@ -1,4 +1,4 @@
--- if true then return {} end
+if true then return {} end
 if os.getenv "XDG_CURRENT_DESKTOP" == "GNOME" then
   return {
     -- Requires https://extensions.gnome.org/extension/6691/shyriiwook/

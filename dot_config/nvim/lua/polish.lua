@@ -4,7 +4,7 @@
 -- things like custom filetypes. This is just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
-TranslateKeysInNormalMode = false
+TranslateKeysInNormalMode = true
 
 -- Set up custom filetypes
 -- vim.filetype.add {
