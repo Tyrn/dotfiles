@@ -44,12 +44,12 @@ vim.keymap.set("i", en_rp .. ";", lambda, opts)
 vim.keymap.set("i", ru_rp .. "ж", lambda, opts)
 vim.keymap.set("i", en_rp .. "ñ", lambda, opts)
 
-function vks_l(symbol, en_key, ru_key)
+local function vks_l(symbol, en_key, ru_key)
   vim.keymap.set("i", en_lp .. en_key, symbol, opts)
   vim.keymap.set("i", ru_lp .. ru_key, symbol, opts)
 end
 
-function vks_r(symbol, en_key, ru_key)
+local function vks_r(symbol, en_key, ru_key)
   vim.keymap.set("i", en_rp .. en_key, symbol, opts)
   vim.keymap.set("i", ru_rp .. ru_key, symbol, opts)
 end
@@ -99,8 +99,11 @@ if TranslateKeysInNormalMode then
   vim.keymap.set("n", "ѱ", "G", opts)
   vim.keymap.set("n", ";", "$", opts) -- Russian dollar
   vim.keymap.set("n", "Ñ", ":", opts) -- Spanish colon
-  vim.keymap.set("n", "ю", "/", opts) -- Russian slash, alternative
+  -- vim.keymap.set("n", "ю", "/", opts) -- Russian slash, alternative
   vim.keymap.set("n", "-", "/", opts) -- Spanish slash
+  -- Universal slash
+  vim.keymap.set("n", "<leader>z", "/", opts)
+  vim.keymap.set("n", "<leader>я", "/", opts)
 
   -- Window navigation, AstroNvim convention
   vim.keymap.set("n", "<C-р>", "<C-h>", lops)
