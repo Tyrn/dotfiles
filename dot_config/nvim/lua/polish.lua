@@ -102,8 +102,8 @@ if TranslateKeysInNormalMode then
   -- vim.keymap.set("n", "ю", "/", opts) -- Russian slash, alternative
   vim.keymap.set("n", "-", "/", opts) -- Spanish slash
   -- Universal slash
-  vim.keymap.set("n", "<leader>z", "/", opts)
-  vim.keymap.set("n", "<leader>я", "/", opts)
+  vim.keymap.set("n", "<leader>z", function() vim.fn.feedkeys("/", "it") end, { desc = "Search (/)" })
+  vim.keymap.set("n", "<leader>я", function() vim.fn.feedkeys("/", "it") end, { desc = "Search (/)" })
 
   -- Window navigation, AstroNvim convention
   vim.keymap.set("n", "<C-р>", "<C-h>", lops)
