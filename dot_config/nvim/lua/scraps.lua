@@ -40,7 +40,7 @@ function scraps.kinks()
   vks_l("⮐", "r", "к") -- Enter
   vks_l("⇆", "t", "е") -- Tab
   vks_l("⎋", "q", "й") -- Escape
-  vks_l("␡", "d", "в") -- Delete
+  vks_l("␥", "d", "в") -- Delete
   vks_l("⬞", "g", "п") -- Separator
   vks_l("☉", "w", "ц") -- Mouse Wheel
 
