@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+if [ ! "$(command -v zsh)" ]; then
+  echo "Zsh package missing"
+  exit 1
+fi
+
+rm -rf ~/.oh-my-zsh
+rm -rf ~/.oh-my-zsh-cache
+rm -rf ~/.antidote
+
+# shellcheck disable=SC2086
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+
+chezmoi apply --force
+
+yes | ./fzf-install
+
+set +x
+
+# Set default login shell (may prompt for password)
+chsh -s "$(which zsh)" || exit 1
+echo "⮞ ⮞ ⮞ LOG OUT, THEN LOG IN AGAIN ⮜ ⮜ ⮜"
