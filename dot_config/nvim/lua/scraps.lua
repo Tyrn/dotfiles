@@ -80,9 +80,9 @@ function scraps.odds()
   -- local keymap = vim.api.nvim_set_keymap
   vim.keymap.set("n", "ѵ", "0", opts)
   vim.keymap.set("n", "ѱ", "G", opts)
-  vim.keymap.set("n", ";", "$", opts) -- Russian dollar
-  vim.keymap.set("n", "Ñ", ":", opts) -- Spanish colon
-  -- vim.keymap.set("n", "ю", "/", opts) -- Russian slash, alternative
+  -- vim.keymap.set("n", ";", "$", opts) -- Russian dollar
+  -- Spanish colon
+  vim.keymap.set("n", "Ñ", function() vim.fn.feedkeys(":", "it") end, { desc = "Ex Mode (:)" })
   -- Spanish slash
   vim.keymap.set("n", "-", function() vim.fn.feedkeys("/", "it") end, { desc = "Search (/)" })
   -- Universal slash
