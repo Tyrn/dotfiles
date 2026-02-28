@@ -21,3 +21,9 @@ chezmoi apply --force
 #git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 yes | ./fzf-install
+
+set +x
+
+# Set default login shell (may prompt for password)
+chsh -s "$(which zsh)" || exit 1
+echo "⮞ ⮞ ⮞ LOG OUT, THEN LOG IN AGAIN ⮜ ⮜ ⮜"
