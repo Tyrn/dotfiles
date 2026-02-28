@@ -42,6 +42,7 @@ function scraps.kinks()
   vks_l("⎋", "q", "й") -- Escape
   vks_l("␥", "d", "в") -- Delete
   vks_l("⬞", "g", "п") -- Separator
+  vks_l("ᛟ", "v", "м") -- Runic Leader
   vks_l("☉", "w", "ц") -- Mouse Wheel
 
   vks_r("⮜", "h", "р") -- Left arrow
@@ -53,6 +54,8 @@ function scraps.kinks()
   vks_r("⤣", "i", "ш") -- Page Up
   vks_r("⥿", "o", "щ") -- End
   vks_r("⌫", "n", "т") -- Backspace
+  vks_r("ᛝ", "m", "ь") -- Runic Local Leader
+  vks_r("ˋ", "'", "э") -- Non-toxic backtick
   vks_r("⎙", "p", "з") -- Print Screen
 
   -- ⮝⮝⮝ Weird characters for Insert Mode ⮝⮝⮝
