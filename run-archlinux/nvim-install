@@ -8,8 +8,9 @@ set -x
 
 # MicroPython.
 
-pipx install adafruit-ampy
-pipx install rshell
+uv tool install adafruit-ampy
+uv tool install rshell
+uv tool install mpremote
 
 # AstroNvim.
 #
@@ -18,16 +19,15 @@ pipx install rshell
 #yay -S neovim-remote  # (AUR only).
 
 if [ ! "$(command -v npm)" ]; then
-    yes |sudo pacman -S npm
+    yes | sudo pacman -S npm
 fi
 
-yes |sudo pacman -S python-pynvim tree-sitter python-jedi neovide luarocks
+yes | sudo pacman -S python-pynvim tree-sitter python-jedi neovide luarocks
 
 sudo rm -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
 
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 sudo rm -rf ~/.config/nvim/.git
-yes |sudo pacman -S neovim
+yes | sudo pacman -S neovim
 
 chezmoi apply --force
-
