@@ -18,7 +18,10 @@ sudo systemctl enable --now docker
 
 yes | sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty taglib1
 
-yes | sudo pacman -S partitionmanager fastfetch python-pipx mlocate sdkmanager
+yes | sudo pacman -S partitionmanager fastfetch plocate sdkmanager
+#yes | sudo pacman -S python-pipx
+yes | cargo binstall uv
+
 yes | sudo pacman -S gparted grsync lazygit tig tmux atool ouch
 
 yes | sudo pacman -S tk wxwidgets-common wxwidgets-gtk3
@@ -66,9 +69,7 @@ yes | sudo pacman -S splix
 
 # Python, forgettable.
 
-pipx install poetry
-pipx install uv
-pipx install mkdocs-material --include-deps
+#pipx install mkdocs-material --include-deps
 
-yes | sudo pacman -S python-lsp-server python-black ipython ptpython
+yes | sudo pacman -S python-lsp-server #python-black ipython ptpython
 yes | sudo pacman -S bash-language-server bash-completion lua-language-server yaml-language-server
