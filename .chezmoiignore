@@ -13,6 +13,8 @@ nerd-fonts-install
 fonts-install
 gnome-customize
 gsettings-set
+zsh-install
+fzf-install
 
 ## Neovim
 #**/autoload/

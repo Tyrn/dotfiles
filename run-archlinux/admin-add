@@ -19,6 +19,7 @@ yes | sudo pacman -S unzip
 yes | sudo pacman -S autoconf-archive
 yes | sudo pacman -S aurutils
 yes | sudo pacman -S keyd
+yes | sudo pacman -S zsh
 
 rustup toolchain install stable
 
@@ -31,6 +32,8 @@ fi
 ../locale-to-en
 
 ../fonts-install
+
+../zsh-install
 
 echo "!!! REBOOT !!!"
 sudo shutdown -r now
