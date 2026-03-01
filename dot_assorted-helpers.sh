@@ -48,13 +48,18 @@ function cprf() {
   eval "rsync -avm $include_args --exclude=\"*\" \"$src/\" \"$dest/\""
 }
 
+function scc() {
+  # Clean download cache if anything exists (glob with N for null_glob)
+  sudo rm -rf /var/cache/pacman/pkg/download*(DN) 2>/dev/null
+  yes | yay -Scc
+}
+
 alias dm=damastes
 alias dp=procrustes
 alias lls="ls -lha --color=always | less -r"
 alias lss="ls --color=always | less -r"
 alias exstat="expac -H M '%m\t%n' | sort -h"
 alias exst="exstat | tail -n 10"
-alias scc="sudo rm -rf /var/cache/pacman/pkg/download* && yes | yay -Scc"
 alias lg="lazygit"
 alias dozer="docker-compose run buildozer android"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
