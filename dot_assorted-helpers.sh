@@ -54,6 +54,7 @@ alias lls="ls -lha --color=always | less -r"
 alias lss="ls --color=always | less -r"
 alias exstat="expac -H M '%m\t%n' | sort -h"
 alias exst="exstat | tail -n 10"
+alias scc="sudo rm -rf /var/cache/pacman/pkg/download* && yes | yay -Scc"
 alias lg="lazygit"
 alias dozer="docker-compose run buildozer android"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
