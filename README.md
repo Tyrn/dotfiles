@@ -130,6 +130,14 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 ### [Gnome tips](messy-notes/GNOME.md)
 
+### [DMS](https://github.com/AvengeMedia/DankMaterialShell)
+
+- Install
+
+```
+curl -fsSL https://install.danklinux.com | sh
+```
+
 ## Fedora
 
 ### Install sequence
