@@ -26,7 +26,7 @@ vim.opt.spelllang = { "ru_ru", "en_us", "es_es" }
 vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 
 -- Massive remappings
-local scraps = require "scraps"
+local scraps = require "aa-scraps"
 
 scraps.kinks() -- Assorted exotics, mostly Insert Mode
 scraps.odds() -- AstroNvim standard mappings, Cyrillic
