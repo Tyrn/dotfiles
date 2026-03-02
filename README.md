@@ -111,20 +111,20 @@ cd ~/.local/share/chezmoi/run-archlinux
 ```
 
 - Keep an eye on your installation scripts output. Sometimes you'll
-  have to say _yes_ or _Enter_
+  have to say _yes_, _no_, or _Enter_
 
 - Run `./admin-add` (expect reboot)
 
-- Run `./zsh-install`. Answer _yes_ to everything, then leave the new and pretty
-  default zsh with Ctrl+D. Wait till the end and close the terminal. Open it any
-  time and enjoy [the fun](https://github.com/ohmyzsh/ohmyzsh/wiki).
-  - You can reload the shell (zsh) any time without closing the terminal
+- Your shell should be ready to use. You can reinstall it any time running
+  `./zsh-install`. Reload the shell (zsh) whenever you wish without
+  closing the terminal
 
   ```
   omz reload
   ```
 
-- Run `./all-install`
+- Run `./all-install`. Feel free to uncomment or comment out entries
+  in `all-install` and `extras-install`.
 
 - Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
@@ -173,10 +173,8 @@ _NB_ chezmoi is already installed via mise, zsh-install script relies on that!
 cd ~/.local/share/chezmoi/run-fedora
 ```
 
-- Run `./zsh-install`. Answer _yes_ to everything, then leave the new and pretty
-  default zsh with Ctrl+D. Wait till the end and close the terminal. Open it any
-  time and enjoy [the fun](https://github.com/ohmyzsh/ohmyzsh/wiki).
-  - You can reload the shell (zsh) any time without closing the terminal
+- Run `./zsh-install`. You can reload the shell (zsh) any time
+  without closing the terminal
 
   ```
   omz reload
@@ -217,19 +215,6 @@ rustup self uninstall
 
   ```
   cargo install-update -a
-  ```
-
-- pipx
-  - List all the packages
-
-  ```
-  pipx list
-  ```
-
-  - Update all the packages
-
-  ```
-  pipx upgrade-all
   ```
 
 - Mise
@@ -288,16 +273,11 @@ so unnecessary to execute manually_
   $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
   ```
 
+  - **Better still**, use `caligula` :)
+
 - [**Assorted notes**](messy-notes)
 
 - Control `$ chezmoi add` using `.chezmoiignore`, located in the repository: [#1237](https://github.com/twpayne/chezmoi/issues/1237)
-
-- Stop/start `ibus-daemon` if it hangs:
-
-```
-$ ibus exit
-$ ibus-daemon -drx &
-```
 
 - Change date and time language; `LC_TIME` in `/etc/locale.conf` (`/etc/default/locale` is ignored):
 
@@ -351,19 +331,13 @@ pkill -KILL -u $USER
   ```
 
   - Troubleshoot AstroNvim
+    - Update Lazy and Mason `(<Leader>pa)`
+    - Lazy essentials
 
-  ```
-  :Lazy update  (<Leader>pU)
-  :Lazy sync    (<Leader>pS)
-  ```
-
-### Hyprland ML4W
-
-- Installation; **the install script will suggest a** `~/dotfiles` **directory**; **reject, and change it to** `~/ml4w-dotfiles`**!**
-
-```
-bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)
-```
+    ```
+    :Lazy update  (<Leader>pU)
+    :Lazy sync    (<Leader>pS)
+    ```
 
 ### Git credentials on the workstation
 
@@ -424,7 +398,7 @@ Alternate good firmware (`sigrok-firmware.zip`) and LA1010 [info](https://www.fo
 - **Install PulseView**
 
 ```
-$ yay -S pulseview-git
+yay -S pulseview-git
 ```
 
 ### Java

@@ -3,15 +3,10 @@
 set -u
 set -x
 
-# Check which chezmoi.
-#
-# Run this script manually as
-# yes | ./fzf-install
-#
 # The script can be run securely multiple times.
 
 rm -rf ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+yes | ~/.fzf/install
 
 chezmoi apply --force

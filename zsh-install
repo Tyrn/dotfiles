@@ -3,6 +3,8 @@
 set -u
 set -x
 
+# The script can be run securely multiple times.
+
 if [ ! "$(command -v zsh)" ]; then
   echo "Zsh package missing"
   exit 1
@@ -15,9 +17,7 @@ rm -rf ~/.antidote
 # shellcheck disable=SC2086
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
-chezmoi apply --force
-
-yes | ./fzf-install
+~/.local/share/chezmoi/fzf-install
 
 set +x
 
