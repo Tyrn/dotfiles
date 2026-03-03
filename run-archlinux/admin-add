@@ -35,5 +35,7 @@ fi
 
 ../zsh-install
 
+../kbd-tune
+
 echo "!!! REBOOT !!!"
 sudo shutdown -r now
