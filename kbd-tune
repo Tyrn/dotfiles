@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2059
 # set -e
 set -u
 
@@ -25,11 +26,6 @@ printf "\n$conf:\n\n"
 printf "$locale" | sudo tee "$conf"
 
 set -x
-
-# An attempt at installing keyd on Arch Linux.
-if command -v pacman &> /dev/null; then
-  sudo pacman -S keyd
-fi
 
 if [ "$(command -v keyd)" ]; then
   sudo systemctl enable --now keyd
