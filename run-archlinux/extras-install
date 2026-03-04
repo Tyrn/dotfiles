@@ -5,45 +5,51 @@ set -x
 
 # Miscellaneous applications.
 
-sudo pacman -S dolphin okular
-yes | sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers gwenview
-yes | sudo pacman -S gthumb # gwenview alternative
+sudo pacman -S dolphin okular gwenview
+yes | sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers
 
 yes | sudo pacman -S thunar tumbler android-file-transfer # android-udev ?
 yes | sudo pacman -S catfish thunar-volman thunar-archive-plugin thunar-media-tags-plugin
 
-#../kde-to-gnome
 #./m17n-add
 
-#yes | sudo pacman -S python311
-#yes | sudo pacman -S pulseview-git
+#yes | sudo pacman -S pulseview-qt6-git
+#yes | yay -S watchman-bin
 
-yes | sudo pacman -S gnome-shell-extension-dash-to-dock
-yes | sudo pacman -S dconf-editor
-
-yes | sudo pacman -S watchman-bin
-
-yes | sudo pacman -S obs-studio
-yes | sudo pacman -S vlc vlc-plugins-all
-yes | sudo pacman -S google-chrome
 #yes | sudo pacman -S qutebrowser
 #yes | sudo pacman -S tor-browser-bin
-yes | sudo pacman -S geany geany-plugins retext foliate arianna qbittorrent
-yes | sudo pacman -S warpinator scrcpy vorbis-tools pandoc-bin
-yes | sudo pacman -S telegram-desktop
-#yes |sudo pacman -S vscodium
-#yes |sudo pacman -S arduino-ide arduino-language-server
-yes | sudo pacman -S libusb-compat python-pyserial
+#yes | sudo pacman -S google-chrome
+#yes | sudo pacman -S telegram-desktop
+#yes | sudo pacman -S warpinator
+
+#yes | sudo pacman -S obs-studio
+#yes | sudo pacman -S qmmp
+#yes | sudo pacman -S deadbeef opusfile
+
+#yes | sudo pacman -S vscodium
+#yes | sudo pacman -S arduino-ide arduino-language-server
 #yes | sudo pacman -S zoom
-#yes |sudo pacman -S kicad kicad-library kicad-library-3d python-kikit
+#yes | sudo pacman -S kicad kicad-library kicad-library-3d python-kikit
 
 #cargo install --locked --git https://github.com/Decodetalkers/flutterup
 #flutterup install
 
+if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
+  ../kde-to-gnome
+  yes | sudo pacman -S gnome-shell-extension-dash-to-dock
+  yes | sudo pacman -S dconf-editor
+  #yes | sudo pacman -S gthumb # gwenview alternative
+fi
+
+yes | sudo pacman -S vlc vlc-plugins-all
+yes | sudo pacman -S geany geany-plugins retext foliate arianna qbittorrent
+yes | sudo pacman -S scrcpy vorbis-tools pandoc-bin
+yes | sudo pacman -S libusb-compat python-pyserial
+yes | sudo pacman -S evince papers
+yes | sudo pacman -S yacreader
+
 yes | cargo binstall tex-fmt
-#sudo pacman -S evince
-#sudo pacman -S qmmp
-#
+
 #     yay -S kwin-scripts-krohnkite
 #     yay -S doublecmd-qt5
 #     yay -S fontmatrix  # Not recommended before adding archlinuxcn repo (due to qt5-webkit dependency).
@@ -53,17 +59,14 @@ yes | cargo binstall tex-fmt
 #     yay -S juliaup-bin
 #     yay -S ghcup-hs-bin  # Haskell, starting the right way (ghcup tui).
 #     yay -S fop  # Erlang/Elixir obscure dependency, requires a lot of Java!
-#     yay -S pandoc-bin  # (AUR only).
 #     yay -S texlive-dummy
 #     yay -S modpoll-bin  # Modbus master CLI simulator.
 #     yay -S qmodbus-git  # Modbus master GUI simulator.
 #     yay -Ss stm32cubeprog  # Installation script may hang.
-#     yay -S deadbeef opusfile
 #     yay -S puddletag  # An audio tag editor.
 #     yay -S kdenlive  # Video editor.
 #     yay -S ocenaudio-bin  # Audio editor.
 #     yay -S snd  # Audio editor.
-#     yay -S yacreader-bin
 #     yay -S esplorer
 #     yay -S anki-official-binary-bundle
 #     yay -S rstudio-desktop-bin
