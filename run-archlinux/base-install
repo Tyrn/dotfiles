@@ -18,7 +18,7 @@ sudo systemctl enable --now docker
 
 yes | sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty taglib1
 
-yes | sudo pacman -S partitionmanager fastfetch plocate sdkmanager
+yes | sudo pacman -S partitionmanager fastfetch plocate sdkmanager update-grub
 #yes | sudo pacman -S python-pipx
 yes | cargo binstall uv
 
