@@ -33,30 +33,24 @@ function font_install_zip() {
     unzip "$font_file" -d "$fonts_unzip_to$deeper/$font_name/"
 }
 
-if [ $# -eq 0 ]; then
+# A behemoth: Noto Nerd fonts.
 
-    # A behemoth: Noto Nerd fonts.
+font_install_zip \
+    "Noto" \
+    "https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
 
-    font_install_zip \
-        "Noto" \
-        "https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
+# A tiny addition: the Church Slavonic fonts.
 
-    # A tiny addition: the Church Slavonic fonts.
+font_install_zip \
+    "fonts-churchslavonic" \
+    "https://www.ponomar.net/files"
 
-    font_install_zip \
-        "fonts-churchslavonic" \
-        "https://www.ponomar.net/files"
+# The Church Slavonic legacy, too.
 
-else
-
-    # Church Slavonic legacy.
-
-    font_install_zip \
-        "fonts-churchslavonic" \
-        "https://github.com/typiconman/fonts-cu/releases/download/v2.2.1" \
-        "/legacy"
-
-fi
+font_install_zip \
+    "fonts-churchslavonic" \
+    "https://github.com/typiconman/fonts-cu/releases/download/v2.2.1" \
+    "/legacy"
 
 fc-cache -fv
 echo "Done!"
