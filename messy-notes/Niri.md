@@ -1,5 +1,9 @@
 # Niri Wayland compositor
 
+## Theming and dialogs
+
+- [Plasma KDE](/messy-notes/KDE.md)
+
 ## Troubleshooting
 
 - Just in case: `~/.config/systemd/user/graphical-session.target.wants/dms.service`
@@ -16,43 +20,12 @@ niri msg windows
 
 ## Settings
 
-_Almost everything implemented via_ `common.kdl`
-
-- For IBus, add to `~/.config/niri/config.kdl`
-
-```
-spawn-at-startup "ibus" "start" "--type" "wayland"
-```
-
-in case of a hotkey conflict, change in `binds`:
-
-```
-Mod+Space
-```
-
-to
-
-```
-Ctrl+Space
-```
-
-- Keyboard, mouse and touchpad, 2025-12-10 `~/.config/niri/config.kdl`
-
-```
-input {
-    keyboard {
-        xkb {
-        }
-        //numlock
-    }
-    touchpad {
-        tap
-    }
-    mouse {
-    }
-    trackpoint {
-    }
-}
-```
-
-- _Don't forget about the monitor settings!_ (`output`)
+- After `chezmpi apply -v`:
+  - `cd ~/.config/niri`
+  - At the end of `config.kdl`, add
+    ```
+    include "user/common.kdl"
+    ```
+  - Comment out (`/-`) `input ...` clause in `config.kdl`
+  - Comment out (`/-`) `Mod+Space ...`
+    clause in `dms/binds.kdl`
