@@ -9,8 +9,8 @@ set -x
 sudo pacman -S dolphin okular gwenview
 yes | sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers
 
-yes | sudo pacman -S thunar tumbler android-file-transfer # android-udev ?
-yes | sudo pacman -S catfish thunar-volman thunar-archive-plugin thunar-media-tags-plugin
+#yes | sudo pacman -S thunar tumbler android-file-transfer # android-udev ?
+#yes | sudo pacman -S catfish thunar-volman thunar-archive-plugin thunar-media-tags-plugin
 
 #./m17n-add
 

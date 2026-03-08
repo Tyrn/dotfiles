@@ -130,15 +130,21 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 ### [Gnome tips](messy-notes/GNOME.md)
 
+### [Plasma KDE tips](messy-notes/KDE.md)
+
 ### [DMS](https://github.com/AvengeMedia/DankMaterialShell)
 
-- Install
+- Install DMS
 
 ```
 curl -fsSL https://install.danklinux.com | sh
 ```
 
+- DMS niri [tips](messy-notes/Niri.md)
+
 ## Fedora
+
+Legacy. Hasn't been updated since 2024
 
 ### Install sequence
 
