@@ -5,6 +5,7 @@ run-archlinux/
 run-fedora/
 ml4w-dotfiles/
 udev-add
+environment-add
 locale-to-en
 kde-to-gnome
 kbd-tune
