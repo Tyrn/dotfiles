@@ -7,7 +7,7 @@ set -x
 #./sandbox-repo-add
 ./groups-add
 ../udev-add
-../environment-add
+#../environment-add
 
 yes | sudo pacman -S unixodbc zoxide direnv
 
