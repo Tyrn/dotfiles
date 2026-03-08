@@ -15,8 +15,6 @@ docker buildx install
 sudo systemctl enable --now docker
 
 #yes | sudo pacman -S kdialog
-yes | sudo pacman -S kvantum
-yes | sudo pacman -S qt5ct qt6ct
 
 yes | sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty taglib1
 
