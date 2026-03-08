@@ -3,6 +3,8 @@
 set -u
 set -x
 
+# CHECK /etc/environment VISUALLY FIRST!
+
 # This script adds variables to /etc/environment
 # It can be run securely multiple times.
 
