@@ -97,7 +97,7 @@
   ```
 
   - Use `kservice` to rebuild the KDE cache. Implemented in
-    [kde-to-gnome](/kde-to-gnome)
+    [kde-to-others](/kde-to-others)
 
   ```
   kbuildsycoca6 --noincremental
