@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 #
-# Tweaking the KDE apps already installed in pure Gnome environment.
+# Creates an alternative KDE file associations menu,
+# usable outside Plasma desktop, i.e., for Dolphin
+# on GNOME, etc.
 #
-
-if [[ "$XDG_CURRENT_DESKTOP" == "KDE" ]]; then
-    exit 0
-fi
-
-# Dolphin requires applications.menu configuration file:
+# ~/.config/menus/applications.menu
+#
+# over
+#
+# /etc/xdg/menus/plasma-applications.menu
+#
 
 apps_url="https://raw.githubusercontent.com/KDE/plasma-workspace/master/menu/desktop/plasma-applications.menu"
 

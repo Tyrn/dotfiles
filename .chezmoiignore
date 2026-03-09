@@ -7,7 +7,7 @@ ml4w-dotfiles/
 udev-add
 environment-add
 locale-to-en
-kde-to-gnome
+kde-to-others
 kbd-tune
 sdk-install
 nerd-fonts-install
