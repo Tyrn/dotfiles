@@ -45,6 +45,7 @@ if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
 fi
 
 yes | sudo pacman -S vlc vlc-plugins-all
+yes | sudo pacman -S haruna
 yes | sudo pacman -S geany geany-plugins retext foliate arianna qbittorrent
 yes | sudo pacman -S scrcpy vorbis-tools pandoc-bin
 yes | sudo pacman -S libusb-compat python-pyserial
