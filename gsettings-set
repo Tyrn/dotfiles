@@ -8,6 +8,11 @@ if [ ! "$(command -v gsettings)" ]; then
   exit 1
 fi
 
+if [ "$(systemctl is-active dbus)" != "active" ]; then
+  echo "DBus is down"
+  exit 1
+fi
+
 if [ ! $# -eq 0 ]; then
   # Some argument passed; show a selection of settings
   gsettings get org.gtk.Settings.FileChooser sort-directories-first
