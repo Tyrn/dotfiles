@@ -84,11 +84,9 @@ fi
 #alias nt='setsid alacritty --working-directory "$PWD" --config-file /dev/null >/dev/null 2>&1'
 alias nt='setsid alacritty --working-directory "$PWD" >/dev/null 2>&1'
 
-function cf() { clang-format -i **/*.{c,cpp,h,hh,hpp,ino,cc,hxx}; }
-
-function pipver-col() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/\1/p'; }
-function pipver() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd,; }
-function tpipver() { curl -s https://test.pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd,; }
+function pipver-col() { curl -s "https://pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/\1/p'; }
+function pipver() { curl -s "https://pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd,; }
+function tpipver() { curl -s "https://test.pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd,; }
 
 # Fetches into the (empty) current directory a [package] from AUR,
 # along with its AUR dependencies, if any, builds it/them
