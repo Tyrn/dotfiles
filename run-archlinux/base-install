@@ -20,6 +20,7 @@ yes | sudo pacman -S ttf-liberation ttf-dejavu fontforge alacritty taglib1
 
 yes | sudo pacman -S partitionmanager fastfetch plocate sdkmanager update-grub
 #yes | sudo pacman -S python-pipx
+yes | sudo pacman -S python-pip
 yes | cargo binstall uv
 
 yes | sudo pacman -S gparted grsync lazygit tig tmux atool ouch
