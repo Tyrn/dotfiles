@@ -103,3 +103,9 @@ pio run -t upload
 ```
 pio run -t clean
 ```
+
+- Start `Serial.print()` output monitor
+
+```
+pio device monitor
+```
