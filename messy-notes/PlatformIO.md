@@ -84,6 +84,12 @@ pio pkg uninstall -l git@github.com:Tyrn/LCD_1602_RUS_ALL.git
 pio project init --ide=vim
 ```
 
+- Inside a project
+
+```
+pio pkg list
+```
+
 ### Build and run
 
 - Build project
