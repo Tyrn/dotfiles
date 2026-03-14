@@ -2,6 +2,14 @@
 -- mostly Cyrillic, with a touch of Spanish.
 local scraps = {}
 
+local function show_path()
+  local path = vim.fn.expand "%:p"
+
+  print(path)
+  -- vim.notify(path, nil, { title = "File Path" })
+  -- vim.api.nvim_echo({ { path, "" } }, false, {})
+end
+
 local opts = { noremap = true, silent = true }
 local lops = { remap = true, silent = true }
 
@@ -66,6 +74,7 @@ function scraps.kinks()
   vim.keymap.set("n", "<leader>Lv", "<C-w>v", opts)
   vim.keymap.set("n", "<leader>Lc", "<C-w>c", opts)
   vim.keymap.set("n", "<leader>Lw", "<C-w>w", opts)
+  vim.keymap.set("n", "<leader>Lf", show_path, { desc = "Path to file" })
 end
 
 -- Makes AstroNvim standard mappings usable
@@ -75,6 +84,7 @@ function scraps.odds()
   vim.keymap.set("n", "<leader>Дм", "<C-w>v", opts)
   vim.keymap.set("n", "<leader>Дс", "<C-w>c", opts)
   vim.keymap.set("n", "<leader>Дц", "<C-w>w", opts)
+  vim.keymap.set("n", "<leader>Да", show_path, { desc = "Path to file" })
 
   -- Slavonic/Russian/Spanish special remapping
   -- local keymap = vim.api.nvim_set_keymap
