@@ -106,6 +106,7 @@ function to-repo() {
   if [[ "$package" != "0" ]]; then
     aur fetch -r "$package"
   fi
-  ls -d */ | sed 's|/$|/|' >_pkglist.txt
+  printf '%s\n' */ >_pkglist.txt
+  #ls -d */ | sed 's|/$|/|' >_pkglist.txt
   aur build -a ./_pkglist.txt -d "$database" --margs -s
 }
