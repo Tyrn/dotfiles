@@ -18,6 +18,19 @@ set ideajoin
 set idearefactormode=keep
 ```
 
+## Linters and formatters
+
+- JS/TS, single vs double quotes
+  - Make Prettier comply with ESLint.
+    Create `.prettierrc` at the root of the project
+    ```
+    {
+      "singleQuote": true,
+      "semi": true,
+      "tabWidth": 2
+    }
+    ```
+
 ## Plugin functionality support
 
 - [TSUpdate error, related to nvim-treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter/issues/913)
