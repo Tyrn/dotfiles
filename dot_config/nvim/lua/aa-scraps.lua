@@ -13,6 +13,8 @@ end
 local opts = { noremap = true, silent = true }
 local lops = { remap = true, silent = true }
 
+vim.keymap.set("i", "<C-l>", function() require("luasnip").expand_or_jump() end, opts)
+
 -- ⮟⮟⮟ Weird characters for Insert Mode ⮟⮟⮟
 
 -- Insert Mode prefixes
