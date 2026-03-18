@@ -8,7 +8,7 @@ if false then
     -- keys = { { ",v", "<cmd>VenvSelect<cr>" } }, -- Open picker on keymap
     keys = {
       -- Keymap to open the selector
-      { "<leader>Vv", "<cmd>VenvSelect<cr>" },
+      { "<leader>LV", "<cmd>VenvSelect<cr>" },
     },
     opts = {
       options = {}, -- plugin-wide options
@@ -25,7 +25,7 @@ else
     },
     keys = {
       -- Keymap to open the selector
-      { "<leader>Vs", "<cmd>VenvSelect<cr>" },
+      { "<leader>Lv", "<cmd>VenvSelect<cr>" },
     },
   }
 end
