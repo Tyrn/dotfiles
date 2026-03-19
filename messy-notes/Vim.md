@@ -56,6 +56,17 @@ set clipboard=unnamedplus
 
 ## AstroNvim 4.0
 
+- A possibility with `lua/polish.lua` (appears to be unnecessary, still interesting)
+
+```
+...
+local luasnip = require "luasnip"
+-- Making snippets available everywhere
+luasnip.filetype_extend("typescript", { "typescriptreact", "javascriptreact" })
+luasnip.filetype_extend("typescriptreact", { "javascriptreact" })
+...
+```
+
 - [Re]install
 
 ```
