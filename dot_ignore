@@ -1,0 +1,14 @@
+#
+# To be ignored by rg
+# and similar tools.
+#
+node_modules/
+*.lock
+*lock.json
+.git/
+.venv/
+dist/
+build/
+.env
+.DS_Store
+coverage/
