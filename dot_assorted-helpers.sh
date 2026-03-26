@@ -20,6 +20,35 @@ function lsext() {
   find "$dir" -type f | grep -E '\.[^./][^./]*$' | sed 's/.*\.//' | sort -u | paste -sd ' '
 }
 
+# Zip a git project leaving out the .git directory.
+# Usage:
+# shallow-git-zip /path/to/project output.zip
+function shallow-git-zip() {
+  local project_dir="$1"
+  local zip_file="$2"
+
+  cd "$project_dir" || return
+
+  #echo "Creating zip from tracked files (excluding .venv, dist, build, node_modules, lock files)..."
+
+  git ls-files |
+    grep -v '^\.venv/' |
+    grep -v '^dist/' |
+    grep -v '^build/' |
+    grep -v '^node_modules/' |
+    grep -v '^\.next/' |
+    grep -v '^coverage/' |
+    grep -v '^__pycache__/' |
+    grep -v '\.lock$' |
+    grep -v '\.log$' |
+    zip -r "$zip_file" -@
+
+  #echo "Created: $zip_file"
+  #unzip -l "$zip_file" | head -20
+
+  cd - >/dev/null || return
+}
+
 # Remove exec permission recursively.
 function chmod-x() {
   local dir="${1:-.}"
