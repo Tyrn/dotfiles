@@ -13,6 +13,8 @@ fi
 rm -rf ~/.oh-my-zsh
 rm -rf ~/.oh-my-zsh-cache
 rm -rf ~/.antidote
+rm -rf ~/.cache/antidote
+rm -rf ~/.cache/p10k*
 
 # shellcheck disable=SC2086
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
