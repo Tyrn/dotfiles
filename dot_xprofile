@@ -1,7 +1,0 @@
-#export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
-if [ $XDG_SESSION_TYPE == 'x11' ]; then
-    export GTK_IM_MODULE=ibus
-    export QT_IM_MODULE=ibus
-    export XMODIFIERS=@im=ibus
-    exec /usr/bin/ibus-daemon -rxRd &
-fi

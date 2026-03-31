@@ -1,0 +1,44 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+[plugins.oh-my-posh]
+inline = 'eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/custom_lean.omp.json)"'
+
+[plugins.oh-my-zsh]
+github = "ohmyzsh/ohmyzsh"
+
+# The Git plugin
+[plugins.ohmyzsh-git]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/git"
+
+# The Sudo plugin (hits ESC twice to put 'sudo' in front of a command)
+[plugins.ohmyzsh-sudo]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/sudo"
+
+# The Extract plugin (one command to unzip/untar anything)
+[plugins.ohmyzsh-extract]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/extract"
+
+[plugins.ohmyzsh-vi-mode]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/vi-mode"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]

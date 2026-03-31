@@ -15,9 +15,10 @@ rm -rf ~/.oh-my-zsh-cache
 rm -rf ~/.antidote
 rm -rf ~/.cache/antidote
 rm -rf ~/.cache/p10k*
+rm -rf ~/.local/share/sheldon
 
-# shellcheck disable=SC2086
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
+yes | cargo binstall sheldon
+yes | cargo binstall zsh-patina
 
 ~/.local/share/chezmoi/fzf-install
 
