@@ -14,26 +14,45 @@ shell = "zsh"
 
 [plugins]
 
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
 [plugins.oh-my-posh]
 inline = 'eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/custom_lean.omp.json)"'
 
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
 
+[plugins.zoxide]
+github = "ajeetdsouza/zoxide"
+use = ["zoxide.plugin.zsh"]
+apply = ["defer"]
+
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+use = ["fzf-tab.zsh"]
+apply = ["defer"]
+
 # The Git plugin
 [plugins.ohmyzsh-git]
 github = "ohmyzsh/ohmyzsh"
 dir = "plugins/git"
+apply = ["defer"]
 
 # The Sudo plugin (hits ESC twice to put 'sudo' in front of a command)
 [plugins.ohmyzsh-sudo]
 github = "ohmyzsh/ohmyzsh"
 dir = "plugins/sudo"
+apply = ["defer"]
 
 # The Extract plugin (one command to unzip/untar anything)
 [plugins.ohmyzsh-extract]
 github = "ohmyzsh/ohmyzsh"
 dir = "plugins/extract"
+apply = ["defer"]
 
 [plugins.ohmyzsh-vi-mode]
 github = "ohmyzsh/ohmyzsh"
@@ -42,3 +61,4 @@ dir = "plugins/vi-mode"
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
+apply = ["defer"]
