@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "upgrade": {
+    "source": "cdn",
+    "interval": "168h",
+    "auto": false,
+    "notice": false
+  },
+  "blocks": [
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#FFE953",
+          "options": {
+            "display_mode": "environment",
+            "fetch_virtual_env": true,
+            "fetch_version": true
+          },
+          "template": " <#43D426>\ue235</> {{ if .Venv }}({{ .Venv }}) {{ end }}<#ffffff>{{ .Full }}</> "
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "#ff0000",
+          "template": " \uf00d {{ .Code }} ",
+          "options": {
+            "always_enabled": false
+          }
+        },
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "#00C5C7",
+          "options": {
+            "time_format": "15:04:05"
+          },
+          "template": " {{ .CurrentDate | date .Format }} "
+        },
+        {
+          "template": "❯ ",
+          "foreground": "#43D426",
+          "type": "text",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "options": {
+            "style": "full"
+          },
+          "template": "{{ .Path }} ",
+          "foreground": "#77E4F7",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#FFE700",
+          "options": {
+            "fetch_status": true,
+            "branch_icon": ""
+          },
+          "template": "{{ .HEAD }}{{ if .Working.Changed }} <#FF5F5F>\uf044{{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }} <#40FF40>+{{ .Staging.String }}</>{{ end }} "
+        },
+        {
+          "template": "❯ ",
+          "foreground": "#43D426",
+          "type": "text",
+          "style": "plain"
+        }
+      ]
+    }
+  ],
+  "version": 4
+}
