@@ -17,6 +17,7 @@ rm -rf ~/.cache/antidote
 rm -rf ~/.cache/p10k*
 rm -rf ~/.local/share/sheldon
 
+yes | sudo pacman -S oh-my-posh
 yes | cargo binstall sheldon
 yes | cargo binstall zsh-patina
 
