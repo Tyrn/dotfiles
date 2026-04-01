@@ -8,6 +8,37 @@
 
 source ~/.antidote/antidote.zsh
 antidote load
+#bindkey -v
+
+# eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/custom_lean.omp.json)"
+
+# Enable vi mode
+bindkey -v
+
+# Set up vi mode indicator (separate from Oh My Posh)
+function zle-line-init() {
+  if [[ $KEYMAP == vicmd ]]; then
+    RPS1="%F{red}[N]%f"
+  else
+    RPS1="%F{green}[I]%f"
+  fi
+  zle reset-prompt
+}
+
+function zle-keymap-select() {
+  if [[ $KEYMAP == vicmd ]]; then
+    RPS1="%F{red}[N]%f"
+  else
+    RPS1="%F{green}[I]%f"
+  fi
+  zle reset-prompt
+}
+
+# Register and initialize
+zle -N zle-line-init
+zle -N zle-keymap-select
+#zle-line-init
+
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/custom_lean.omp.json)"
 
 # Enable smart cd.
