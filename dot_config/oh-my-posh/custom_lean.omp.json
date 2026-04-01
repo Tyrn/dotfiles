@@ -26,10 +26,7 @@
           "type": "status",
           "style": "plain",
           "foreground": "#ff0000",
-          "template": " \uf00d {{ .Code }} ",
-          "options": {
-            "always_enabled": false
-          }
+          "template": "{{ if .Code }} \uf00d {{ .Code }} {{ end }}"
         },
         {
           "options": {
