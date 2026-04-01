@@ -11,7 +11,7 @@ export GTEST_COLOR=1
 
 # The following exports moved from ~/.xprofile; XDG_DATA_DIRS is ruining KDE panel, somehow.
 export TERMINAL=/usr/bin/alacritty
-export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+# export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 
 export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$PATH
 export PATH=$HOME/micropython/ports/unix/build-standard:$PATH

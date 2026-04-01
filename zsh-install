@@ -18,8 +18,11 @@ rm -rf ~/.cache/p10k*
 rm -rf ~/.local/share/sheldon
 
 yes | sudo pacman -S oh-my-posh
-yes | cargo binstall sheldon
+#yes | cargo binstall sheldon
 yes | cargo binstall zsh-patina
+
+# shellcheck disable=SC2086
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 
 ~/.local/share/chezmoi/fzf-install
 

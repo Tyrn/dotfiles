@@ -1,9 +1,14 @@
 # shellcheck disable=SC1090
 
-autoload -Uz compinit
-compinit
+#zmodload zsh/zprof
 
-eval "$(sheldon source)"
+#autoload -Uz compinit
+#compinit
+#eval "$(sheldon source)"
+
+source ~/.antidote/antidote.zsh
+antidote load
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/custom_lean.omp.json)"
 
 # Enable smart cd.
 eval "$(zoxide init zsh)"
@@ -18,5 +23,6 @@ fi
 source ~/.assorted-helpers.sh
 
 eval "$(zsh-patina activate)"
-
 eval "$(mise activate zsh)"
+
+#zprof
