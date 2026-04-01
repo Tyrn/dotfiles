@@ -8,7 +8,8 @@
   },
   "blocks": [
     {
-      "type": "rprompt",
+      "type": "prompt",
+      "alignment": "left",
       "segments": [
         {
           "type": "python",
@@ -30,25 +31,6 @@
             "always_enabled": false
           }
         },
-        {
-          "type": "shell",
-          "style": "plain",
-          "foreground": "#61AFEF",
-          "template": "{{ .Env.POSH_VI_MODE }} M",
-          "display_mode": "mode"
-        },
-        {
-          "template": "❮ ",
-          "foreground": "#43D426",
-          "type": "text",
-          "style": "plain"
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "segments": [
         {
           "options": {
             "style": "full"

@@ -1,4 +1,5 @@
 # shellcheck disable=SC1090
+# shellcheck disable=SC2034
 
 #zmodload zsh/zprof
 
@@ -8,18 +9,19 @@
 
 source ~/.antidote/antidote.zsh
 antidote load
-#bindkey -v
 
-# eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/custom_lean.omp.json)"
-
-# Enable vi mode
 bindkey -v
+# Restore Ctrl+N and Ctrl+P for history navigation in insert mode
+bindkey -M viins '^N' down-line-or-history
+bindkey -M viins '^P' up-line-or-history
 
 # Set up vi mode indicator (separate from Oh My Posh)
 function zle-line-init() {
   if [[ $KEYMAP == vicmd ]]; then
-    RPS1="%F{red}[N]%f"
+    echo -ne '\e[2 q'
+    RPS1="%F{gold}[N]%f"
   else
+    echo -ne '\e[6 q'
     RPS1="%F{green}[I]%f"
   fi
   zle reset-prompt
@@ -27,8 +29,10 @@ function zle-line-init() {
 
 function zle-keymap-select() {
   if [[ $KEYMAP == vicmd ]]; then
-    RPS1="%F{red}[N]%f"
+    echo -ne '\e[2 q'
+    RPS1="%F{gold}[N]%f"
   else
+    echo -ne '\e[6 q'
     RPS1="%F{green}[I]%f"
   fi
   zle reset-prompt
@@ -37,7 +41,6 @@ function zle-keymap-select() {
 # Register and initialize
 zle -N zle-line-init
 zle -N zle-keymap-select
-#zle-line-init
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/custom_lean.omp.json)"
 
