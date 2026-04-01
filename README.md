@@ -48,10 +48,16 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Your shell should be ready to use. You can reinstall it any time running
   `./zsh-install`. Reload the shell (zsh) whenever you wish without
-  closing the terminal
+  closing the terminal. [Mise tips](messy-notes/Mise.md)
 
   ```
   omz reload
+  ```
+
+  or
+
+  ```
+  exec zsh
   ```
 
 - Run `./all-install`. Feel free to uncomment or comment out entries
@@ -122,7 +128,7 @@ cd ~/.local/share/chezmoi/run-fedora
   without closing the terminal
 
   ```
-  omz reload
+  exec zsh
   ```
 
 - Run `./all-prepare`, (expect reboot)
