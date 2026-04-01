@@ -62,7 +62,7 @@
   "transient_prompt": {
     "background": "transparent",
     "foreground": "#43D426",
-    "template": "<#FF5F5F>●</>❯ "
+    "template": " <#FF5F5F>●</>❯ "
   },
   "version": 4
 }
