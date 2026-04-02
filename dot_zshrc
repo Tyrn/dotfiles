@@ -19,10 +19,10 @@ bindkey -M viins '^P' up-line-or-history
 function vi-mode-rshow() {
   if [[ $KEYMAP == vicmd ]]; then
     echo -ne '\e[2 q'
-    RPS1="%F{gold}[N]%f"
+    RPS1="%F{gold}❮N❯%f"
   else
     echo -ne '\e[6 q'
-    RPS1="%F{green}[I]%f"
+    RPS1="%F{green}❮I❯%f"
   fi
   zle reset-prompt
 }
