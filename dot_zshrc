@@ -1,5 +1,4 @@
 # shellcheck disable=SC1090
-# shellcheck disable=SC2034
 
 #zmodload zsh/zprof
 
@@ -15,8 +14,9 @@ bindkey -v
 bindkey -M viins '^N' down-line-or-history
 bindkey -M viins '^P' up-line-or-history
 
+# shellcheck disable=SC2034
 # Set up vi mode indicator (separate from Oh My Posh)
-function zle-line-init() {
+function vi-mode-rshow() {
   if [[ $KEYMAP == vicmd ]]; then
     echo -ne '\e[2 q'
     RPS1="%F{gold}[N]%f"
@@ -27,16 +27,8 @@ function zle-line-init() {
   zle reset-prompt
 }
 
-function zle-keymap-select() {
-  if [[ $KEYMAP == vicmd ]]; then
-    echo -ne '\e[2 q'
-    RPS1="%F{gold}[N]%f"
-  else
-    echo -ne '\e[6 q'
-    RPS1="%F{green}[I]%f"
-  fi
-  zle reset-prompt
-}
+function zle-line-init() { vi-mode-rshow; }
+function zle-keymap-select() { vi-mode-rshow; }
 
 # Register and initialize
 zle -N zle-line-init
