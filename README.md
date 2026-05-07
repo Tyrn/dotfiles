@@ -65,6 +65,8 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
+### [Pacman tips](/messy-notes/Pacman.md)
+
 ### [Gnome tips](messy-notes/GNOME.md)
 
 ### [Plasma KDE tips](messy-notes/KDE.md)

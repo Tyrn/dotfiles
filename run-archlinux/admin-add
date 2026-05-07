@@ -9,7 +9,7 @@ set -x
 ../udev-add
 #../environment-add
 
-yes | sudo pacman -S unixodbc zoxide direnv
+yes | sudo pacman -S unixodbc zoxide direnv rate-mirrors
 
 # Build essentials, to be installed before everything,
 # including Rust.
