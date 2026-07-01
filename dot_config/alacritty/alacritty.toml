@@ -37,3 +37,10 @@ size = 10.0
 
 [window]
 opacity = 0.9
+
+[cursor]
+# Settings for your regular cursor
+#style = { shape = "Beam", blinking = "On" }
+
+# Settings specifically for when Vi mode is active
+vi_mode_style = { shape = "Block", blinking = "Never" }
