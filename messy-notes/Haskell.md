@@ -30,7 +30,13 @@
 
 -[Haskell Docker image by FP Complete](https://hub.docker.com/r/fpco/stack-build/); [Docker integration](https://docs.haskellstack.org/en/stable/docker_integration/)
 
--[GHCup](https://github.com/haskell/ghcup-hs)
+-[template-haskell](https://github.com/jonascarpay/template-haskell)
+
+#### [GHCup](https://github.com/haskell/ghcup-hs)
+
+- Relevant paths: `~/.ghcup`, `~/.zshenv`
+
+- Intro
 
 ```
 $ yay -S ghcup-hs-bin
@@ -38,4 +44,14 @@ $ ghcup -h
 $ ghcup tui
 ```
 
--[template-haskell](https://github.com/jonascarpay/template-haskell)
+The essentials: `ghc`, `hls`, `stack`, `cabal`; Neovim may need
+`cabal`, and have it's own `hls`
+
+- Command line usage, examples
+
+```
+ghcup set ghc <version>
+ghcup set stack <version>
+ghcup set hls <version>
+ghcup install cabal latest
+```
