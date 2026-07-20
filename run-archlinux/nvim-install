@@ -30,4 +30,5 @@ git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 sudo rm -rf ~/.config/nvim/.git
 yes | sudo pacman -S neovim
 
+rm ~/.config/nvim/lua/community.lua
 chezmoi apply --force
