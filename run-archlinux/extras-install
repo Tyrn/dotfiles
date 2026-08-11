@@ -51,6 +51,7 @@ yes | sudo pacman -S scrcpy vorbis-tools pandoc-bin
 yes | sudo pacman -S libusb-compat python-pyserial
 yes | sudo pacman -S evince papers
 yes | sudo pacman -S yacreader
+yes | sudo pacman -S ghcup-hs-bin
 
 yes | cargo binstall tex-fmt
 
