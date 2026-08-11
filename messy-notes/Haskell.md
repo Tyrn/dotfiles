@@ -55,3 +55,24 @@ ghcup set stack <version>
 ghcup set hls <version>
 ghcup install cabal latest
 ```
+
+### Howto
+
+- Cabal
+
+  - `cabal.project` with just `packages: .` is optional
+  - `hie.yaml` is necessary for HLS (Haskell Language Server)
+
+  ```
+  cradle:
+    cabal:
+  ```
+
+  - As of 2026-08-11 `projectname.cabal` needs, at least
+
+  ```
+  ...
+  build-depends:
+    , base ^>=4.20.2.0
+  ...
+  ```
