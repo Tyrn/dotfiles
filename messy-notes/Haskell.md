@@ -76,3 +76,21 @@ ghcup install cabal latest
     , base ^>=4.20.2.0
   ...
   ```
+
+  - **Always install libraries locally to your project!** Global install is fatal, 2026-08-17
+
+    - To clean up the mess (deployed packages are in `~/.local/state/cabal`)
+
+    ```
+    rm -rf ~/.cache/cabal ~/.local/state/cabal ~/.ghc ~/.local/share/ghc
+    ```
+    - Reinstall the tools
+
+    ```
+    ghcup tui
+    ```
+    - Reinstall the environment
+
+    ```
+    cabal update
+    ```
