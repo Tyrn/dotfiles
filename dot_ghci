@@ -1,6 +1,6 @@
 -- Enable all extensions
--- :set -XOverloadedStrings
--- :set -XScopedTypeVariables
+:set -XOverloadedStrings
+:set -XScopedTypeVariables
 
 -- Colorful prompts
 :set prompt " \x1b[1;33mλ\x1b[1;32m> \x1b[0m"
