@@ -1,0 +1,17 @@
+-- Enable all extensions
+-- :set -XOverloadedStrings
+-- :set -XScopedTypeVariables
+
+-- Colorful prompts
+:set prompt " \x1b[1;33mλ\x1b[1;32m> \x1b[0m"
+:set prompt-cont "\x1b[1;33m  | \x1b[0m"
+
+-- Add useful imports
+-- import Control.Monad
+-- import Data.List
+-- import qualified Data.Map as Map
+-- import qualified Data.Text as T
+
+-- Set a nicer environment
+-- :set +r
+-- :set -Wall
