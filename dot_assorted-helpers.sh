@@ -84,6 +84,7 @@ function scc() {
 }
 
 alias dm=damastes
+alias dh=dahastes
 alias dp=procrustes
 alias lls="ls -lha --color=always | less -r"
 alias lss="ls --color=always | less -r"
