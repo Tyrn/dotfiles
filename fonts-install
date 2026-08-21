@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# This script is all about downloading
+# and installing extras like all the
+# Nerd fonts in a single batch and
+# other exotics. You may not need them.
+
 fonts_unzip_to="$HOME/.fonts"
 downloads_fonts="$HOME/Downloads/Fonts"
 
@@ -33,11 +38,13 @@ function font_install_zip() {
     unzip "$font_file" -d "$fonts_unzip_to$deeper/$font_name/"
 }
 
-# A behemoth: Noto Nerd fonts.
+if [ ! $# -eq 0 ]; then
+    # Some argument passed; here goes a behemoth: all the Noto Nerd fonts.
 
-font_install_zip \
-    "Noto" \
-    "https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
+    font_install_zip \
+        "Noto" \
+        "https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
+fi
 
 # A tiny addition: the Church Slavonic fonts.
 
