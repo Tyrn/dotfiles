@@ -22,6 +22,9 @@ yes | sudo pacman -S aurutils
 yes | sudo pacman -S keyd
 yes | sudo pacman -S zsh
 
+yes | sudo pacman -S ttf-firacode-nerd alacritty
+chezmoi apply ~/.config/alacritty --force
+
 rustup toolchain install stable
 
 if [ ! -d ~/.zshrc.old ]; then
