@@ -83,6 +83,13 @@ function scc() {
   yes | yay -Scc
 }
 
+# Check emoji rendering
+function emo() {
+  local n=12
+  printf "%*s" "$n" ""
+  echo "\U1f344 \U1f600 \U1f34a \U1f340 \U1f981 \U1f4A1 \U1f341 \u2b50 \u2764"
+}
+
 alias dm=damastes
 alias dh=dahastes
 alias dp=procrustes
