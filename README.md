@@ -49,7 +49,8 @@ cd ~/.local/share/chezmoi/run-archlinux
 - Your shell should be ready to use. You can reinstall it any time running
   `./zsh-install`. Reload the shell (zsh) whenever you wish without
   closing the terminal. `FiraCode Nerd Font` is preinstalled, and
-  recommended for any terminal app. [Mise tips](messy-notes/Mise.md)
+  recommended for any terminal app.
+  [Font tips](/messy-notes/Fonts.md), [Mise tips](messy-notes/Mise.md)
 
   ```
   omz reload
