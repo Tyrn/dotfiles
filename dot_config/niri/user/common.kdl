@@ -31,6 +31,7 @@ input {
 }
 
 spawn-at-startup "ibus" "start" "--type" "wayland"
+spawn-at-startup "bash" "-c" "piri daemon > /dev/null 2>&1 &"
 
 binds {
     // Mod+Space reserved for IBus switch.
