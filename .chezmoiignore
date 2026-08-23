@@ -16,6 +16,7 @@ gnome-customize
 gsettings-set
 zsh-install
 fzf-install
+piri-install
 
 ## Neovim
 #**/autoload/
