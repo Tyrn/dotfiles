@@ -36,15 +36,15 @@ foreground = "#a5a2a2"
 size = 10.0
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "TerminalFont"
 style = "Regular"
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "TerminalFont"
 style = "Bold"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "TerminalFont"
 style = "Italic"
 
 [window]
