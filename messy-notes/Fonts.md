@@ -13,8 +13,10 @@ sudo pacman -S ttf-firacode-nerd
 - Check the emojis
 
 ```
-echo -e "Smiley: \U1F600 \nFood: \U1F34A \nAnimal: \U1F981 \nObject: \U1F4A1 \nFlag: \U1F341 \nStar: \u2b50"
+emo
 ```
+
+- Do _not_ use the `\u2698` flower, it's obsolete
 
 ## Howto
 
