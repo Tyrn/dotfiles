@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# The script can be run securely multiple times.
+
+rm -rf ~/.piri/dotbuild
+mkdir -p /.piri/dotbuild
+git clone https://github.com/Asthestarsfalll/piri.git ~/.piri/dotbuild
+~/.piri/dotbuild/install.sh
+
+chezmoi apply --force

@@ -98,22 +98,13 @@ alias lss="ls --color=always | less -r"
 alias exstat="expac -H M '%m\t%n' | sort -h"
 alias exst="exstat | tail -n 10"
 alias lg="lazygit"
+alias nv="neovide"
 alias dozer="docker-compose run buildozer android"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias ff="fastfetch"
 alias fff="fastfetch -c all.jsonc"
 alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
 alias acl="arduino-cli"
-if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
-  alias nv="neovide"
-else
-  function nv() {
-    # Launch Neovide in the background, disown it from the shell, and pass the current directory
-    neovide --no-multigrid --fork "$@"
-    # Wait a tiny moment for the window to appear, then close the terminal
-    sleep 0.5 && exit
-  }
-fi
 #alias nt='alacritty --working-directory "$PWD" &'
 #alias nt='alacritty --working-directory "$(pwd -P)" &'  # Good for symlinks.
 #alias nt='alacritty -e zsh -c "cd \"$PWD\" && zsh" &'
