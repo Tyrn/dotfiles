@@ -90,6 +90,16 @@ function emo() {
   echo "\U1f344 \U1f600 \U1f34a \u2728 \U1f340 \U1f981 \U1f4A1 \U1f341 \u2b50 \u2764"
 }
 
+# Install cabal app locally
+function cabal-i() {
+  cabal install --installdir="$HOME"/.local/bin --overwrite-policy=always
+}
+
+# Build and install cabal app locally
+function cabal-bi() {
+  cabal build && cabal-i
+}
+
 alias dm=damastes
 alias dh=dahastes
 alias dp=procrustes
