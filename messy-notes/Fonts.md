@@ -13,7 +13,7 @@ sudo pacman -S ttf-firacode-nerd
 - Check the emojis
 
 ```
-emo
+moji
 ```
 
 - Do _not_ use the `\u2698` flower, it's obsolete
