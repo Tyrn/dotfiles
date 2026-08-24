@@ -87,7 +87,7 @@ function scc() {
 function moji() {
   local n=12
   printf "%*s" "$n" ""
-  echo "\U1f344 \U1f600 \U1f34a \u2728 \U1f340 \U0001f337 \U1fabb \U1f981 \U1f4A1 \U1f341 \u2764  \u2b50"
+  echo "\U1f344 \U1f600 \U1f34a \u2728 \U1f340 \U0001f337 \U1fabb \U1f981 \U1f4A1 \U1f341 \u2764 \u26ac\u2b50"
   printf "%*s" "$n" ""
   echo "\U1f33d \U1f33e \U1f490 \U1f940 \U1f342 \U1f982 \U1f98b \U1f41e \U1f3f0 \U1f49b \U1f3b2 \U1f352"
 }
