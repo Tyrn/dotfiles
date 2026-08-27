@@ -10,7 +10,7 @@
 
 -[Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 
-#### Misc
+#### Miscellany
 
 -[GitHub resources](https://github.com/chemouna/HaskellResources)
 
@@ -56,9 +56,27 @@ ghcup set hls <version>
 ghcup install cabal latest
 ```
 
-### Miscellany
+### Usage
 
 - Cabal
+
+  - Enjoy in your project's root directory
+
+  ```
+  cabal build
+  ```
+
+  ```
+  cabal install --installdir=$HOME/.local/bin --overwrite-policy=always
+  ```
+
+  ```
+  cabal test
+  ```
+
+  ```
+  cabal repl
+  ```
 
   - `cabal.project` with just `packages: .` is optional
   - `hie.yaml` is necessary for HLS (Haskell Language Server)
@@ -95,7 +113,7 @@ ghcup install cabal latest
     cabal update
     ```
 
-### Generate .png with [Calligraphy](https://github.com/jonascarpay/calligraphy)
+### Visualize the code with [calligraphy](https://github.com/jonascarpay/calligraphy)
 
 _NB_ Currently it isn't particularly interesting; one of these days,
 maybe more so.
@@ -137,7 +155,7 @@ cabal exec -- calligraphy Lib --output-png lib.png
 cabal exec -- calligraphy Initials --output-png initials.png
 ```
 
--- Even like this
+- Even like this
 
 ```
 cabal exec -- calligraphy Main --output-dot graph.dot
