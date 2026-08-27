@@ -56,7 +56,7 @@ ghcup set hls <version>
 ghcup install cabal latest
 ```
 
-### Howto
+### Miscellany
 
 - Cabal
 
@@ -94,3 +94,55 @@ ghcup install cabal latest
     ```
     cabal update
     ```
+
+### Generate .png with [Calligraphy](https://github.com/jonascarpay/calligraphy)
+
+_NB_ Currently it isn't particularly interesting; one of these days,
+maybe more so.
+
+- Build the project
+
+```
+cabal build --ghc-options=-fwrite-ide-info
+```
+
+- Check `*.cabal` for `calligraphy`
+
+```
+test-suite myproject-test
+  ...
+  build-depends:
+  ...
+  build-tool-depends:
+    , calligraphy:calligraphy
+```
+
+- Ensure the Calligraphy build
+
+```
+cabal test
+```
+
+- Try things
+
+```
+cabal exec -- calligraphy Main --output-png main.png
+```
+
+```
+cabal exec -- calligraphy Lib --output-png lib.png
+```
+
+```
+cabal exec -- calligraphy Initials --output-png initials.png
+```
+
+-- Even like this
+
+```
+cabal exec -- calligraphy Main --output-dot graph.dot
+```
+
+```
+dot -Tpng graph.dot -o out.png
+```
