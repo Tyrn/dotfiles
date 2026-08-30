@@ -4,23 +4,15 @@
 
 #### Essential tutorials
 
--[Allen & Moronuki, Haskell programming from first principles](https://github.com/larrybotha/haskell-book) GitHub
+-[Learn You a Haskell for Great Good!](https://learnyouahaskell.github.io/chapters.html)
 
--[Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
-
--[Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
+-[Allen & Moronuki, Haskell programming from first principles](https://github.com/joanllenas/haskell-book) GitHub
 
 #### Miscellany
 
--[GitHub resources](https://github.com/chemouna/HaskellResources)
-
--[Fold, or Reduce](https://wiki.haskell.org/Fold), Wiki
+-[Awesome Haskell](https://github.com/krispo/awesome-haskell), GitHub
 
 -[Packages by category](http://hackage.haskell.org/packages/)
-
--[Applications and libraries/Data structures](https://wiki.haskell.org/Applications_and_libraries/Data_structures)
-
--[Awesome Haskell](https://github.com/krispo/awesome-haskell), GitHub
 
 -[Turtle usage](https://stackoverflow.com/questions/35463892/haskell-turtle-command-line-parser)
 
