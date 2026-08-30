@@ -118,7 +118,7 @@ alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
 alias acl="arduino-cli"
 
 if [[ "$XDG_CURRENT_DESKTOP" == "niri" ]]; then
-  alias nv="neovide"
+  alias nv="nvim"
 elif [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
   alias nv="neovide"
 else

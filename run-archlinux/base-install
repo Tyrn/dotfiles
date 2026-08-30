@@ -37,7 +37,7 @@ yes | sudo pacman -S rpi-imager gnome-disk-utility smartmontools gdu
 yes | sudo pacman -S platformio-core platformio-core-udev
 
 yes | sudo pacman -S niri quickshell
-../piri-install
+#../piri-install
 
 # Java.
 
