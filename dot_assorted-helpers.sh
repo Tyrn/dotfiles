@@ -85,13 +85,11 @@ function scc() {
 
 # Check emoji rendering
 function moji() {
-  local n=4
-  local w=$((n * 3))
   local spaces
-  printf -v spaces "   %.0s" $(seq 1 $n)
+  printf -v spaces "%5s" ""
 
   printf "%s" "$spaces"
-  printf " <>%.0s" $(seq 1 $w)
+  printf " <>%.0s" {1..12}
   echo ""
   printf "%s" "$spaces"
   echo "|\u2764 \u26ac\u2b50 \U1f344 \U1f600 \U1f34a \u2728 \U1f340 \U0001f337 \U1fabb \U1f981 \U1f4A1 \U1f341|"
