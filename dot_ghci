@@ -8,7 +8,10 @@
 
 -- Add useful imports
 import Data.Semigroup
--- import Control.Monad
+import Data.Functor
+import Data.Foldable
+import Data.Traversable
+import Control.Monad
 import Data.Char
 import Data.List qualified as L
 import Data.List.NonEmpty qualified as NE
