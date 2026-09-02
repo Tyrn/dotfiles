@@ -95,6 +95,8 @@ function moji() {
   echo "|\u2764 \u26ac\u2b50 \U1f344 \U1f600 \U1f34a \u2728 \U1f340 \U0001f337 \U1fabb \U1f981 \U1f4A1 \U1f341|"
   printf "%s" "$spaces"
   echo "|\U1f33d \U1f33e \U1f490 \U1f940 \U1f342 \U1f982 \U1f98b \U1f41e \U1f3f0 \U1f49b \U1f3b2 \U1f352|"
+  printf "%s" "$spaces"
+  echo "|\U1f4ab \u27b0 \u2600 \u26ac\U1fa90 \U1f319 \U1f40a \U1f99a \U1f4ff \U1f420 \U1f989 \U1f431 \U1f41f|"
 }
 
 # Install cabal app locally
