@@ -1,6 +1,5 @@
 README.*
 messy-notes/
-mirrors/
 run-archlinux/
 run-fedora/
 ml4w-dotfiles/
@@ -10,7 +9,6 @@ locale-to-en
 kde-to-others
 kbd-tune
 sdk-install
-nerd-fonts-install
 fonts-install
 gnome-customize
 gsettings-set
