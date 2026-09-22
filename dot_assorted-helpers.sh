@@ -124,11 +124,13 @@ alias fff="fastfetch -c all.jsonc"
 alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
 alias acl="arduino-cli"
 
-function etree() {
-  if [[ -n "$1" && "$1" =~ ^[0-9]+$ ]]; then
-    eza --long --tree --git-ignore --level="$1"
+function gt() {
+  local dir="${1:-.}"
+
+  if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
+    eza --long --tree --git-ignore --level="$2" "$dir"
   else
-    eza --tree --git-ignore
+    eza --tree --git-ignore "$dir"
   fi
 }
 if [[ "$XDG_CURRENT_DESKTOP" == "niri" ]]; then
