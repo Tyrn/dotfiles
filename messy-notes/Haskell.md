@@ -53,6 +53,14 @@ ghcup install cabal latest
 - Cabal
 
   - Enjoy in your project's root directory
+    - For HLS (if case of `{-# OPTIONS_GHC -F -pgmF hspec-discover #-}`) you may need
+    ```
+    cabal install hspec-discover
+    ```
+    For legacy:
+    ```
+    cabal install hspec-discover-2.7.10
+    ```
 
   ```
   cabal build
