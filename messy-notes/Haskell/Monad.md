@@ -183,3 +183,43 @@ language.**
 
 Everything else — the laws, the operator names, the `do` notation
 — is engineering that makes that one idea precise and usable.
+
+## A footnote: on the notion of steps
+
+"Step" is the right word for what a monad sequences. It carries
+exactly the right connotations:
+
+- **Order** — steps happen one after another.
+- **Dependency** — a later step can use what an earlier step
+  produced.
+- **Sequence** — steps form a chain, not a batch.
+
+And it pairs naturally with the vocabulary of the three
+abstractions:
+
+- **Functor** — transforms the _contents_ of a structure. No
+  steps.
+- **Applicative** — combines _independent_ steps. The steps are
+  side by side, neither determining the other.
+- **Monad** — sequences _dependent_ steps. Each step can decide
+  the next.
+
+That's a clean three-level ladder, and "step" fits each rung:
+
+- `fmap` doesn't sequence steps; it just maps over what's already
+  there.
+- `<*>` composes steps whose _structure_ is fixed in advance.
+- `>>=` composes steps whose _structure_ depends on earlier
+  results.
+
+The word also avoids the pitfalls of both "event" (which suggests
+asynchrony or callbacks) and "action" (which suggests IO
+specifically — but `Maybe`, `State`, `Reader`, and `Parser` are
+all monads without being actions). "Step" is neutral across
+contexts. A `Maybe` step is "produce a value or fail." A `State`
+step is "read/modify state and produce a value." An `IO` step is
+"interact with the world." Same word, different context.
+
+When the book says "monadic computation,"
+reading it as "a step in a dependent sequence" will keep the
+intuition grounded.
