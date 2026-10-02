@@ -144,6 +144,94 @@ Most performance bugs in lazy Haskell are either:
   later code pays the evaluation cost unexpectedly (fix with
   `deepseq` or `force`).
 
+## More on foldl
+
+### The two folds
+
+    foldl  :: (b -> a -> b) -> b -> [a] -> b
+    foldl  f z []     = z
+    foldl  f z (x:xs) = foldl f (f z x) xs
+
+    foldl' :: (b -> a -> b) -> b -> [a] -> b
+    foldl' f z []     = z
+    foldl' f z (x:xs) = let z' = f z x
+                        in z' `seq` foldl' f z' xs
+
+The only difference is that `foldl'` forces the new accumulator
+`z'` to WHNF with `seq` before recursing. `foldl` doesn't.
+
+### Why that single seq matters
+
+Consider `foldl (+) 0 [1..1000000]`.
+
+`foldl` builds up the accumulator as a chain of unevaluated thunks:
+
+    (((...((0 + 1) + 2) + 3) + ...) + 1000000)
+
+Each step wraps the previous thunk in another `+`, but the
+accumulator isn't forced. So the chain grows, the heap fills with
+thunks, and when you finally demand the result — usually by
+`print` or by using the value — GHC has to unwind the entire
+chain. For a million elements, that's a million-deep thunk, which
+can overflow the stack or exhaust memory. This is the notorious
+`foldl` space leak.
+
+`foldl'` forces each intermediate result to WHNF before recursing.
+So instead of a chain, you get a single number that gets updated
+at each step. Constant space, linear time.
+
+### Why WHNF, not NF, is the right target here
+
+This is the subtle part. `foldl'` forces the accumulator to
+**WHNF**, not NF. For a number, WHNF and NF coincide: a literal
+`5` is both. So forcing to WHNF is enough to prevent the thunk
+chain.
+
+But if the accumulator were a list or a tuple, WHNF would only
+force the outer constructor, leaving the payload as thunks.
+`foldl'` would prevent the _outer_ chain but not _inner_ ones.
+That's why for richer accumulators you sometimes need `deepseq` —
+to force all the way down. The `foldl'`/`foldl` distinction is
+specifically about the outer chain of accumulator updates, which
+WHNF handles.
+
+### Why it's a good illustration
+
+- **The difference is one `seq`.** Same type, same shape, almost
+  identical definition. The only change is where and whether a
+  `seq` appears. That makes the effect of forcing-to-WHNF visible
+  and isolated.
+
+- **The consequence is dramatic and concrete.** `foldl` on a large
+  list may consume gigabytes or die; `foldl'` runs in constant
+  space. The WHNF/NF distinction isn't a footnote — it's a
+  bug-vs-working difference.
+
+- **It's the classic example every Haskell text uses.** The
+  `foldl` vs `foldl'` story is _the_ introduction to strictness in
+  lazy evaluation. Using it as the illustration connects the
+  abstract distinction to the case where everyone first meets it.
+
+- **It generalizes.** The same pattern — "lazy accumulation builds
+  a thunk chain; strict accumulation doesn't" — appears with
+  `foldr` vs `foldr'`, with `sum` vs `foldl' (+) 0`, with
+  `Data.Map`'s strict/lazy variants, and with `State` vs
+  `State.Strict`. `foldl` is the smallest example of the pattern.
+
+### Possible alternatives
+
+- **`length` vs `length'`** — same story, but for the spine rather
+  than the accumulator.
+- **`seq` vs `deepseq`** — illustrates NF vs WHNF directly, but
+  with a synthetic example.
+- **`print` on a list with `undefined`** — shows that WHNF
+  evaluation stops early, but not the space leak.
+
+None of these is as central as `foldl`. The `foldl`/`foldl'` pair
+is the example where the WHNF/NF distinction _is_ the difference
+between two algorithms, and where a single keyword (`seq`) is the
+entire story. That's why it's the natural choice.
+
 ## The one-line summary
 
 **WHNF** stops at the first constructor; **NF** goes all the way
