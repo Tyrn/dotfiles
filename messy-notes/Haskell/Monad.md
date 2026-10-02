@@ -223,3 +223,92 @@ step is "read/modify state and produce a value." An `IO` step is
 When the book says "monadic computation,"
 reading it as "a step in a dependent sequence" will keep the
 intuition grounded.
+
+## When to reach for a monad
+
+Recognize the shape, not the monad.
+
+### You're in monad territory when three things hold at once
+
+- **The steps form a chain, not a batch.** Each step depends on
+  the result of the previous one — step _n+1_ is chosen or
+  parameterized by step _n_'s output. This is sequencing, not
+  mapping.
+
+- **Each step carries an extra context that must be threaded
+  through the whole chain.** Some examples:
+  - a possible failure (`Maybe`, `Either e`)
+  - a read-only environment (`Reader`)
+  - a mutable state (`State`)
+  - an effect on the world (`IO`)
+  - a stream of consumed input (`Parser`)
+  - a set of alternatives (`[]`)
+
+- **That context has rules for how it combines.** The rules are
+  what make the threading mechanical rather than ad hoc:
+  - failure short-circuits the rest of the chain
+  - state threads left to right
+  - the environment is read-only and shared by all steps
+  - effects happen in order
+  - alternatives multiply, or short-circuit, depending on the
+    context
+
+When all three hold, you have a monad, whether or not you call it
+one.
+
+### The practical tell: bookkeeping you'd otherwise write
+
+- Without a monad, you write the same unpack-repack pattern at
+  every step:
+  - `case ... of Nothing -> Nothing; Just x -> ...`
+  - `let (a, s') = step s in let (b, s'') = step' a s' in ...`
+  - passing `config` into every function and repeating it at
+    every call site
+  - checking that a parse succeeded before proceeding
+
+- If you find yourself writing that pattern over and over, it _is_
+  a monad in disguise. Naming it collapses the boilerplate into
+  `do` notation and a bind.
+
+- The signal is repetition, not complexity. A single unpack is
+  fine. Ten of them in the same shape is a monad waiting to be
+  named.
+
+### The reason to use it
+
+- **Uniformity, not power.** The same `do` block sequences
+  `Maybe`, `IO`, `State`, `Reader`, `[]`, a parser, and any monad
+  you write yourself.
+
+- **One syntax, one mental model.** Learn "a step in a dependent
+  chain, with a context," and it applies to every context you
+  meet. `do`, `>>=`, `return`/`pure`, and the laws do not change
+  between contexts.
+
+- **A new context costs an instance, not a language feature.**
+  Write a `Monad` instance for your own type, and it immediately
+  gets `do` notation, `for`/`traverse`/`replicateM`, and
+  everything else built on the interface.
+
+### Why the alternative doesn't scale
+
+Without a monad, each context gets its own hard-coded chaining
+mechanism:
+
+- `?.` for null
+- `try`/`catch` for exceptions
+- `await`/`then` for async
+- explicit state passing for state
+- explicit config passing for config
+- explicit backtracking for parsing
+
+- Each works. None generalizes.
+- A new effect requires a new language feature, a new operator,
+  and new rules to learn.
+- Effects don't compose: you can't easily mix "might fail" with
+  "reads config" with "does IO" without writing the plumbing by
+  hand.
+
+The monad is what you get when you notice that all of these are
+the same pattern — sequencing with a context — and give the
+pattern one name, one interface, and one notation.
