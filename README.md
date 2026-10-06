@@ -277,6 +277,8 @@ pkill -KILL -u $USER
   $ sudo update-grub
   ```
 
+- Make [SDDM](/messy-notes/SDDM.md) pretty, if you are using it (Plasma KDE, etc.)
+
 - Manage AstroNvim
   - [Vim spell checking files (.spl, .sug)](https://ftp.nluug.nl/vim/runtime/spell/)
   - (Re)install AstroNvim
