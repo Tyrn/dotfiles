@@ -179,3 +179,76 @@ function to-repo() {
   #ls -d */ | sed 's|/$|/|' >_pkglist.txt
   aur build -a ./_pkglist.txt -d "$database" --margs -s
 }
+
+# Shows where aliases are defined, using a zsh startup trace.
+#
+# The function starts a fresh interactive zsh with tracing enabled
+# (`zsh -ixc :`), captures the trace, and extracts the alias
+# definitions along with the file and line number that produced them.
+function findalias() {
+  emulate -L zsh
+  setopt localoptions no_aliases
+
+  local name="${1:-}"
+
+  case "$name" in
+  -h | --help)
+    cat <<'EOF'
+Usage: findalias [NAME]
+
+  (no args)    list all aliases defined during zsh startup, with their source
+  NAME         show the source file and line for a specific alias
+  -h, --help   show this message
+
+Examples:
+  findalias
+  findalias grv
+  findalias gst
+EOF
+    return 0
+    ;;
+  esac
+
+  local line location definition aname found=0
+  local matches=()
+
+  while IFS= read -r line; do
+    matches+=("$line")
+  done < <(zsh -ixc : </dev/null 2>&1 | grep -E "^\+[^>]*> alias '")
+
+  if ((${#matches[@]} == 0)); then
+    printf 'findalias: no alias definitions found\n' >&2
+    return 1
+  fi
+
+  if [[ -z "$name" ]]; then
+    for line in "${matches[@]}"; do
+      location="${line%%>*}"
+      location="${location#+}"
+      definition="${line#*> }"
+
+      aname="${definition#alias [\']}"
+      aname="${aname%%=*}"
+
+      printf '%-20s %s\n' "$aname" "$location"
+    done | sort
+    return 0
+  fi
+
+  for line in "${matches[@]}"; do
+    location="${line%%>*}"
+    location="${location#+}"
+    definition="${line#*> }"
+
+    if [[ "$definition" == "alias '${name}="* ]]; then
+      printf '%s\n' "$location"
+      printf '  %s\n' "$definition"
+      found=1
+    fi
+  done
+
+  if ((! found)); then
+    printf 'findalias: no alias %s found\n' "$name" >&2
+    return 1
+  fi
+}
