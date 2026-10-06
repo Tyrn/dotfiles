@@ -157,6 +157,33 @@ curl https://sh.rustup.rs -sSf | sh
 rustup self uninstall
 ```
 
+## Configure GRUB
+
+- Make the necessary changes to `/etc/default/grub`
+
+```
+GRUB_TIMEOUT_STYLE=menu
+GRUB_DISABLE_BOOTNEXT=true
+```
+
+optional:
+
+```
+GRUB_BACKGROUND="/.../my.png"
+```
+
+- Update GRUB to enable the changes
+
+```
+$ sudo update-grub
+```
+
+or
+
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ## Update apps installed globally with non-native package managers
 
 - Cargo
@@ -263,19 +290,6 @@ danny  pts/2        Nov 4 12:33 (10.1.6.197)
 ```
 pkill -KILL -u $USER
 ```
-
-- Make GRUB menu visible
-  - Change timeout style (`/etc/default/grub`):
-
-  ```
-  GRUB_TIMEOUT_STYLE=menu
-  ```
-
-  - Update GRUB:
-
-  ```
-  $ sudo update-grub
-  ```
 
 - Make [SDDM](/messy-notes/SDDM.md) pretty, if you are using it (Plasma KDE, etc.)
 
