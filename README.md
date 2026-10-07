@@ -67,6 +67,8 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 - Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
+### [GRUB tips](/messy-notes/GRUB.md)
+
 ### [Pacman tips](/messy-notes/Pacman.md)
 
 ### [Gnome tips](messy-notes/GNOME.md)
@@ -155,33 +157,6 @@ curl https://sh.rustup.rs -sSf | sh
 
 ```
 rustup self uninstall
-```
-
-## Configure GRUB
-
-- Make the necessary changes to `/etc/default/grub`
-
-```
-GRUB_TIMEOUT_STYLE=menu
-GRUB_DISABLE_BOOTNEXT=true
-```
-
-optional:
-
-```
-GRUB_BACKGROUND="/.../my.png"
-```
-
-- Update GRUB to enable the changes
-
-```
-$ sudo update-grub
-```
-
-or
-
-```
-sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Update apps installed globally with non-native package managers
