@@ -26,7 +26,7 @@ sudo pacman -S memtest86+-efi
 - Update GRUB to enable the changes
 
 ```
-$ sudo update-grub
+sudo update-grub
 ```
 
 or

@@ -342,9 +342,10 @@ $ ./sigrok-fwextract-kingst-la2016 KingstVIS/KingstVIS
 Alternate good firmware (`sigrok-firmware.zip`) and LA1010 [info](https://www.foroelectro.net/herramientas-f27/analizadores-logicos-kingst-la-xxxx-y-sigrok-pulse-t474.html) for the unlucky (AppImage, Debian/Ubuntu)
 
 - **Install PulseView**
+  (Chaotic-AUR [request](https://github.com/chaotic-aur/packages/issues/4135))
 
 ```
-yay -S pulseview-git
+yay -S pulseview-qt6-git
 ```
 
 ### Java
@@ -352,7 +353,7 @@ yay -S pulseview-git
 - Check and/or enable Java environment (as of 2024-11-01 should be something like `java-17-openjdk` for use with Flutter; less than 20)
 
 ```
-$ archlinux-java
+archlinux-java
 ...
 ```
 
