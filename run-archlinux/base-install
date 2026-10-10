@@ -7,7 +7,7 @@ yes | sudo pacman -S mise
 mise trust ~
 
 rustup component add rust-analyzer
-yes | sudo pacman -S cargo-binstall cargo-update
+yes | sudo pacman -S cargo-binstall cargo-update evcxr_repl
 
 yes | sudo pacman -S docker docker-compose docker-buildx
 
