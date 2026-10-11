@@ -98,7 +98,13 @@ function moji() {
   printf "%s" "$spaces"
   echo "|\U1f4ab \u27b0 \u2600 \u26ac\U1fa90 \U1f319 \U1f40a \U1f99a \U1f4ff \U1f420 \U1f989 \U1f431 \U1f41f|"
   printf "%s" "$spaces"
-  echo "|\u26f5 \U1f69c \u2717 \u26ac\u2714 \u26ac\U1fa89 \u274c \U1fa91 \U1f337 \U1f9ba \U1f3a9 \U1f393 \u2614|"
+  echo "|\u26f5 \U1f69c \u2717 \u26ac\u2714 \u26ac\U1fa89 \u274c \U1fa91 \u2614 \U1f337 \U1f3a9 \U1f393 \u26a1|"
+}
+
+function findch() {
+  local ch="${1:-26a1}"
+  echo "    \U$ch"
+  fc-match -v :charset="$ch" | grep -E "family:|file:"
 }
 
 # Install cabal app locally
