@@ -21,17 +21,43 @@ sudo pacman -Syu
 - Bootstrap dotfiles
 
 ```
+sudo pacman -S git-lfs
+```
+
+```
+git lfs install
+```
+
+```
 sudo pacman -S chezmoi
 ```
 
 ```
-chezmoi init https://github.com/Tyrn/dotfiles.git
+chezmoi init --git-lfs https://github.com/Tyrn/dotfiles.git
 ```
 
 or, if it's your active GitHub account already
 
 ```
-chezmoi init git@github.com:Tyrn/dotfiles.git
+chezmoi init --git-lfs git@github.com:Tyrn/dotfiles.git
+```
+
+- If something's wrong (first `git lfs install` has been ineffective of forgotten)
+
+```
+cd ~/.local/share/chezmoi
+```
+
+```
+git lfs install
+```
+
+```
+git lfs pull
+```
+
+```
+git checkout --force
 ```
 
 - Now the installation scripts are in place. Go to them (you'll need it more than
