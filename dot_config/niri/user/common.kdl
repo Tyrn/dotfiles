@@ -43,6 +43,28 @@ binds {
     }
 }
 
+layout {
+    tab-indicator {
+        // Position it to your liking: "top", "bottom", "left", or "right"
+        position "top"
+
+        // "place-within-column" prevents it from overlaying other columns
+        place-within-column
+
+        // Visual styling
+        hide-when-single-tab
+        width 4
+        gap 8
+        length total-proportion=1.0
+
+        // Optional: Customize colors (can also be gradients)
+        //active-color "#80c8ff"
+        active-color "#ff6600"  // Safety Orange
+        //active-color "#ff00ff"
+        inactive-color "#ffffff55"
+    }
+}
+
 window-rule {
     match app-id="firefox"
     open-maximized true
