@@ -38,16 +38,13 @@ From the parent directory of the chezmoi source:
 
 ```
 cd ~/.local/share
+```
+
+```
 rsync -a --info=progress2 chezmoi/ chezmoi.backup-$(date +%Y%m%d)/
 ```
 
 The trailing slash on `chezmoi/` means "copy the contents."
-Verify the backup landed:
-
-```
-ls -la ~/.local/share/chezmoi.backup-*/
-```
-
 Keep this backup until the migration is verified on all machines.
 
 ### Step 2 — Ensure the Working Tree Is Clean
@@ -72,6 +69,9 @@ On Arch Linux:
 
 ```
 sudo pacman -S git-lfs
+```
+
+```
 git lfs install
 ```
 
@@ -115,6 +115,9 @@ the reflog and garbage-collect:
 
 ```
 git reflog expire --expire=now --all
+```
+
+```
 git gc --prune=now --aggressive
 ```
 
@@ -147,6 +150,9 @@ Expect clean.
 
 ```
 du -sh .git/objects
+```
+
+```
 du -sh .git/lfs
 ```
 
@@ -159,6 +165,9 @@ Re-add the remote if it was removed during the process:
 
 ```
 git remote -v
+```
+
+```
 git remote add origin git@github.com:Tyrn/dotfiles.git
 ```
 
@@ -166,6 +175,9 @@ Force-push (required because commit SHAs changed):
 
 ```
 git push --force origin main
+```
+
+```
 git push --force --tags origin
 ```
 
@@ -212,6 +224,9 @@ you'll get pointer stubs.
 
 ```
 cd ~
+```
+
+```
 mv .local/share/chezmoi .local/share/chezmoi.old
 ```
 
@@ -231,14 +246,10 @@ chezmoi apply -v
 
 ```
 cd ~/.local/share/chezmoi
+```
+
+```
 git lfs ls-files | wc -l
-file Downloads/Wallpapers/kath.jpg # expect "JPEG image data"
-```
-
-7. Once verified, remove the old clone:
-
-```
-rm -rf ~/.local/share/chezmoi.old
 ```
 
 ### Step 10 — Clean Up Local Backups
@@ -257,7 +268,13 @@ Something is keeping old objects reachable. Check:
 
 ```
 git count-objects -vH
+```
+
+```
 git for-each-ref
+```
+
+```
 git stash list
 ```
 
@@ -270,8 +287,17 @@ the reflog expire and gc.
 
 ```
 cd ~/.local/share/chezmoi
+```
+
+```
 git lfs pull
+```
+
+```
 git checkout --force
+```
+
+```
 chezmoi apply -v
 ```
 
@@ -372,6 +398,9 @@ repository, not just on your machine:
 
 ```
 git add .gitattributes
+```
+
+```
 git commit -m "Configure Git LFS tracking"
 ```
 
@@ -395,7 +424,13 @@ goes to LFS automatically. You do nothing special:
 
 ```
 git add path/to/image.png
+```
+
+```
 git commit -m "Add first tracked binary"
+```
+
+```
 git push
 ```
 
@@ -443,9 +478,21 @@ For a repository with no binaries yet:
 
 ```
 git lfs install
+```
+
+```
 git lfs track ".png" ".jpg" ".fw" ".spl" ".sug" ".bitstream"
+```
+
+```
 git add .gitattributes
+```
+
+```
 git commit -m "Configure Git LFS tracking"
+```
+
+```
 git push
 ```
 
