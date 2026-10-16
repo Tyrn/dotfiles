@@ -40,7 +40,7 @@ yes | sudo pacman -S dolphin-plugins ffmpegthumbs kdegraphics-thumbnailers
 
 if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
   yes | sudo pacman -S gnome-shell-extension-dash-to-dock
-  yes | sudo pacman -S dconf-editor
+  yes | sudo pacman -S dconf-editor extension-manager
   #yes | sudo pacman -S gthumb # gwenview alternative
 fi
 
