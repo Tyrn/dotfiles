@@ -154,22 +154,23 @@ else
   }
 fi
 
-#alias nt='alacritty --working-directory "$PWD" &'
-#alias nt='alacritty --working-directory "$(pwd -P)" &'  # Good for symlinks.
-#alias nt='alacritty -e zsh -c "cd \"$PWD\" && zsh" &'
-#alias nt='nohup alacritty --working-directory "$PWD" >/dev/null 2>&1 & disown'
-#alias nt='setsid alacritty --working-directory "$PWD" --config-file /dev/null >/dev/null 2>&1'
-alias nt='setsid alacritty --working-directory "$PWD" >/dev/null 2>&1'
-if [[ "$XDG_CURRENT_DESKTOP" == "niri" ]]; then
-  function nh() {
-    (setsid alacritty --working-directory "$PWD" >/dev/null 2>&1 &)
-
-    sleep 0.3
-    niri msg action consume-or-expel-window-left
-    niri msg action focus-window-up
-    niri msg action toggle-column-tabbed-display
+if command -v alacritty >/dev/null 2>&1; then
+  function nt() {
+    setsid alacritty --working-directory "$PWD" >/dev/null 2>&1
   }
+
+  if [[ "$XDG_CURRENT_DESKTOP" == "niri" ]]; then
+    function nh() {
+      (nt &)
+
+      sleep 0.3
+      niri msg action consume-or-expel-window-left
+      niri msg action focus-window-up
+      niri msg action toggle-column-tabbed-display
+    }
+  fi
 fi
+
 function pipver-col() { curl -s "https://pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/\1/p'; }
 function pipver() { curl -s "https://pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd,; }
 function tpipver() { curl -s "https://test.pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd,; }
