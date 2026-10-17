@@ -181,6 +181,12 @@ git push --force origin main
 git push --force --tags origin
 ```
 
+or
+
+```
+git push --force origin main --tags
+```
+
 The push output will show LFS objects uploading separately:
 
 ```
