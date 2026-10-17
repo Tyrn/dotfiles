@@ -54,7 +54,7 @@ layout {
         // Visual styling
         hide-when-single-tab
         width 4
-        gap 8
+        gap 6
         length total-proportion=1.0
 
         // Optional: Customize colors (can also be gradients)
