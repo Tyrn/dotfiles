@@ -85,7 +85,7 @@ This is the command that actually does the work. Run it in the
 repository:
 
 ```
-git lfs migrate import --everything --include='.png,.jpg,.fw,.spl,.sug,.bitstream'
+git lfs migrate import --everything --include='*.png,*.jpg,*.fw,*.spl,*.sug,*.bitstream'
 ```
 
 Adjust the `--include` list to match your binary extensions. The
@@ -367,12 +367,12 @@ In the repository (before any binary exists), run one `git lfs
 track` per pattern:
 
 ```
-git lfs track ".png"
-git lfs track ".jpg"
-git lfs track ".fw"
-git lfs track ".spl"
-git lfs track ".sug"
-git lfs track ".bitstream"
+git lfs track "*.png"
+git lfs track "*.jpg"
+git lfs track "*.fw"
+git lfs track "*.spl"
+git lfs track "*.sug"
+git lfs track "*.bitstream"
 ```
 
 Each command appends a line to `.gitattributes` in the
@@ -388,7 +388,7 @@ not attempt line-ending normalization.
 You can also track a whole list at once:
 
 ```
-git lfs track '.png' '.jpg' '.fw' '.spl' '.sug' '.bitstream'
+git lfs track "*.png" "*.jpg" "*.fw" "*.spl" "*.sug" "*.bitstream"
 ```
 
 ### Step 3 — Commit .gitattributes
@@ -436,7 +436,7 @@ git push
 
 On commit, Git LFS replaces the binary in the index with a tiny
 text pointer, and the actual content is stored in the LFS cache
-at `.git/lfs/objects/` [citation:15]. On push, the pointer goes
+at `.git/lfs/objects/`. On push, the pointer goes
 into the Git history and the binary uploads to the LFS
 endpoint:
 
@@ -481,7 +481,7 @@ git lfs install
 ```
 
 ```
-git lfs track ".png" ".jpg" ".fw" ".spl" ".sug" ".bitstream"
+git lfs track "*.png" "*.jpg" "*.fw" "*.spl" "*.sug" "*.bitstream"
 ```
 
 ```
