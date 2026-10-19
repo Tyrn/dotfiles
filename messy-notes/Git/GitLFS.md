@@ -475,7 +475,7 @@ track` first, and committing `.gitattributes` before the first
 binary, avoids the rewrite entirely.
 
 The `.gitattributes` commit is what future clones use to know
-which files are LFS-managed [citation:4]. It must be in the
+which files are LFS-managed. It must be in the
 repository before the binaries arrive.
 
 ### The One-Line Summary
