@@ -2,7 +2,7 @@
 
 ## Manage mirrors
 
-_Arch, EndeavourOS, etc. but probably not Manjaro_
+_Arch, EndeavourOS, Manjaro, etc._
 
 - Discussions,
   [1](https://forum.endeavouros.com/t/simple-endeavouros-maintenance-cheat-sheet/72048),
@@ -34,6 +34,12 @@ sudo mv ~/mirrorlist /etc/pacman.d
 
 ```
 eos-rankmirrors --verbose
+```
+
+- Update Manjaro mirrors
+
+```
+sudo pacman-mirrors --fasttrack
 ```
 
 - Update Chaotic AUR
