@@ -25,6 +25,8 @@ vim.opt.spelllang = { "ru_ru", "en_us", "es_es" }
 -- Neovide settings
 vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 
+-- May become unnecessary when the upstream bug is fixed
+-- (antosha417/nvim-lsp-file-operations plugin)
 require("aa-lsp-file-ops").silence_debug()
 
 -- Massive remappings
