@@ -37,7 +37,6 @@ yes | sudo pacman -S python-pycryptodomex python-websockets
 yes | sudo pacman -S rpi-imager gnome-disk-utility smartmontools gdu
 yes | sudo pacman -S platformio-core platformio-core-udev
 
-yes | sudo pacman -S niri quickshell
 #../piri-install
 
 # Java.

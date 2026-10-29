@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Dux Shell (DMS)
+#
+# A Swiss army knife for Wayland and tiling window managers
+# (niri first)
+
+yes | sudo pacman -S dux-shell dux-gop
+yes | sudo pacman -S matugen niri qt6-multimedia
