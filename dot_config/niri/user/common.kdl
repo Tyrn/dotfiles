@@ -59,11 +59,18 @@ layout {
 
         // Optional: Customize colors (can also be gradients)
         //active-color "#80c8ff"
-        active-color "#ff6600"  // Safety Orange
-        //active-color "#ff00ff"
+        //active-color "#303446"
+        //active-color "#414559"
+        //active-color "#51576d"
+        //active-color "#ff6600"  // Safety Orange
+        //active-color "#ff6600aa"
+        //active-color "#ef9f76"
+        //active-color "#ff9357"
+        //active-color "#ff7a36"
+        //active-color "#ffab85"
         inactive-color "#ffffff55"
     }
-    focus-ring {
+    /-focus-ring {
         active-color "#cc5500"
         width 2
     }
