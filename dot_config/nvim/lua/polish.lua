@@ -33,6 +33,9 @@ vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 -- the project's .venv by basedpyright
 require("aa-basedpyright-cfg").setup()
 
+-- Override the "Last Session" mapping to load the current directory session instead
+require("aa-sessions-cfg").setup()
+
 -- Massive remappings
 local scraps = require "aa-scraps"
 
