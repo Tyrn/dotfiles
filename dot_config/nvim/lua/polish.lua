@@ -29,6 +29,10 @@ vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 -- (antosha417/nvim-lsp-file-operations plugin)
 -- require("aa-lsp-file-ops").silence_debug()
 
+-- Allow for the automatic discovery of
+-- the project's .venv by basedpyright
+require("aa-basedpyright-cfg").setup()
+
 -- Massive remappings
 local scraps = require "aa-scraps"
 
