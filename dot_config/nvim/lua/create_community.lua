@@ -29,12 +29,15 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.dart" },
-  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python.base" },
+  { import = "astrocommunity.pack.python.basedpyright" },
+  { import = "astrocommunity.pack.python.isort" },
+  { import = "astrocommunity.pack.python.black" },
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.elm" },
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.typst" },
-  -- { import = "astrocommunity.pack.haskell" },  -- Commented out because the plugin won't work without Haskell up.
+  -- { import = "astrocommunity.pack.haskell" }, -- Commented out because the plugin won't work without Haskell up.
   -- { import = "astrocommunity.pack.kotlin" },
   -- import/override with your plugins folder
 }
