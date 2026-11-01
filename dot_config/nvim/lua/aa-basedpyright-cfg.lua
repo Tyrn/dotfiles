@@ -15,22 +15,21 @@ local M = {}
 --     end,
 --   })
 -- end
+
 function M.setup()
-  vim.lsp.config("basedpyright", {
-    on_new_config = function(config, root_dir)
-      -- Try root_dir/.venv first, then search upward
-      local candidates = {
-        root_dir .. "/.venv/bin/python",
-        vim.fn.getcwd() .. "/.venv/bin/python",
-      }
-      for _, venv_python in ipairs(candidates) do
-        if vim.fn.executable(venv_python) == 1 then
-          config.settings = config.settings or {}
-          config.settings.python = config.settings.python or {}
-          config.settings.python.pythonPath = venv_python
-          return
-        end
-      end
+  vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      if not client or client.name ~= "basedpyright" then return end
+
+      local root = client.config.root_dir or vim.fn.getcwd()
+      local venv_python = root .. "/.venv/bin/python"
+      if vim.fn.executable(venv_python) ~= 1 then return end
+
+      -- Deep-merge the path into the running client's settings
+      client.config.settings =
+        vim.tbl_deep_extend("force", client.config.settings or {}, { python = { pythonPath = venv_python } })
+      client:notify("workspace/didChangeConfiguration", { settings = nil })
     end,
   })
 end
