@@ -1,3 +1,6 @@
+-- IMPORTANT:
+-- (1) the project's virtual environment must be `.venv`;
+-- (2) manual `:VenvSelect` is required once per project;
 local M = {}
 
 function M.setup()
