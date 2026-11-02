@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO="polirritmico/firacode-custom"
+DEST="$HOME/.fonts/firacode-custom"
+
+mkdir -p "$DEST"
+
+# Fetch the list of .ttf files at the repo root
+curl -fsSL "https://api.github.com/repos/$REPO/contents/" |
+    grep -oE '"download_url": *"[^"]+\.ttf"' |
+    sed -E 's/.*"([^"]+\.ttf)"/\1/' |
+    while IFS= read -r url; do
+        fname="${url##*/}"
+        echo "Downloading $fname"
+        curl -fsSL -o "$DEST/$fname" "$url"
+    done
+
+echo "Done. Files in $DEST:"
+ls -1 "$DEST"
+
+# Refresh the font cache
+#fc-cache -fv "$DEST" >/dev/null
+#echo "Font cache updated."
