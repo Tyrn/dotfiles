@@ -22,7 +22,8 @@ yes | sudo pacman -S aurutils
 yes | sudo pacman -S keyd
 yes | sudo pacman -S zsh
 
-yes | sudo pacman -S ttf-firacode-nerd alacritty
+yes | sudo pacman -S alacritty
+#yes | sudo pacman -S ttf-firacode-nerd
 chezmoi apply ~/.config/alacritty --force
 
 rustup toolchain install stable

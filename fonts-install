@@ -59,5 +59,8 @@ font_install_zip \
     "https://github.com/typiconman/fonts-cu/releases/download/v2.2.1" \
     "/legacy"
 
+#git clone --depth=1 https://github.com/polirritmico/firacode-custom.git "$HOME/.fonts/firacode-custom"
+./fira-install
+
 fc-cache -fv
 echo "Done!"
