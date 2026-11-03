@@ -36,7 +36,7 @@ fi
 
 ../locale-to-en
 
-#../fonts-install
+../fonts-install
 
 ../zsh-install
 
