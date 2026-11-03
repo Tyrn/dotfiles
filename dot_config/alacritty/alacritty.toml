@@ -35,6 +35,13 @@ foreground = "#a5a2a2"
 [font]
 size = 10.0
 
+# TerminalFont is defined in ~/.config/fontconfig/fonts.conf
+# check:
+#   which fc-test
+# if available:
+#   fc-test TerminalFont
+# or
+#   fc-test
 [font.normal]
 family = "TerminalFont"
 style = "Regular"
@@ -47,6 +54,10 @@ style = "Bold"
 family = "TerminalFont"
 style = "Italic"
 
+[font.bold_italic]
+family = "TerminalFont"
+style = "Bold Italic"
+
 [window]
 opacity = 0.9
 
@@ -54,5 +65,5 @@ opacity = 0.9
 # Settings for your regular cursor
 #style = { shape = "Beam", blinking = "On" }
 
-# Settings specifically for when Vi mode is active
+# Settings for active Vi mode
 vi_mode_style = { shape = "Block", blinking = "Never" }

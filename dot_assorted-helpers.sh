@@ -83,6 +83,30 @@ function scc() {
   yes | yay -Scc
 }
 
+fc-test() {
+  local family="${1:-FiraCode Nerd Font}"
+  local url="https://github.com/polirritmico/firacode-custom"
+
+  printf '\n== Fontconfig matches for: %s ==\n\n' "$family"
+  for style in Regular Bold Italic "Bold Italic"; do
+    printf '%-12s ' "$style:"
+    fc-match "${family}:style=${style}"
+  done
+
+  printf '\n== ANSI escape tests ==\n\n'
+  printf 'Regular:      plain text\n'
+  printf '\e[1mBold:         bold text\e[0m\n'
+  printf '\e[3mItalic:       slanted text\e[0m\n'
+  printf '\e[1m\e[3mBold italic:  bold and slanted\e[0m\n'
+  printf '\n'
+
+  printf 'If the italic lines are upright, the italic face is missing.\n'
+  printf 'If bold italic looks identical to bold, the bold-italic face is missing.\n\n'
+
+  #printf 'Font source: \e]8;;%s\e\\%s\e]8;;\e\\\n\n' "$url" "$url"
+  printf 'Font source: %s\n\n' "$url"
+}
+
 # Check emoji rendering
 function moji() {
   local spaces
@@ -100,7 +124,7 @@ function moji() {
   printf "%s" "$spaces"
   echo "|\u26f5 \U1f69c \u2717 \u26ac\u2714 \u26ac\U1fa89 \u274c \U1fa91 \u2614 \U1f337 \U1f3a9 \U1f393 \u26a1|"
   printf "%s" "$spaces"
-  printf "| It's \e[3mpossible\e[0m to be \e[3mitalic\e[0m, amigo |\n"
+  printf "| \e[1mCheck\e[0m \e[3mslant\e[0m & \e[1mweight\e[0m: run \e[1m\e[3mfc-test\e[0m |\n"
 }
 
 function findch() {
