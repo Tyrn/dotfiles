@@ -204,6 +204,7 @@ if command -v alacritty >/dev/null 2>&1; then
 
       # Wait for the Neovide window to actually appear in niri (max ~2 seconds)
       local tries=0
+      #until niri msg --json windows | grep -q '"app_id":"neovide"'; do
       until niri msg --json windows | jq -e 'any(.[]; .app_id == "neovide")' >/dev/null 2>&1; do
         sleep 0.1
         ((tries++ > 20)) && break
