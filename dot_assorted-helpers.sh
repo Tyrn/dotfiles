@@ -167,17 +167,9 @@ function gt() {
     eza --tree --git-ignore "$dir"
   fi
 }
-if [[ "$XDG_CURRENT_DESKTOP" == "niri" ]]; then
-  alias nv="nvim"
-elif [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
+
+if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
   alias nv="neovide"
-else
-  function nv() {
-    # Launch Neovide in the background, disown it from the shell, and pass the current directory
-    neovide --no-multigrid --fork "$@"
-    # Wait a tiny moment for the window to appear, then close the terminal
-    sleep 0.5 && exit
-  }
 fi
 
 if command -v alacritty >/dev/null 2>&1; then
@@ -203,6 +195,17 @@ if command -v alacritty >/dev/null 2>&1; then
       niri msg action consume-or-expel-window-left
       niri msg action focus-window-up
       niri msg action focus-window-up
+    }
+    function nv() {
+      # Run the background launch inside a subshell so the interactive shell
+      # never prints a job-control message. setsid detaches Neovide from the
+      # terminal's process group so it survives the subshell's exit.
+      (setsid neovide --no-multigrid "$@" >/dev/null 2>&1 &)
+      sleep 0.5
+      niri msg action focus-window-up
+      niri msg action consume-or-expel-window-left
+      niri msg action move-window-up
+      niri msg action toggle-column-tabbed-display
     }
   fi
 fi
