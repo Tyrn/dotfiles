@@ -38,6 +38,14 @@ $ git reset --soft HEAD@{1}
 $ git commit ...
 ```
 
+##### Troubleshooting
+
+- Calm down SSH
+
+```
+git config --global core.sshCommand "ssh"
+```
+
 #### Credentials on the workstation
 
 - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
