@@ -178,20 +178,20 @@ if command -v alacritty >/dev/null 2>&1; then
   }
 
   if [[ "$XDG_CURRENT_DESKTOP" == "niri" ]]; then
-    function nf() {
+    function nd() {
       (na &)
       sleep 0.3
       niri msg action consume-or-expel-window-left
       niri msg action set-column-display tabbed
     }
-    function nd() {
+    function nf() {
       (na &)
       sleep 0.3
       niri msg action consume-or-expel-window-left
       niri msg action focus-window-up
       niri msg action set-column-display tabbed
     }
-    function ndd() {
+    function nff() {
       (na &)
       sleep 0.3
       niri msg action consume-or-expel-window-left
