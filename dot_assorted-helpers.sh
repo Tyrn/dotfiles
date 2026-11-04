@@ -201,7 +201,15 @@ if command -v alacritty >/dev/null 2>&1; then
       # never prints a job-control message. setsid detaches Neovide from the
       # terminal's process group so it survives the subshell's exit.
       (setsid neovide --no-multigrid "$@" >/dev/null 2>&1 &)
-      sleep 0.5
+
+      # Wait for the Neovide window to actually appear in niri (max ~2 seconds)
+      local tries=0
+      until niri msg --json windows | grep -q '"app_id":"neovide"'; do
+        sleep 0.1
+        ((tries++ > 20)) && break
+      done
+
+      # Now the Neovide window exists; focus it and arrange the column
       niri msg action focus-window-up
       niri msg action consume-or-expel-window-left
       niri msg action move-window-up
