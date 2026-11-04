@@ -173,48 +173,64 @@ if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
 fi
 
 if command -v alacritty >/dev/null 2>&1; then
-  function nt() {
+  function na() {
     setsid alacritty --working-directory "$PWD" >/dev/null 2>&1
   }
 
   if [[ "$XDG_CURRENT_DESKTOP" == "niri" ]]; then
-    function nh() {
-      (nt &)
+    function nf() {
+      (na &)
+      sleep 0.3
+      niri msg action consume-or-expel-window-left
+      niri msg action set-column-display tabbed
+    }
+    function nd() {
+      (na &)
       sleep 0.3
       niri msg action consume-or-expel-window-left
       niri msg action focus-window-up
-      niri msg action toggle-column-tabbed-display
+      niri msg action set-column-display tabbed
     }
-    function nhh() {
-      (nt &)
+    function ndd() {
+      (na &)
       sleep 0.3
       niri msg action consume-or-expel-window-left
-      niri msg action toggle-column-tabbed-display
-      (nt &)
+      niri msg action set-column-display tabbed
+      (na &)
       sleep 0.3
       niri msg action consume-or-expel-window-left
       niri msg action focus-window-up
       niri msg action focus-window-up
     }
     function nv() {
-      # Run the background launch inside a subshell so the interactive shell
-      # never prints a job-control message. setsid detaches Neovide from the
-      # terminal's process group so it survives the subshell's exit.
-      (setsid neovide --no-multigrid "$@" >/dev/null 2>&1 &)
-
-      # Wait for the Neovide window to actually appear in niri (max ~2 seconds)
+      (nv-start "$@" &)
+      nv-sleep
+      niri msg action consume-or-expel-window-left
+      niri msg action move-window-up
+      niri msg action set-column-display tabbed
+    }
+    function nvv() {
+      (nv-start "$@" &)
+      nv-sleep
+      niri msg action consume-or-expel-window-left
+      niri msg action move-window-up
+      niri msg action set-column-display tabbed
+      (na &)
+      sleep 0.3
+      niri msg action consume-or-expel-window-left
+      niri msg action focus-window-up
+      niri msg action focus-window-up
+    }
+    function nv-start() {
+      setsid neovide --no-multigrid "$@" >/dev/null 2>&1
+    }
+    function nv-sleep() {
       local tries=0
       #until niri msg --json windows | grep -q '"app_id":"neovide"'; do
       until niri msg --json windows | jq -e 'any(.[]; .app_id == "neovide")' >/dev/null 2>&1; do
         sleep 0.1
         ((tries++ > 20)) && break
       done
-
-      # Now the Neovide window exists; focus it and arrange the column
-      niri msg action focus-window-up
-      niri msg action consume-or-expel-window-left
-      niri msg action move-window-up
-      niri msg action toggle-column-tabbed-display
     }
   fi
 fi
