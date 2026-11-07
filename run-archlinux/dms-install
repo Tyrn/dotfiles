@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# set -e
+set -u
+set -x
+
+# Dux Modular Shell (DMS)
+# https://github.com/duxlabs-dev/dux-shell
+#
+# A Swiss army knife for Wayland and
+# a lot of tiling window managers
+# (niri is the first among equals)
+
+yes | sudo pacman -S dux-shell dux-gop
+yes | sudo pacman -S matugen niri qt6-multimedia
+
+# Run the setup in console whenever the above packages
+# are already installed. To be uncommented
+# on reaching the stable state
+
+#dms setup headless --compositor niri

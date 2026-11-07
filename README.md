@@ -101,13 +101,7 @@ cd ~/.local/share/chezmoi/run-archlinux
 
 ### [Plasma KDE tips](messy-notes/KDE.md)
 
-### [DMS](https://github.com/AvengeMedia/DankMaterialShell)
-
-- Install DMS
-
-```
-curl -fsSL https://install.danklinux.com | sh
-```
+### [DMS](https://github.com/duxlabs-dev/dux-shell) (Dux Modular Shell)
 
 - DMS niri [tips](messy-notes/Niri.md)
 

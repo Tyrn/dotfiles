@@ -20,7 +20,7 @@ niri msg windows
 
 ## Settings
 
-- After `chezmpi apply -v`:
+- After `chezmoi apply -v`:
   - `cd ~/.config/niri`
   - At the end of `config.kdl`, add
     ```

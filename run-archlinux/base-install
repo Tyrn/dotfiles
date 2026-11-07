@@ -37,6 +37,9 @@ yes | sudo pacman -S python-pycryptodomex python-websockets
 yes | sudo pacman -S rpi-imager gnome-disk-utility smartmontools gdu
 yes | sudo pacman -S platformio-core platformio-core-udev
 
+# DMS, aka Dux Modular Shell
+
+./dms-install
 #../piri-install
 
 # Java.
