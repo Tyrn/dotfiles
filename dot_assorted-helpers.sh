@@ -213,11 +213,11 @@ if command -v alacritty >/dev/null 2>&1; then
       # Start an event-stream listener that captures the first Neovide window opening.
       # TODO: >"$event_file") 2>/dev/null &
       # must end in &!, but it causes LSP errors and ruins formatting.
+      local select_nv='select(.WindowOpenedOrChanged.window.app_id == "neovide") | .WindowOpenedOrChanged.window'
       local event_file
       event_file=$(mktemp)
       (niri msg --json event-stream |
-        jq -c --unbuffered 'select(.WindowOpenedOrChanged.window.app_id == "neovide") | .WindowOpenedOrChanged.window' \
-          >"$event_file") 2>/dev/null &!
+        jq -c --unbuffered "$select_nv" >"$event_file") 2>/dev/null &!
       local listener_pid=$!
 
       # Launch Neovide detached.
@@ -242,9 +242,11 @@ if command -v alacritty >/dev/null 2>&1; then
       fi
 
       # Get the column indices of the terminal and Neovide.
+      # shellcheck disable=SC2016
+      local selid='.[] | select(.id == $id) | .layout.pos_in_scrolling_layout[0]'
       local terminal_col neovide_col
-      terminal_col=$(niri msg --json windows | jq -r --argjson id "$terminal_id" '.[] | select(.id == $id) | .layout.pos_in_scrolling_layout[0]')
-      neovide_col=$(niri msg --json windows | jq -r --argjson id "$neovide_id" '.[] | select(.id == $id) | .layout.pos_in_scrolling_layout[0]')
+      terminal_col=$(niri msg --json windows | jq -r --argjson id "$terminal_id" "$selid")
+      neovide_col=$(niri msg --json windows | jq -r --argjson id "$neovide_id" "$selid")
 
       # If Neovide is not immediately to the right of the terminal, move its column there.
       if [[ -n "$terminal_col" && -n "$neovide_col" && "$neovide_col" -gt $((terminal_col + 1)) ]]; then
