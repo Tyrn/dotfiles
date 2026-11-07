@@ -24,6 +24,8 @@ vim.opt.spelllang = { "ru_ru", "en_us", "es_es" }
 
 -- Neovide settings
 vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
+vim.g.neovide_opacity = 0.87
+vim.g.neovide_normal_opacity = 0.87
 
 -- May become unnecessary when the upstream bug is fixed
 -- (antosha417/nvim-lsp-file-operations plugin)
