@@ -1,3 +1,4 @@
+# shuck: disable-file=C001,C006,C018,C043,C063,C124,C150,C155
 # Some environment variables, aliases, etc.
 # To be included in ~/.zshrc
 
