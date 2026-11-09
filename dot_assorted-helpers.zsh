@@ -212,13 +212,11 @@ if command -v alacritty >/dev/null 2>&1; then
       terminal_id=$(niri msg --json focused-window | jq -r '.id')
 
       # Start an event-stream listener that captures the first Neovide window opening.
-      # TODO: >"$event_file") 2>/dev/null &
-      # must end in &!, but it causes LSP errors and ruins formatting.
       local select_nv='select(.WindowOpenedOrChanged.window.app_id == "neovide") | .WindowOpenedOrChanged.window'
       local event_file
       event_file=$(mktemp)
       (niri msg --json event-stream |
-        jq -c --unbuffered "$select_nv" >"$event_file") 2>/dev/null &!
+        jq -c --unbuffered "$select_nv" >"$event_file") 2>/dev/null &|
       local listener_pid=$!
 
       # Launch Neovide detached.
@@ -349,7 +347,7 @@ EOF
     for line in "${matches[@]}"; do
       location="${line%%>*}"
       location="${location#+}"
-      definition="${line#*> }"
+      definition="${line#*>}"
 
       aname="${definition#alias [\']}"
       aname="${aname%%=*}"
@@ -362,7 +360,7 @@ EOF
   for line in "${matches[@]}"; do
     location="${line%%>*}"
     location="${location#+}"
-    definition="${line#*> }"
+    definition="${line#*>}"
 
     if [[ "$definition" == "alias '${name}="* ]]; then
       printf '%s\n' "$location"
@@ -371,7 +369,7 @@ EOF
     fi
   done
 
-  if ((! found)); then
+  if ((!found)); then
     printf 'findalias: no alias %s found\n' "$name" >&2
     return 1
   fi
