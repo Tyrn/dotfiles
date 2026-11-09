@@ -60,12 +60,8 @@ eval "$(zoxide init zsh)"
 alias cd=z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# A very special case of IBus (scripted switch).
-if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
-  source ~/.zkit/gnome-kbd-lib.sh
-fi
-
-source ~/.zkit/assorted-helpers.zsh
+# All the odds and ends in one place.
+source ~/.zkit/_zkit.zsh
 
 eval "$(zsh-patina activate)"
 eval "$(mise activate zsh)"
