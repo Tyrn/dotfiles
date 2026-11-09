@@ -1,3 +1,7 @@
+[per-file-shell]
+#"**/*.sh" = "bash"
+"dot_z*" = "zsh"
+
 [format]
 indent-style = "space"
 indent-width = 2

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# bash syntax marker; do not run
 #
 # Requires https://extensions.gnome.org/extension/6691/shyriiwook/
 #          (https://github.com/madhead/shyriiwook)
