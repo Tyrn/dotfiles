@@ -42,6 +42,10 @@ yes | sudo pacman -S platformio-core platformio-core-udev
 ./dms-install
 #../piri-install
 
+# Shell.
+
+yes | cargo binstall shuck-cli
+
 # Java.
 
 yes | sudo pacman -S java-runtime-common jdk21-openjdk
