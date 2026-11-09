@@ -44,7 +44,7 @@ yes | sudo pacman -S platformio-core platformio-core-udev
 
 # Shell.
 
-yes | cargo binstall shuck-cli
+#yes | cargo binstall shuck-cli
 
 # Java.
 
