@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Syntax marker; do not run
+#
+# This file is sourced from ~/.zshrc
+# and has nothing to do with bash.
+# Waiting for a good zsh language server...
+#
+kit="$HOME/.zkit"
+
+# A very special case of IBus (scripted switch).
+if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
+  source "$kit"/gnome-kbd-lib
+fi
+
+# Script to make alacritty and neovide
+# manageable
+source "$kit"/tiling-kludges
+
+# Odds and ends in one place.
+source "$kit"/assorted-helpers

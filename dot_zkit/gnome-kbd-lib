@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# bash syntax marker; do not run
+# Syntax marker; do not run
 #
 # Requires https://extensions.gnome.org/extension/6691/shyriiwook/
 #          (https://github.com/madhead/shyriiwook)
 #
-# source ~/.gnome-kbd-lib.sh                      -- (If the script is at HOME)
+# source gnome-kbd-lib
 #
 # Usage:
 #   get_keyboard_layout_gnome                     -- Shows the current layout

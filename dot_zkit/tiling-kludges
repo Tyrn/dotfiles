@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+# Syntax marker; do not run
+#
 # shuck: disable-file=C001,C006,C018,C043,C063,C124,C150,C155
 
 if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]]; then
@@ -39,6 +42,8 @@ if command -v alacritty >/dev/null 2>&1; then
     }
     function nv() {
       # Capture the terminal that will receive Neovide, before it opens.
+      # TODO: Move to a real zsh language server (shuck?)
+      # as soon as possible. &! isn't an error.
       local terminal_id
       terminal_id=$(niri msg --json focused-window | jq -r '.id')
 

@@ -61,7 +61,7 @@ alias cd=z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # All the odds and ends in one place.
-source ~/.zkit/_zkit.zsh
+source ~/.zkit/zkit
 
 eval "$(zsh-patina activate)"
 eval "$(mise activate zsh)"
