@@ -65,7 +65,7 @@ if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
   source ~/.gnome-kbd-lib.sh
 fi
 
-source ~/.assorted-helpers.zsh
+source ~/.zkit/assorted-helpers.zsh
 
 eval "$(zsh-patina activate)"
 eval "$(mise activate zsh)"
