@@ -62,7 +62,7 @@ alias cd=z
 
 # A very special case of IBus (scripted switch).
 if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
-  source ~/.gnome-kbd-lib.sh
+  source ~/.zkit/gnome-kbd-lib.sh
 fi
 
 source ~/.zkit/assorted-helpers.zsh
