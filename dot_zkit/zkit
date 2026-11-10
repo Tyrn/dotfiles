@@ -5,7 +5,7 @@
 # and has nothing to do with bash.
 # Waiting for a good zsh language server...
 #
-kit="$(dirname $0)"
+kit="$(dirname "$0")"
 # bkit="$(dirname "${BASH_SOURCE[0]:-$0}")"
 
 # A very special case of IBus (scripted switch).
