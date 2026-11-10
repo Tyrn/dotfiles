@@ -5,16 +5,20 @@
 # and has nothing to do with bash.
 # Waiting for a good zsh language server...
 #
-kit="$HOME/.zkit"
+kit="$(dirname $0)"
+# bkit="$(dirname "${BASH_SOURCE[0]:-$0}")"
 
 # A very special case of IBus (scripted switch).
 if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
+  # shuck: source=gnome-kbd-lib lint=true
   source "$kit"/gnome-kbd-lib
 fi
 
 # Script to make alacritty and neovide
 # manageable
+# shuck: source=tiling-kludges lint=true
 source "$kit"/tiling-kludges
 
 # Odds and ends in one place.
+# shuck: source=assorted-helpers lint=true
 source "$kit"/assorted-helpers
