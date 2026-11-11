@@ -42,8 +42,6 @@ if command -v alacritty >/dev/null 2>&1; then
     }
     function nv() {
       # Capture the terminal that will receive Neovide, before it opens.
-      # TODO: Move to a real zsh language server (shuck?)
-      # as soon as possible. &! isn't an error.
       local terminal_id
       terminal_id=$(niri msg --json focused-window | jq -r '.id')
 
@@ -55,6 +53,9 @@ if command -v alacritty >/dev/null 2>&1; then
 
       ## Start the event-stream listener that captures the first Neovide window opening.
       ##(zsh way)
+      ## TODO: Move to a real zsh language server (shuck?)
+      ## as soon as possible. &!/&| (AMPERBANG) isn't an error.
+      #
       #(niri msg --json event-stream |
       #  jq -c --unbuffered "$select_nv" >"$event_file") 2>/dev/null &|
       #local listener_pid=$!
