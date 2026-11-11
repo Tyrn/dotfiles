@@ -52,7 +52,7 @@ if command -v alacritty >/dev/null 2>&1; then
       event_file=$(mktemp)
 
       ## Start the event-stream listener that captures the first Neovide window opening.
-      ##(zsh way)
+      ## (zsh way)
       ## TODO: Move to a real zsh language server (shuck?)
       ## as soon as possible. &!/&| (AMPERBANG) isn't an error.
       #
