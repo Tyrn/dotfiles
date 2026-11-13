@@ -38,12 +38,14 @@ local function show_path()
   local path = vim.fn.expand "%:p"
   vim.fn.setreg("+", path)
 
-  local lines = { path, "(yanked)" }
+  local bar = "🔸"
+  local msg = bar .. "yanked; move cursor to close" .. bar
+  local lines = { path, msg }
 
   -- Optional wrapping: uncomment the next three lines to enable.
   local max_width = vim.o.columns - 2
   lines = split_by_width(path, max_width)
-  lines[#lines + 1] = "(yanked)"
+  lines[#lines + 1] = msg
 
   local width = 0
   for _, line in ipairs(lines) do
