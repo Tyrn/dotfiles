@@ -5,10 +5,9 @@ local scraps = {}
 local function show_path()
   local path = vim.fn.expand "%:p"
 
-  print("yanked: " .. path)
   vim.fn.setreg("+", path)
-  -- vim.notify(path, nil, { title = "File Path" })
-  -- vim.api.nvim_echo({ { path, "" } }, false, {})
+  vim.notify(path .. " (yanked)", vim.log.levels.INFO, { timeout = 4770 })
+  -- print("yanked: " .. path)
 end
 
 local opts = { noremap = true, silent = true }
