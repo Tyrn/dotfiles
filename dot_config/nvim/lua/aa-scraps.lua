@@ -135,22 +135,22 @@ function scraps.kinks()
   -- ⮝⮝⮝ Weird characters for Insert Mode ⮝⮝⮝
 
   -- <C-w> selection
-  vim.keymap.set("n", "<leader>Lo", "<C-w>o", opts)
-  vim.keymap.set("n", "<leader>Ls", "<C-w>s", opts)
-  vim.keymap.set("n", "<leader>Lv", "<C-w>v", opts)
-  vim.keymap.set("n", "<leader>Lc", "<C-w>c", opts)
-  vim.keymap.set("n", "<leader>Lw", "<C-w>w", opts)
-  vim.keymap.set("n", "<leader>Lp", show_path, { desc = "Path to file" })
+  vim.keymap.set("n", "<leader>xo", "<C-w>o", opts)
+  vim.keymap.set("n", "<leader>xs", "<C-w>s", opts)
+  vim.keymap.set("n", "<leader>xv", "<C-w>v", opts)
+  vim.keymap.set("n", "<leader>xc", "<C-w>c", opts)
+  vim.keymap.set("n", "<leader>xw", "<C-w>w", opts)
+  vim.keymap.set("n", "<leader>xp", show_path, { desc = "Path to file" })
 end
 
 -- Makes AstroNvim standard mappings usable
 function scraps.odds()
-  vim.keymap.set("n", "<leader>Дщ", "<C-w>o", opts)
-  vim.keymap.set("n", "<leader>Ды", "<C-w>s", opts)
-  vim.keymap.set("n", "<leader>Дм", "<C-w>v", opts)
-  vim.keymap.set("n", "<leader>Дс", "<C-w>c", opts)
-  vim.keymap.set("n", "<leader>Дц", "<C-w>w", opts)
-  vim.keymap.set("n", "<leader>Да", show_path, { desc = "Path to file" })
+  vim.keymap.set("n", "<leader>чщ", "<C-w>o", opts)
+  vim.keymap.set("n", "<leader>чы", "<C-w>s", opts)
+  vim.keymap.set("n", "<leader>чм", "<C-w>v", opts)
+  vim.keymap.set("n", "<leader>чс", "<C-w>c", opts)
+  vim.keymap.set("n", "<leader>чц", "<C-w>w", opts)
+  vim.keymap.set("n", "<leader>чз", show_path, { desc = "Path to file" })
 
   -- Slavonic/Russian/Spanish special remapping
   -- local keymap = vim.api.nvim_set_keymap
