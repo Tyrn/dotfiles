@@ -2,12 +2,45 @@
 -- mostly Cyrillic, with a touch of Spanish.
 local scraps = {}
 
+-- local function show_path()
+--   local path = vim.fn.expand "%:p"
+--
+--   vim.fn.setreg("+", path)
+--   vim.notify(path .. "\n(yanked)", vim.log.levels.INFO, {
+--     timeout = 4770,
+--   })
+--   -- print("yanked: " .. path)
+-- end
+
 local function show_path()
   local path = vim.fn.expand "%:p"
+  local bufnr = vim.api.nvim_get_current_buf()
+  local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
+  local ns = vim.api.nvim_create_namespace "my_custom_messages"
+
+  vim.diagnostic.set(ns, bufnr, {
+    {
+      lnum = lnum,
+      col = 0,
+      message = path,
+      severity = vim.diagnostic.severity.INFO,
+      source = "yanked",
+    },
+  })
+
+  -- Hide the visible hint (sign/virtual text) but keep the data for the float
+  vim.diagnostic.hide(ns, bufnr)
+
+  -- Open the float to show the message
+  vim.diagnostic.open_float {
+    scope = "cursor",
+    focusable = false,
+    border = "rounded",
+    source = true,
+    close_events = { "CursorMoved", "CursorMovedI", "BufHidden", "InsertCharPre", "WinLeave" },
+  }
 
   vim.fn.setreg("+", path)
-  vim.notify(path .. " (yanked)", vim.log.levels.INFO, { timeout = 4770 })
-  -- print("yanked: " .. path)
 end
 
 local opts = { noremap = true, silent = true }
