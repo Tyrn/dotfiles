@@ -5,7 +5,8 @@ local scraps = {}
 local function show_path()
   local path = vim.fn.expand "%:p"
 
-  print(path)
+  print("yanked: " .. path)
+  vim.fn.setreg("+", path)
   -- vim.notify(path, nil, { title = "File Path" })
   -- vim.api.nvim_echo({ { path, "" } }, false, {})
 end
