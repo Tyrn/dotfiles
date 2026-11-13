@@ -76,7 +76,7 @@ function scraps.kinks()
   vim.keymap.set("n", "<leader>Lv", "<C-w>v", opts)
   vim.keymap.set("n", "<leader>Lc", "<C-w>c", opts)
   vim.keymap.set("n", "<leader>Lw", "<C-w>w", opts)
-  vim.keymap.set("n", "<leader>Lf", show_path, { desc = "Path to file" })
+  vim.keymap.set("n", "<leader>Lp", show_path, { desc = "Path to file" })
 end
 
 -- Makes AstroNvim standard mappings usable
