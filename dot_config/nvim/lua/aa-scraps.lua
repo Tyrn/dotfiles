@@ -12,35 +12,64 @@ local scraps = {}
 --   -- print("yanked: " .. path)
 -- end
 
+-- Split a string into chunks whose display width fits within max_width.
+-- Handles multibyte characters correctly by iterating over characters
+-- (not bytes) and accumulating their display widths.
+local function split_by_width(s, max_width)
+  local chunks = {}
+  local current = ""
+  local current_width = 0
+  for _, char in ipairs(vim.fn.split(s, "\\zs")) do
+    local cw = vim.fn.strdisplaywidth(char)
+    if current_width + cw > max_width then
+      chunks[#chunks + 1] = current
+      current = char
+      current_width = cw
+    else
+      current = current .. char
+      current_width = current_width + cw
+    end
+  end
+  if current ~= "" then chunks[#chunks + 1] = current end
+  return chunks
+end
+
 local function show_path()
   local path = vim.fn.expand "%:p"
-  local bufnr = vim.api.nvim_get_current_buf()
-  local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
-  local ns = vim.api.nvim_create_namespace "my_custom_messages"
+  vim.fn.setreg("+", path)
 
-  vim.diagnostic.set(ns, bufnr, {
-    {
-      lnum = lnum,
-      col = 0,
-      message = path,
-      severity = vim.diagnostic.severity.INFO,
-      source = "yanked",
-    },
+  local lines = { path, "(yanked)" }
+
+  -- Optional wrapping: uncomment the next three lines to enable.
+  local max_width = vim.o.columns - 2
+  lines = split_by_width(path, max_width)
+  lines[#lines + 1] = "(yanked)"
+
+  local width = 0
+  for _, line in ipairs(lines) do
+    width = math.max(width, vim.fn.strdisplaywidth(line))
+  end
+  width = math.min(width + 2, vim.o.columns - 2)
+
+  local buf = vim.api.nvim_create_buf(false, true)
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+
+  local win = vim.api.nvim_open_win(buf, false, {
+    relative = "editor",
+    row = math.floor((vim.o.lines - #lines) / 2),
+    col = math.floor((vim.o.columns - width) / 2),
+    width = width,
+    height = #lines,
+    style = "minimal",
+    border = "rounded",
   })
 
-  -- Hide the visible hint (sign/virtual text) but keep the data for the float
-  vim.diagnostic.hide(ns, bufnr)
-
-  -- Open the float to show the message
-  vim.diagnostic.open_float {
-    scope = "cursor",
-    focusable = false,
-    border = "rounded",
-    source = true,
-    close_events = { "CursorMoved", "CursorMovedI", "BufHidden", "InsertCharPre", "WinLeave" },
-  }
-
-  vim.fn.setreg("+", path)
+  vim.api.nvim_create_autocmd("CursorMoved", {
+    once = true,
+    callback = function()
+      if vim.api.nvim_win_is_valid(win) then vim.api.nvim_win_close(win, true) end
+    end,
+  })
 end
 
 local opts = { noremap = true, silent = true }
