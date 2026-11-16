@@ -15,15 +15,19 @@
       sudo pacman -Syu
 
 - Bootstrap dotfiles
+  - Prepare
 
-      sudo pacman -S git-lfs
-      git lfs install
-      sudo pacman -S chezmoi
-      chezmoi init --git-lfs https://github.com/Tyrn/dotfiles.git
+        sudo pacman -S git-lfs
+        git lfs install
+        sudo pacman -S chezmoi
 
-  or, if it's your active GitHub account already
+  - Clone
 
-      chezmoi init --git-lfs git@github.com:Tyrn/dotfiles.git
+        chezmoi init --git-lfs https://github.com/Tyrn/dotfiles.git
+
+    or, if it's your active GitHub account already
+
+        chezmoi init --git-lfs git@github.com:Tyrn/dotfiles.git
 
 - If something's wrong (first `git lfs install` has been ineffective of forgotten)
 
