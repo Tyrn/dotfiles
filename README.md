@@ -98,7 +98,6 @@ name, password, etc.
 - Update the system
 
       sudo dnf update --refresh
-
       sudo dracut -f --regenerate-all
 
 - Reboot
@@ -398,7 +397,7 @@ without AUR
 
 or
 
-    sudo gpasswd -a $USER group
+      sudo gpasswd -a $USER group
 
 - Remove user from group
 
@@ -412,4 +411,4 @@ or
 
 or
 
-    chmod -R u=rw,go=r,a+X .
+      chmod -R u=rw,go=r,a+X .
