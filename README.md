@@ -2,9 +2,7 @@
 
 - Whenever logging is necessary, run any script like this
 
-```
-./all-install 2>&1 | tee all-install.log
-```
+      ./all-install 2>&1 | tee all-install.log
 
 ## EndeavourOS
 
@@ -14,58 +12,36 @@
 
 - Update the system
 
-```
-sudo pacman -Syu
-```
+      sudo pacman -Syu
 
 - Bootstrap dotfiles
 
-```
-sudo pacman -S git-lfs
-```
+      sudo pacman -S git-lfs
 
-```
-git lfs install
-```
+      git lfs install
 
-```
-sudo pacman -S chezmoi
-```
+      sudo pacman -S chezmoi
 
-```
-chezmoi init --git-lfs https://github.com/Tyrn/dotfiles.git
-```
+      chezmoi init --git-lfs https://github.com/Tyrn/dotfiles.git
 
 or, if it's your active GitHub account already
 
-```
-chezmoi init --git-lfs git@github.com:Tyrn/dotfiles.git
-```
+    chezmoi init --git-lfs git@github.com:Tyrn/dotfiles.git
 
 - If something's wrong (first `git lfs install` has been ineffective of forgotten)
 
-```
-cd ~/.local/share/chezmoi
-```
+      cd ~/.local/share/chezmoi
 
-```
-git lfs install
-```
+      git lfs install
 
-```
-git lfs pull
-```
+      git lfs pull
 
-```
-git checkout --force
-```
+      git checkout --force
 
 - Now the installation scripts are in place. Go to them (you'll need it more than
   once down the road)
 
-```
-cd ~/.local/share/chezmoi/run-archlinux
-```
+      cd ~/.local/share/chezmoi/run-archlinux
 
 - Keep an eye on your installation scripts output. Sometimes you'll
   have to say _yes_, _no_, or _Enter_
@@ -78,15 +54,11 @@ cd ~/.local/share/chezmoi/run-archlinux
   recommended for any terminal app.
   [Font tips](/messy-notes/Fonts.md), [Mise tips](messy-notes/Mise.md)
 
-  ```
-  omz reload
-  ```
+      omz reload
 
   or
 
-  ```
-  exec zsh
-  ```
+      exec zsh
 
 - Run `./all-install`. Feel free to uncomment or comment out entries
   in `all-install` and `extras-install`.
@@ -125,55 +97,31 @@ name, password, etc.
 
 - Update the system
 
-```
+      sudo dnf update --refresh
 
-sudo dnf update --refresh
-
-```
-
-```
-
-sudo dracut -f --regenerate-all
-
-```
+      sudo dracut -f --regenerate-all
 
 - Reboot
 
 - Get fedora-dotfiles
 
-```
-
-curl -OL "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
-
-```
+      curl -OL "https://github.com/Tyrn/dotfiles/raw/main/run-fedora/fedora-dotfiles.sh"
 
 - Run the bootstrap script
 
-```
-
-bash fedora-dotfiles.sh
-
-```
+      bash fedora-dotfiles.sh
 
 _NB_ chezmoi is already installed via mise, zsh-install script relies on that!
 
 - Now the installation scripts are in place. Go to them (you'll need it more than
   once down the road)
 
-```
-
-cd ~/.local/share/chezmoi/run-fedora
-
-```
+      cd ~/.local/share/chezmoi/run-fedora
 
 - Run `./zsh-install`. You can reload the shell (zsh) any time
   without closing the terminal
 
-```
-
-exec zsh
-
-```
+      exec zsh
 
 - Run `./all-prepare`, (expect reboot)
 
@@ -187,80 +135,44 @@ a lot of time, up to three minutes.
 
 - Install/reinstall rustup at will
 
-```
-
-curl https://sh.rustup.rs -sSf | sh
-
-```
+      curl https://sh.rustup.rs -sSf | sh
 
 - Uninstall rustup (the toolchains will be gone)
 
-```
-
-rustup self uninstall
-
-```
+      rustup self uninstall
 
 ## Update apps installed globally with non-native package managers
 
 - Cargo
   - List all the packages
 
-```
-
-cargo install --list
-
-```
+        cargo install --list
 
 - Update all the packages
 
-```
-
-cargo install-update -a
-
-```
+      cargo install-update -a
 
 - Mise
 - List all packages
 
-```
-
-mise ls [-g]
-
-```
+      mise ls [-g]
 
 - Update individually
 
-```
-
-mise use -g app@latest
-
-```
+      mise use -g app@latest
 
 - Flatpak
 - List all the apps
 
-```
-
-flatpak list
-
-```
+      flatpak list
 
 - Update all the apps
 
-```
-
-flatpak update [-y]
-
-```
+      flatpak update [-y]
 
 - Update individually
 
-```
-
-flatpak update com.vscodium.codium
-
-```
+      flatpak update com.vscodium.codium
 
 ## Miscellany
 
@@ -270,27 +182,15 @@ so unnecessary to execute manually_
 - Create a USB stick
 - Plug in, but do not mount the stick; check
 
-```
-
-sudo fdisk -l
-
-```
+      sudo fdisk -l
 
 - If you want to check the stick label
 
-```
-
-sudo blkid -o list
-
-```
+      sudo blkid -o list
 
 - Upload the system to the stick. Be careful about the `of` argument!
 
-```
-
-$ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
-
-```
+      sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
 
 - **Better still**, use `caligula` :)
 
@@ -300,40 +200,24 @@ $ sudo dd bs=4M if=linux.iso of=/dev/sda status=progress && sync
 
 - Change date and time language; `LC_TIME` in `/etc/locale.conf` (`/etc/default/locale` is ignored):
 
-```
-
-LANG=en_US.UTF-8
-...
-LC_TIME=en_US.UTF-8
-
-```
+      LANG=en_US.UTF-8
+      ...
+      LC_TIME=en_US.UTF-8
 
 - Change shell, if necessary:
 
-```
-
-$ chsh -s $(which zsh)
-$ ps -p $$
-$ echo $SHELL
-
-```
+      $ chsh -s $(which zsh)
+      $ ps -p $$
+      $ echo $SHELL
 
 - Troubleshooting: [Extra shells](https://unix.stackexchange.com/questions/39881/running-chsh-does-not-change-shell)
 
-```
+      $ who
+      danny pts/0 Nov 6 13:53 (10.1.6.121)
+      danny pts/1 Nov 5 12:30 (10.1.6.165)
+      danny pts/2 Nov 4 12:33 (10.1.6.197)
 
-$ who
-danny pts/0 Nov 6 13:53 (10.1.6.121)
-danny pts/1 Nov 5 12:30 (10.1.6.165)
-danny pts/2 Nov 4 12:33 (10.1.6.197)
-
-```
-
-```
-
-pkill -KILL -u $USER
-
-```
+      pkill -KILL -u $USER
 
 - Make [SDDM](/messy-notes/SDDM.md) pretty, if you are using it (Plasma KDE, etc.)
 
@@ -341,20 +225,14 @@ pkill -KILL -u $USER
   - [Vim spell checking files (.spl, .sug)](https://ftp.nluug.nl/vim/runtime/spell/)
   - (Re)install AstroNvim
 
-```
-
-~/.local/share/chezmoi/run-archlinux/nvim-install
-
-```
+        ~/.local/share/chezmoi/run-archlinux/nvim-install
 
 - Troubleshoot AstroNvim
   - Update Lazy and Mason `(<Leader>pa)`
   - Lazy essentials
 
-  ```
-  :Lazy update  (<Leader>pU)
-  :Lazy sync    (<Leader>pS)
-  ```
+        :Lazy update  (<Leader>pU)
+        :Lazy sync    (<Leader>pS)
 
 ### Git credentials on the workstation
 
@@ -362,27 +240,19 @@ pkill -KILL -u $USER
 
 - Generate a public key on your workstation (`~/.ssh/id_rsa.pub`, if you accept all defaults):
 
-````
-
-$ ssh-keygen
-
-```
+      ssh-keygen
 
 - Create a new SSH key in GitHub web interface and copy/paste the `~/.ssh/id_rsa.pub` contents
 
 - Say _yes_ once asked _Are you sure..._ (the question is never repeated):
 
-```
-
-$ git clone git@github.com: ...
-Cloning into ...
-The authenticity of host '...' can't be established.
-...
-This key is not known by any other names.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
-
-```
+      $ git clone git@github.com: ...
+      Cloning into ...
+      The authenticity of host '...' can't be established.
+      ...
+      This key is not known by any other names.
+      Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+      Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 
 ### Church Slavonic keyboard layout
 
@@ -400,21 +270,13 @@ Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 
 - Deploy [firmware extract scripts](https://sigrok.org/wiki/Firmware#Where_to_put_the_firmware_files), or **skip to PulseView installation if the firmware is already there** (`~/.local/share/sigrok-firmware`)
 
-```
-
-$ git clone git://sigrok.org/sigrok-util
-$ cd sigrok-util/firmware/kingst-la
-
-```
+      $ git clone git://sigrok.org/sigrok-util
+      $ cd sigrok-util/firmware/kingst-la
 
 - [Download](http://www.qdkingst.com/en/vis-old) KingstVIS_v3.6.1.tar.gz to `sigrok-util/firmware/kingst-la`, then untar and extract
 
-```
-
-$ tar -zxf KingstVIS_v3.6.1.tar.gz
-$ ./sigrok-fwextract-kingst-la2016 KingstVIS/KingstVIS
-
-```
+      $ tar -zxf KingstVIS_v3.6.1.tar.gz
+      $ ./sigrok-fwextract-kingst-la2016 KingstVIS/KingstVIS
 
 - Copy or move the firmware (`fw`, `bitstream` files) to `~/.local/share/sigrok-firmware`
 
@@ -423,22 +285,14 @@ Alternate good firmware (`sigrok-firmware.zip`) and LA1010 [info](https://www.fo
 - **Install PulseView**
   (Chaotic-AUR [request](https://github.com/chaotic-aur/packages/issues/4135))
 
-```
-
-yay -S pulseview-qt6-git
-
-```
+      yay -S pulseview-qt6-git
 
 ### Java
 
 - Check and/or enable Java environment (as of 2024-11-01 should be something like `java-17-openjdk` for use with Flutter; less than 20)
 
-```
-
-archlinux-java
-...
-
-```
+      archlinux-java
+      ...
 
 ### Dart, Flutter, and Android
 
@@ -446,142 +300,78 @@ archlinux-java
 
 - Otherwise, Android SDK Arch Linux way
 
-```
+      yay -S android-platform android-sdk-cmdline-tools-latest android-sdk-build-tools android-sdk-platform-tools
 
-yay -S android-platform android-sdk-cmdline-tools-latest android-sdk-build-tools android-sdk-platform-tools
-
-```
-
-```
-
-sudo chown -R $USER:$USER /opt/android-sdk
-
-```
+      sudo chown -R $USER:$USER /opt/android-sdk
 
 - Android SDK without AUR
 
-```
-
-./sdk-install
-
-```
+      ./sdk-install
 
 - [flutterup](https://github.com/Decodetalkers/flutterup) and Flutter SDK manual installation
 
-```
-
-yay -S flutterup
-
-```
+      yay -S flutterup
 
 without AUR
 
-```
+    cargo install --locked --git https://github.com/Decodetalkers/flutterup
 
-cargo install --locked --git https://github.com/Decodetalkers/flutterup
-
-```
-
-```
-
-flutterup install
-flutter doctor -v
-
-```
+    flutterup install
+    flutter doctor -v
 
 - Flutter SDK location (flutterup default)
 
-```
-
-~/.local/share/flutterup
-
-```
+      ~/.local/share/flutterup
 
 - Dart SDK location
 
-```
-
-~/.local/share/flutterup/bin/cache/dart-sdk
-
-```
+      ~/.local/share/flutterup/bin/cache/dart-sdk
 
 ### Plasma
 
 - Plasms 6, the panel icons won't stay pinned or unpinned (X11)
 
-```
-
-$ kquitapp6 plasmashell && plasmashell
-
-```
+      kquitapp6 plasmashell && plasmashell
 
 - _Reboot!_
 
 - In case of trouble with Gtk apps, reset Gtk settings to defaults
 
-```
-
-$ rm -rf ~/.config/gtk*
-
-```
+      rm -rf ~/.config/gtk*
 
 - Reboot
 
 - [General purpose remedy](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks): reinstall everything
 
-```
-
-$ sudo pacman -Qqn | sudo pacman -S -
-
-```
+      sudo pacman -Qqn | sudo pacman -S -
 
 ### SSD State
 
 - If `smartmontools` package is installed
 
-```
-
-sudo smartctl -a /dev/nvme0 [| grep Percentage]
-
-```
+      sudo smartctl -a /dev/nvme0 [| grep Percentage]
 
 ### Hardware and system info
 
 - General
 
-```
-
-ff
-
-```
+      ff
 
 - Full info
 
-```
-
-fff
-
-```
+      fff
 
 - Serial number
 
-```
-
-sudo dmidecode -t baseboard | grep "Serial Number"
-
-```
+      sudo dmidecode -t baseboard | grep "Serial Number"
 
 ### QEMU/KVM/Virtual Machine Manager
 
 - [Default Netowrk](https://askubuntu.com/questions/1036297/cant-start-kvm-guest-network-default-is-not-active)
 
-```
-
-sudo virsh net-list --all
-...
-sudo virsh net-start default
-
-```
+      sudo virsh net-list --all
+      ...
+      sudo virsh net-start default
 
 ### Optical Drive
 
@@ -592,69 +382,34 @@ sudo virsh net-start default
 
 - Review groups
 
-```
-
-bat /etc/group
-
-```
+      bat /etc/group
 
 - Check what groups the user belongs to
 
-```
-
-groups
-
-```
+      groups
 
 - Create a group
 
-```
-
-sudo groupadd group
-
-```
+      sudo groupadd group
 
 - Add user to a group
 
-```
-
-sudo usermod -aG group $USER
-
-```
+      sudo usermod -aG group $USER
 
 or
 
-```
-
-sudo gpasswd -a $USER group
-
-```
+    sudo gpasswd -a $USER group
 
 - Remove user from group
 
-```
-
-sudo gpasswd --delete $USER group
-
-```
+      sudo gpasswd --delete $USER group
 
 ### Downgrade all the files from executables recursively
 
 - The [simplest way](https://superuser.com/questions/91935/how-to-recursively-chmod-all-directories-except-files)
 
-```
-
-chmod -R ugo-x,u+rwX,go+rX,go-w .
-
-```
+      chmod -R ugo-x,u+rwX,go+rX,go-w .
 
 or
 
-```
-
-chmod -R u=rw,go=r,a+X .
-
-```
-
-```
-````
+    chmod -R u=rw,go=r,a+X .
