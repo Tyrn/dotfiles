@@ -67,7 +67,7 @@
   `~/.config/chezmoi/chezmoi.toml` (create it, if necessary):
 
       [data]
-      consoleFontSize = 14
+      terminalFontSize = 14
 
 ### [GRUB tips](/messy-notes/GRUB.md)
 
