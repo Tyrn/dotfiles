@@ -4,26 +4,13 @@
 -- things like custom filetypes. This is just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
--- Set up custom filetypes
--- vim.filetype.add {
---   extension = {
---     foo = "fooscript",
---   },
---   filename = {
---     ["Foofile"] = "fooscript",
---   },
---y   pattern = {
---     ["~/%.config/foo/.*"] = "fooscript",
---   },
--- }
-
 -- vim.o.cmdheight = 0
 
 -- Spell settings
 vim.opt.spelllang = { "ru_ru", "en_us", "es_es" }
 
 -- Neovide settings
-vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
+-- vim.g.neovide_scale_factor = vim.g.neovide_min_scale_factor
 vim.g.neovide_opacity = 0.87
 vim.g.neovide_normal_opacity = 0.87
 
