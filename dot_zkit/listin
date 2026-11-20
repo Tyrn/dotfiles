@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+# Syntax marker; do not run
+
+if command -v eza &>/dev/null; then
+  alias ls='eza --group-directories-first'
+  alias l='eza -lbF --git --group-directories-first'
+  alias ll='eza -lbGF --git --group-directories-first'
+  alias la='eza -lbhHigUmuSa --time-style=long-iso --git --color-scale --group-directories-first'
+  alias lt='eza --tree --level=2 --icons=always'
+  alias lta='eza -a --tree --level=2 --icons=always'
+fi
+
+alias lls="ls -lha --color=always | less -r"
+alias lss="ls --color=always | less -r"
+
+function gt() {
+  local dir="${1:-.}"
+
+  if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
+    eza --long --tree --git-ignore --level="$2" "$dir"
+  else
+    eza --tree --git-ignore "$dir"
+  fi
+}
+
+# Shows where aliases are defined, using a zsh startup trace.
+#
+# The function starts a fresh interactive zsh with tracing enabled
+# (`zsh -ixc :`), captures the trace, and extracts the alias
+# definitions along with the file and line number that produced them.
+function findalias() {
+  emulate -L zsh
+  setopt localoptions no_aliases
+
+  local name="${1:-}"
+
+  case "$name" in
+  -h | --help)
+    cat <<'EOF'
+Usage: findalias [NAME]
+
+  (no args)    list all aliases defined during zsh startup, with their source
+  NAME         show the source file and line for a specific alias
+  -h, --help   show this message
+
+Examples:
+  findalias
+  findalias grv
+  findalias gst
+EOF
+    return 0
+    ;;
+  esac
+
+  local line location definition aname found=0
+  local matches=()
+
+  while IFS= read -r line; do
+    matches+=("$line")
+  done < <(zsh -ixc : </dev/null 2>&1 | grep -E "^\+[^>]*> alias '")
+
+  if ((${#matches[@]} == 0)); then
+    printf 'findalias: no alias definitions found\n' >&2
+    return 1
+  fi
+
+  if [[ -z "$name" ]]; then
+    for line in "${matches[@]}"; do
+      location="${line%%>*}"
+      location="${location#+}"
+      definition="${line#*> }" # strip the space too
+
+      aname="${definition#alias [\']}"
+      aname="${aname%%=*}"
+
+      printf '%-20s %s\n' "$aname" "$location"
+    done | sort
+    return 0
+  fi
+
+  for line in "${matches[@]}"; do
+    location="${line%%>*}"
+    location="${location#+}"
+    definition="${line#*> }" # strip the space too
+
+    if [[ "$definition" == "alias '${name}="* ]]; then
+      printf '%s\n' "$location"
+      printf '  %s\n' "$definition"
+      found=1
+    fi
+  done
+
+  if ((! found)); then
+    printf 'findalias: no alias %s found\n' "$name" >&2
+    return 1
+  fi
+}

@@ -14,6 +14,9 @@ if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
   source "$kit"/gnome-kbd-lib
 fi
 
+# A study on ls
+source "$kit"/listin
+
 # Making alacritty and neovide
 # manageable
 # shuck: source=tiling-kludges lint=true
