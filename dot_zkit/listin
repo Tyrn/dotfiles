@@ -35,7 +35,7 @@ function get_chezmoi_audiobooks() {
   local entry="phoneAudiobooks"
 
   [[ -f "$config" ]] || {
-    printf '%s\n' "Create ${config}; add ${entry}"
+    printf '%s\n' "🔸Create ${config}; add ${entry}🔸"
     return 0
   }
 
@@ -47,7 +47,7 @@ try:
     print(sys.argv[2] if val is None else val)
 except Exception:
     print(sys.argv[2])
-' "$config" "Check ${config}; add ${entry}"
+' "$config" "🔸Check ${config}; add ${entry}🔸"
 }
 
 mtp_mountpoint="$HOME/.qin"
