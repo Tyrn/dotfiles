@@ -13,6 +13,13 @@ fi
 alias lls="ls -lha --color=always | less -r"
 alias lss="ls --color=always | less -r"
 
+function lf() {
+  local dir="${1:-.}"
+
+  l "$dir"
+  df -h "$dir"
+}
+
 function gt() {
   local dir="${1:-.}"
 
@@ -21,6 +28,17 @@ function gt() {
   else
     eza --tree --git-ignore "$dir"
   fi
+}
+
+mtp_mountpoint="$HOME/mnt/phone/"
+
+function aftm() {
+  mkdir -p "$mtp_mountpoint"
+  aft-mtp-mount "$mtp_mountpoint"
+}
+
+function aftu() {
+  fusermount -u "$mtp_mountpoint"
 }
 
 # Shows where aliases are defined, using a zsh startup trace.

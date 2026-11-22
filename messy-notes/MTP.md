@@ -9,6 +9,7 @@
     file transfer utility
   - [mtp-mount](https://github.com/vdavid/mtp-mount)
     and `mtp-mountd`
+  - [Android File Transfer](https://github.com/whoozle/android-file-transfer-linux)
 
 - Mounting with `mtp-mount`
   - Create a custom mount point in your home directory
@@ -28,3 +29,16 @@
     (in a separate shell)
 
         mtp-mount ~/mnt/phone
+
+  - A (sometimes) useful check
+
+        mount | grep mtp
+
+- Mounting with `aft-mtp-mount` (Android File Transfer)
+  - Mount
+
+        aft-mtp-mount ~/mnt/phone
+
+  - Unmount
+
+        fusermount -u $HOME/mnt/phone
