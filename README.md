@@ -68,7 +68,7 @@
 
       [data]
       terminalFontSize = 14
-      phoneAudiobooks = "Internal storage/Audiobooks"
+      phoneAudiobooks = "/Internal storage/Audiobooks"
 
 ### [GRUB tips](/messy-notes/GRUB.md)
 

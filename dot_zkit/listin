@@ -50,7 +50,7 @@ except Exception:
 ' "$config" "Check ${config}; add ${entry}"
 }
 
-mtp_mountpoint="$HOME/.qin/"
+mtp_mountpoint="$HOME/.qin"
 
 # Check your favorite MTP phone directory.
 function lfm() {
