@@ -153,7 +153,6 @@ alias dp=procrustes
 alias exstat="expac -H M '%m\t%n' | sort -h"
 alias exst="exstat | tail -n 10"
 alias lg="lazygit"
-alias rp="mtp-rs"
 alias dozer="docker-compose run buildozer android"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias ff="fastfetch"
