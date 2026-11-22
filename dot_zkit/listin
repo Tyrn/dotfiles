@@ -30,10 +30,31 @@ function gt() {
   fi
 }
 
+get_chezmoi_audiobooks() {
+  local config="$HOME/.config/chezmoi/chezmoi.toml"
+  local entry="phoneAudiobooks"
+
+  [[ -f "$config" ]] || {
+    printf '%s\n' "Create ${config}; add ${entry}"
+    return 0
+  }
+
+  python3 -c '
+import sys, tomllib
+try:
+    with open(sys.argv[1], "rb") as f:
+        val = tomllib.load(f).get("data", {}).get("phoneAudiobooks")
+    print(sys.argv[2] if val is None else val)
+except Exception:
+    print(sys.argv[2])
+' "$config" "Check ${config}; add ${entry}"
+}
+
+audiobooks=$(get_chezmoi_audiobooks)
 mtp_mountpoint="$HOME/.qin/"
 
 function lfm() {
-  lf "$mtp_mountpoint/Internal storage/Audiobooks"
+  lf "$mtp_mountpoint/$audiobooks"
 }
 
 function aftm() {

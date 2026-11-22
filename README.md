@@ -63,11 +63,12 @@
 
 - Later on, see `pacman-add` on adoption of unofficial repositories, if necessary
 
-- To override the default console font size, edit manually
-  `~/.config/chezmoi/chezmoi.toml` (create it, if necessary):
+- Per workstation settings go to `~/.config/chezmoi/chezmoi.toml`
+  (create it, if necessary):
 
       [data]
       terminalFontSize = 14
+      phoneAudiobooks = "Internal storage/Audiobooks"
 
 ### [GRUB tips](/messy-notes/GRUB.md)
 
