@@ -30,7 +30,11 @@ function gt() {
   fi
 }
 
-mtp_mountpoint="$HOME/mnt/phone/"
+mtp_mountpoint="$HOME/.qin/"
+
+function lfm() {
+  lf "$mtp_mountpoint/Internal storage/Audiobooks"
+}
 
 function aftm() {
   mkdir -p "$mtp_mountpoint"
