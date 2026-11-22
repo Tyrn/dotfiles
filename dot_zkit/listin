@@ -50,10 +50,11 @@ except Exception:
 ' "$config" "Check ${config}; add ${entry}"
 }
 
-audiobooks=$(get_chezmoi_audiobooks)
 mtp_mountpoint="$HOME/.qin/"
 
 function lfm() {
+  local audiobooks
+  audiobooks=$(get_chezmoi_audiobooks)
   lf "$mtp_mountpoint/$audiobooks"
 }
 
