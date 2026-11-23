@@ -52,9 +52,10 @@ except Exception:
 }
 
 # Check your favorite MTP phone directory.
-function lfshow() {
+# Requires manual configuration (chezmoi.toml).
+function lfconf() {
   local key="${1}"
-  local suggested_value="${2}"
+  local suggested_value="${2}" # "suggested" means "merely an example"
   local icon="${3:-⛵}"
   local value
   value=$(get_chezmoi_value "$key")
@@ -70,7 +71,7 @@ function lfshow() {
 mtp_mountpoint="$HOME/.qin"
 
 function lfau() {
-  lfshow phoneAudiobooks "/Internal storage/Audiobooks" 🎧
+  lfconf phoneAudiobooks "/Internal storage/Audiobooks" 🎧
 }
 
 function aftm() {
