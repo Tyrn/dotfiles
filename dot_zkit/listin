@@ -55,8 +55,8 @@ except Exception:
 # Requires manual configuration (chezmoi.toml).
 function lfconf() {
   local key="${1}"
-  local suggested_value="${2:-/}" # "suggested" means "merely an example"
-  local icon="${3:-⛵}"
+  local icon="${2:-⛵}"
+  local suggested_value="${3:-/}" # "suggested" means "merely an example"
   local value
   value=$(get_chezmoi_value "$key")
   if [[ "$value" == 🔸* ]]; then
@@ -70,9 +70,8 @@ function lfconf() {
 
 mtp_mountpoint="$HOME/.qin"
 
-function lfau() {
-  lfconf phoneAudiobooks "/Internal storage/Audiobooks" 🎧
-}
+# Shortcuts for daily routine.
+alias lfau='lfconf phoneAudiobook 🎧 "/storage/Audiobooks"'
 
 function aftm() {
   mkdir -p "$mtp_mountpoint"
