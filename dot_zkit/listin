@@ -82,6 +82,22 @@ function aftu() {
   fusermount -u "$mtp_mountpoint"
 }
 
+# ────────────────────────────────────────────────────────────────
+# So far the use of mtp-mount is experimental.
+# Notes:
+# - Filesystem: to Size, Used, etc. all the mounted devices
+#   (Internal, SD card) are lumped together. df output is useless.
+# ────────────────────────────────────────────────────────────────
+
+function mtpm() {
+  mkdir -p "$mtp_mountpoint"
+  mtp-mount "$mtp_mountpoint" &
+}
+
+function mtpu() {
+  umount "$mtp_mountpoint"
+}
+
 # Helps to revive MTP strangled by Plasma KDE apps.
 function kiok() {
   killall -w kiod6
