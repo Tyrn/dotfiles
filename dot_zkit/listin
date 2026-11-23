@@ -30,12 +30,11 @@ function gt() {
   fi
 }
 
-function get_chezmoi_audiobooks() {
-  local config="$HOME/.config/chezmoi/chezmoi.toml"
-  local entry="phoneAudiobooks"
+chezmoi_toml="$HOME/.config/chezmoi/chezmoi.toml"
 
-  [[ -f "$config" ]] || {
-    printf '%s\n' "🔸Create ${config}; add ${entry}🔸"
+function get_chezmoi_audiobooks() {
+  [[ -f "$chezmoi_toml" ]] || {
+    printf '%s\n' "🔸"
     return 0
   }
 
@@ -47,7 +46,7 @@ try:
     print(sys.argv[2] if val is None else val)
 except Exception:
     print(sys.argv[2])
-' "$config" "🔸Check ${config}; add ${entry}🔸"
+' "$chezmoi_toml" "🔸"
 }
 
 mtp_mountpoint="$HOME/.qin"
@@ -56,6 +55,13 @@ mtp_mountpoint="$HOME/.qin"
 function lfm() {
   local audiobooks
   audiobooks=$(get_chezmoi_audiobooks)
+  if [[ "$audiobooks" == 🔸* ]]; then
+    printf '%s should have an entry like this:\n' "$chezmoi_toml"
+    echo "[data]"
+    echo "..."
+    echo 'phoneAudiobooks = "/Internal storage/Audiobooks"'
+    echo " ⛵"
+  fi
   lf "$mtp_mountpoint$audiobooks"
 }
 
