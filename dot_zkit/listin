@@ -55,7 +55,7 @@ except Exception:
 # Requires manual configuration (chezmoi.toml).
 function lfconf() {
   local key="${1}"
-  local suggested_value="${2}" # "suggested" means "merely an example"
+  local suggested_value="${2:-/}" # "suggested" means "merely an example"
   local icon="${3:-⛵}"
   local value
   value=$(get_chezmoi_value "$key")
