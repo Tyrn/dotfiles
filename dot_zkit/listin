@@ -71,7 +71,7 @@ function lfconf() {
 mtp_mountpoint="$HOME/.qin"
 
 # Shortcuts for daily routine.
-alias lfau='lfconf phoneAudiobook 🎧 "/storage/Audiobooks"'
+alias lfau='lfconf phoneAudiobooks 🎧 "/storage/Audiobooks"'
 
 function aftm() {
   mkdir -p "$mtp_mountpoint"
