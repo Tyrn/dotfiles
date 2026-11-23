@@ -32,37 +32,45 @@ function gt() {
 
 chezmoi_toml="$HOME/.config/chezmoi/chezmoi.toml"
 
-function get_chezmoi_audiobooks() {
+function get_chezmoi_value() {
+  local key="${1}"
+
   [[ -f "$chezmoi_toml" ]] || {
     printf '%s\n' "🔸"
     return 0
   }
 
-  python3 -c '
+  python3 -c "
 import sys, tomllib
 try:
-    with open(sys.argv[1], "rb") as f:
-        val = tomllib.load(f).get("data", {}).get("phoneAudiobooks")
+    with open(sys.argv[1], 'rb') as f:
+        val = tomllib.load(f).get('data', {}).get('$key')
     print(sys.argv[2] if val is None else val)
 except Exception:
     print(sys.argv[2])
-' "$chezmoi_toml" "🔸"
+" "$chezmoi_toml" "🔸"
+}
+
+# Check your favorite MTP phone directory.
+function lfshow() {
+  local key="${1}"
+  local suggested_value="${2}"
+  local icon="${3:-⛵}"
+  local value
+  value=$(get_chezmoi_value "$key")
+  if [[ "$value" == 🔸* ]]; then
+    printf '%s should have an entry like this:\n' "$chezmoi_toml"
+    echo "[data]"
+    echo "..."
+    printf '%s = "%s"\n %s\n' "$key" "$suggested_value" "$icon"
+  fi
+  lf "$mtp_mountpoint$value"
 }
 
 mtp_mountpoint="$HOME/.qin"
 
-# Check your favorite MTP phone directory.
-function lfm() {
-  local audiobooks
-  audiobooks=$(get_chezmoi_audiobooks)
-  if [[ "$audiobooks" == 🔸* ]]; then
-    printf '%s should have an entry like this:\n' "$chezmoi_toml"
-    echo "[data]"
-    echo "..."
-    echo 'phoneAudiobooks = "/Internal storage/Audiobooks"'
-    echo " ⛵"
-  fi
-  lf "$mtp_mountpoint$audiobooks"
+function lfau() {
+  lfshow phoneAudiobooks "/Internal storage/Audiobooks" 🎧
 }
 
 function aftm() {
