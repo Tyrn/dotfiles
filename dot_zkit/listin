@@ -13,13 +13,6 @@ fi
 alias lls="ls -lha --color=always | less -r"
 alias lss="ls --color=always | less -r"
 
-function lf() {
-  local dir="${1:-.}"
-
-  l "$dir"
-  df -h "$dir"
-}
-
 function gt() {
   local dir="${1:-.}"
 
@@ -53,7 +46,7 @@ except Exception:
 
 # Check your favorite MTP phone directory.
 # Requires manual configuration (chezmoi.toml).
-function lfconf() {
+function lfs() {
   local key="${1}"
   local icon="${2:-⛵}"
   local suggested_value="${3:-/}" # "suggested" means "merely an example"
@@ -68,10 +61,17 @@ function lfconf() {
   lf "$mtp_mountpoint$value"
 }
 
-mtp_mountpoint="$HOME/.qin"
+function lf() {
+  local dir="${1:-.}"
+
+  l "$dir"
+  df -h "$dir"
+}
 
 # Shortcuts for daily routine.
-alias lfau='lfconf phoneAudiobooks 🎧 "/storage/Audiobooks"'
+alias lfau='lfs phoneAudiobooks 🎧 "/storage/Audiobooks"'
+
+mtp_mountpoint="$HOME/.qin"
 
 function aftm() {
   mkdir -p "$mtp_mountpoint"
