@@ -49,11 +49,11 @@ except Exception:
 #
 # Usage, simple and advanced:
 #
-#   lfs phoneKey
-#   lfs phoneKey '*Martin*'
+#   lz phoneKey
+#   lz phoneKey '*Martin*'
 #
 # Styled to please shellcheck and shfmt
-function lfs() {
+function lz() {
   local key="${1}"
   shift 1
   local value
@@ -85,20 +85,24 @@ function lfs() {
         paths+=("$base/$p")
       fi
     done
-    # flat, dirs as entries
-    eza -lbF --git --group-directories-first -d "${paths[@]}"
+    lf "${paths[@]}"
   else
-    eza -lbF --git --group-directories-first --level=1 "$base"
+    li "$base"
   fi
 }
 
-function lf() {
-  l "${@:-.}"
+function lf() { # flat entries, no descending
+  eza -lbF --git --group-directories-first -d "${@:-.}"
+  df -h "${1:-.}"
+}
+
+function li() { # contents, one level of introspection
+  eza -lbF --git --group-directories-first --level=1 "${@:-.}"
   df -h "${1:-.}"
 }
 
 # Shortcuts for daily routine.
-alias lfau='lfs phoneAudiobooks'
+alias lau='lz phoneAudiobooks'
 
 mtp_mountpoint="$HOME/.qin"
 
