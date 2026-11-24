@@ -61,13 +61,6 @@ function lfs() {
   lf "$mtp_mountpoint$value"
 }
 
-function lffa() {
-  local dir="${1:-.}"
-
-  l "$dir"
-  df -h "$dir"
-}
-
 function lf() {
   l "${@:-.}"
   df -h "${1:-.}"
