@@ -42,3 +42,44 @@
   - Unmount
 
         fusermount -u $HOME/mnt/phone
+
+## Quirks
+
+- `lfs`: not good enough for `shfmt` because of `zsh` syntax
+
+      # Check your favorite MTP phone directory.
+      # Requires manual configuration (chezmoi.toml).
+      #
+      # Usage, simple and advanced:
+      #
+      #   lfs phoneKey
+      #   lfs phoneKey '*Martin*'
+      #
+      function lfs() {
+        local key="${1}"
+        shift 1
+        local value; value=$(get_chezmoi_value "$key")
+        if [[ "$value" == 🔸* ]]; then
+          printf '%s should have an entry like this:\n[data]\n...\n%s = "%s"\n %s\n' \
+            "$chezmoi_toml" "$key" "/storage/something" "⛵"
+        fi
+
+        local base="$mtp_mountpoint$value"
+        if (( $# )); then
+          local -a paths=()
+          local p
+          for p in "$@"; do
+            # shellcheck disable=SC2296,SC1036,SC2206
+            local -a hit=( "$base"/${~p}(N) )
+            if (( ${#hit[@]} )); then
+              paths+=( "${hit[@]}" )
+            else
+              printf 'lfs: no match: %q\n' "$base/$p" >&2
+              paths+=( "$base/$p" )
+            fi
+          done
+          lf "${paths[@]}"
+        else
+          lf "$base"
+        fi
+      }
