@@ -81,7 +81,7 @@ function lz() {
       if ((${#hit[@]})); then
         paths+=("${hit[@]}")
       else
-        printf 'lfs: no match: %q\n' "$base/$p" >&2
+        printf 'lz: no match: %q\n' "$base/$p" >&2
         paths+=("$base/$p")
       fi
     done

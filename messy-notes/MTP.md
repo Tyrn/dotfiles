@@ -52,10 +52,10 @@
       #
       # Usage, simple and advanced:
       #
-      #   lfs phoneKey
-      #   lfs phoneKey '*Martin*'
+      #   lz phoneKey
+      #   lz phoneKey '*Martin*'
       #
-      function lfs() {
+      function lz() {
         local key="${1}"
         shift 1
         local value; value=$(get_chezmoi_value "$key")
@@ -74,12 +74,12 @@
             if (( ${#hit[@]} )); then
               paths+=( "${hit[@]}" )
             else
-              printf 'lfs: no match: %q\n' "$base/$p" >&2
+              printf 'lz: no match: %q\n' "$base/$p" >&2
               paths+=( "$base/$p" )
             fi
           done
           lf "${paths[@]}"
         else
-          lf "$base"
+          li "$base"
         fi
       }
