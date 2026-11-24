@@ -106,11 +106,13 @@ alias lau='lz phoneAudiobooks'
 
 mtp_mountpoint="$HOME/.qin"
 
+# Android File Transfer, mount
 function aftm() {
   mkdir -p "$mtp_mountpoint"
   aft-mtp-mount "$mtp_mountpoint"
 }
 
+# Android File Transfer, unmount
 function aftu() {
   fusermount -u "$mtp_mountpoint"
 }
@@ -122,11 +124,13 @@ function aftu() {
 #   (Internal, SD card) are lumped together. df output is useless.
 # ────────────────────────────────────────────────────────────────
 
+# mtp-rs, mount
 function mtpm() {
   mkdir -p "$mtp_mountpoint"
   mtp-mount "$mtp_mountpoint" &
 }
 
+# mtp-rs, unmount
 function mtpu() {
   umount "$mtp_mountpoint"
 }
