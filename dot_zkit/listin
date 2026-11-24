@@ -85,10 +85,10 @@ function lfs() {
         paths+=("$base/$p")
       fi
     done
-
-    lf "${paths[@]}"
+    # flat, dirs as entries
+    eza -lbF --git --group-directories-first -d "${paths[@]}"
   else
-    lf "$base"
+    eza -lbF --git --group-directories-first --level=1 "$base"
   fi
 }
 
