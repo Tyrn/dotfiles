@@ -46,19 +46,39 @@ except Exception:
 
 # Check your favorite MTP phone directory.
 # Requires manual configuration (chezmoi.toml).
+#
+# Usage, simple and advanced:
+#
+#   lfs phoneKey
+#   lfs phoneKey 'John*'
+#
 function lfs() {
   local key="${1}"
-  local icon="${2:-⛵}"
-  local suggested_value="${3:-/}" # "suggested" means "merely an example"
-  local value
-  value=$(get_chezmoi_value "$key")
+  shift 1
+  local value; value=$(get_chezmoi_value "$key")
   if [[ "$value" == 🔸* ]]; then
-    printf '%s should have an entry like this:\n' "$chezmoi_toml"
-    echo "[data]"
-    echo "..."
-    printf '%s = "%s"\n %s\n' "$key" "$suggested_value" "$icon"
+    printf '%s should have an entry like this:\n[data]\n...\n%s = "%s"\n %s\n' \
+      "$chezmoi_toml" "$key" "/storage/something" "⛵"
   fi
-  lf "$mtp_mountpoint$value"
+
+  local base="$mtp_mountpoint$value"
+  if (( $# )); then
+    local -a paths=()
+    local p
+    for p in "$@"; do
+      # shellcheck disable=SC2296,SC1036,SC2206
+      local -a hit=( "$base"/${~p}(N) )
+      if (( ${#hit[@]} )); then
+        paths+=( "${hit[@]}" )
+      else
+        printf 'lfs: no match: %q\n' "$base/$p" >&2
+        paths+=( "$base/$p" )
+      fi
+    done
+    lf "${paths[@]}"
+  else
+    lf "$base"
+  fi
 }
 
 function lf() {
@@ -67,7 +87,7 @@ function lf() {
 }
 
 # Shortcuts for daily routine.
-alias lfau='lfs phoneAudiobooks 🎧 "/storage/Audiobooks"'
+alias lfau='lfs phoneAudiobooks'
 
 mtp_mountpoint="$HOME/.qin"
 
