@@ -58,10 +58,11 @@
       function lz() {
         local key="${1}"
         shift 1
-        local value; value=$(get_chezmoi_value "$key")
+        local table=data
+        local value; value=$(get_chezmoi_value "$table" "$key")
         if [[ "$value" == 🔸* ]]; then
-          printf '%s should have an entry like this:\n[data]\n...\n%s = "%s"\n %s\n' \
-            "$chezmoi_toml" "$key" "/storage/something" "⛵"
+          printf '%s should have an entry like this:\n[%s]\n...\n%s = "%s"\n %s\n' \
+            "$chezmoi_toml" "$table" "$key" "/storage/something" "⛵"
         fi
 
         local base="$mtp_mountpoint$value"

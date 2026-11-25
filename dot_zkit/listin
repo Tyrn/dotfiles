@@ -26,7 +26,8 @@ function gt() {
 chezmoi_toml="$HOME/.config/chezmoi/chezmoi.toml"
 
 function get_chezmoi_value() {
-  local key="${1}"
+  local table="${1}"
+  local key="${2}"
 
   [[ -f "$chezmoi_toml" ]] || {
     printf '%s\n' "🔸"
@@ -37,7 +38,7 @@ function get_chezmoi_value() {
 import sys, tomllib
 try:
     with open(sys.argv[1], 'rb') as f:
-        val = tomllib.load(f).get('data', {}).get('$key')
+        val = tomllib.load(f).get('$table', {}).get('$key')
     print(sys.argv[2] if val is None else val)
 except Exception:
     print(sys.argv[2])
@@ -56,11 +57,12 @@ except Exception:
 function lz() {
   local key="${1}"
   shift 1
+  local table=data
   local value
-  value=$(get_chezmoi_value "$key")
+  value=$(get_chezmoi_value "$table" "$key")
   if [[ "$value" == 🔸* ]]; then
-    printf '%s should have an entry like this:\n[data]\n...\n%s = "%s"\n %s\n' \
-      "$chezmoi_toml" "$key" "/storage/something" "⛵"
+    printf '%s should have an entry like this:\n[%s]\n...\n%s = "%s"\n %s\n' \
+      "$chezmoi_toml" "$table" "$key" "/storage/something" "⛵"
   fi
 
   local base="$mtp_mountpoint$value"
