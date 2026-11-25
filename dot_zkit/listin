@@ -53,6 +53,11 @@ except Exception:
 #   lz phoneKey
 #   lz phoneKey '*Martin*'
 #
+# To get an idea about lz expectations,
+# run something unexpected:
+#
+#   lz boo
+#
 # Styled to please shellcheck and shfmt
 function lz() {
   local key="${1}"

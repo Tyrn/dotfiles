@@ -45,7 +45,7 @@
 
 ## Quirks
 
-- `lfs`: not good enough for `shfmt` because of `zsh` syntax
+- `lz`: not good enough for `shfmt` because of `zsh` syntax
 
       # Check your favorite MTP phone directory.
       # Requires manual configuration (chezmoi.toml).
