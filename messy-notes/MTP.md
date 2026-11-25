@@ -62,7 +62,7 @@
         local value; value=$(get_chezmoi_value "$table" "$key")
         if [[ "$value" == 🔸* ]]; then
           printf '%s should have an entry like this:\n[%s]\n...\n%s = "%s"\n %s\n' \
-            "$chezmoi_toml" "$table" "$key" "/storage/something" "⛵"
+            "$chezmoi_toml" "$table" "$key" "/deep storage/preciouss" "⛵"
         fi
 
         local base="$mtp_mountpoint$value"
