@@ -106,7 +106,7 @@ function li() { # contents, one level of introspection
 
 # Shortcuts for daily routine ('noglob' lets you omit quotes around *)
 alias lz='noglob _lz'
-alias lau='noglob _lz phoneAudiobooks'
+alias laud='noglob _lz phoneAudiobooks'
 
 mtp_mountpoint="$HOME/.qin"
 
