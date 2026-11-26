@@ -94,14 +94,24 @@ function _lz() {
   fi
 }
 
+function _df_target() {
+  local target="${1:-.}"
+  while [[ ! -e "$target" && "$target" == */* ]]; do
+    target="${target%/*}"
+    : "${target:=/}"
+  done
+  [[ -e "$target" ]] || target="."
+  printf '%s\n' "$target"
+}
+
 function lf() { # flat entries, no descending
   eza -lbF --git --group-directories-first -d "${@:-.}"
-  df -h "${1:-.}"
+  df -h "$(_df_target "${1:-.}")"
 }
 
 function li() { # contents, one level of introspection
   eza -lbF --git --group-directories-first --level=1 "${@:-.}"
-  df -h "${1:-.}"
+  df -h "$(_df_target "${1:-.}")"
 }
 
 # Shortcuts for daily routine ('noglob' lets you omit quotes around *)
