@@ -45,75 +45,50 @@ except Exception:
 " "$chezmoi_toml" "🔸"
 }
 
-# resolve_globs OUT_ARRAY BASE PATTERN...
-#
-# Fills the caller's array named OUT_ARRAY with resolved paths.
-# Unmatched patterns warn to stderr and pass through literally.
-#
-# NOTE: OUT_ARRAY must already be declared (e.g. `local -a name=()`) by the
-#   caller. `set -A` assigns the nearest scope that defines the name; it must
-#   NOT collide with any local here: out_name, base, p, hit, acc.
-#   (`paths_like_no_other` in the caller is a deliberately unique name.)
-function resolve_globs() {
-  local out_name=$1
-  local base=$2
-  shift 2
-
-  local p
-  local -a hit acc
-
-  # Enable Zsh globbing for variable expansions and nullglob locally
-  setopt local_options glob_subst null_glob
-
-  for p in "$@"; do
-    # With glob_subst + null_glob active, unquoted $p expands as a glob
-    # and resolves to nothing if unmatched, while $base stays safely quoted
-    # shellcheck disable=SC2206
-    hit=("$base"/$p)
-
-    if ((${#hit[@]})); then
-      acc+=("${hit[@]}")
-    else
-      # funcstack[2] is the caller in Zsh; fallback avoids shellcheck array/unset warnings
-      printf '%s: no match: %q\n' "${funcstack[2]:-resolve_globs}" "$base/$p" >&2
-      acc+=("$base/$p")
-    fi
-  done
-
-  # zsh: assign the array named by $out_name (indirect array assignment)
-  set -A "$out_name" "${acc[@]}"
-}
-
-# Checks your favorite MTP phone directory.
+# Resolves a chezmoi key to its MTP mount path.
 # Requires manual configuration (chezmoi.toml).
-#
-# Usage, simple and advanced:
-#
-#   lz phoneKey
-#   lz phoneKey '*Martin*'
-#
-# To get an idea about lz expectations,
-# run something unexpected:
-#
-#   lz boo
-#
-# Styled to please shellcheck and shfmt
-function lz() {
-  local key="${1}"
-  shift 1
+function _lz_base() {
+  local key="$1"
   local table=data
   local value
   value=$(get_chezmoi_value "$table" "$key")
+
   if [[ "$value" == 🔸* ]]; then
     printf '%s should have an entry like this:\n[%s]\n...\n%s = "%s"\n %s\n' \
-      "$chezmoi_toml" "$table" "$key" "/deep storage/preciouss" "⛵"
+      "$chezmoi_toml" "$table" "$key" "/deep storage/preciouss" "⛵" >&2
+    return 1
   fi
 
-  local base="$mtp_mountpoint$value"
+  printf '%s%s\n' "$mtp_mountpoint" "$value"
+}
+
+# Checks your favorite MTP phone directory.
+#
+# Usage, simple and advanced:
+#
+#   _lz phoneKey
+#   noglob _lz phoneKey *Martin*
+#
+# To get an idea about _lz expectations,
+# run something unexpected:
+#
+#   _lz boo
+#
+# Styled to please shellcheck and shfmt
+function _lz() {
+  local base
+  base=$(_lz_base "$1") || return 1
+  shift
+
   if (($#)); then
-    local -a paths_like_no_other=()
-    resolve_globs paths_like_no_other "$base" "$@"
-    lf "${paths_like_no_other[@]}"
+    setopt local_options glob_subst nonomatch
+    local -a targets=()
+    local p
+    for p in "$@"; do
+      # shellcheck disable=SC2206
+      targets+=("$base"/$p)
+    done
+    lf "${targets[@]}"
   else
     li "$base"
   fi
@@ -129,8 +104,9 @@ function li() { # contents, one level of introspection
   df -h "${1:-.}"
 }
 
-# Shortcuts for daily routine.
-alias lau='lz phoneAudiobooks'
+# Shortcuts for daily routine ('noglob' lets you omit quotes around *)
+alias lz='noglob _lz'
+alias lau='noglob _lz phoneAudiobooks'
 
 mtp_mountpoint="$HOME/.qin"
 
