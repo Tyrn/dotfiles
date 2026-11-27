@@ -3,7 +3,6 @@
 #
 # shuck: disable-file=C001,C006,C018,C043,C063,C124,C150,C155
 # Some environment variables, aliases, etc.
-# To be included in ~/.zshrc
 
 export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
@@ -11,6 +10,29 @@ export EDITOR="$VISUAL"
 #export CODE=~/spaces
 
 export SAM_CLI_TELEMETRY=0
+
+alias dm=damastes
+alias dh=dahastes
+alias dp=procrustes
+alias exstat="expac -H M '%m\t%n' | sort -h"
+alias exst="exstat | tail -n 10"
+alias lg="lazygit"
+alias dozer="docker-compose run buildozer android"
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias ff="fastfetch"
+alias fff="fastfetch -c all.jsonc"
+alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
+alias acl="arduino-cli"
+
+# Install cabal app locally
+function cabal-i() {
+  cabal install --installdir="$HOME"/.local/bin --overwrite-policy=always
+}
+
+# Build and install cabal app locally
+function cabal-bi() {
+  cabal build && cabal-i
+}
 
 # A list of file extensions,
 # encountered recursively.
@@ -136,29 +158,6 @@ function findch() {
   echo "    \U$ch"
   fc-match -v :charset="$ch" | grep -E "family:|file:"
 }
-
-# Install cabal app locally
-function cabal-i() {
-  cabal install --installdir="$HOME"/.local/bin --overwrite-policy=always
-}
-
-# Build and install cabal app locally
-function cabal-bi() {
-  cabal build && cabal-i
-}
-
-alias dm=damastes
-alias dh=dahastes
-alias dp=procrustes
-alias exstat="expac -H M '%m\t%n' | sort -h"
-alias exst="exstat | tail -n 10"
-alias lg="lazygit"
-alias dozer="docker-compose run buildozer android"
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias ff="fastfetch"
-alias fff="fastfetch -c all.jsonc"
-alias ac="printf '%s\n' ~/.arduino15/packages/*/hard*/*/*"
-alias acl="arduino-cli"
 
 function pipver-col() { curl -s "https://pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/\1/p'; }
 function pipver() { curl -s "https://pypi.org/rss/project/$1/releases.xml" | sed -n 's/\s*<title>\([^<]*\).*/ \1/p' | paste -sd,; }
