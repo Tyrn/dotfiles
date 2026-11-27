@@ -125,13 +125,15 @@ function _lz() {
   fi
 }
 
+# Prints the nearest existing ancestor of TARGET (or "." if none).
+# Symlinks are followed: a valid link resolves to its target; a dangling
+# link is treated as existing here (df will report its containing fs).
 function _df_target() {
   local target="${1:-.}"
-  while [[ ! -e "$target" && "$target" == */* ]]; do
-    target="${target%/*}"
-    : "${target:=/}"
+  while [[ ! -e "$target" && ! -L "$target" && "$target" != "/" ]]; do
+    target="${target:h}"
   done
-  [[ -e "$target" ]] || target="."
+  [[ -e "$target" || -L "$target" ]] || target="."
   printf '%s\n' "$target"
 }
 
