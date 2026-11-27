@@ -90,6 +90,7 @@ function _lz_base() {
     return 1
   fi
 
+  : "${mtp_mountpoint:?mtp_mountpoint must be set (the MTP mount root)}"
   printf '%s%s\n' "$mtp_mountpoint" "$value"
 }
 
