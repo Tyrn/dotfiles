@@ -3,7 +3,7 @@
 
 # Shared base options so aliases stay DRY
 if command -v eza &>/dev/null; then
-  _eza_base=(eza --group-directories-first --icons=auto)
+  _eza_base=(eza --group-directories-first --icons=never)
 
   alias ls='${_eza_base[*]}'
   alias l='${_eza_base[*]} -lbF --git'
