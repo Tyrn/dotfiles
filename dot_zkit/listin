@@ -199,9 +199,15 @@ function findalias() {
     cat <<'EOF'
 Usage: findalias [NAME]
 
-  (no args)    list all aliases defined during zsh startup, with their source
-  NAME         show the source file and line for a specific alias
-  -h, --help   show this message
+Find where your shell aliases are defined, including ones that get overwritten.
+
+  (no args)   Show every  loaded alias, along with its source file.
+  NAME        Find the exact file and line number where a specific alias is set.
+  -h, --help  Display this help message.
+
+Examples:
+  findalias        # List all the available aliases
+  findalias ll     # See where 'll' is defined (and if anything overrides it)
 EOF
     return 0
     ;;
