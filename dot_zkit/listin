@@ -65,15 +65,15 @@ function get_chezmoi_value() {
     return 0
   }
 
-  python3 -c "
+  python3 -c '
 import sys, tomllib
 try:
-    with open(sys.argv[1], 'rb') as f:
-        val = tomllib.load(f).get('$table', {}).get('$key')
-    print(sys.argv[2] if val is None else val)
+    with open(sys.argv[1], "rb") as f:
+        val = tomllib.load(f).get(sys.argv[2], {}).get(sys.argv[3])
+    print(sys.argv[4] if val is None else val)
 except Exception:
-    print(sys.argv[2])
-" "$chezmoi_toml" "🔸"
+    print(sys.argv[4])
+' "$chezmoi_toml" "$table" "$key" "🔸"
 }
 
 # Resolves a chezmoi key to its MTP mount path.
