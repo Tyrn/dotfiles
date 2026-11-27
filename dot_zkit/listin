@@ -114,6 +114,7 @@ function _lz() {
 
   if (($#)); then
     setopt local_options glob_subst nonomatch
+    unsetopt case_glob # ← case-insensitive globs, function-scoped
     local -a targets=()
     local p
     for p in "$@"; do
