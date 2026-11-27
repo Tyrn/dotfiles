@@ -1,25 +1,56 @@
 #!/usr/bin/env bash
 # Syntax marker; do not run
 
+# Shared base options so aliases stay DRY
 if command -v eza &>/dev/null; then
-  alias ls='eza --group-directories-first'
-  alias l='eza -lbF --git --group-directories-first'
-  alias ll='eza -lbGF --git --group-directories-first'
-  alias la='eza -lbhHigUmuSa --time-style=long-iso --git --color-scale --group-directories-first'
-  alias lt='eza --tree --level=2 --icons=always'
-  alias lta='eza -a --tree --level=2 --icons=always'
+  _eza_base=(eza --group-directories-first --icons=auto)
+
+  alias ls='${_eza_base[*]}'
+  alias l='${_eza_base[*]} -lbF --git'
+  alias ll='${_eza_base[*]} -laF --git'
+  alias la='${_eza_base[*]} -lbhHigUmuSa --time-style=long-iso --git --color-scale'
+  alias lt='${_eza_base[*]} --tree --level=2'
+  alias lta='${_eza_base[*]} -a --tree --level=2'
+
+  function lls() {
+    "${_eza_base[@]}" -laF --git --color=always "$@" | less -R
+  }
+
+  function lss() {
+    "${_eza_base[@]}" --color=always "$@" | less -R
+  }
+else
+  alias ls='ls --color=auto --group-directories-first'
+  alias l='ls -lFh'
+  alias ll='ls -lAFh'
+  alias la='ls -laFh'
+
+  function lls() {
+    command ls -lAh --color=always "$@" | less -R
+  }
+
+  function lss() {
+    command ls --color=always "$@" | less -R
+  }
 fi
 
-alias lls="ls -lha --color=always | less -r"
-alias lss="ls --color=always | less -r"
-
+# Git-aware tree: supports `gt`, `gt DIR`, `gt LEVEL`, or `gt DIR LEVEL`
 function gt() {
-  local dir="${1:-.}"
+  local dir="."
+  local level=""
 
-  if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
-    eza --long --tree --git-ignore --level="$2" "$dir"
+  for arg in "$@"; do
+    if [[ "$arg" =~ ^[0-9]+$ ]]; then
+      level="$arg"
+    else
+      dir="$arg"
+    fi
+  done
+
+  if [[ -n "$level" ]]; then
+    eza --long --tree --git-ignore --icons=auto --level="$level" "$dir"
   else
-    eza --tree --git-ignore "$dir"
+    eza --tree --git-ignore --icons=auto "$dir"
   fi
 }
 
