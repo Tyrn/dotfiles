@@ -232,6 +232,10 @@ function kiok() {
 # The use of mtp-mount isn't quite experimental any more. mtp-info
 # is recommended as a single tool for mounting MTP gadgets.
 #
+# Notes on aft, or Android File Transfer:
+# - Copying files circa 1GiB with general purpose tools
+#   is unreliable.
+#
 # Notes on mtp-mount:
 # - For Filesystem Size, Used, etc., all the mounted devices
 #   (Internal, SD card) are lumped together. df output is useless.
