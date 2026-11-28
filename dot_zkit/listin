@@ -223,31 +223,66 @@ function aftu() {
   fusermount -u "$mtp_mountpoint"
 }
 
+# Helps to revive MTP strangled by Plasma KDE apps.
+function kiok() {
+  killall -w kiod6
+}
+
 # ────────────────────────────────────────────────────────────────
-# So far the use of mtp-mount is experimental.
-# Notes:
-# - Filesystem: to Size, Used, etc. all the mounted devices
+# The use of mtp-mount isn't quite experimental any more. mtp-info
+# is recommended as a single tool for mounting MTP gadgets.
+#
+# Notes on mtp-mount:
+# - For Filesystem Size, Used, etc., all the mounted devices
 #   (Internal, SD card) are lumped together. df output is useless.
 # ────────────────────────────────────────────────────────────────
 
 # mtp-rs, mount
 function mtpm() {
   mkdir -p "$mtp_mountpoint"
-  mtp-mount "$mtp_mountpoint" &
+  (
+    set +m
+    mtp-mount "$mtp_mountpoint" >/dev/null 2>&1 &
+    echo $!
+  ) >/dev/null
+
+  local i
+  for ((i = 0; i < 30; i++)); do
+    mountpoint -q "$mtp_mountpoint" && return 0
+    ((i == 3)) && print -u2 'Wait...'
+    sleep 0.1
+  done
+
+  print -u2 "mtpm: mount failed; check the cable"
+  return 1
 }
 
 # mtp-rs, unmount
 function mtpu() {
-  umount "$mtp_mountpoint"
+  # Try to find and terminate the mtp-mount process gracefully
+  if pgrep -f "mtp-mount $mtp_mountpoint" >/dev/null; then
+    pkill -TERM -f "mtp-mount $mtp_mountpoint"
+    # Give it a moment to clean up the MTP session
+    sleep 1
+  fi
+  # Now unmount (should be a no-op if pkill worked)
+  mountpoint -q "$mtp_mountpoint" && umount "$mtp_mountpoint" 2>/dev/null || true
 }
 
-# Helps to revive MTP strangled by Plasma KDE apps.
-function kiok() {
-  killall -w kiod6
+# Shows every storage device of the
+# plugged in MTP gadget.
+#
+# Makes it mounted via mtp-mount
+# and fully accessible.
+#
+# Safe to be called repeatedly.
+function mtp-info() {
+  mtpu
+  aft-info
+  mtpm
 }
 
-# aft-info: list MTP storages with names and human-readable capacity.
-# Works in bash and zsh. Requires aft-mtp-cli (no mount needed).
+# Lists available MTP storages without mounting them.
 function aft-info() {
   emulate -L zsh 2>/dev/null || true
 
