@@ -253,26 +253,33 @@ function aft-info() {
 
   local line id desc info used free total pct
   local -a storages
+  local attempt
 
-  # 1. Enumerate storages: id<TAB>description (strip "volume: ..., description:").
-  while IFS= read -r line; do
-    case "$line" in
-    [0-9]*[[:space:]]*)
-      id=${line%%[[:space:]]*}
-      desc=${line#"$id"}
-      desc=${desc#"${desc%%[![:space:]]*}"} # ltrim
-      case "$desc" in
-      *"description:"*) desc=${desc##*description:} ;;
+  # Enumerate storages, retrying briefly: the phone's MTP interface can
+  # take a moment to become claimable right after plugging in.
+  for ((attempt = 0; attempt < 5; attempt++)); do
+    storages=()
+    while IFS= read -r line; do
+      case "$line" in
+      [0-9]*[[:space:]]*)
+        id=${line%%[[:space:]]*}
+        desc=${line#"$id"}
+        desc=${desc#"${desc%%[![:space:]]*}"}
+        case "$desc" in
+        *"description:"*) desc=${desc##*description:} ;;
+        esac
+        desc=${desc#"${desc%%[![:space:]]*}"}
+        storages+=("$id"$'\t'"$desc")
+        ;;
       esac
-      desc=${desc#"${desc%%[![:space:]]*}"} # ltrim again
-      storages+=("$id"$'\t'"$desc")
-      ;;
-    esac
-  done < <(aft-mtp-cli storage-list 2>/dev/null)
+    done < <(aft-mtp-cli storage-list 2>/dev/null)
+    ((${#storages[@]} > 0)) && break
+    sleep 1
+  done
 
   if ((${#storages[@]} == 0)); then
-    print -u2 'aft-info: no storages found (phone connected? MTP mode on?)' 2>/dev/null ||
-      printf '%s\n' 'aft-info: no storages found (phone connected? MTP mode on?)' >&2
+    print -u2 'aft-info: no storages found (device busy, locked, or not in MTP mode?)' 2>/dev/null ||
+      printf '%s\n' 'aft-info: no storages found (device busy, locked, or not in MTP mode?)' >&2
     return 1
   fi
 
@@ -285,7 +292,6 @@ function aft-info() {
     }'
   }
 
-  # 2. df-style line per storage.
   local entry
   for entry in "${storages[@]}"; do
     id=${entry%%$'\t'*}
