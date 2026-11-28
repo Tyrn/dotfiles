@@ -243,6 +243,10 @@ function kiok() {
 
 # mtp-rs, mount
 function mtpm() {
+  command -v mtp-mount >/dev/null 2>&1 || {
+    print -u2 'mtp-mount not found'
+    return 1
+  }
   mkdir -p "$mtp_mountpoint"
   (
     set +m
